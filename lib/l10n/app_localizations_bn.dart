@@ -768,167 +768,168 @@ class AppLocalizationsBn extends AppLocalizations {
       'এই ছবিটি বিশ্লেষণ করা যায়নি। আবার চেষ্টা করুন।';
 
   @override
-  String get plantDetailsTitle => 'Plant Details';
+  String get plantDetailsTitle => 'গাছের বিবরণ';
 
   @override
-  String get careSummaryTitle => 'Care Summary';
+  String get careSummaryTitle => 'পরিচর্যার সারসংক্ষেপ';
 
   @override
-  String get actionsTitle => 'Actions';
+  String get actionsTitle => 'কার্যক্রম';
 
   @override
-  String get lastWateredLabel => 'Last Watered';
+  String get lastWateredLabel => 'সর্বশেষ পানি দেওয়া হয়েছে';
 
   @override
-  String get nextWaterLabel => 'Next Watering';
+  String get nextWaterLabel => 'পরবর্তী পানি দেওয়ার সময়';
 
   @override
-  String get sunlightLabel => 'Sunlight';
+  String get sunlightLabel => 'সূর্যালোক';
 
   @override
-  String get neverWateredLabel => 'Never';
+  String get neverWateredLabel => 'কখনো নয়';
 
   @override
-  String get wateredTodayLabel => 'Today';
+  String get wateredTodayLabel => 'আজ';
 
   @override
   String daysAgoLabel(int days) {
-    return '${days}d ago';
+    return '$days দিন আগে';
   }
 
   @override
-  String get waterNowLabel => 'Water now!';
+  String get waterNowLabel => 'এখনই পানি দিন!';
 
   @override
   String daysLeftLabel(int days) {
-    return 'In ${days}d';
+    return '$days দিন পর';
   }
 
   @override
-  String get unknownSpeciesLabel => 'Unknown species';
+  String get unknownSpeciesLabel => 'অজানা প্রজাতি';
 
   @override
-  String get noNicknameLabel => 'No nickname';
+  String get noNicknameLabel => 'কোনো ডাকনাম নেই';
 
   @override
-  String get markWateredButton => 'Mark as Watered';
+  String get markWateredButton => 'পানি দেওয়া হয়েছে চিহ্নিত করুন';
 
   @override
-  String get editPlantButton => 'Edit Plant';
+  String get editPlantButton => 'গাছের তথ্য সম্পাদনা';
 
   @override
   String markedWateredSnackbar(String name) {
-    return '$name has been watered 💧';
+    return '$name-এ পানি দেওয়া হয়েছে 💧';
   }
 
   @override
-  String get needsWaterTooltip => 'Needs water';
+  String get needsWaterTooltip => 'পানি প্রয়োজন';
 
   @override
-  String get emptyPlantsTitle => 'No plants yet';
+  String get emptyPlantsTitle => 'এখনো কোনো গাছ নেই';
 
   @override
-  String get emptyPlantsBody => 'Tap + to add your first plant.';
+  String get emptyPlantsBody => 'আপনার প্রথম গাছ যোগ করতে + চাপুন।';
 
   @override
-  String get addFirstPlantButton => 'Add your first plant';
+  String get addFirstPlantButton => 'আপনার প্রথম গাছ যোগ করুন';
 
   @override
-  String get plantsGridHeader => 'My Plants';
+  String get plantsGridHeader => 'আমার গাছপালা';
 
   @override
-  String get editPlantTitle => 'Edit Plant';
+  String get editPlantTitle => 'গাছের তথ্য পরিবর্তন';
 
   @override
-  String get plantSavedSnackbar => 'Plant saved successfully.';
+  String get plantSavedSnackbar => 'গাছের তথ্য সফলভাবে সংরক্ষিত হয়েছে।';
 
   @override
-  String get deleteConfirmTitle => 'Delete this plant?';
+  String get deleteConfirmTitle => 'এই গাছটি মুছে ফেলতে চান?';
 
   @override
-  String get deleteConfirmBody => 'This action cannot be undone.';
+  String get deleteConfirmBody => 'এই কাজটি আর ফিরিয়ে আনা যাবে না।';
 
   @override
-  String get deletePlantButton => 'Delete Plant';
+  String get deletePlantButton => 'গাছ মুছুন';
 
   @override
-  String get changePhotoLabel => 'Change Photo';
+  String get changePhotoLabel => 'ছবি পরিবর্তন করুন';
 
   @override
-  String get settingsSectionTitle => 'Settings';
+  String get settingsSectionTitle => 'সেটিংস';
 
   @override
-  String get notificationsLabel => 'Notifications';
+  String get notificationsLabel => 'বিজ্ঞপ্তি';
 
   @override
-  String get helpLabel => 'Help';
+  String get helpLabel => 'সাহায্য';
 
   @override
-  String get aboutLabel => 'About';
+  String get aboutLabel => 'সম্পর্কে';
 
   @override
-  String get profileStatPlants => 'Plants';
+  String get profileStatPlants => 'গাছপালা';
 
   @override
-  String get profileStatOrders => 'Orders';
+  String get profileStatOrders => 'অর্ডার';
 
   @override
-  String get profileStatPoints => 'Points';
+  String get profileStatPoints => 'পয়েন্ট';
 
   @override
-  String get shopTitle => 'Shop';
+  String get shopTitle => 'দোকান';
 
   @override
-  String get allCategoryLabel => 'All';
+  String get allCategoryLabel => 'সব';
 
   @override
-  String get noProductsFoundTitle => 'No products found';
+  String get noProductsFoundTitle => 'কোনো পণ্য পাওয়া যায়নি';
 
   @override
-  String get noScanResultTitle => 'No scan yet';
+  String get noScanResultTitle => 'এখনো কোনো স্ক্যান নেই';
 
   @override
-  String get noScanResultBody => 'Take or choose a plant photo first.';
+  String get noScanResultBody =>
+      'প্রথমে একটি গাছের ছবি তুলুন বা নির্বাচন করুন।';
 
   @override
-  String get defaultDisplayName => 'Plant Parent';
+  String get defaultDisplayName => 'গাছের অভিভাবক';
 
   @override
-  String get refreshPriceButton => 'Refresh Price via AI';
+  String get refreshPriceButton => 'AI দিয়ে দাম যাচাই করুন';
 
   @override
-  String get checkingPriceLabel => 'Checking live price...';
+  String get checkingPriceLabel => 'সর্বশেষ দাম যাচাই করা হচ্ছে...';
 
   @override
-  String get aiPriceRefreshedLabel => 'AI Price Check';
+  String get aiPriceRefreshedLabel => 'AI মূল্য যাচাই';
 
   @override
   String priceCheckedAgoLabel(String timeAgo) {
-    return 'Checked $timeAgo';
+    return 'যাচাই করা হয়েছে $timeAgo';
   }
 
   @override
-  String get possiblyOutOfStockLabel => 'May be out of stock';
+  String get possiblyOutOfStockLabel => 'স্টক শেষ হতে পারে';
 
   @override
-  String get priceRefreshFailedLabel => 'Couldn\'t fetch live price';
+  String get priceRefreshFailedLabel => 'সর্বশেষ মূল্য আনা যায়নি';
 
   @override
-  String get refreshAgainLabel => 'Refresh again';
+  String get refreshAgainLabel => 'আবার যাচাই করুন';
 
   @override
-  String get retryLabel => 'Retry';
+  String get retryLabel => 'পুনরায় চেষ্টা করুন';
 
   @override
-  String get justNowLabel => 'just now';
+  String get justNowLabel => 'এইমাত্র';
 
   @override
   String minutesAgoLabel(int count) {
-    return '$count min ago';
+    return '$count মিনিট আগে';
   }
 
   @override
   String hoursAgoLabel(int count) {
-    return '${count}h ago';
+    return '$count ঘণ্টা আগে';
   }
 }

@@ -25,6 +25,7 @@ class _PlantPalAppState extends State<PlantPalApp> {
     super.initState();
     _deps.auth.addListener(_onAuthChanged);
     _deps.auth.init(); // restore saved session
+    _deps.settings.init(); // restore saved settings/language
   }
 
   /// Drop per-user state when the session ends.

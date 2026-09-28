@@ -4,11 +4,15 @@ import '../storage/secure_storage.dart';
 
 /// The only door from the Flutter app to the REST API.
 class ApiClient {
-  ApiClient(this._storage) {
+  ApiClient(this._storage, {this.getLanguage}) {
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         final token = await _storage.readToken();
         if (token != null) options.headers['Authorization'] = 'Bearer $token';
+        final lang = getLanguage?.call();
+        if (lang != null && lang.isNotEmpty) {
+          options.headers['Accept-Language'] = lang;
+        }
         handler.next(options);
       },
       onResponse: (response, handler) {
@@ -35,6 +39,7 @@ class ApiClient {
   }
 
   final SecureStorage _storage;
+  final String Function()? getLanguage;
   final Dio dio = Dio(BaseOptions(
     baseUrl: AppConfig.apiBaseUrl,
     connectTimeout: const Duration(seconds: 15),

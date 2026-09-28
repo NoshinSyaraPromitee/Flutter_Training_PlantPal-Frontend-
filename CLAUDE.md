@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file gives Claude Code (and any other AI assistant) the context needed to work effectively in the MyPlantPal repository.
+This file gives Claude Code (and any other AI assistant) the context needed to work effectively in the PlantPal repository.
 
 ## Project Overview
 
-MyPlantPal is a mobile app that helps users identify, understand, and care for plants. It combines a plant care guide, AI-based plant diagnosis, fertilizer information, an e-commerce shop, and gamification (points/rewards).
+PlantPal is a mobile app that helps users identify, understand, and care for plants. It combines a plant care guide, AI-based plant diagnosis, fertilizer information, an e-commerce shop, and gamification (points/rewards).
 
 Core features:
 - **AI Doctor** — photo-based plant diagnosis (Gemini / Groq)

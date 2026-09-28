@@ -10,17 +10,30 @@ import '../../domain/repositories/product_repository.dart';
 /// fields are filled with a stable placeholder derived from the product id
 /// (not random on every rebuild) until the backend grows real fields for them.
 class ProductRemoteRepository implements ProductRepository {
-  ProductRemoteRepository(this._dio);
+  ProductRemoteRepository(this._dio, {this.getLanguage});
   final Dio _dio;
+  final String Function()? getLanguage;
 
   // Both getProducts() and getCategories() come from the same response, so
   // one request feeds both and a second call within the same load() doesn't
   // hit the network again.
   List<Product>? _products;
   List<ProductCategory>? _categories;
+  String? _cachedLanguage;
+
+  void invalidateCache() {
+    _products = null;
+    _categories = null;
+    _cachedLanguage = null;
+  }
 
   Future<void> _load() async {
+    final currentLang = getLanguage?.call() ?? 'en';
+    if (_cachedLanguage != null && _cachedLanguage != currentLang) {
+      invalidateCache();
+    }
     if (_products != null && _categories != null) return;
+    _cachedLanguage = currentLang;
 
     final resp = await _dio.get('/api/v1/products');
     final body = resp.data as Map<String, dynamic>;

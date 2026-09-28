@@ -5,7 +5,7 @@ import '../theme/app_colors.dart';
 enum AppButtonVariant { orange, green }
 
 /// Pill-shaped button matching the "Button" / "Button Danger" components
-/// from the MyPlantPal Figma design system.
+/// from the PlantPal Figma design system.
 class AppButton extends StatelessWidget {
   const AppButton({
     super.key,

@@ -1,4 +1,5 @@
 import '../../core/network/api_client.dart';
+import '../../core/network/failure.dart';
 import '../../core/storage/secure_storage.dart';
 import '../../features/ai_doctor/data/datasources/ai_doctor_remote_data_source.dart';
 import '../../features/ai_doctor/data/repositories/ai_doctor_repository_impl.dart';
@@ -32,7 +33,9 @@ import '../../features/wishlist/presentation/controllers/wishlist_controller.dar
 class AppDependencies {
   AppDependencies() {
     storage = const SecureStorage();
-    api = ApiClient(storage);
+    settings = SettingsController(storage);
+    Failure.currentLanguage = () => settings.language;
+    api = ApiClient(storage, getLanguage: () => settings.language);
 
     auth = AuthController(
       AuthRepositoryImpl(AuthRemoteDataSource(api), storage),
@@ -49,11 +52,16 @@ class AppDependencies {
     chat = ChatController(aiRepo);
     scan = ScanController(aiRepo);
 
-    shop = ShopController(ProductRemoteRepository(api.dio))..load();
+    shop = ShopController(ProductRemoteRepository(api.dio, getLanguage: () => settings.language))..load();
+    fertilizer = FertilizerController(FertilizerLocalRepository(getLanguage: () => settings.language))..load();
+    settings.addListener(() {
+      shop.load();
+      fertilizer.load();
+    });
     reviews = ReviewsController(ReviewLocalRepository());
-    fertilizer = FertilizerController(FertilizerLocalRepository())..load();
     payment = PaymentController(SimulatedPaymentRepository());
     priceRefresh = PriceRefreshRepository(api.dio);
+    careGuide = CareGuideLocalRepository(getLanguage: () => settings.language);
   }
 
   late final SecureStorage storage;
@@ -68,8 +76,8 @@ class AppDependencies {
   late final PaymentController payment;
   final CartController cart = CartController();
   final WishlistController wishlist = WishlistController();
-  final SettingsController settings = SettingsController();
-  final CareGuideRepository careGuide = CareGuideLocalRepository();
+  late final SettingsController settings;
+  late final CareGuideRepository careGuide;
   final AchievementRepository achievements = AchievementLocalRepository();
   late final PriceRefreshRepository priceRefresh;
 }

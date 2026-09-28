@@ -15,6 +15,24 @@ class AiChatScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final chat = ref.watch(chatControllerProvider);
+
+    chat.errorFormatter = (f) {
+      if (f.statusCode == 429) return l10n.chatRateLimitError;
+      if (f.isUnauthorized) return l10n.signInRequiredChatMessage;
+      if (f.statusCode == null) return l10n.connectionErrorMessage;
+      return l10n.genericChatErrorMessage;
+    };
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      chat.syncWelcome(
+        welcome: l10n.chatWelcomeMessage,
+        chips: [
+          l10n.chatSuggestion1,
+          l10n.chatSuggestion2,
+          l10n.chatSuggestion3,
+        ],
+      );
+    });
+
     return AppScreen(
       title: l10n.aiDoctorMenuLabel,
       showBack: false,

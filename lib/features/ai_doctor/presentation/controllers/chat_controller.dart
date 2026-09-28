@@ -28,8 +28,23 @@ class ChatController extends ChangeNotifier {
     ),
   ];
   bool typing = false;
+  String Function(Failure f)? errorFormatter;
+
+  void syncWelcome({required String welcome, required List<String> chips}) {
+    if (messages.length == 1 && !messages.first.fromUser) {
+      if (messages.first.text != welcome) {
+        messages[0] = ChatMessage(
+          fromUser: false,
+          text: welcome,
+          suggestedChips: chips,
+        );
+        notifyListeners();
+      }
+    }
+  }
 
   String _friendly(Failure f) {
+    if (errorFormatter != null) return errorFormatter!(f);
     if (f.statusCode == 429) {
       return 'Free-tier rate limit reached. Please wait 10 seconds and try again.';
     }
