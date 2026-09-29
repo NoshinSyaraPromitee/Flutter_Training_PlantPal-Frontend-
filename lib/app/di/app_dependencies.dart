@@ -42,14 +42,15 @@ class AppDependencies {
     );
     api.onUnauthorized = auth.logout; // expired/invalid token -> back to login
 
+    final aiRepo = AiDoctorRepositoryImpl(AiDoctorRemoteDataSource(api));
     final plantRepo = PlantRepositoryImpl(PlantRemoteDataSource(api));
     plants = PlantsController(
       repository: plantRepo,
       addPlant: AddPlant(plantRepo),
+      scans: aiRepo,
     );
 
-    final aiRepo = AiDoctorRepositoryImpl(AiDoctorRemoteDataSource(api));
-    chat = ChatController(aiRepo);
+    chat = ChatController(aiRepo, storage);
     scan = ScanController(aiRepo);
 
     shop = ShopController(ProductRemoteRepository(api.dio, getLanguage: () => settings.language))..load();

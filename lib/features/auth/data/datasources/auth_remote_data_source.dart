@@ -1,7 +1,5 @@
-import 'package:flutter/services.dart';
-import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
-import '../../../../core/config/app_config.dart';
 import '../../../../core/network/api_client.dart';
+import 'google_auth_service.dart';
 
 class AuthTokens {
   const AuthTokens({required this.accessToken, required this.refreshToken, required this.userJson});
@@ -11,8 +9,9 @@ class AuthTokens {
 }
 
 class AuthRemoteDataSource {
-  AuthRemoteDataSource(this._api);
+  AuthRemoteDataSource(this._api, {GoogleAuthService? google}) : _google = google ?? GoogleAuthService();
   final ApiClient _api;
+  final GoogleAuthService _google;
 
   Future<AuthTokens> register({required String email, required String password, String? name}) async {
     final res = await _api.dio.post('/api/v1/auth/register', data: {
@@ -38,23 +37,21 @@ class AuthRemoteDataSource {
         userJson: json['user'] as Map<String, dynamic>,
       );
 
-  /// Google OAuth round-trip. Returns the app JWT, or null if cancelled.
-  Future<String?> googleLogin() async {
-    const redirect = AppConfig.appCallbackUri;
-    final url = Uri.https('accounts.google.com', '/o/oauth2/v2/auth', {
-      'client_id': AppConfig.googleClientId,
-      'redirect_uri': AppConfig.googleRedirectUri,
-      'response_type': 'code',
-      'scope': 'openid email profile',
-      'state': redirect,
-    });
-    try {
-      await FlutterWebAuth2.authenticate(url: url.toString(), callbackUrlScheme: AppConfig.appCallbackScheme);
-    } on PlatformException catch (e) {
-      if (e.code == 'CANCELED') return null;
-      rethrow;
-    }
-    final res = await _api.dio.get('/auth/google/session/${Uri.encodeComponent(redirect)}');
-    return (res.data as Map<String, dynamic>)['token'] as String?;
+  /// Opens the Google account picker and returns a Google ID token (null if cancelled).
+  Future<String?> googleIdToken() => _google.getIdToken();
+
+  /// Web only: listens for ID tokens from the rendered Google button.
+  Future<void> listenForGoogleWebSignIn({
+    required void Function(String idToken) onIdToken,
+    required void Function(Object error) onError,
+  }) =>
+      _google.listenForWebSignIn(onIdToken: onIdToken, onError: onError);
+
+  Future<void> googleSignOut() => _google.signOut();
+
+  /// Exchanges a Google ID token for the app's own access + refresh tokens.
+  Future<AuthTokens> loginWithGoogle(String idToken) async {
+    final res = await _api.dio.post('/api/v1/auth/google', data: {'idToken': idToken});
+    return _toTokens(res.data as Map<String, dynamic>);
   }
 }

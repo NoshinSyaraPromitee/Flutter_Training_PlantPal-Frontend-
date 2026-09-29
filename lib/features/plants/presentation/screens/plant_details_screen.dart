@@ -168,7 +168,7 @@ class PlantDetailsScreen extends ConsumerWidget {
                       child: AppButton(
                         label: l10n.scanAgainButton,
                         trailingIcon: Icons.photo_camera,
-                        onPressed: () => context.go('/scan'),
+                        onPressed: () => context.push('/plants/${plant.id}/scan'),
                       ),
                     ),
                     const SizedBox(height: 10),

@@ -12,13 +12,14 @@ class ScanController extends ChangeNotifier {
   Uint8List? imageBytes;
   BotReply? result;
 
-  Future<bool> analyze(Uint8List bytes) async {
+  /// [plantId] links the saved diagnosis to one of the user's plants.
+  Future<bool> analyze(Uint8List bytes, {String? plantId}) async {
     loading = true;
     error = null;
     imageBytes = bytes;
     notifyListeners();
     try {
-      result = await _repo.analyzeImage(bytes);
+      result = await _repo.analyzeImage(bytes, plantId: plantId);
       loading = false;
       notifyListeners();
       return true;

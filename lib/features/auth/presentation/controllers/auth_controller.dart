@@ -75,6 +75,30 @@ class AuthController extends ChangeNotifier {
     return status == AuthStatus.authenticated;
   }
 
+  /// Web: starts listening for Google button sign-ins. Call before showing the button.
+  /// On success the status flips to authenticated and the router redirects to /home.
+  Future<void> prepareGoogleWeb() async {
+    try {
+      await _repo.listenForGoogleWebSignIn(
+        onSignedIn: (u) {
+          user = u;
+          error = null;
+          busy = false;
+          status = AuthStatus.authenticated;
+          notifyListeners();
+        },
+        onError: (e) {
+          error = Failure.from(e).message;
+          busy = false;
+          notifyListeners();
+        },
+      );
+    } catch (e) {
+      error = Failure.from(e).message;
+      notifyListeners();
+    }
+  }
+
   /// Debug builds only (see login screen). No token, so plants/AI calls will fail.
   void continueAsGuest() {
     status = AuthStatus.guest;

@@ -105,6 +105,14 @@ class AppRouter {
             path: ':id',
             builder: (c, s) =>
                 PlantDetailsScreen(plantId: s.pathParameters['id']!),
+            routes: [
+              // Scan launched from a plant, so the saved diagnosis is linked to it.
+              GoRoute(
+                path: 'scan',
+                builder: (c, s) =>
+                    ScanPlantScreen(plantId: s.pathParameters['id']),
+              ),
+            ],
           ),
         ],
       ),

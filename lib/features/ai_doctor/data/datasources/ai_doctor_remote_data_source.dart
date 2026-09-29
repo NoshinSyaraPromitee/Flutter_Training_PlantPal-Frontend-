@@ -21,6 +21,29 @@ class AiDoctorRemoteDataSource {
     );
   }
 
+  /// GET /chat/messages?sessionId= — the saved turns of one conversation.
+  Future<List<Map<String, dynamic>>> chatHistory(String sessionId) async {
+    final res = await _api.dio.get(
+      '/api/v1/chat/messages',
+      queryParameters: {'sessionId': sessionId},
+    );
+    return _asList(res.data);
+  }
+
+  /// GET /diagnoses[?plantId=] — saved scans for the signed-in user.
+  Future<List<Map<String, dynamic>>> diagnoses({String? plantId}) async {
+    final res = await _api.dio.get(
+      '/api/v1/diagnoses',
+      queryParameters: {if (plantId != null) 'plantId': plantId},
+    );
+    return _asList(res.data);
+  }
+
+  // The backend answers an empty result as `"data": null`, so treat anything
+  // that isn't a list as "no items" instead of throwing.
+  List<Map<String, dynamic>> _asList(Object? data) =>
+      data is List ? data.cast<Map<String, dynamic>>() : const [];
+
   /// Submits a plant photo for diagnosis. The backend takes the image as
   /// base64 JSON, not multipart.
   Future<Map<String, dynamic>> diagnose(

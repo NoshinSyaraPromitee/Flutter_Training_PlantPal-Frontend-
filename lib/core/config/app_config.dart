@@ -8,10 +8,13 @@ class AppConfig {
     'API_BASE_URL',
     defaultValue: kIsWeb ? 'http://localhost:8081' : 'http://10.0.2.2:8081',
   );
-  static const googleClientId = String.fromEnvironment('GOOGLE_CLIENT_ID',
-      defaultValue: '951483915022-b7ape69mbclro6jlhnjrm7650qmftcuk.apps.googleusercontent.com');
-  static const googleRedirectUri = String.fromEnvironment('GOOGLE_REDIRECT_URI',
-      defaultValue: 'https://sixfold-document-bucktooth.ngrok-free.dev/auth/google/callback');
-  static const appCallbackScheme = 'plantpal';
-  static const appCallbackUri = 'plantpal://auth';
+
+  /// The OAuth *Web application* client ID from Google Cloud Console. Google Sign-In
+  /// puts it in the ID token's audience, and the backend (GOOGLE_CLIENT_ID) checks it.
+  /// Android uses it as serverClientId; on web it is the clientId of the Google button.
+  /// Pass it at build time: --dart-define=GOOGLE_SERVER_CLIENT_ID=xxxx.apps.googleusercontent.com
+  static const googleServerClientId = String.fromEnvironment(
+    'GOOGLE_SERVER_CLIENT_ID',
+    defaultValue: '818489842071-smbaue5m8tc7kl8iqhd9k2jo66olljtk.apps.googleusercontent.com',
+  );
 }

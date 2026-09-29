@@ -32,6 +32,24 @@ class Plant {
   final int? health; // 0-100, null until scanned
   final int wateringFrequencyDays;
   final DateTime? lastScan, lastWatered, nextWatering;
+
+  Plant copyWith({DateTime? lastScan}) => Plant(
+    id: id,
+    nickname: nickname,
+    species: species,
+    imageUrl: imageUrl,
+    location: location,
+    sunlight: sunlight,
+    health: health,
+    status: status,
+    humidity: humidity,
+    lastScan: lastScan ?? this.lastScan,
+    wateringFrequencyDays: wateringFrequencyDays,
+    lastWatered: lastWatered,
+    nextWatering: nextWatering,
+    waterLevel: waterLevel,
+    fertilizerNote: fertilizerNote,
+  );
 }
 
 class NewPlant {

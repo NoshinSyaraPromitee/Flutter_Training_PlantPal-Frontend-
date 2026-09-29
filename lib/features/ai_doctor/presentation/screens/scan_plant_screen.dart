@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -11,12 +13,18 @@ import '../../../../l10n/app_localizations.dart';
 import '../../../../app/riverpod_providers.dart';
 
 class ScanPlantScreen extends ConsumerWidget {
-  const ScanPlantScreen({super.key});
+  const ScanPlantScreen({super.key, this.plantId});
+
+  /// Set when opened from a plant's page; the scan is saved against it.
+  final String? plantId;
 
   Future<void> _scan(BuildContext context, WidgetRef ref, ImageSource source) async {
     final bytes = await pickPhoto(context, source: source);
     if (bytes == null || !context.mounted) return;
-    final ok = await ref.read(scanControllerProvider).analyze(bytes);
+    final ok = await ref.read(scanControllerProvider).analyze(bytes, plantId: plantId);
+    if (ok && plantId != null) {
+      unawaited(ref.read(plantsControllerProvider).refreshScans());
+    }
     if (ok && context.mounted) context.push('/scan-result');
   }
 
@@ -26,7 +34,7 @@ class ScanPlantScreen extends ConsumerWidget {
     final scan = ref.watch(scanControllerProvider);
     return AppScreen(
       title: l10n.scanPlantTitle,
-      showBack: false,
+      showBack: plantId != null,
       child: Center(
         child: scan.loading
             ? Column(

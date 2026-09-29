@@ -28,12 +28,18 @@ class _PlantPalAppState extends State<PlantPalApp> {
     _deps.settings.init(); // restore saved settings/language
   }
 
-  /// Drop per-user state when the session ends.
+  /// Drop per-user state when the session ends; restore it when one starts.
   void _onAuthChanged() {
-    if (_deps.auth.status == AuthStatus.unauthenticated) {
-      _deps.plants.clear();
-      _deps.cart.clear();
-      _deps.wishlist.clear();
+    switch (_deps.auth.status) {
+      case AuthStatus.unauthenticated:
+        _deps.plants.clear();
+        _deps.cart.clear();
+        _deps.wishlist.clear();
+        _deps.chat.reset();
+      case AuthStatus.authenticated:
+        _deps.chat.loadHistory();
+      case AuthStatus.unknown || AuthStatus.guest:
+        break;
     }
   }
 

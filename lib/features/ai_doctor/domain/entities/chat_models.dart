@@ -6,9 +6,17 @@ class Diagnosis {
     required this.cure,
     required this.disclaimer,
     this.provider,
+    this.id,
+    this.plantId,
+    this.createdAt,
   });
   final String issue, cure, disclaimer;
   final String? provider;
+
+  /// Set for diagnoses that came from the backend (saved scans).
+  final String? id;
+  final String? plantId;
+  final DateTime? createdAt;
 }
 
 /// One AI reply.
@@ -35,7 +43,8 @@ class ChatMessage {
     this.diagnosis,
     this.suggestedChips = const [],
     this.provider,
-  }) : id = DateTime.now().microsecondsSinceEpoch.toString();
+    String? id,
+  }) : id = id ?? DateTime.now().microsecondsSinceEpoch.toString();
 
   factory ChatMessage.user(String text, {Uint8List? imageBytes}) =>
       ChatMessage(fromUser: true, text: text, imageBytes: imageBytes);

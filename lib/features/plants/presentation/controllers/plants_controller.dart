@@ -1,15 +1,24 @@
 import 'package:flutter/foundation.dart';
 import '../../../../core/network/failure.dart';
+import '../../../ai_doctor/domain/repositories/ai_doctor_repository.dart';
 import '../../domain/entities/plant.dart';
 import '../../domain/repositories/plant_repository.dart';
 import '../../domain/usecases/add_plant.dart';
 
 class PlantsController extends ChangeNotifier {
-  PlantsController({required PlantRepository repository, required AddPlant addPlant})
-      : _repo = repository,
-        _add = addPlant;
+  PlantsController({
+    required PlantRepository repository,
+    required AddPlant addPlant,
+    AiDoctorRepository? scans,
+  })  : _repo = repository,
+        _add = addPlant,
+        _scans = scans;
   final PlantRepository _repo;
   final AddPlant _add;
+
+  /// Source of saved scans (GET /diagnoses), used to fill in each plant's
+  /// last-scan date, which the plants API doesn't carry itself.
+  final AiDoctorRepository? _scans;
 
   List<Plant> plants = const [];
   bool loading = false;
@@ -22,7 +31,7 @@ class PlantsController extends ChangeNotifier {
     error = null;
     notifyListeners();
     try {
-      plants = await _repo.getPlants();
+      plants = await _withScans(await _repo.getPlants());
       loaded = true;
     } catch (e) {
       error = Failure.from(e).message;
@@ -30,6 +39,38 @@ class PlantsController extends ChangeNotifier {
     loading = false;
     notifyListeners();
   }
+
+  /// Stamps each plant with the date of its newest saved scan. Best effort:
+  /// if the scan history can't be fetched the plants are returned unchanged.
+  Future<List<Plant>> _withScans(List<Plant> list) async {
+    final repo = _scans;
+    if (repo == null || list.isEmpty) return list;
+    try {
+      final latest = <String, DateTime>{};
+      for (final d in await repo.diagnosisHistory()) {
+        final plantId = d.plantId, at = d.createdAt;
+        if (plantId == null || at == null) continue;
+        final current = latest[plantId];
+        if (current == null || at.isAfter(current)) latest[plantId] = at;
+      }
+      return [
+        for (final p in list)
+          latest.containsKey(p.id) ? p.copyWith(lastScan: latest[p.id]) : p,
+      ];
+    } catch (_) {
+      return list;
+    }
+  }
+
+  /// Re-reads scan dates, e.g. after a scan linked to a plant was saved.
+  Future<void> refreshScans() async {
+    plants = await _withScans(plants);
+    notifyListeners();
+  }
+
+  // A plant returned by the API carries no scan date; keep the one we know.
+  Plant _keepScan(Plant old, Plant updated) =>
+      updated.lastScan == null ? updated.copyWith(lastScan: old.lastScan) : updated;
 
   Plant? byId(String id) {
     for (final p in plants) {
@@ -54,7 +95,7 @@ class PlantsController extends ChangeNotifier {
 
   Future<String?> markWatered(String id) => _run(() async {
         final updated = await _repo.updatePlant(id, {'lastWatered': DateTime.now().toUtc().toIso8601String()});
-        plants = [for (final p in plants) p.id == id ? updated : p];
+        plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
       });
 
   Future<String?> updateDetails({
@@ -73,7 +114,7 @@ class PlantsController extends ChangeNotifier {
           'sunlight': sunlight,
           'wateringFrequencyDays': wateringFrequencyDays,
         });
-        plants = [for (final p in plants) p.id == id ? updated : p];
+        plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
       });
 
   Future<String?> remove(String id) => _run(() async {
