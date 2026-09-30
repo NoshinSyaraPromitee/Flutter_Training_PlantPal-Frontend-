@@ -26,4 +26,20 @@ class AuthRemoteDataSource {
     final res = await _api.dio.get('/auth/google/session/${Uri.encodeComponent(redirect)}');
     return (res.data as Map<String, dynamic>)['token'] as String?;
   }
+
+  Future<Map<String, dynamic>> register({required String email, required String password, required String name}) async {
+    final res = await _api.dio.post(
+      '/api/v1/auth/register',
+      data: {'email': email, 'password': password, 'name': name},
+    );
+    return (res.data as Map<String, dynamic>)['data'] as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> login({required String email, required String password}) async {
+    final res = await _api.dio.post(
+      '/api/v1/auth/login',
+      data: {'email': email, 'password': password},
+    );
+    return (res.data as Map<String, dynamic>)['data'] as Map<String, dynamic>;
+  }
 }

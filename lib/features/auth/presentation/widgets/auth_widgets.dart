@@ -7,8 +7,6 @@ import 'package:plantpal/core/widgets/gradient_background.dart';
 import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
 import 'package:provider/provider.dart';
 
-const emailAuthNotice = "Email sign-in isn't available yet. Please continue with Google.";
-
 class AuthScaffold extends StatelessWidget {
   const AuthScaffold({super.key, required this.title, this.subtitle, required this.children});
   final String title;

@@ -61,6 +61,21 @@ abstract class AppLocalizations {
   String get cancel;
   String get delete;
   String get save;
+
+  String get greetingMorning;
+  String get greetingAfternoon;
+  String get greetingEvening;
+  String get greetingNight;
+  String get greetingPlantThirsty;
+  String get greetingWeatherRain;
+  String get greetingWeatherThunderstorm;
+  String get greetingWeatherSnow;
+  String get greetingWeatherFog;
+  String greetingWeatherHot(int temperature);
+
+  String weatherTipHot(int waterMl);
+  String get weatherTipCold;
+  String get weatherTipWetOutside;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

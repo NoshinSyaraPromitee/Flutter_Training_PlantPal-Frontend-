@@ -76,4 +76,32 @@ class AppLocalizationsBn extends AppLocalizations {
   String get delete => 'মুছুন';
   @override
   String get save => 'সংরক্ষণ করুন';
+
+  @override
+  String get greetingMorning => 'শুভ সকাল! ☀️ আপনার গাছগুলো দেখে নিন?';
+  @override
+  String get greetingAfternoon => 'শুভ অপরাহ্ন! 🌤️ আপনার গাছগুলো কেমন আছে?';
+  @override
+  String get greetingEvening => 'শুভ সন্ধ্যা! 🌆 শেষবারের মতো একবার দেখে নিন।';
+  @override
+  String get greetingNight => 'এখনও জেগে আছেন? 🌙 আপনার গাছগুলোও বিশ্রাম নিচ্ছে।';
+  @override
+  String get greetingPlantThirsty => '🌱 আপনার একটি গাছের আজ পানি দরকার!';
+  @override
+  String get greetingWeatherRain => 'বাইরে বৃষ্টি হচ্ছে 🌧️ — আজ বাইরের গাছে পানি দেওয়ার দরকার নেই।';
+  @override
+  String get greetingWeatherThunderstorm => 'কাছাকাছি ঝড় হচ্ছে ⛈️ — সংবেদনশীল গাছগুলো ঘরে রাখুন।';
+  @override
+  String get greetingWeatherSnow => 'তুষারপাত হচ্ছে ❄️ — নরম গাছগুলো ঘরে নিয়ে আসুন।';
+  @override
+  String get greetingWeatherFog => 'কুয়াশাচ্ছন্ন সকাল 🌫️ — আপনার গাছগুলো এই বাড়তি আর্দ্রতা পছন্দ করে।';
+  @override
+  String greetingWeatherHot(int temperature) => 'বাইরে $temperature°সে তাপমাত্রা 🔥 — আপনার গাছের বাড়তি পানি লাগতে পারে।';
+
+  @override
+  String weatherTipHot(int waterMl) => 'আজ খুব গরম 🔥 — আজ অন্তত $waterMl মিলি পানি দিন।';
+  @override
+  String get weatherTipCold => 'আজ ঠান্ডা ❄️ — মূল পচন এড়াতে একটু কম পানি দিন।';
+  @override
+  String get weatherTipWetOutside => 'আজ বাইরে ভেজা আবহাওয়া 🌧️ — বাইরের গাছে পানি দেওয়ার দরকার নেই।';
 }

@@ -43,6 +43,7 @@ class AppDependencies {
     plants = PlantsController(
       repository: plantRepo,
       addPlant: AddPlant(plantRepo),
+      points: points,
     );
 
     final aiRepo = AiDoctorRepositoryImpl(AiDoctorRemoteDataSource(api));

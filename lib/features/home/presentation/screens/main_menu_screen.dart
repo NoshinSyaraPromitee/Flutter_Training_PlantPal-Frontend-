@@ -20,7 +20,6 @@ class MainMenuScreen extends StatefulWidget {
 
 class _MainMenuScreenState extends State<MainMenuScreen> {
   static const int _pointsPerTaka = 100;
-  static const String _mascotName = 'Tetoro';
 
   // Swap these for your own tile art (same filenames in assets/images/ works too).
   static const _imgMyPlants = 'assets/images/corner_flowers.png';
@@ -67,7 +66,6 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                 const SizedBox(height: 4),
                 MainMenuMascot(
                   imageAsset: _imgMascot,
-                  mascotName: _mascotName,
                   onBubbleTap: () => context.push('/plants'),
                 ),
                 const SizedBox(height: 16),

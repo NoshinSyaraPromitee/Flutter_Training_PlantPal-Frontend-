@@ -76,4 +76,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get delete => 'Delete';
   @override
   String get save => 'Save';
+
+  @override
+  String get greetingMorning => 'Good morning! ☀️ Ready to check on your plants?';
+  @override
+  String get greetingAfternoon => 'Good afternoon! 🌤️ How are your plants doing?';
+  @override
+  String get greetingEvening => 'Good evening! 🌆 Time for one last check-in.';
+  @override
+  String get greetingNight => 'Still up? 🌙 Your plants are resting too.';
+  @override
+  String get greetingPlantThirsty => '🌱 One of your plants is thirsty today!';
+  @override
+  String get greetingWeatherRain => "It's rainy out there 🌧️ — skip watering outdoor plants today.";
+  @override
+  String get greetingWeatherThunderstorm => 'Storms nearby ⛈️ — keep sensitive plants indoors.';
+  @override
+  String get greetingWeatherSnow => "It's snowing ❄️ — bring tender plants inside.";
+  @override
+  String get greetingWeatherFog => 'Foggy morning 🌫️ — your plants love the extra humidity.';
+  @override
+  String greetingWeatherHot(int temperature) => "It's $temperature°C out 🔥 — your plants may need extra water.";
+
+  @override
+  String weatherTipHot(int waterMl) => "It's too hot today 🔥 — give at least $waterMl ml water today.";
+  @override
+  String get weatherTipCold => "It's cold today ❄️ — water a little less to avoid root rot.";
+  @override
+  String get weatherTipWetOutside => "It's wet outside today 🌧️ — skip watering outdoor plants.";
 }

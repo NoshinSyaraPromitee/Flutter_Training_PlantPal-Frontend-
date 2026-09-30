@@ -1,15 +1,21 @@
 import 'package:flutter/foundation.dart';
 import 'package:plantpal/core/network/failure.dart';
+import 'package:plantpal/features/gamification/presentation/providers/points_provider.dart';
 import 'package:plantpal/features/plants/domain/model/plant.dart';
 import 'package:plantpal/features/plants/domain/repositories/plant_repository.dart';
 import 'package:plantpal/features/plants/domain/usecases/add_plant.dart';
 
+/// Points awarded for each completed care step (currently: watering).
+const pointsPerCareStep = 10;
+
 class PlantsController extends ChangeNotifier {
-  PlantsController({required PlantRepository repository, required AddPlant addPlant})
+  PlantsController({required PlantRepository repository, required AddPlant addPlant, PointsController? points})
       : _repo = repository,
-        _add = addPlant;
+        _add = addPlant,
+        _points = points;
   final PlantRepository _repo;
   final AddPlant _add;
+  final PointsController? _points;
 
   List<Plant> plants = const [];
   bool loading = false;
@@ -55,6 +61,7 @@ class PlantsController extends ChangeNotifier {
   Future<String?> markWatered(String id) => _run(() async {
         final updated = await _repo.updatePlant(id, {'lastWatered': DateTime.now().toUtc().toIso8601String()});
         plants = [for (final p in plants) p.id == id ? updated : p];
+        _points?.add(pointsPerCareStep);
       });
 
   Future<String?> remove(String id) => _run(() async {

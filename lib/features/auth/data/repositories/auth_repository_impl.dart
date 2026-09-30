@@ -49,6 +49,30 @@ class AuthRepositoryImpl implements AuthRepository {
       });
 
   @override
+  Future<AuthUser> loginWithEmail({required String email, required String password}) => guardCall(() async {
+        final res = await _remote.login(email: email, password: password);
+        return _saveAuthResult(res);
+      });
+
+  @override
+  Future<AuthUser> registerWithEmail({required String email, required String password, required String name}) =>
+      guardCall(() async {
+        final res = await _remote.register(email: email, password: password, name: name);
+        return _saveAuthResult(res);
+      });
+
+  Future<AuthUser> _saveAuthResult(Map<String, dynamic> res) async {
+    final userJson = res['user'] as Map<String, dynamic>;
+    final user = AuthUser.fromJson(userJson);
+    await _storage.saveSession(
+      token: res['accessToken'] as String,
+      refreshToken: res['refreshToken'] as String?,
+      user: user.toJson(),
+    );
+    return user;
+  }
+
+  @override
   Future<void> logout() => _storage.clear();
 }
 

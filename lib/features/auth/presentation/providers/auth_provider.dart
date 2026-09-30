@@ -27,18 +27,34 @@ class AuthController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// TEMP (testing): any email/password signs in locally. No backend, no token.
-  void signInLocal({String? email, String? name}) {
-    final e = email?.trim() ?? '';
-    final n = name?.trim() ?? '';
-    user = AuthUser(
-      id: 'local-test-user',
-      email: e.isEmpty ? 'test@plantpal.dev' : e,
-      name: n.isEmpty ? null : n,
-    );
+  Future<bool> loginWithEmail({required String email, required String password}) async {
+    busy = true;
     error = null;
-    status = AuthStatus.authenticated;
     notifyListeners();
+    try {
+      user = await _repo.loginWithEmail(email: email, password: password);
+      status = AuthStatus.authenticated;
+    } catch (e) {
+      error = Failure.from(e).message;
+    }
+    busy = false;
+    notifyListeners();
+    return status == AuthStatus.authenticated;
+  }
+
+  Future<bool> registerWithEmail({required String email, required String password, required String name}) async {
+    busy = true;
+    error = null;
+    notifyListeners();
+    try {
+      user = await _repo.registerWithEmail(email: email, password: password, name: name);
+      status = AuthStatus.authenticated;
+    } catch (e) {
+      error = Failure.from(e).message;
+    }
+    busy = false;
+    notifyListeners();
+    return status == AuthStatus.authenticated;
   }
 
   Future<bool> loginWithGoogle() async {

@@ -26,14 +26,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  // TEMP (testing): any name/email/password works.
-  void _create() {
-    context.read<AuthController>().signInLocal(email: _email.text, name: _name.text);
-    context.go('/home');
+  Future<void> _create() async {
+    final auth = context.read<AuthController>();
+    final ok = await auth.registerWithEmail(
+      email: _email.text.trim(),
+      password: _password.text,
+      name: _name.text.trim(),
+    );
+    if (!mounted) return;
+    if (ok) {
+      context.go('/home');
+    } else if (auth.error != null) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(auth.error!)));
+    }
   }
 
   @override
-  Widget build(BuildContext context) => AuthScaffold(
+  Widget build(BuildContext context) {
+    final auth = context.watch<AuthController>();
+    return AuthScaffold(
         title: 'Create Account',
         children: [
           AppTextField(controller: _name, hint: 'Full Name', icon: Icons.person_outline),
@@ -51,9 +62,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
           const SizedBox(height: 24),
-          SizedBox(width: double.infinity, child: AppButton(label: 'Create Account', onPressed: _create)),
+          SizedBox(
+            width: double.infinity,
+            child: AppButton(label: 'Create Account', isLoading: auth.busy, onPressed: auth.busy ? null : _create),
+          ),
           const SizedBox(height: 16),
           const GoogleSignInButton(),
         ],
       );
+  }
 }

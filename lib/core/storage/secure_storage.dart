@@ -10,6 +10,7 @@ class SecureStorage {
   static const _storage = FlutterSecureStorage();
 
   static const _tokenKey = 'auth_token';
+  static const _refreshTokenKey = 'auth_refresh_token';
   static const _userKey = 'auth_user';
 
   Future<void> write(String key, String value) =>
@@ -21,18 +22,25 @@ class SecureStorage {
 
   Future<String?> readToken() => read(_tokenKey);
 
+  Future<String?> readRefreshToken() => read(_refreshTokenKey);
+
   Future<String?> readUser() => read(_userKey);
 
   Future<void> saveSession({
     required String token,
     required Map<String, dynamic> user,
+    String? refreshToken,
   }) async {
     await write(_tokenKey, token);
     await write(_userKey, jsonEncode(user));
+    if (refreshToken != null) {
+      await write(_refreshTokenKey, refreshToken);
+    }
   }
 
   Future<void> clear() async {
     await delete(_tokenKey);
+    await delete(_refreshTokenKey);
     await delete(_userKey);
   }
 }

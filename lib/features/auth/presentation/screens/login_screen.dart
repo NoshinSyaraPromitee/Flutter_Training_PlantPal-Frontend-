@@ -26,14 +26,21 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  // TEMP (testing): any email/password works.
-  void _emailLogin() {
-    context.read<AuthController>().signInLocal(email: _email.text);
-    context.go('/home');
+  Future<void> _emailLogin() async {
+    final auth = context.read<AuthController>();
+    final ok = await auth.loginWithEmail(email: _email.text.trim(), password: _password.text);
+    if (!mounted) return;
+    if (ok) {
+      context.go('/home');
+    } else if (auth.error != null) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(auth.error!)));
+    }
   }
 
   @override
-  Widget build(BuildContext context) => AuthScaffold(
+  Widget build(BuildContext context) {
+    final auth = context.watch<AuthController>();
+    return AuthScaffold(
         title: 'Welcome Back!',
         subtitle: 'Missing your buddies?',
         children: [
@@ -50,7 +57,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           const SizedBox(height: 24),
-          SizedBox(width: double.infinity, child: AppButton(label: 'Login', onPressed: _emailLogin)),
+          SizedBox(
+            width: double.infinity,
+            child: AppButton(label: 'Login', isLoading: auth.busy, onPressed: auth.busy ? null : _emailLogin),
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 22),
             child: Row(children: [Expanded(child: Divider()), Padding(padding: EdgeInsets.symmetric(horizontal: 12), child: Text('OR')), Expanded(child: Divider())]),
@@ -66,4 +76,5 @@ class _LoginScreenState extends State<LoginScreen> {
           ]),
         ],
       );
+  }
 }

@@ -24,4 +24,11 @@ class PointsController extends ChangeNotifier {
     _balance = (_balance - points).clamp(0, _balance);
     notifyListeners();
   }
+
+  /// Awards points for a completed care action (e.g. watering a plant).
+  void add(int points) {
+    if (points <= 0) return;
+    _balance += points;
+    notifyListeners();
+  }
 }
