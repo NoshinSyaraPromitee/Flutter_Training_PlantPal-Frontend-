@@ -7,73 +7,73 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get appTitle => 'প্ল্যান্টপাল';
   @override
-  String get myPlants => 'আমার গাছপালা';
+  String get myPlants => 'আমার শখের বাগান';
   @override
-  String get aiDoctor => 'এআই ডাক্তার';
+  String get aiDoctor => 'এআই প্ল্যান্ট ডাক্তার';
   @override
-  String get fertilizerRecipes => 'সারের রেসিপি';
+  String get fertilizerRecipes => 'হোমমেড সারের রেসিপি';
   @override
-  String get maintenance => 'রক্ষণাবেক্ষণ';
+  String get maintenance => 'নিয়মিত যত্ন-আত্তি';
   @override
-  String get shop => 'দোকান';
+  String get shop => 'প্ল্যান্ট শপ';
   @override
-  String get uploadPlantPhoto => 'আপনার গাছের ছবি আপলোড করুন';
+  String get uploadPlantPhoto => 'আপনার গাছের দারুণ একটি ছবি দিন';
   @override
-  String get noNewNotifications => 'নতুন কোনো বিজ্ঞপ্তি নেই।';
+  String get noNewNotifications => 'আপাতত নতুন কোনো আপডেট নেই!';
 
   @override
   String get navHome => 'হোম';
   @override
   String get navScan => 'স্ক্যান';
   @override
-  String get navShop => 'দোকান';
+  String get navShop => 'শপ';
   @override
-  String get navAiDoctor => 'এআই ডাক্তার';
+  String get navAiDoctor => 'ডাক্তার';
   @override
   String get navProfile => 'প্রোফাইল';
 
   @override
   String get settingsTitle => 'সেটিংস';
   @override
-  String get settingsAppearance => 'অ্যাপিয়ারেন্স';
+  String get settingsAppearance => 'থিম ও ডিজাইন';
   @override
   String get settingsDarkMode => 'ডার্ক মোড';
   @override
-  String get settingsLanguage => 'ভাষা';
+  String get settingsLanguage => 'অ্যাপের ভাষা';
   @override
-  String get settingsNotifications => 'বিজ্ঞপ্তি';
+  String get settingsNotifications => 'নোটিফিকেশন';
   @override
-  String get settingsWateringReminders => 'পানি দেওয়ার রিমাইন্ডার';
+  String get settingsWateringReminders => 'পানি দেওয়ার রিমাইন্ডার';
   @override
   String get settingsLogout => 'লগ আউট';
 
   @override
   String get landingTitle => 'প্ল্যান্টপাল';
   @override
-  String get landingSubtitle => 'আপনার বাগানের সেরা বন্ধু';
+  String get landingSubtitle => 'আপনার শখের বাগানের সেরা বন্ধু';
   @override
-  String get landingLogin => 'লগ ইন';
+  String get landingLogin => 'লগ ইন করুন';
   @override
-  String get landingRegister => 'অ্যাকাউন্ট তৈরি করুন';
+  String get landingRegister => 'নতুন অ্যাকাউন্ট খুলুন';
 
   @override
-  String get loginTitle => 'স্বাগতম';
+  String get loginTitle => 'আবারও স্বাগতম!';
   @override
-  String get loginEmail => 'ইমেইল';
+  String get loginEmail => 'ইমেইল অ্যাড্রেস';
   @override
-  String get loginPassword => 'পাসওয়ার্ড';
+  String get loginPassword => 'পাসওয়ার্ড';
   @override
-  String get loginSubmit => 'লগ ইন';
+  String get loginSubmit => 'প্রবেশ করুন';
 
   @override
-  String get registerTitle => 'আপনার অ্যাকাউন্ট তৈরি করুন';
+  String get registerTitle => 'প্ল্যান্টপালে যুক্ত হোন';
   @override
   String get registerSubmit => 'সাইন আপ';
 
   @override
-  String get cancel => 'বাতিল';
+  String get cancel => 'বাদ দিন';
   @override
-  String get delete => 'মুছুন';
+  String get delete => 'ডিলিট করুন';
   @override
-  String get save => 'সংরক্ষণ করুন';
+  String get save => 'সেভ করুন';
 }

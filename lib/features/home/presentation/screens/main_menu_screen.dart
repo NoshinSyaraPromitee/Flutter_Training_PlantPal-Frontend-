@@ -23,12 +23,11 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
   static const String _mascotName = 'Tetoro';
 
   // Swap these for your own tile art (same filenames in assets/images/ works too).
-  static const _imgMyPlants = 'assets/images/corner_flowers.png';
-  static const _imgAiDoctor = 'assets/images/disease_plant.png';
-  static const _imgFertilizer = 'assets/images/fertilizer_bag.png';
-  static const _imgMaintenance = 'assets/images/maintenance_cactus.png';
+  static const _imgMyPlants = 'assets/images/myplant.png';
+  static const _imgAiDoctor = 'assets/images/aidoctor.png';
+  static const _imgFertilizer = 'assets/images/fertilizer.png';
+  static const _imgMaintenance = 'assets/images/maintenance.png';
   static const _imgShop = 'assets/images/shop_image.png';
-  static const _imgMascot = 'assets/images/splash_mascot.png';
 
   @override
   void initState() {
@@ -66,7 +65,6 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                 ),
                 const SizedBox(height: 4),
                 MainMenuMascot(
-                  imageAsset: _imgMascot,
                   mascotName: _mascotName,
                   onBubbleTap: () => context.push('/plants'),
                 ),

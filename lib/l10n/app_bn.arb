@@ -1,90 +1,90 @@
 {
   "@@locale": "bn",
 
-  "appTitle": "MyPlantPal",
+  "appTitle": "PlantPal",
 
-  "splashTagline": "আত্মবিশ্বাসের সাথে বেড়ে উঠুন",
+  "splashTagline": "আপনার সবুজ বন্ধু বেড়ে উঠুক পরম যত্নে!",
 
-  "homeHeaderTitle": "আসুন যত্ন নেই\nআপনার গাছের",
-  "homeHeaderSubtitle": "রোগ নির্ণয়, পুষ্টি জোগান, আত্মবিশ্বাসের সাথে বাড়ান।",
-  "greetingMorning": "শুভ সকাল!  আপনার গাছগুলো দেখে নিন?",
-  "greetingAfternoon": "শুভ অপরাহ্ন!  আপনার গাছগুলো কেমন আছে?",
-  "greetingEvening": "শুভ সন্ধ্যা!  শেষবারের মতো একবার দেখে নিন।",
-  "greetingNight": "এখনও জেগে আছেন? 🌙 আপনার গাছগুলোও বিশ্রাম নিচ্ছে।",
-  "greetingPlantThirsty": " আপনার একটি গাছের আজ পানি দরকার!",
-  "greetingWeatherRain": "বাইরে বৃষ্টি হচ্ছে  — আজ বাইরের গাছে পানি দেওয়ার দরকার নেই।",
-  "greetingWeatherThunderstorm": "কাছাকাছি ঝড় হচ্ছে  — সংবেদনশীল গাছগুলো ঘরে রাখুন।",
-  "greetingWeatherSnow": "তুষারপাত হচ্ছে  — নরম গাছগুলো ঘরে নিয়ে আসুন।",
-  "greetingWeatherFog": "কুয়াশাচ্ছন্ন সকাল  — আপনার গাছগুলো এই বাড়তি আর্দ্রতা পছন্দ করে।",
-  "greetingWeatherHot": "বাইরে {temperature}°সে তাপমাত্রা 🔥 — আপনার গাছের বাড়তি পানি লাগতে পারে।",
+  "homeHeaderTitle": "আদরে বাড়ুক\nআপনার শখের গাছ",
+  "homeHeaderSubtitle": "রোগবালাই দূর করুন, সঠিক পুষ্টি দিন, আর গাছ বড় করুন নিশ্চিন্তে।",
+  "greetingMorning": "শুভ সকাল! আপনার সবুজ বন্ধুরাও কি ঘুম থেকে উঠেছে?",
+  "greetingAfternoon": "শুভ দুপুর! রোদেলা দুপুরে আপনার গাছেরা কেমন আছে?",
+  "greetingEvening": "শুভ সন্ধ্যা! দিনের শেষে আপনার বাগানে একবার উঁকি দিয়ে আসুন।",
+  "greetingNight": "এখনও জেগে আছেন? আপনার গাছগুলো কিন্তু ঘুমে কাদা!",
+  "greetingPlantThirsty": "আপনার একটি গাছের কিন্তু খুব তেষ্টা পেয়েছে!",
+  "greetingWeatherRain": "বাইরে অঝোর ধারায় বৃষ্টি-আজ আর গাছে পানি দেওয়ার কষ্ট করতে হবে না!",
+  "greetingWeatherThunderstorm": "আকাশের অবস্থা ভালো নয় -আদুরে গাছগুলোকে দ্রুত ঘরে নিয়ে আসুন!",
+  "greetingWeatherSnow": "বাহিরে কনকনে ঠান্ডা — শখের গাছগুলোকে একটু উষ্ণতায় রাখুন।",
+  "greetingWeatherFog": "কুয়াশামাখা সকাল — আপনার গাছেরা এমন স্নিগ্ধ পরিবেশ বেশ উপভোগ করছে!",
+  "greetingWeatherHot": "উফ, কী গরম! বাইরে {temperature}°সে তাপমাত্রা — গাছগুলোর কিন্তু আজ একটু বেশিই পানি চাই।",
   "@greetingWeatherHot": {
     "placeholders": {
       "temperature": { "type": "int" }
     }
   },
-  "uploadPlantPhoto": "আপনার গাছের ছবি আপলোড করুন",
-  "quickActionsLabel": "দ্রুত কার্যক্রম",
-  "myPlantsLabel": "আমার গাছপালা",
-  "maintainance": "রক্ষণাবেক্ষণ",
-  "diseaseDetectionTile": "রোগ শনাক্তকরণ",
-  "fertilizerRecipesLabel": "সার তৈরির রেসিপি",
-  "shopLabel": "দোকান",
-  "chatWithExpertLabel": "বিশেষজ্ঞের সাথে চ্যাট করুন",
+  "uploadPlantPhoto": "আপনার গাছের দারুণ একটি ছবি দিন",
+  "quickActionsLabel": "কুইক অ্যাকশন",
+  "myPlantsLabel": "আমার শখের বাগান",
+  "maintainance": "নিয়মিত যত্ন-আত্তি",
+  "diseaseDetectionTile": "রোগবালাই স্ক্যানার",
+  "fertilizerRecipesLabel": "সার তৈরির জাদুকরী রেসিপি",
+  "shopLabel": "প্ল্যান্ট শপ",
+  "chatWithExpertLabel": "বিশেষজ্ঞের পরামর্শ নিন",
   "mainMenuButton": "প্রধান মেনু",
 
-  "fertilizerHeaderTitle": "সার তৈরি",
-  "fertilizerHeaderSubtitle": "প্রতিটি বৃদ্ধির ধাপের জন্য ঘরে তৈরি রেসিপি।",
-  "addFertilizerButton": "নতুন সার যোগ করুন",
-  "fertilizerNameFieldLabel": "নাম",
-  "fertilizerCategoryFieldLabel": "বিভাগ",
-  "fertilizerInstructionsFieldLabel": "নির্দেশাবলী",
-  "cancelButton": "বাতিল",
-  "saveButton": "সংরক্ষণ করুন",
-  "searchFertilizerHint": "আপনার ঘরে তৈরি সার খুঁজুন",
-  "noFertilizersFound": "কোনো সার পাওয়া যায়নি।",
-  "serverUnreachable": "সার্ভারে পৌঁছানো যায়নি। ব্যাকএন্ড কি চলছে?",
+  "fertilizerHeaderTitle": "হোমমেড সার",
+  "fertilizerHeaderSubtitle": "গাছের ম্যাজিক গ্রোথের জন্য দারুণ সব ঘরোয়া রেসিপি।",
+  "addFertilizerButton": "নতুন রেসিপি যোগ করুন",
+  "fertilizerNameFieldLabel": "সারের নাম",
+  "fertilizerCategoryFieldLabel": "ক্যাটাগরি",
+  "fertilizerInstructionsFieldLabel": "তৈরির নিয়মাবলি",
+  "cancelButton": "বাদ দিন",
+  "saveButton": "সেভ করুন",
+  "searchFertilizerHint": "আপনার পছন্দের সারের রেসিপি খুঁজুন...",
+  "noFertilizersFound": "আরে! এমন কোনো সারের রেসিপি পাওয়া গেল না।",
+  "serverUnreachable": "সার্ভারের সাথে কানেক্ট করা যাচ্ছে না! ইন্টারনেট ঠিক আছে তো?",
 
-  "maintainanceHeaderSubtitleForm": "যত্নের পরিকল্পনা পেতে আপনার গাছ সম্পর্কে জানান।",
-  "maintainanceHeaderSubtitleResult": "এই দেখুন আপনার গাছের যত্নের পরিকল্পনা।",
-  "nameOfPlantLabel": "গাছের নাম",
-  "nameFieldHint": "মান লিখুন",
-  "typesOfPlantLabel": "গাছের ধরন",
-  "typesFieldHint": "জল ভিত্তিক, মানিপ্ল্যান্ট ইত্যাদি",
-  "plantAgeLabel": "গাছের বয়স কেমন?",
-  "ageFieldHint": "বীজ, চারা...",
-  "createRoadmapButton": "আমার পরিকল্পনা তৈরি করুন",
-  "yourPlantNeeds": "আপনার '{plantName}' গাছের প্রতিদিন প্রায় {amount} মিলি পানি প্রয়োজন। এখানে পানি দেওয়ার সময়সূচী দেওয়া হলো",
+  "maintainanceHeaderSubtitleForm": "গাছটির সঠিক যত্নের রুটিন পেতে ওর ব্যাপারে একটু বিস্তারিত জানান।",
+  "maintainanceHeaderSubtitleResult": "এই নিন আপনার আদরের গাছের পারফেক্ট কেয়ার রুটিন!",
+  "nameOfPlantLabel": "গাছটির কী নাম দিয়েছেন?",
+  "nameFieldHint": "যেমন: স্নেক প্ল্যান্ট, অ্যালোভেরা...",
+  "typesOfPlantLabel": "এটি কেমন গাছ?",
+  "typesFieldHint": "যেমন: ইনডোর, সাকুলেন্ট...",
+  "plantAgeLabel": "গাছটির বয়স কত?",
+  "ageFieldHint": "যেমন: চারাগাছ, পূর্ণবয়স্ক...",
+  "createRoadmapButton": "কেয়ার রুটিন তৈরি করুন",
+  "yourPlantNeeds": "আপনার প্রিয় '{plantName}'-এর প্রতিদিন প্রায় {amount} মিলি পানি প্রয়োজন। নিচে পানি দেওয়ার রুটিন দেওয়া হলো:",
   "@yourPlantNeeds": {
     "placeholders": {
       "plantName": { "type": "String" },
       "amount": { "type": "int" }
     }
   },
-  "setAlarmButton": "অ্যালার্ম সেট করুন",
-  "tipsLabel": "পরামর্শ: {tips}",
+  "setAlarmButton": "রিমাইন্ডার সেট করুন",
+  "tipsLabel": "টিপস: {tips}",
   "@tipsLabel": {
     "placeholders": {
       "tips": { "type": "String" }
     }
   },
-  "weatherTipHot": "আজ খুব গরম 🔥 — আজ অন্তত {waterMl} মিলি পানি দিন।",
+  "weatherTipHot": "দারুণ রোদ আজ গাছটিকে অন্তত {waterMl} মিলি পানি পান করান।",
   "@weatherTipHot": {
     "placeholders": {
       "waterMl": { "type": "int" }
     }
   },
-  "weatherTipCold": "আজ ঠান্ডা ❄️ — মূল পচন এড়াতে একটু কম পানি দিন।",
-  "weatherTipWetOutside": "আজ বাইরে ভেজা আবহাওয়া 🌧️ — বাইরের গাছে পানি দেওয়ার দরকার নেই।",
+  "weatherTipCold": "আজ বেশ ঠান্ডা-শেকড় পচা রোধে একটু কম পানি দিলেও চলবে।",
+  "weatherTipWetOutside": "আজ তো এমনিতেই বৃষ্টি হচ্ছে-বাইরের গাছগুলোকে আজ আর পানি দিতে হবে না।",
 
-  "diseasesDetectionHeader": "রোগ\nশনাক্তকরণ",
-  "diseasesDetectionSubtitle": "একটি ছবি তুলুন এবং তাৎক্ষণিক মূল্যায়ন পান।",
-  "openCameraButton": "ছবি তুলতে ক্যামেরা খুলুন",
-  "cureLabel": "প্রতিকার: {cure}",
+  "diseasesDetectionHeader": "প্ল্যান্ট\nডাক্তার",
+  "diseasesDetectionSubtitle": "অসুস্থ পাতার ছবি তুলুন আর ম্যাজিকের মতো সমাধান পান!",
+  "openCameraButton": "ক্যামেরা ওপেন করুন",
+  "cureLabel": "সমাধান: {cure}",
   "@cureLabel": {
     "placeholders": {
       "cure": { "type": "String" }
     }
   },
-  "addToLogButton": "লগে যোগ করুন",
-  "buyFertilizerButton": "সার কিনুন"
+  "addToLogButton": "লিস্টে সেভ রাখুন",
+  "buyFertilizerButton": "সারের অর্ডার দিন"
 }
