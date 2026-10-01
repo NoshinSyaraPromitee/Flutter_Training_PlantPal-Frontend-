@@ -125,61 +125,61 @@ abstract class AppLocalizations {
   /// No description provided for @greetingMorning.
   ///
   /// In en, this message translates to:
-  /// **'Good morning! ╬ô├┐├çΓê⌐Γòò├à Ready to check on your plants?'**
+  /// **'Good morning! ☀️ Ready to check on your plants?'**
   String get greetingMorning;
 
   /// No description provided for @greetingAfternoon.
   ///
   /// In en, this message translates to:
-  /// **'Good afternoon! Γëí╞Æ├«├▒Γê⌐Γòò├à How are your plants doing?'**
+  /// **'Good afternoon! 🌤️ How are your plants doing?'**
   String get greetingAfternoon;
 
   /// No description provided for @greetingEvening.
   ///
   /// In en, this message translates to:
-  /// **'Good evening! Γëí╞Æ├«├Ñ Time for one last check-in.'**
+  /// **'Good evening! 🌆 Time for one last check-in.'**
   String get greetingEvening;
 
   /// No description provided for @greetingNight.
   ///
   /// In en, this message translates to:
-  /// **'Still up? Γëí╞Æ├«├û Your plants are resting too.'**
+  /// **'Still up? 🌙 Your plants are resting too.'**
   String get greetingNight;
 
   /// No description provided for @greetingPlantThirsty.
   ///
   /// In en, this message translates to:
-  /// **'Γëí╞Æ├«ΓûÆ One of your plants is thirsty today!'**
+  /// **'🌱 One of your plants is thirsty today!'**
   String get greetingPlantThirsty;
 
   /// No description provided for @greetingWeatherRain.
   ///
   /// In en, this message translates to:
-  /// **'It\'s rainy out there Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants today.'**
+  /// **'It\'s rainy out there 🌧️ — skip watering outdoor plants today.'**
   String get greetingWeatherRain;
 
   /// No description provided for @greetingWeatherThunderstorm.
   ///
   /// In en, this message translates to:
-  /// **'Storms nearby ╬ô┬ó├¬Γê⌐Γòò├à ╬ô├ç├╢ keep sensitive plants indoors.'**
+  /// **'Storms nearby ⛈️ — keep sensitive plants indoors.'**
   String get greetingWeatherThunderstorm;
 
   /// No description provided for @greetingWeatherSnow.
   ///
   /// In en, this message translates to:
-  /// **'It\'s snowing ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ bring tender plants inside.'**
+  /// **'It\'s snowing ❄️ — bring tender plants inside.'**
   String get greetingWeatherSnow;
 
   /// No description provided for @greetingWeatherFog.
   ///
   /// In en, this message translates to:
-  /// **'Foggy morning Γëí╞Æ├«┬╜Γê⌐Γòò├à ╬ô├ç├╢ your plants love the extra humidity.'**
+  /// **'Foggy morning 🌫️ — your plants love the extra humidity.'**
   String get greetingWeatherFog;
 
   /// No description provided for @greetingWeatherHot.
   ///
   /// In en, this message translates to:
-  /// **'It\'s {temperature}Γö¼ΓûæC out Γëí╞Æ├╢├æ ╬ô├ç├╢ your plants may need extra water.'**
+  /// **'It\'s {temperature}°C out 🔥 — your plants may need extra water.'**
   String greetingWeatherHot(int temperature);
 
   /// No description provided for @uploadPlantPhoto.
@@ -311,7 +311,7 @@ abstract class AppLocalizations {
   /// No description provided for @maintainanceHeaderSubtitleResult.
   ///
   /// In en, this message translates to:
-  /// **'Here╬ô├ç├ûs the care plan for your plant.'**
+  /// **'Here’s the care plan for your plant.'**
   String get maintainanceHeaderSubtitleResult;
 
   /// No description provided for @nameOfPlantLabel.
@@ -377,19 +377,19 @@ abstract class AppLocalizations {
   /// No description provided for @weatherTipHot.
   ///
   /// In en, this message translates to:
-  /// **'It\'s too hot today Γëí╞Æ├╢├æ ╬ô├ç├╢ give at least {waterMl} ml water today.'**
+  /// **'It\'s too hot today 🔥 — give at least {waterMl} ml water today.'**
   String weatherTipHot(int waterMl);
 
   /// No description provided for @weatherTipCold.
   ///
   /// In en, this message translates to:
-  /// **'It\'s cold today ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ water a little less to avoid root rot.'**
+  /// **'It\'s cold today ❄️ — water a little less to avoid root rot.'**
   String get weatherTipCold;
 
   /// No description provided for @weatherTipWetOutside.
   ///
   /// In en, this message translates to:
-  /// **'It\'s wet outside today Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants.'**
+  /// **'It\'s wet outside today 🌧️ — skip watering outdoor plants.'**
   String get weatherTipWetOutside;
 
   /// No description provided for @diseasesDetectionHeader.
@@ -719,7 +719,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for checkoutDeliveryEtaFee
   ///
   /// In en, this message translates to:
-  /// **'{eta} ╬ô├ç├│ {fee}'**
+  /// **'{eta} • {fee}'**
   String checkoutDeliveryEtaFee(String eta, String fee);
 
   /// No description provided for @orderConfirmedTitle.
@@ -995,7 +995,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for plantAddedSnackbar
   ///
   /// In en, this message translates to:
-  /// **'{name} has been added Γëí╞Æ├«ΓûÆ'**
+  /// **'{name} has been added 🌱'**
   String plantAddedSnackbar(String name);
 
   /// No description provided for @addPlantTitle.
@@ -1175,7 +1175,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for plantWateredSnackbar
   ///
   /// In en, this message translates to:
-  /// **'{name} marked as watered Γëí╞Æ├å┬║'**
+  /// **'{name} marked as watered 💧'**
   String plantWateredSnackbar(String name);
 
   /// No description provided for @deletePlantConfirmTitle.
@@ -1295,19 +1295,19 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for healthCritical
   ///
   /// In en, this message translates to:
-  /// **'{percent}% ╬ô├ç├│ Critical'**
+  /// **'{percent}% • Critical'**
   String healthCritical(int percent);
 
   /// Auto-extracted UI string for healthNeedsCare
   ///
   /// In en, this message translates to:
-  /// **'{percent}% ╬ô├ç├│ Needs Care'**
+  /// **'{percent}% • Needs Care'**
   String healthNeedsCare(int percent);
 
   /// Auto-extracted UI string for healthHealthy
   ///
   /// In en, this message translates to:
-  /// **'{percent}% ╬ô├ç├│ Healthy'**
+  /// **'{percent}% • Healthy'**
   String healthHealthy(int percent);
 
   /// No description provided for @settingsMenuLabel.
@@ -1355,7 +1355,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutBody.
   ///
   /// In en, this message translates to:
-  /// **'Version 1.0.0\n\nYour friendly AI gardening assistant ╬ô├ç├╢ scan, track, and care for your plants with confidence.'**
+  /// **'Version 1.0.0\n\nYour friendly AI gardening assistant — scan, track, and care for your plants with confidence.'**
   String get aboutBody;
 
   /// No description provided for @notificationsSectionTitle.
@@ -1505,7 +1505,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for productQuantityFormula
   ///
   /// In en, this message translates to:
-  /// **'= {qty} Γö£├╣ {unit}'**
+  /// **'= {qty} × {unit}'**
   String productQuantityFormula(int qty, String unit);
 
   /// No description provided for @buyNowButton.
@@ -1685,13 +1685,13 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for bulletItem
   ///
   /// In en, this message translates to:
-  /// **'╬ô├ç├│ {item}'**
+  /// **'• {item}'**
   String bulletItem(String item);
 
   /// No description provided for @aiDisclaimerText.
   ///
   /// In en, this message translates to:
-  /// **'AI guidance only ╬ô├ç├╢ not a guaranteed diagnosis. Check with a local plant expert for serious issues.'**
+  /// **'AI guidance only — not a guaranteed diagnosis. Check with a local plant expert for serious issues.'**
   String get aiDisclaimerText;
 
   /// No description provided for @chatWelcomeMessage.
@@ -1853,7 +1853,7 @@ abstract class AppLocalizations {
   /// No description provided for @markedWateredSnackbar.
   ///
   /// In en, this message translates to:
-  /// **'{name} has been watered ≡ƒÆº'**
+  /// **'{name} has been watered 💧'**
   String markedWateredSnackbar(String name);
 
   /// No description provided for @needsWaterTooltip.

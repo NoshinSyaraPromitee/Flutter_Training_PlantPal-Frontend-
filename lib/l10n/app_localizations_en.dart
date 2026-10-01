@@ -23,43 +23,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get greetingMorning =>
-      'Good morning! ╬ô├┐├çΓê⌐Γòò├à Ready to check on your plants?';
+      'Good morning! ☀️ Ready to check on your plants?';
 
   @override
   String get greetingAfternoon =>
-      'Good afternoon! Γëí╞Æ├«├▒Γê⌐Γòò├à How are your plants doing?';
+      'Good afternoon! 🌤️ How are your plants doing?';
 
   @override
-  String get greetingEvening =>
-      'Good evening! Γëí╞Æ├«├Ñ Time for one last check-in.';
+  String get greetingEvening => 'Good evening! 🌆 Time for one last check-in.';
 
   @override
-  String get greetingNight =>
-      'Still up? Γëí╞Æ├«├û Your plants are resting too.';
+  String get greetingNight => 'Still up? 🌙 Your plants are resting too.';
 
   @override
-  String get greetingPlantThirsty =>
-      'Γëí╞Æ├«ΓûÆ One of your plants is thirsty today!';
+  String get greetingPlantThirsty => '🌱 One of your plants is thirsty today!';
 
   @override
   String get greetingWeatherRain =>
-      'It\'s rainy out there Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants today.';
+      'It\'s rainy out there 🌧️ — skip watering outdoor plants today.';
 
   @override
   String get greetingWeatherThunderstorm =>
-      'Storms nearby ╬ô┬ó├¬Γê⌐Γòò├à ╬ô├ç├╢ keep sensitive plants indoors.';
+      'Storms nearby ⛈️ — keep sensitive plants indoors.';
 
   @override
   String get greetingWeatherSnow =>
-      'It\'s snowing ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ bring tender plants inside.';
+      'It\'s snowing ❄️ — bring tender plants inside.';
 
   @override
   String get greetingWeatherFog =>
-      'Foggy morning Γëí╞Æ├«┬╜Γê⌐Γòò├à ╬ô├ç├╢ your plants love the extra humidity.';
+      'Foggy morning 🌫️ — your plants love the extra humidity.';
 
   @override
   String greetingWeatherHot(int temperature) {
-    return 'It\'s $temperatureΓö¼ΓûæC out Γëí╞Æ├╢├æ ╬ô├ç├╢ your plants may need extra water.';
+    return 'It\'s $temperature°C out 🔥 — your plants may need extra water.';
   }
 
   @override
@@ -130,7 +127,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get maintainanceHeaderSubtitleResult =>
-      'Here╬ô├ç├ûs the care plan for your plant.';
+      'Here’s the care plan for your plant.';
 
   @override
   String get nameOfPlantLabel => 'Name of the Plant';
@@ -168,16 +165,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String weatherTipHot(int waterMl) {
-    return 'It\'s too hot today Γëí╞Æ├╢├æ ╬ô├ç├╢ give at least $waterMl ml water today.';
+    return 'It\'s too hot today 🔥 — give at least $waterMl ml water today.';
   }
 
   @override
   String get weatherTipCold =>
-      'It\'s cold today ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ water a little less to avoid root rot.';
+      'It\'s cold today ❄️ — water a little less to avoid root rot.';
 
   @override
   String get weatherTipWetOutside =>
-      'It\'s wet outside today Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants.';
+      'It\'s wet outside today 🌧️ — skip watering outdoor plants.';
 
   @override
   String get diseasesDetectionHeader => 'Diseases\nDetection';
@@ -348,7 +345,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String checkoutDeliveryEtaFee(String eta, String fee) {
-    return '$eta ╬ô├ç├│ $fee';
+    return '$eta • $fee';
   }
 
   @override
@@ -505,7 +502,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String plantAddedSnackbar(String name) {
-    return '$name has been added Γëí╞Æ├«ΓûÆ';
+    return '$name has been added 🌱';
   }
 
   @override
@@ -601,7 +598,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String plantWateredSnackbar(String name) {
-    return '$name marked as watered Γëí╞Æ├å┬║';
+    return '$name marked as watered 💧';
   }
 
   @override
@@ -675,17 +672,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String healthCritical(int percent) {
-    return '$percent% ╬ô├ç├│ Critical';
+    return '$percent% • Critical';
   }
 
   @override
   String healthNeedsCare(int percent) {
-    return '$percent% ╬ô├ç├│ Needs Care';
+    return '$percent% • Needs Care';
   }
 
   @override
   String healthHealthy(int percent) {
-    return '$percent% ╬ô├ç├│ Healthy';
+    return '$percent% • Healthy';
   }
 
   @override
@@ -713,7 +710,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutBody =>
-      'Version 1.0.0\n\nYour friendly AI gardening assistant ╬ô├ç├╢ scan, track, and care for your plants with confidence.';
+      'Version 1.0.0\n\nYour friendly AI gardening assistant — scan, track, and care for your plants with confidence.';
 
   @override
   String get notificationsSectionTitle => 'Notifications';
@@ -791,7 +788,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String productQuantityFormula(int qty, String unit) {
-    return '= $qty Γö£├╣ $unit';
+    return '= $qty × $unit';
   }
 
   @override
@@ -900,12 +897,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String bulletItem(String item) {
-    return '╬ô├ç├│ $item';
+    return '• $item';
   }
 
   @override
   String get aiDisclaimerText =>
-      'AI guidance only ╬ô├ç├╢ not a guaranteed diagnosis. Check with a local plant expert for serious issues.';
+      'AI guidance only — not a guaranteed diagnosis. Check with a local plant expert for serious issues.';
 
   @override
   String get chatWelcomeMessage =>
@@ -999,7 +996,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String markedWateredSnackbar(String name) {
-    return '$name has been watered ≡ƒÆº';
+    return '$name has been watered 💧';
   }
 
   @override

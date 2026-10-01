@@ -4,16 +4,16 @@
     "splashTagline":  "Grow with confidence",
     "homeHeaderTitle":  "Let\u0027s care for\nyour plants",
     "homeHeaderSubtitle":  "Diagnose, feed, and grow with confidence.",
-    "greetingMorning":  "Good morning! ╬ô├┐├çΓê⌐Γòò├à Ready to check on your plants?",
-    "greetingAfternoon":  "Good afternoon! Γëí╞Æ├«├▒Γê⌐Γòò├à How are your plants doing?",
-    "greetingEvening":  "Good evening! Γëí╞Æ├«├Ñ Time for one last check-in.",
-    "greetingNight":  "Still up? Γëí╞Æ├«├û Your plants are resting too.",
-    "greetingPlantThirsty":  "Γëí╞Æ├«ΓûÆ One of your plants is thirsty today!",
-    "greetingWeatherRain":  "It\u0027s rainy out there Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants today.",
-    "greetingWeatherThunderstorm":  "Storms nearby ╬ô┬ó├¬Γê⌐Γòò├à ╬ô├ç├╢ keep sensitive plants indoors.",
-    "greetingWeatherSnow":  "It\u0027s snowing ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ bring tender plants inside.",
-    "greetingWeatherFog":  "Foggy morning Γëí╞Æ├«┬╜Γê⌐Γòò├à ╬ô├ç├╢ your plants love the extra humidity.",
-    "greetingWeatherHot":  "It\u0027s {temperature}Γö¼ΓûæC out Γëí╞Æ├╢├æ ╬ô├ç├╢ your plants may need extra water.",
+    "greetingMorning":  "Good morning! ☀️ Ready to check on your plants?",
+    "greetingAfternoon":  "Good afternoon! 🌤️ How are your plants doing?",
+    "greetingEvening":  "Good evening! 🌆 Time for one last check-in.",
+    "greetingNight":  "Still up? 🌙 Your plants are resting too.",
+    "greetingPlantThirsty":  "🌱 One of your plants is thirsty today!",
+    "greetingWeatherRain":  "It\u0027s rainy out there 🌧️ — skip watering outdoor plants today.",
+    "greetingWeatherThunderstorm":  "Storms nearby ⛈️ — keep sensitive plants indoors.",
+    "greetingWeatherSnow":  "It\u0027s snowing ❄️ — bring tender plants inside.",
+    "greetingWeatherFog":  "Foggy morning 🌫️ — your plants love the extra humidity.",
+    "greetingWeatherHot":  "It\u0027s {temperature}°C out 🔥 — your plants may need extra water.",
     "@greetingWeatherHot":  {
                                 "placeholders":  {
                                                      "temperature":  {
@@ -42,7 +42,7 @@
     "noFertilizersFound":  "No fertilizers found.",
     "serverUnreachable":  "Could not reach the server. Is the backend running?",
     "maintainanceHeaderSubtitleForm":  "Tell us about your plant to get a care plan.",
-    "maintainanceHeaderSubtitleResult":  "Here╬ô├ç├ûs the care plan for your plant.",
+    "maintainanceHeaderSubtitleResult":  "Here’s the care plan for your plant.",
     "nameOfPlantLabel":  "Name of the Plant",
     "nameFieldHint":  "Value",
     "typesOfPlantLabel":  "Types of Plant",
@@ -70,7 +70,7 @@
                                                      }
                                         }
                    },
-    "weatherTipHot":  "It\u0027s too hot today Γëí╞Æ├╢├æ ╬ô├ç├╢ give at least {waterMl} ml water today.",
+    "weatherTipHot":  "It\u0027s too hot today 🔥 — give at least {waterMl} ml water today.",
     "@weatherTipHot":  {
                            "placeholders":  {
                                                 "waterMl":  {
@@ -78,8 +78,8 @@
                                                             }
                                             }
                        },
-    "weatherTipCold":  "It\u0027s cold today ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ water a little less to avoid root rot.",
-    "weatherTipWetOutside":  "It\u0027s wet outside today Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants.",
+    "weatherTipCold":  "It\u0027s cold today ❄️ — water a little less to avoid root rot.",
+    "weatherTipWetOutside":  "It\u0027s wet outside today 🌧️ — skip watering outdoor plants.",
     "diseasesDetectionHeader":  "Diseases\nDetection",
     "diseasesDetectionSubtitle":  "Snap a photo and get an instant assessment.",
     "openCameraButton":  "Open Camera to take photo",
@@ -141,7 +141,7 @@
     "deliveryMethodLabel":  "Delivery Method",
     "orderSummaryTitle":  "Order Summary",
     "continueToPaymentButton":  "Continue to Payment",
-    "checkoutDeliveryEtaFee":  "{eta} ╬ô├ç├│ {fee}",
+    "checkoutDeliveryEtaFee":  "{eta} • {fee}",
     "@checkoutDeliveryEtaFee":  {
                                     "description":  "Auto-extracted UI string for checkoutDeliveryEtaFee",
                                     "placeholders":  {
@@ -260,7 +260,7 @@
                                                             }
                                              }
                         },
-    "plantAddedSnackbar":  "{name} has been added Γëí╞Æ├«ΓûÆ",
+    "plantAddedSnackbar":  "{name} has been added 🌱",
     "@plantAddedSnackbar":  {
                                 "description":  "Auto-extracted UI string for plantAddedSnackbar",
                                 "placeholders":  {
@@ -314,7 +314,7 @@
     "statWaterToday":  "Water Today",
     "noPlantsTitle":  "No plants yet",
     "noPlantsBody":  "Tap + to add your first plant.",
-    "plantWateredSnackbar":  "{name} marked as watered Γëí╞Æ├å┬║",
+    "plantWateredSnackbar":  "{name} marked as watered 💧",
     "@plantWateredSnackbar":  {
                                   "description":  "Auto-extracted UI string for plantWateredSnackbar",
                                   "placeholders":  {
@@ -388,7 +388,7 @@
                                                   }
                              },
     "notScannedYetLabel":  "Not scanned yet",
-    "healthCritical":  "{percent}% ╬ô├ç├│ Critical",
+    "healthCritical":  "{percent}% • Critical",
     "@healthCritical":  {
                             "description":  "Auto-extracted UI string for healthCritical",
                             "placeholders":  {
@@ -397,7 +397,7 @@
                                                              }
                                              }
                         },
-    "healthNeedsCare":  "{percent}% ╬ô├ç├│ Needs Care",
+    "healthNeedsCare":  "{percent}% • Needs Care",
     "@healthNeedsCare":  {
                              "description":  "Auto-extracted UI string for healthNeedsCare",
                              "placeholders":  {
@@ -406,7 +406,7 @@
                                                               }
                                               }
                          },
-    "healthHealthy":  "{percent}% ╬ô├ç├│ Healthy",
+    "healthHealthy":  "{percent}% • Healthy",
     "@healthHealthy":  {
                            "description":  "Auto-extracted UI string for healthHealthy",
                            "placeholders":  {
@@ -430,7 +430,7 @@
     "statBadges":  "Badges",
     "quickMenuTitle":  "Quick Menu",
     "chooseLanguageTitle":  "Choose Language",
-    "aboutBody":  "Version 1.0.0\n\nYour friendly AI gardening assistant ╬ô├ç├╢ scan, track, and care for your plants with confidence.",
+    "aboutBody":  "Version 1.0.0\n\nYour friendly AI gardening assistant — scan, track, and care for your plants with confidence.",
     "notificationsSectionTitle":  "Notifications",
     "pushNotificationsLabel":  "Push Notifications",
     "pushNotificationsSubtitle":  "General app updates and alerts",
@@ -455,7 +455,7 @@
     "detailsSectionTitle":  "Details",
     "descriptionSectionTitle":  "Description",
     "quantitySectionTitle":  "Quantity",
-    "productQuantityFormula":  "= {qty} Γö£├╣ {unit}",
+    "productQuantityFormula":  "= {qty} × {unit}",
     "@productQuantityFormula":  {
                                     "description":  "Auto-extracted UI string for productQuantityFormula",
                                     "placeholders":  {
@@ -537,7 +537,7 @@
     "treatmentLabel":  "Treatment:",
     "recommendedFertilizerLabel":  "Recommended Fertilizer:",
     "shopProductsLabel":  "Shop Products:",
-    "bulletItem":  "╬ô├ç├│ {item}",
+    "bulletItem":  "• {item}",
     "@bulletItem":  {
                         "description":  "Auto-extracted UI string for bulletItem",
                         "placeholders":  {
@@ -546,7 +546,7 @@
                                                       }
                                          }
                     },
-    "aiDisclaimerText":  "AI guidance only ╬ô├ç├╢ not a guaranteed diagnosis. Check with a local plant expert for serious issues.",
+    "aiDisclaimerText":  "AI guidance only — not a guaranteed diagnosis. Check with a local plant expert for serious issues.",
     "chatWelcomeMessage":  "Hello! I\u0027m PlantBot.\nHow can I help your plants today?",
     "chatSuggestion1":  "Why are my leaves yellow?",
     "chatSuggestion2":  "Homemade Banana Fertilizer",
@@ -587,7 +587,7 @@
     "noNicknameLabel":  "No nickname",
     "markWateredButton":  "Mark as Watered",
     "editPlantButton":  "Edit Plant",
-    "markedWateredSnackbar":  "{name} has been watered ≡ƒÆº",
+    "markedWateredSnackbar":  "{name} has been watered 💧",
     "@markedWateredSnackbar":  {
                                    "placeholders":  {
                                                         "name":  {

@@ -13,416 +13,349 @@ class AppLocalizationsBn extends AppLocalizations {
   String get appTitle => 'MyPlantPal';
 
   @override
-  String get splashTagline =>
-      '╬▒┬¬├Ñ╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬½╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├æ╬▒┬║├º ╬▒┬¬┬╝╬▒┬║├º╬▒┬║┬ú╬▒┬║├º ╬▒┬¬├½╬▒┬¬├í╬▒┬║├╝╬▒┬¬┬┐';
+  String get splashTagline => 'আত্মবিশ্বাসের সাথে বেড়ে উঠুন';
 
   @override
-  String get homeHeaderTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬Γòò╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬┬╗╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬┐ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º\n╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ';
+  String get homeHeaderTitle => 'আসুন যত্ন নেই\nআপনার গাছের';
 
   @override
   String get homeHeaderSubtitle =>
-      '╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├║╬▒┬║╞Æ, ╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬ú╬▒┬║├»╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬┐, ╬▒┬¬├Ñ╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬½╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├æ╬▒┬║├º ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬║┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒├æ├▒';
+      'রোগ নির্ণয়, পুষ্টি জোগান, আত্মবিশ্বাসের সাথে বাড়ান।';
 
   @override
-  String get greetingMorning =>
-      '╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬┬í ╬▒┬¬Γòò╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûô!  ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├» ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐?';
+  String get greetingMorning => 'শুভ সকাল!  আপনার গাছগুলো দেখে নিন?';
 
   @override
-  String get greetingAfternoon =>
-      '╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬┬í ╬▒┬¬├á╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬Γòú╬▒┬║├¼╬▒┬¬┬┐!  ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├» ╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬½╬▒┬¬┬┐ ╬▒┬¬├Ñ╬▒┬¬┬ó╬▒┬║├º?';
+  String get greetingAfternoon => 'শুভ অপরাহ্ন!  আপনার গাছগুলো কেমন আছে?';
 
   @override
-  String get greetingEvening =>
-      '╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬┬í ╬▒┬¬Γòò╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬║╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢!  ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬½╬▒┬¬├▒╬▒┬║├» ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒├æ├▒';
+  String get greetingEvening => 'শুভ সন্ধ্যা!  শেষবারের মতো একবার দেখে নিন।';
 
   @override
   String get greetingNight =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬¬├┤ ╬▒┬¬┬ú╬▒┬║├º╬▒┬¬├╣╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬ó╬▒┬║├º╬▒┬¬┬┐? Γëí╞Æ├«├û ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├»╬▒┬¬├┤ ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬½ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒';
+      'এখনও জেগে আছেন? 🌙 আপনার গাছগুলোও বিশ্রাম নিচ্ছে।';
 
   @override
-  String get greetingPlantThirsty =>
-      ' ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ!';
+  String get greetingPlantThirsty => ' আপনার একটি গাছের আজ পানি দরকার!';
 
   @override
   String get greetingWeatherRain =>
-      '╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬┬╝╬▒┬║├ó╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º  ╬ô├ç├╢ ╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º╬▒├æ├▒';
+      'বাইরে বৃষ্টি হচ্ছে  — আজ বাইরের গাছে পানি দেওয়ার দরকার নেই।';
 
   @override
   String get greetingWeatherThunderstorm =>
-      '╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬ΓöÉ ╬▒┬¬┬Ñ╬▒┬¬├¡╬▒┬¬Γò¥ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º  ╬ô├ç├╢ ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬¬╬▒┬¬┬┐╬▒┬¬Γòó╬▒┬║├ç╬▒┬¬Γûô ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├» ╬▒┬¬├┐╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'কাছাকাছি ঝড় হচ্ছে  — সংবেদনশীল গাছগুলো ঘরে রাখুন।';
 
   @override
   String get greetingWeatherSnow =>
-      '╬▒┬¬├▒╬▒┬║├╝╬▒┬¬Γòû╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├▒ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º  ╬ô├ç├╢ ╬▒┬¬┬┐╬▒┬¬Γûæ╬▒┬¬┬½ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├» ╬▒┬¬├┐╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬Γòò╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'তুষারপাত হচ্ছে  — নরম গাছগুলো ঘরে নিয়ে আসুন।';
 
   @override
   String get greetingWeatherFog =>
-      '╬▒┬¬├▓╬▒┬║├╝╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γòó╬▒┬¬Γò¢╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬┐ ╬▒┬¬Γòò╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûô  ╬ô├ç├╢ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├» ╬▒┬¬├à╬▒┬¬├º ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├¡╬▒┬¬Γò¥╬▒┬¬├▒╬▒┬¬ΓöÉ ╬▒┬¬├Ñ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬¬Γò¢ ╬▒┬¬┬¼╬▒┬¬┬ó╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬¬ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º╬▒├æ├▒';
+      'কুয়াশাচ্ছন্ন সকাল  — আপনার গাছগুলো এই বাড়তি আর্দ্রতা পছন্দ করে।';
 
   @override
   String greetingWeatherHot(int temperature) {
-    return '╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬Γûæ╬▒┬║├º $temperatureΓö¼Γûæ╬▒┬¬Γòò╬▒┬║├º ╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γò¢ Γëí╞Æ├╢├æ ╬ô├ç├╢ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├¡╬▒┬¬Γò¥╬▒┬¬├▒╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬Γûô╬▒┬¬Γò¢╬▒┬¬├╣╬▒┬¬├▒╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º╬▒├æ├▒';
+    return 'বাইরে $temperature°সে তাপমাত্রা 🔥 — আপনার গাছের বাড়তি পানি লাগতে পারে।';
   }
 
   @override
-  String get uploadPlantPhoto =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬Γûô╬▒┬║├»╬▒┬¬├¡ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get uploadPlantPhoto => 'আপনার গাছের ছবি আপলোড করুন';
 
   @override
-  String get quickActionsLabel =>
-      '╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬├▒ ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬½';
+  String get quickActionsLabel => 'দ্রুত কার্যক্রম';
 
   @override
-  String get myPlantsLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬Γò¢';
+  String get myPlantsLabel => 'আমার গাছপালা';
 
   @override
-  String get maintainance =>
-      '╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬║├º╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║';
+  String get maintainance => 'রক্ষণাবেক্ষণ';
 
   @override
-  String get diseaseDetectionTile =>
-      '╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬Γòó╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬║├¼╬▒┬¬├▒╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├║';
+  String get diseaseDetectionTile => 'রোগ শনাক্তকরণ';
 
   @override
-  String get fertilizerRecipesLabel =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬Γûæ ╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ';
+  String get fertilizerRecipesLabel => 'সার তৈরির রেসিপি';
 
   @override
-  String get shopLabel => '╬▒┬¬┬¬╬▒┬║├»╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get shopLabel => 'দোকান';
 
   @override
-  String get chatWithExpertLabel =>
-      '╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├æ╬▒┬║├º ╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬╞Æ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get chatWithExpertLabel => 'বিশেষজ্ঞের সাথে চ্যাট করুন';
 
   @override
-  String get mainMenuButton =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬║╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├╝';
+  String get mainMenuButton => 'প্রধান মেনু';
 
   @override
-  String get fertilizerHeaderTitle =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ';
+  String get fertilizerHeaderTitle => 'সার তৈরি';
 
   @override
   String get fertilizerHeaderSubtitle =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬¬ΓöÉ╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬╝╬▒┬║├ó╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬┬║╬▒┬¬ΓöÉ╬▒┬¬Γûæ ╬▒┬¬┬║╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ú╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬├┐╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ╬▒├æ├▒';
+      'প্রতিটি বৃদ্ধির ধাপের জন্য ঘরে তৈরি রেসিপি।';
 
   @override
-  String get addFertilizerButton =>
-      '╬▒┬¬┬┐╬▒┬¬├▒╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get addFertilizerButton => 'নতুন সার যোগ করুন';
 
   @override
-  String get fertilizerNameFieldLabel => '╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬½';
+  String get fertilizerNameFieldLabel => 'নাম';
 
   @override
-  String get fertilizerCategoryFieldLabel => '╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬├╣';
+  String get fertilizerCategoryFieldLabel => 'বিভাগ';
 
   @override
-  String get fertilizerInstructionsFieldLabel =>
-      '╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬¬╬▒┬║├º╬▒┬¬Γòó╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬¬Γûô╬▒┬║├ç';
+  String get fertilizerInstructionsFieldLabel => 'নির্দেশাবলী';
 
   @override
-  String get cancelButton => '╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬¬ΓöÉ╬▒┬¬Γûô';
+  String get cancelButton => 'বাতিল';
 
   @override
-  String get saveButton =>
-      '╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get saveButton => 'সংরক্ষণ করুন';
 
   @override
-  String get searchFertilizerHint =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├┐╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬├╝╬▒┬¬┬ú╬▒┬║├╝╬▒┬¬┬┐';
+  String get searchFertilizerHint => 'আপনার ঘরে তৈরি সার খুঁজুন';
 
   @override
-  String get noFertilizersFound =>
-      '╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬║╞Æ╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬║╞Æ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒';
+  String get noFertilizersFound => 'কোনো সার পাওয়া যায়নি।';
 
   @override
-  String get serverUnreachable =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬┬¼╬▒┬║├«╬▒┬¬├╝╬▒┬¬┬ó╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬║╞Æ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒ ╬▒┬¬┬╝╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬├à╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├¡ ╬▒┬¬├▓╬▒┬¬ΓöÉ ╬▒┬¬├£╬▒┬¬Γûô╬▒┬¬┬ó╬▒┬║├º?';
+  String get serverUnreachable => 'সার্ভারে পৌঁছানো যায়নি। ব্যাকএন্ড কি চলছে?';
 
   @override
   String get maintainanceHeaderSubtitleForm =>
-      '╬▒┬¬┬╗╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬┐╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢ ╬▒┬¬┬¼╬▒┬║├º╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬┐╬▒├æ├▒';
+      'যত্নের পরিকল্পনা পেতে আপনার গাছ সম্পর্কে জানান।';
 
   @override
   String get maintainanceHeaderSubtitleResult =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬╗╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬┐╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒├æ├▒';
+      'এই দেখুন আপনার গাছের যত্নের পরিকল্পনা।';
 
   @override
-  String get nameOfPlantLabel =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬½';
+  String get nameOfPlantLabel => 'গাছের নাম';
 
   @override
-  String get nameFieldHint =>
-      '╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐';
+  String get nameFieldHint => 'মান লিখুন';
 
   @override
-  String get typesOfPlantLabel =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬║╬▒┬¬Γûæ╬▒┬¬┬┐';
+  String get typesOfPlantLabel => 'গাছের ধরন';
 
   @override
-  String get typesFieldHint =>
-      '╬▒┬¬┬ú╬▒┬¬Γûô ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├▒╬▒┬║├¼╬▒┬¬├▒╬▒┬¬ΓöÉ╬▒┬¬├▓, ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├º╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬¬╬▒┬¬ΓöÉ';
+  String get typesFieldHint => 'জল ভিত্তিক, মানিপ্ল্যান্ট ইত্যাদি';
 
   @override
-  String get plantAgeLabel =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬╝╬▒┬║╞Æ╬▒┬¬Γòò ╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬½╬▒┬¬┬┐?';
+  String get plantAgeLabel => 'গাছের বয়স কেমন?';
 
   @override
-  String get ageFieldHint =>
-      '╬▒┬¬┬╝╬▒┬║├ç╬▒┬¬┬ú, ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬Γò¢...';
+  String get ageFieldHint => 'বীজ, চারা...';
 
   @override
-  String get createRoadmapButton =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢ ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get createRoadmapButton => 'আমার পরিকল্পনা তৈরি করুন';
 
   @override
   String yourPlantNeeds(String plantName, int amount) {
-    return '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ \'$plantName\' ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬¬ΓöÉ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬║╞Æ $amount ╬▒┬¬┬½╬▒┬¬ΓöÉ╬▒┬¬Γûô╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬║╞Æ╬▒┬║├»╬▒┬¬┬ú╬▒┬¬┬┐╬▒├æ├▒ ╬▒┬¬├à╬▒┬¬├╗╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬║╞Æ╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬║╞Æ╬▒┬¬Γòò╬▒┬║├⌐╬▒┬¬├£╬▒┬║├ç ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬║╞Æ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬Γûô╬▒┬║├»';
+    return 'আপনার \'$plantName\' গাছের প্রতিদিন প্রায় $amount মিলি পানি প্রয়োজন। এখানে পানি দেওয়ার সময়সূচী দেওয়া হলো';
   }
 
   @override
-  String get setAlarmButton =>
-      '╬▒┬¬├á╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬½ ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬╞Æ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get setAlarmButton => 'অ্যালার্ম সেট করুন';
 
   @override
   String tipsLabel(String tips) {
-    return '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬½╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬Γòó: $tips';
+    return 'পরামর্শ: $tips';
   }
 
   @override
   String weatherTipHot(int waterMl) {
-    return '╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬╝ ╬▒┬¬├╣╬▒┬¬Γûæ╬▒┬¬┬½ Γëí╞Æ├╢├æ ╬ô├ç├╢ ╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├▒╬▒┬¬├▒ $waterMl ╬▒┬¬┬½╬▒┬¬ΓöÉ╬▒┬¬Γûô╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒├æ├▒';
+    return 'আজ খুব গরম 🔥 — আজ অন্তত $waterMl মিলি পানি দিন।';
   }
 
   @override
   String get weatherTipCold =>
-      '╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬├í╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢ ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ ╬▒┬¬┬½╬▒┬║├⌐╬▒┬¬Γûô ╬▒┬¬┬¼╬▒┬¬├£╬▒┬¬┬┐ ╬▒┬¬├à╬▒┬¬├¡╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬║├╝ ╬▒┬¬├▓╬▒┬¬┬½ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒├æ├▒';
+      'আজ ঠান্ডা ❄️ — মূল পচন এড়াতে একটু কম পানি দিন।';
 
   @override
   String get weatherTipWetOutside =>
-      '╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬┬í╬▒┬║├º╬▒┬¬┬ú╬▒┬¬Γò¢ ╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γòú╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º╬▒├æ├▒';
+      'আজ বাইরে ভেজা আবহাওয়া 🌧️ — বাইরের গাছে পানি দেওয়ার দরকার নেই।';
 
   @override
-  String get diseasesDetectionHeader =>
-      '╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬├╣\n╬▒┬¬Γòó╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬║├¼╬▒┬¬├▒╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├║';
+  String get diseasesDetectionHeader => 'রোগ\nশনাক্তকরণ';
 
   @override
   String get diseasesDetectionSubtitle =>
-      '╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬├▒╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬├à╬▒┬¬┬╝╬▒┬¬├⌐ ╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬║├ä╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║╬▒┬¬ΓöÉ╬▒┬¬├▓ ╬▒┬¬┬½╬▒┬║├⌐╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬║╞Æ╬▒┬¬┬┐ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒├æ├▒';
+      'একটি ছবি তুলুন এবং তাৎক্ষণিক মূল্যায়ন পান।';
 
   @override
-  String get openCameraButton =>
-      '╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬├▒╬▒┬║├╝╬▒┬¬Γûô╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬½╬▒┬║├º╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├╝╬▒┬¬┬┐';
+  String get openCameraButton => 'ছবি তুলতে ক্যামেরা খুলুন';
 
   @override
   String cureLabel(String cure) {
-    return '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ: $cure';
+    return 'প্রতিকার: $cure';
   }
 
   @override
-  String get addToLogButton =>
-      '╬▒┬¬Γûô╬▒┬¬├╣╬▒┬║├º ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get addToLogButton => 'লগে যোগ করুন';
 
   @override
-  String get buyFertilizerButton =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▓╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬┬┐';
+  String get buyFertilizerButton => 'সার কিনুন';
 
   @override
-  String get appTagline =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬┬╝╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬║╬▒┬║├╝';
+  String get appTagline => 'আপনার বাগানের সেরা বন্ধু';
 
   @override
-  String get getStartedButton =>
-      '╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬Γûæ╬▒┬║├╝ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get getStartedButton => 'শুরু করুন';
 
   @override
-  String get deleteButton => '╬▒┬¬┬½╬▒┬║├╝╬▒┬¬┬ó╬▒┬║├╝╬▒┬¬┬┐';
+  String get deleteButton => 'মুছুন';
 
   @override
-  String get backButton => '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬ó╬▒┬¬┬┐╬▒┬║├º';
+  String get backButton => 'পেছনে';
 
   @override
-  String get closeButton =>
-      '╬▒┬¬┬╝╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get closeButton => 'বন্ধ করুন';
 
   @override
-  String get continueShoppingButton =>
-      '╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get continueShoppingButton => 'কেনাকাটা চালিয়ে যান';
 
   @override
-  String get addToCartButton =>
-      '╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬╞Æ╬▒┬║├º ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get addToCartButton => 'কার্টে যোগ করুন';
 
   @override
-  String get logOutButton => '╬▒┬¬Γûô╬▒┬¬├╣ ╬▒┬¬├Ñ╬▒┬¬├½╬▒┬¬╞Æ';
+  String get logOutButton => 'লগ আউট';
 
   @override
-  String get todayLabel => '╬▒┬¬├Ñ╬▒┬¬┬ú';
+  String get todayLabel => 'আজ';
 
   @override
-  String get onLabel => '╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├╝';
+  String get onLabel => 'চালু';
 
   @override
-  String get offLabel => '╬▒┬¬┬╝╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬║';
+  String get offLabel => 'বন্ধ';
 
   @override
-  String get emailLabel => '╬▒┬¬├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬├º╬▒┬¬Γûô';
+  String get emailLabel => 'ইমেইল';
 
   @override
-  String get passwordLabel =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡';
+  String get passwordLabel => 'পাসওয়ার্ড';
 
   @override
-  String get fullNameLabel =>
-      '╬▒┬¬┬¼╬▒┬║├⌐╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├║ ╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬½';
+  String get fullNameLabel => 'পূর্ণ নাম';
 
   @override
-  String get locationLabel => '╬▒┬¬├á╬▒┬¬┬╝╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get locationLabel => 'অবস্থান';
 
   @override
-  String get loadingLabel =>
-      '╬▒┬¬Γûô╬▒┬║├»╬▒┬¬├¡ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º...';
+  String get loadingLabel => 'লোড হচ্ছে...';
 
   @override
-  String get loginWelcomeBack =>
-      '╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├╣╬▒┬¬├▒╬▒┬¬┬½!';
+  String get loginWelcomeBack => 'আবার স্বাগতম!';
 
   @override
-  String get loginSubtitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬┬¬╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬½╬▒┬¬ΓöÉ╬▒┬¬Γòò ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬┬ó╬▒┬║├º╬▒┬¬┬┐?';
+  String get loginSubtitle => 'আপনার গাছেদের মিস করছেন?';
 
   @override
-  String get loginButton => '╬▒┬¬Γûô╬▒┬¬├╣╬▒┬¬├º╬▒┬¬┬┐';
+  String get loginButton => 'লগইন';
 
   @override
-  String get orDivider => '╬▒┬¬├á╬▒┬¬├æ╬▒┬¬┬╝╬▒┬¬Γò¢';
+  String get orDivider => 'অথবা';
 
   @override
-  String get noAccountPrompt =>
-      '╬▒┬¬├á╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬├½╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º?';
+  String get noAccountPrompt => 'অ্যাকাউন্ট নেই?';
 
   @override
-  String get registerLink =>
-      '╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬║╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get registerLink => 'নিবন্ধন করুন';
 
   @override
-  String get createAccountButton =>
-      '╬▒┬¬├á╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬├½╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get createAccountButton => 'অ্যাকাউন্ট তৈরি করুন';
 
   @override
   String get emailSignInUnavailable =>
-      '╬▒┬¬├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬├º╬▒┬¬Γûô ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬┬┐-╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├╝ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒ ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬├╣╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòú ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º Google ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐╬▒├æ├▒';
+      'ইমেইল দিয়ে সাইন-ইন এখনো চালু হয়নি। অনুগ্রহ করে Google দিয়ে চালিয়ে যান।';
 
   @override
-  String get signingInLabel =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º...';
+  String get signingInLabel => 'সাইন ইন হচ্ছে...';
 
   @override
-  String get continueWithGoogleButton =>
-      'Google ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get continueWithGoogleButton => 'Google দিয়ে চালিয়ে যান';
 
   @override
-  String get continueAsGuestButton =>
-      '╬▒┬¬├╣╬▒┬║├º╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬Γòú╬▒┬¬ΓöÉ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬┬╝╬▒┬║├º ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ (╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬┬║╬▒┬║├╝ ╬▒┬¬├¡╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├╣)';
+  String get continueAsGuestButton => 'গেস্ট হিসেবে চালিয়ে যান (শুধু ডিবাগ)';
 
   @override
-  String get careMetricWater => '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get careMetricWater => 'পানি';
 
   @override
-  String get careMetricSunlight => '╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬┬¬';
+  String get careMetricSunlight => 'রোদ';
 
   @override
-  String get careMetricTemp =>
-      '╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γò¢';
+  String get careMetricTemp => 'তাপমাত্রা';
 
   @override
-  String get careMetricFertilizer => '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get careMetricFertilizer => 'সার';
 
   @override
-  String get careMetricHumidity =>
-      '╬▒┬¬├Ñ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬¬Γò¢';
+  String get careMetricHumidity => 'আর্দ্রতা';
 
   @override
-  String get careGuideTitle =>
-      '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬├¡';
+  String get careGuideTitle => 'পরিচর্যা গাইড';
 
   @override
-  String get careChallengeTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬ú╬▒┬¬├▓╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├º╬▒┬¬Γéº╬▒┬║├¼╬▒┬¬┬ú';
+  String get careChallengeTitle => 'আজকের পরিচর্যা চ্যালেঞ্জ';
 
   @override
   String get careChallengeDoneMessage =>
-      '╬▒┬¬Γòò╬▒┬¬┬╝ ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû! ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬┬¬╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬├║ ╬▒┬¬├á╬▒┬¬┬╝╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥ ╬▒┬¬├Ñ╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒';
+      'সব শেষ! আপনার গাছ আজ দারুণ অবস্থায় আছে।';
 
   @override
-  String get careEssentialsTitle =>
-      '╬▒┬¬┬½╬▒┬║├⌐╬▒┬¬Γûô ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòû╬▒┬¬┬╗╬▒┬¬Γò¥';
+  String get careEssentialsTitle => 'মূল বিষয়';
 
   @override
-  String get careProTipsTitle =>
-      '╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº ╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬Γòò';
+  String get careProTipsTitle => 'বিশেষজ্ঞ টিপস';
 
   @override
-  String get careCommonProblemsTitle =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬┬║╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬├║ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢';
+  String get careCommonProblemsTitle => 'সাধারণ সমস্যা';
 
   @override
-  String get cartTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬╞Æ';
+  String get cartTitle => 'আমার কার্ট';
 
   @override
-  String get cartEmptyTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬ΓöÉ';
+  String get cartEmptyTitle => 'আপনার কার্ট খালি';
 
   @override
-  String get proceedToCheckoutButton =>
-      '╬▒┬¬├£╬▒┬║├º╬▒┬¬├▓╬▒┬¬├Ñ╬▒┬¬├½╬▒┬¬╞Æ╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get proceedToCheckoutButton => 'চেকআউটে যান';
 
   @override
-  String get checkoutTitle => '╬▒┬¬├£╬▒┬║├º╬▒┬¬├▓╬▒┬¬├Ñ╬▒┬¬├½╬▒┬¬╞Æ';
+  String get checkoutTitle => 'চেকআউট';
 
   @override
-  String get shippingInfoTitle =>
-      '╬▒┬¬Γòó╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ╬▒┬¬├⌐ ╬▒┬¬├▒╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗';
+  String get shippingInfoTitle => 'শিপিং তথ্য';
 
   @override
-  String get phoneNumberLabel =>
-      '╬▒┬¬┬╜╬▒┬║├»╬▒┬¬┬┐ ╬▒┬¬┬┐╬▒┬¬┬½╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γûæ';
+  String get phoneNumberLabel => 'ফোন নম্বর';
 
   @override
-  String get shippingAddressLabel =>
-      '╬▒┬¬Γòó╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ╬▒┬¬├⌐ ╬▒┬¬├í╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢';
+  String get shippingAddressLabel => 'শিপিং ঠিকানা';
 
   @override
-  String get deliveryMethodLabel =>
-      '╬▒┬¬├¡╬▒┬║├º╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬┬║╬▒┬¬├▒╬▒┬¬ΓöÉ';
+  String get deliveryMethodLabel => 'ডেলিভারি পদ্ধতি';
 
   @override
-  String get orderSummaryTitle =>
-      '╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬├⌐╬▒┬¬Γòó';
+  String get orderSummaryTitle => 'অর্ডার সারাংশ';
 
   @override
-  String get continueToPaymentButton =>
-      '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get continueToPaymentButton => 'পেমেন্টে যান';
 
   @override
   String checkoutDeliveryEtaFee(String eta, String fee) {
-    return '$eta ╬ô├ç├│ $fee';
+    return '$eta • $fee';
   }
 
   @override
-  String get orderConfirmedTitle =>
-      '╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º!';
+  String get orderConfirmedTitle => 'অর্ডার নিশ্চিত হয়েছে!';
 
   @override
   String get orderConfirmedBody =>
-      'PlantPal-╬▒┬¬├à ╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬╞Æ╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬ú╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬║╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬┬¬╬▒├æ├▒\n╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬Γòò╬▒┬¬┬╜╬▒┬¬Γûô╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬║├º ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒';
+      'PlantPal-এ কেনাকাটার জন্য ধন্যবাদ।\nআপনার অর্ডারটি সফলভাবে দেওয়া হয়েছে।';
 
   @override
-  String get orderIdLabel =>
-      '╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├Ñ╬▒┬¬├º╬▒┬¬├¡╬▒┬¬ΓöÉ';
+  String get orderIdLabel => 'অর্ডার আইডি';
 
   @override
   String orderIdValue(String orderId) {
@@ -430,905 +363,763 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get estimatedDeliveryLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬├▓ ╬▒┬¬├¡╬▒┬║├º╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ';
+  String get estimatedDeliveryLabel => 'আনুমানিক ডেলিভারি';
 
   @override
-  String get statusLabel => '╬▒┬¬├á╬▒┬¬┬╝╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ╬▒┬¬Γò¢';
+  String get statusLabel => 'অবস্থা';
 
   @override
-  String get statusProcessing =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬Γòò ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º';
+  String get statusProcessing => 'প্রসেস হচ্ছে';
 
   @override
-  String get backToHomeButton =>
-      '╬▒┬¬Γòú╬▒┬║├»╬▒┬¬┬½╬▒┬║├º ╬▒┬¬┬╜╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get backToHomeButton => 'হোমে ফিরুন';
 
   @override
-  String get recipeTitle => '╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ';
+  String get recipeTitle => 'রেসিপি';
 
   @override
-  String get recipeNotFoundMessage =>
-      '╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒';
+  String get recipeNotFoundMessage => 'রেসিপি পাওয়া যায়নি।';
 
   @override
-  String get ingredientsTitle => '╬▒┬¬├½╬▒┬¬┬¼╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├║';
+  String get ingredientsTitle => 'উপকরণ';
 
   @override
-  String get preparationTitle =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▒╬▒┬║├╝╬▒┬¬├▒ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├║╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├ç';
+  String get preparationTitle => 'প্রস্তুত প্রণালী';
 
   @override
-  String get applicationTitle => '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├»╬▒┬¬├╣';
+  String get applicationTitle => 'প্রয়োগ';
 
   @override
-  String get benefitsTitle =>
-      '╬▒┬¬├½╬▒┬¬┬¼╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├▒╬▒┬¬Γò¢';
+  String get benefitsTitle => 'উপকারিতা';
 
   @override
-  String get safetyTipsTitle => '╬▒┬¬Γòò╬▒┬¬├▒╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▓╬▒┬¬├▒╬▒┬¬Γò¢';
+  String get safetyTipsTitle => 'সতর্কতা';
 
   @override
-  String get fertilizerMakingTitle =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ';
+  String get fertilizerMakingTitle => 'সার তৈরি';
 
   @override
-  String get noRecipesFoundTitle =>
-      '╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get noRecipesFoundTitle => 'কোনো রেসিপি পাওয়া যায়নি';
 
   @override
   String noRecipesFoundBody(String query) {
-    return '\"$query\" ╬▒┬¬├à╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├æ╬▒┬║├º ╬▒┬¬├▓╬▒┬¬ΓöÉ╬▒┬¬┬ó╬▒┬║├╝ ╬▒┬¬┬½╬▒┬║├º╬▒┬¬Γûô╬▒┬║├º╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒';
+    return '\"$query\" এর সাথে কিছু মেলেনি।';
   }
 
   @override
-  String get fertilizerSearchSubtitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├┐╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬├╝╬▒┬¬┬ú╬▒┬║├╝╬▒┬¬┬┐';
+  String get fertilizerSearchSubtitle => 'আপনার ঘরে তৈরি সার খুঁজুন';
 
   @override
   String nutrientLabel(String nutrient) {
-    return '╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├½╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬¬╬▒┬¬Γò¢╬▒┬¬┬┐: $nutrient';
+    return 'পুষ্টি উপাদান: $nutrient';
   }
 
   @override
-  String get achievementsTitle => '╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬ú╬▒┬¬┬┐';
+  String get achievementsTitle => 'অর্জন';
 
   @override
-  String get noNotificationsMessage =>
-      '╬▒┬¬┬┐╬▒┬¬├▒╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬┐╬▒┬║├»╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬┬╜╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬║├º╬▒┬¬Γòó╬▒┬¬┬┐ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º╬▒├æ├▒';
+  String get noNotificationsMessage => 'নতুন কোনো নোটিফিকেশন নেই।';
 
   @override
   String mascotThirstyMessage(String mascotName) {
-    return '$mascotName ╬▒┬¬├▒╬▒┬║├ó╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬├║╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▒, ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬║├╝ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+    return '$mascotName তৃষ্ণার্ত, একটু পানি দিন';
   }
 
   @override
-  String get uploadPlantPhotoPrompt =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬Γûô╬▒┬║├»╬▒┬¬├¡ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get uploadPlantPhotoPrompt => 'আপনার গাছের ছবি আপলোড করুন';
 
   @override
-  String get myPlantsMenuLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó';
+  String get myPlantsMenuLabel => 'আমার গাছ';
 
   @override
-  String get aiDoctorMenuLabel =>
-      'AI ╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬║├¼╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get aiDoctorMenuLabel => 'AI ডাক্তার';
 
   @override
-  String get fertilizerRecipesMenuLabel =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬¬ΓöÉ';
+  String get fertilizerRecipesMenuLabel => 'সারের রেসিপি';
 
   @override
-  String get maintenanceMenuLabel =>
-      '╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬║├º╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║';
+  String get maintenanceMenuLabel => 'রক্ষণাবেক্ষণ';
 
   @override
-  String get shopMenuLabel => '╬▒┬¬┬¬╬▒┬║├»╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get shopMenuLabel => 'দোকান';
 
   @override
-  String get cameraLabel =>
-      '╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬½╬▒┬║├º╬▒┬¬Γûæ╬▒┬¬Γò¢';
+  String get cameraLabel => 'ক্যামেরা';
 
   @override
   String pointsBalanceLabel(String points, String taka) {
-    return '$points ╬▒┬¬┬¼╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ( $taka ╬▒┬¬╞Æ╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢)';
+    return '$points পয়েন্ট ( $taka টাকা)';
   }
 
   @override
-  String get paymentSuccessTitle =>
-      '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬Γòò╬▒┬¬┬╜╬▒┬¬Γûô ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º!';
+  String get paymentSuccessTitle => 'পেমেন্ট সফল হয়েছে!';
 
   @override
   String paymentSuccessBody(String amount, String method) {
-    return '$method-╬▒┬¬├à╬▒┬¬Γûæ ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬┬║╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬┬½╬▒┬║├º $amount ╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬┐ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒';
+    return '$method-এর মাধ্যমে $amount পেমেন্ট সম্পন্ন হয়েছে। আপনার অর্ডার দেওয়া হয়েছে।';
   }
 
   @override
-  String get viewOrderButton =>
-      '╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐';
+  String get viewOrderButton => 'অর্ডার দেখুন';
 
   @override
-  String get paymentFailedTitle =>
-      '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬╝╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├æ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º';
+  String get paymentFailedTitle => 'পেমেন্ট ব্যর্থ হয়েছে';
 
   @override
   String get paymentFailedBody =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬Γòò ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒ ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬├╣╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòú ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬├á╬▒┬¬├æ╬▒┬¬┬╝╬▒┬¬Γò¢ ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬¼╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬┬║╬▒┬¬├▒╬▒┬¬ΓöÉ ╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒├æ├▒';
+      'আমরা আপনার পেমেন্ট প্রসেস করতে পারিনি। অনুগ্রহ করে আবার চেষ্টা করুন অথবা অন্য পেমেন্ট পদ্ধতি বেছে নিন।';
 
   @override
-  String get changePaymentMethodButton =>
-      '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬¼╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬┬║╬▒┬¬├▒╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▒╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get changePaymentMethodButton => 'পেমেন্ট পদ্ধতি পরিবর্তন করুন';
 
   @override
-  String get tryAgainButton =>
-      '╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get tryAgainButton => 'আবার চেষ্টা করুন';
 
   @override
-  String get paymentTitle => '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ';
+  String get paymentTitle => 'পেমেন্ট';
 
   @override
-  String get secureCheckoutTitle =>
-      '╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬¬┬¬ ╬▒┬¬├£╬▒┬║├º╬▒┬¬├▓╬▒┬¬├Ñ╬▒┬¬├½╬▒┬¬╞Æ';
+  String get secureCheckoutTitle => 'নিরাপদ চেকআউট';
 
   @override
-  String get secureCheckoutBody =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├▒╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬├à╬▒┬¬┬┐╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬├┤ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬¬┬¬╬▒├æ├▒';
+  String get secureCheckoutBody => 'আপনার পেমেন্ট তথ্য এনক্রিপ্ট করা ও নিরাপদ।';
 
   @override
-  String get selectPaymentMethodTitle =>
-      '╬▒┬¬┬¼╬▒┬║├º╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬¼╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬┬║╬▒┬¬├▒╬▒┬¬ΓöÉ ╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+  String get selectPaymentMethodTitle => 'পেমেন্ট পদ্ধতি বেছে নিন';
 
   @override
-  String get orderTotalLabel =>
-      '╬▒┬¬┬½╬▒┬║├»╬▒┬¬╞Æ ╬▒┬¬┬½╬▒┬║├⌐╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗';
+  String get orderTotalLabel => 'মোট মূল্য';
 
   @override
-  String get processingLabel =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬Γòò ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º...';
+  String get processingLabel => 'প্রসেস হচ্ছে...';
 
   @override
   String payButtonLabel(String amount) {
-    return '$amount ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├»╬▒┬¬┬║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+    return '$amount পরিশোধ করুন';
   }
 
   @override
   String plantAddedSnackbar(String name) {
-    return '$name ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º Γëí╞Æ├«ΓûÆ';
+    return '$name যোগ করা হয়েছে 🌱';
   }
 
   @override
-  String get addPlantTitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get addPlantTitle => 'গাছ যোগ করুন';
 
   @override
-  String get addPlantPhotoLabel =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get addPlantPhotoLabel => 'গাছের ছবি যোগ করুন';
 
   @override
-  String get nicknameLabel => '╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬½';
+  String get nicknameLabel => 'ডাকনাম';
 
   @override
-  String get nicknameHint => '╬▒┬¬┬╝╬▒┬║├º╬▒┬¬Γûô╬▒┬¬Γò¢';
+  String get nicknameHint => 'বেলা';
 
   @override
-  String get plantSpeciesLabel =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬¬ΓöÉ';
+  String get plantSpeciesLabel => 'গাছের প্রজাতি';
 
   @override
-  String get speciesHint =>
-      '╬▒┬¬┬½╬▒┬¬┬┐╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬╞Æ╬▒┬║├º╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬├¡╬▒┬║├º╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬Γòò╬▒┬¬ΓöÉ╬▒┬¬├┤╬▒┬¬Γòò╬▒┬¬Γò¢';
+  String get speciesHint => 'মনস্টেরা ডেলিসিওসা';
 
   @override
-  String get locationHint =>
-      '╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├⌐ ╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬½';
+  String get locationHint => 'লিভিং রুম';
 
   @override
-  String get sunlightMediumOption => '╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬┬Ñ╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ';
+  String get sunlightMediumOption => 'মাঝারি';
 
   @override
-  String get waterFrequencyLabel =>
-      '╬▒┬¬├▓╬▒┬¬├▒ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬┬¼╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬Γòú╬▒┬¬┬╝╬▒┬║├º';
+  String get waterFrequencyLabel => 'কত দিন পরপর পানি দিতে হবে';
 
   @override
-  String get wateredTodayCheckbox =>
-      '╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬¬ΓöÉ';
+  String get wateredTodayCheckbox => 'আজ পানি দিয়েছি';
 
   @override
-  String get autoFillAiScanButton =>
-      'AI ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├á╬▒┬¬╞Æ╬▒┬║├» ╬▒┬¬┬╜╬▒┬¬ΓöÉ╬▒┬¬Γûô ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get autoFillAiScanButton => 'AI স্ক্যান দিয়ে অটো ফিল করুন';
 
   @override
-  String get savingLabel =>
-      '╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º...';
+  String get savingLabel => 'সংরক্ষণ হচ্ছে...';
 
   @override
-  String get savePlantButton =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get savePlantButton => 'গাছ সংরক্ষণ করুন';
 
   @override
-  String get tomorrowLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬½╬▒┬║├ç╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûô';
+  String get tomorrowLabel => 'আগামীকাল';
 
   @override
-  String get laterThisWeekLabel =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬Γòò╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬Γòú╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬║├º';
+  String get laterThisWeekLabel => 'এই সপ্তাহে পরে';
 
   @override
-  String get careCalendarTitle =>
-      '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get careCalendarTitle => 'পরিচর্যা ক্যালেন্ডার';
 
   @override
-  String get noCareTasksTitle =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬ú ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get noCareTasksTitle => 'এখনো কোনো পরিচর্যার কাজ নেই';
 
   @override
   String get noCareTasksBody =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γòò╬▒┬║├⌐╬▒┬¬├£╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'পানি দেওয়ার সময়সূচি দেখতে একটি গাছ যোগ করুন।';
 
   @override
   String careTaskWater(String name) {
-    return '$name-╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+    return '$name-কে পানি দিন';
   }
 
   @override
   String careTaskFertilize(String name) {
-    return '$name-╬▒┬¬├à ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+    return '$name-এ সার দিন';
   }
 
   @override
-  String get allCaughtUpTitle =>
-      '╬▒┬¬Γòò╬▒┬¬┬╝ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├╣╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º!';
+  String get allCaughtUpTitle => 'সব করা হয়ে গেছে!';
 
   @override
-  String get allCaughtUpBody =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬║╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬┬¬ ╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒';
+  String get allCaughtUpBody => 'আপনার গাছেরা আপনাকে ধন্যবাদ জানাচ্ছে।';
 
   @override
-  String get myPlantsTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬┬╝╬▒┬║├╝╬▒┬¬┬ú ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get myPlantsTitle => 'আমার সবুজ পরিবার';
 
   @override
-  String get searchPlantsHint =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬├╝╬▒┬¬┬ú╬▒┬║├╝╬▒┬¬┬┐...';
+  String get searchPlantsHint => 'গাছ খুঁজুন...';
 
   @override
-  String get statPlants => '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó';
+  String get statPlants => 'গাছ';
 
   @override
-  String get statHealth =>
-      '╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗';
+  String get statHealth => 'স্বাস্থ্য';
 
   @override
-  String get statWaterToday => '╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get statWaterToday => 'আজ পানি';
 
   @override
-  String get noPlantsTitle =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get noPlantsTitle => 'এখনো কোনো গাছ নেই';
 
   @override
-  String get noPlantsBody =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├æ╬▒┬¬┬½ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º + ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+  String get noPlantsBody => 'প্রথম গাছ যোগ করতে + চাপুন।';
 
   @override
   String plantWateredSnackbar(String name) {
-    return '$name-╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬Γòú╬▒┬║├¼╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬Γûô╬▒┬║├» Γëí╞Æ├å┬║';
+    return '$name-কে পানি দেওয়া হয়েছে চিহ্নিত করা হলো 💧';
   }
 
   @override
-  String get deletePlantConfirmTitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬½╬▒┬║├╝╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬┐?';
+  String get deletePlantConfirmTitle => 'গাছটি মুছবেন?';
 
   @override
   String deletePlantConfirmBody(String name) {
-    return '$name ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬├╣╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòú ╬▒┬¬├æ╬▒┬║├º╬▒┬¬├▓╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬╜╬▒┬║├º╬▒┬¬Γûô╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╝╬▒┬║├º╬▒├æ├▒';
+    return '$name আপনার সংগ্রহ থেকে সরিয়ে ফেলা হবে।';
   }
 
   @override
-  String get plantFallbackTitle => '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó';
+  String get plantFallbackTitle => 'গাছ';
 
   @override
-  String get plantNotFoundMessage =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒';
+  String get plantNotFoundMessage => 'গাছটি পাওয়া যায়নি।';
 
   @override
-  String get markAsWateredTooltip =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬Γòú╬▒┬║├¼╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get markAsWateredTooltip => 'পানি দেওয়া হয়েছে চিহ্নিত করুন';
 
   @override
-  String get deletePlantMenuItem =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬½╬▒┬║├╝╬▒┬¬┬ó╬▒┬║├╝╬▒┬¬┬┐';
+  String get deletePlantMenuItem => 'গাছ মুছুন';
 
   @override
-  String get todaysCareTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬ú╬▒┬¬├▓╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢';
+  String get todaysCareTitle => 'আজকের পরিচর্যা';
 
   @override
   String plantWaterLevelLabel(String level) {
-    return '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ: $level';
+    return 'পানি: $level';
   }
 
   @override
-  String get noFertilizerNoteMessage =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬┐╬▒┬║├»╬▒┬¬╞Æ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get noFertilizerNoteMessage => 'এখনো সারের কোনো নোট নেই';
 
   @override
   String plantFertilizeNoteLabel(String note) {
-    return '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ: $note';
+    return 'সার: $note';
   }
 
   @override
   String plantLastScanLabel(String when) {
-    return '╬▒┬¬Γòò╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐: $when';
+    return 'সর্বশেষ স্ক্যান: $when';
   }
 
   @override
-  String get scanAgainButton =>
-      '╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get scanAgainButton => 'আবার স্ক্যান করুন';
 
   @override
-  String get askAiDoctorButton =>
-      'AI ╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬║├¼╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬ú╬▒┬¬ΓöÉ╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get askAiDoctorButton => 'AI ডাক্তারকে জিজ্ঞাসা করুন';
 
   @override
-  String get plantHistoryTitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├º╬▒┬¬├▒╬▒┬¬ΓöÉ╬▒┬¬Γòú╬▒┬¬Γò¢╬▒┬¬Γòò';
+  String get plantHistoryTitle => 'গাছের ইতিহাস';
 
   @override
-  String get noActivityTitle =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬½ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get noActivityTitle => 'এখনো কোনো কার্যক্রম নেই';
 
   @override
-  String get noActivityBody =>
-      '╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬Γûæ╬▒┬║├╝ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬┬╝╬▒┬¬Γò¢ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐!';
+  String get noActivityBody => 'শুরু করতে একটি গাছ স্ক্যান করুন বা পানি দিন!';
 
   @override
   String historyScanEntry(String name) {
-    return 'AI ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬ô├ç├│ $name';
+    return 'AI স্ক্যান • $name';
   }
 
   @override
   String historyWateredEntry(String name) {
-    return '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬ô├ç├│ $name';
+    return 'পানি দেওয়া হয়েছে • $name';
   }
 
   @override
-  String get notScannedYetLabel =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get notScannedYetLabel => 'এখনো স্ক্যান করা হয়নি';
 
   @override
   String healthCritical(int percent) {
-    return '$percent% ╬ô├ç├│ ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬┐';
+    return '$percent% • সংকটাপন্ন';
   }
 
   @override
   String healthNeedsCare(int percent) {
-    return '$percent% ╬ô├ç├│ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├»╬▒┬¬┬ú╬▒┬¬┬┐';
+    return '$percent% • পরিচর্যা প্রয়োজন';
   }
 
   @override
   String healthHealthy(int percent) {
-    return '$percent% ╬ô├ç├│ ╬▒┬¬Γòò╬▒┬║├╝╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ';
+    return '$percent% • সুস্থ';
   }
 
   @override
-  String get settingsMenuLabel => '╬▒┬¬Γòò╬▒┬║├º╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬├⌐╬▒┬¬Γòò';
+  String get settingsMenuLabel => 'সেটিংস';
 
   @override
-  String get profileTitle =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬┬╜╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬Γûô';
+  String get profileTitle => 'প্রোফাইল';
 
   @override
   String profileMemberSince(String year) {
-    return '$year ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûô ╬▒┬¬├æ╬▒┬║├º╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ';
+    return '$year সাল থেকে প্ল্যান্ট প্যারেন্ট';
   }
 
   @override
-  String get statAvgHealth =>
-      '╬▒┬¬├╣╬▒┬¬├¡╬▒┬¬Γò¥ ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗';
+  String get statAvgHealth => 'গড় স্বাস্থ্য';
 
   @override
-  String get statBadges => '╬▒┬¬┬╝╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬ú';
+  String get statBadges => 'ব্যাজ';
 
   @override
-  String get quickMenuTitle =>
-      '╬▒┬¬├▓╬▒┬║├╝╬▒┬¬├º╬▒┬¬├▓ ╬▒┬¬┬½╬▒┬║├º╬▒┬¬┬┐╬▒┬║├╝';
+  String get quickMenuTitle => 'কুইক মেনু';
 
   @override
-  String get chooseLanguageTitle =>
-      '╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬Γòû╬▒┬¬Γò¢ ╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+  String get chooseLanguageTitle => 'ভাষা বেছে নিন';
 
   @override
   String get aboutBody =>
-      '╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├║ ╬▒┬║┬║.╬▒┬║┬¬.╬▒┬║┬¬\n\n╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬╝╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬║╬▒┬║├╝╬▒┬¬├▒╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬┬¼╬▒┬║├⌐╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├║ AI ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬Γòò╬▒┬¬Γòú╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├ç ╬ô├ç├╢ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐, ╬▒┬¬╞Æ╬▒┬║├¼╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├▓ ╬▒┬¬├┤ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'সংস্করণ ১.০.০\n\nআপনার বন্ধুত্বপূর্ণ AI বাগান সহকারী — নিশ্চিন্তে আপনার গাছ স্ক্যান, ট্র্যাক ও পরিচর্যা করুন।';
 
   @override
-  String get notificationsSectionTitle =>
-      '╬▒┬¬┬┐╬▒┬║├»╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬┬╜╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬║├º╬▒┬¬Γòó╬▒┬¬┬┐';
+  String get notificationsSectionTitle => 'নোটিফিকেশন';
 
   @override
-  String get pushNotificationsLabel =>
-      '╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬Γòó ╬▒┬¬┬┐╬▒┬║├»╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬┬╜╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬║├º╬▒┬¬Γòó╬▒┬¬┬┐';
+  String get pushNotificationsLabel => 'পুশ নোটিফিকেশন';
 
   @override
-  String get pushNotificationsSubtitle =>
-      '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬┬║╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬├║ ╬▒┬¬├á╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬¼ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬├¡╬▒┬║├º╬▒┬¬╞Æ ╬▒┬¬├┤ ╬▒┬¬Γòò╬▒┬¬├▒╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▓╬▒┬¬├▒╬▒┬¬Γò¢';
+  String get pushNotificationsSubtitle => 'সাধারণ অ্যাপ আপডেট ও সতর্কতা';
 
   @override
-  String get wateringRemindersLabel =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get wateringRemindersLabel => 'পানি দেওয়ার রিমাইন্ডার';
 
   @override
-  String get wateringRemindersSubtitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├»╬▒┬¬┬ú╬▒┬¬┬┐ ╬▒┬¬Γòú╬▒┬¬Γûô╬▒┬║├º ╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γòú╬▒┬¬┬╝╬▒┬║├º';
+  String get wateringRemindersSubtitle => 'গাছে পানি প্রয়োজন হলে জানানো হবে';
 
   @override
-  String get appearanceSectionTitle =>
-      '╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòú╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬Γò¢';
+  String get appearanceSectionTitle => 'চেহারা';
 
   @override
-  String get darkModeLabel =>
-      '╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▓ ╬▒┬¬┬½╬▒┬║├»╬▒┬¬├¡';
+  String get darkModeLabel => 'ডার্ক মোড';
 
   @override
-  String get generalSectionTitle => '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬┬║╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬├║';
+  String get generalSectionTitle => 'সাধারণ';
 
   @override
-  String get languageLabel => '╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬Γòû╬▒┬¬Γò¢';
+  String get languageLabel => 'ভাষা';
 
   @override
-  String get aboutPlantPalLabel =>
-      'PlantPal ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▓╬▒┬║├º';
+  String get aboutPlantPalLabel => 'PlantPal সম্পর্কে';
 
   @override
-  String get accountSectionTitle =>
-      '╬▒┬¬├á╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬├½╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ';
+  String get accountSectionTitle => 'অ্যাকাউন্ট';
 
   @override
-  String get logoutConfirmBody =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬├▓╬▒┬¬ΓöÉ ╬▒┬¬Γûô╬▒┬¬├╣ ╬▒┬¬├Ñ╬▒┬¬├½╬▒┬¬╞Æ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬┬┐?';
+  String get logoutConfirmBody => 'আপনি কি লগ আউট করতে চান?';
 
   @override
-  String get reviewsSectionTitle => '╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½';
+  String get reviewsSectionTitle => 'রিভিউ';
 
   @override
-  String get noReviewsMessage =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º╬▒├æ├▒ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├æ╬▒┬¬┬½ ╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐!';
+  String get noReviewsMessage => 'এখনো কোনো রিভিউ নেই। প্রথম রিভিউ দিন!';
 
   @override
-  String get writeReviewTitle =>
-      '╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½ ╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐';
+  String get writeReviewTitle => 'রিভিউ লিখুন';
 
   @override
-  String get yourRatingLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬├⌐';
+  String get yourRatingLabel => 'আপনার রেটিং';
 
   @override
-  String get reviewHintText =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├á╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº╬▒┬¬├▒╬▒┬¬Γò¢ ╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬┐...';
+  String get reviewHintText => 'এই পণ্য নিয়ে আপনার অভিজ্ঞতা জানান...';
 
   @override
-  String get submitReviewButton =>
-      '╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½ ╬▒┬¬┬ú╬▒┬¬┬½╬▒┬¬Γò¢ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+  String get submitReviewButton => 'রিভিউ জমা দিন';
 
   @override
-  String get categoryAllLabel => '╬▒┬¬Γòò╬▒┬¬┬╝';
+  String get categoryAllLabel => 'সব';
 
   @override
-  String get productFallbackTitle => '╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗';
+  String get productFallbackTitle => 'পণ্য';
 
   @override
-  String get productNotFoundMessage =>
-      '╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒';
+  String get productNotFoundMessage => 'পণ্যটি পাওয়া যায়নি।';
 
   @override
-  String get detailsSectionTitle =>
-      '╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├▒';
+  String get detailsSectionTitle => 'বিস্তারিত';
 
   @override
-  String get descriptionSectionTitle =>
-      '╬▒┬¬┬╝╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├║╬▒┬¬┬┐╬▒┬¬Γò¢';
+  String get descriptionSectionTitle => 'বর্ণনা';
 
   @override
-  String get quantitySectionTitle => '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬├║';
+  String get quantitySectionTitle => 'পরিমাণ';
 
   @override
   String productQuantityFormula(int qty, String unit) {
-    return '= $qty Γö£├╣ $unit';
+    return '= $qty × $unit';
   }
 
   @override
-  String get buyNowButton =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬¬├º ╬▒┬¬├▓╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬┬┐';
+  String get buyNowButton => 'এখনই কিনুন';
 
   @override
   String productReviewsCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½',
-      zero: '╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬├½ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º',
+      other: '$countটি রিভিউ',
+      zero: 'কোনো রিভিউ নেই',
     );
     return '$_temp0';
   }
 
   @override
   String productInStock(int count) {
-    return '$count╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬½╬▒┬¬┬ú╬▒┬║├╝╬▒┬¬┬¬ ╬▒┬¬├Ñ╬▒┬¬┬ó╬▒┬║├º';
+    return '$countটি মজুদ আছে';
   }
 
   @override
-  String get shopSubtitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├»╬▒┬¬┬ú╬▒┬¬┬┐╬▒┬║├ç╬▒┬¬┬╗╬▒┬¬Γò¥ ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬Γòò╬▒┬¬Γûæ╬▒┬¬Γéº╬▒┬║├¼╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬½ ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬├╝╬▒┬¬┬ú╬▒┬║├╝╬▒┬¬┬┐';
+  String get shopSubtitle => 'আপনার প্রয়োজনীয় বাগান সরঞ্জাম খুঁজুন';
 
   @override
-  String get searchProductsHint =>
-      '╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬├╗╬▒┬║├╝╬▒┬¬├╝╬▒┬¬┬ú╬▒┬║├╝╬▒┬¬┬┐...';
+  String get searchProductsHint => 'পণ্য খুঁজুন...';
 
   @override
-  String get noProductsFoundMessage =>
-      '╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get noProductsFoundMessage => 'কোনো পণ্য পাওয়া যায়নি';
 
   @override
   String productAddedToCartSnackbar(String name) {
-    return '$name ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬╞Æ╬▒┬║├º ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º';
+    return '$name কার্টে যোগ করা হয়েছে';
   }
 
   @override
-  String get wishlistTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├½╬▒┬¬├º╬▒┬¬Γòó╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬╞Æ';
+  String get wishlistTitle => 'আমার উইশলিস্ট';
 
   @override
-  String get wishlistEmptyTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├½╬▒┬¬├º╬▒┬¬Γòó╬▒┬¬Γûô╬▒┬¬ΓöÉ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬ΓöÉ';
+  String get wishlistEmptyTitle => 'আপনার উইশলিস্ট খালি';
 
   @override
   String get wishlistEmptyBody =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬┬╗╬▒┬║├º╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòú╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬├Ñ╬▒┬¬├º╬▒┬¬├▓╬▒┬¬┬┐╬▒┬║├º ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'এখানে সংরক্ষণ করতে যেকোনো পণ্যের হার্ট আইকনে চাপুন।';
 
   @override
-  String get browseShopButton =>
-      '╬▒┬¬┬¬╬▒┬║├»╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐';
+  String get browseShopButton => 'দোকান দেখুন';
 
   @override
-  String get plantBotAnalyzingLabel =>
-      'PlantBot ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├º╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬┬ó╬▒┬║├º...';
+  String get plantBotAnalyzingLabel => 'PlantBot বিশ্লেষণ করছে...';
 
   @override
-  String get scanPlantTitle =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get scanPlantTitle => 'আপনার গাছ স্ক্যান করুন';
 
   @override
-  String get analyzingPlantLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├º╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º...';
+  String get analyzingPlantLabel => 'আপনার গাছ বিশ্লেষণ করা হচ্ছে...';
 
   @override
-  String get chooseFromGalleryButton =>
-      '╬▒┬¬├╣╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬├æ╬▒┬║├º╬▒┬¬├▓╬▒┬║├º ╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐';
+  String get chooseFromGalleryButton => 'গ্যালারি থেকে বেছে নিন';
 
   @override
-  String get plantIdentifiedTitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòó╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬║├¼╬▒┬¬├▒ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º';
+  String get plantIdentifiedTitle => 'গাছ শনাক্ত হয়েছে';
 
   @override
-  String get noScanYetTitle =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get noScanYetTitle => 'এখনো স্ক্যান করা হয়নি';
 
   @override
-  String get noScanYetBody =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├æ╬▒┬¬┬½╬▒┬║├º ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬├▒╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬┬╝╬▒┬¬Γò¢ ╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒├æ├▒';
+  String get noScanYetBody => 'প্রথমে একটি গাছের ছবি তুলুন বা বেছে নিন।';
 
   @override
-  String get unknownPlantLabel =>
-      '╬▒┬¬├á╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó';
+  String get unknownPlantLabel => 'অজানা গাছ';
 
   @override
-  String get aiHardcodedLabel =>
-      '╬▒┬¬┬¼╬▒┬║├⌐╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬║╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬├½╬▒┬¬├▒╬▒┬║├¼╬▒┬¬├▒╬▒┬¬Γûæ';
+  String get aiHardcodedLabel => 'পূর্বনির্ধারিত উত্তর';
 
   @override
-  String get viewCareGuideButton =>
-      '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬├¡ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├╗╬▒┬║├╝╬▒┬¬┬┐';
+  String get viewCareGuideButton => 'পরিচর্যা গাইড দেখুন';
 
   @override
-  String get captionHint =>
-      '╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬¬Γòó╬▒┬¬┬┐ ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐ (╬▒┬¬├ë╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬¬ΓöÉ╬▒┬¬├▓)...';
+  String get captionHint => 'ক্যাপশন যোগ করুন (ঐচ্ছিক)...';
 
   @override
-  String get chatInputHint =>
-      '╬▒┬¬┬╗╬▒┬║├º╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬¬ΓöÉ╬▒┬¬┬ó╬▒┬║├╝ ╬▒┬¬┬ú╬▒┬¬ΓöÉ╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº╬▒┬¬Γò¢╬▒┬¬Γòò╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐...';
+  String get chatInputHint => 'যেকোনো কিছু জিজ্ঞাসা করুন...';
 
   @override
-  String get aiVisionAnalysisTitle =>
-      'AI ╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬¬┬┐ ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├º╬▒┬¬Γòû╬▒┬¬├║';
+  String get aiVisionAnalysisTitle => 'AI ভিশন বিশ্লেষণ';
 
   @override
   String diagnosisProblemLabel(String issue) {
-    return '╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢: $issue';
+    return 'সমস্যা: $issue';
   }
 
   @override
   String diagnosisConfidenceSeverity(String confidence, String severity) {
-    return '╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬í╬▒┬║├╝╬▒┬¬Γûô╬▒┬¬├▒╬▒┬¬Γò¢: $confidence | ╬▒┬¬├▒╬▒┬║├ç╬▒┬¬┬╝╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬¬Γò¢: $severity';
+    return 'নির্ভুলতা: $confidence | তীব্রতা: $severity';
   }
 
   @override
-  String get treatmentLabel =>
-      '╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬ΓöÉ╬▒┬║├ä╬▒┬¬Γòò╬▒┬¬Γò¢:';
+  String get treatmentLabel => 'চিকিৎসা:';
 
   @override
-  String get recommendedFertilizerLabel =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ:';
+  String get recommendedFertilizerLabel => 'প্রস্তাবিত সার:';
 
   @override
-  String get shopProductsLabel =>
-      '╬▒┬¬┬¬╬▒┬║├»╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗:';
+  String get shopProductsLabel => 'দোকানের পণ্য:';
 
   @override
   String bulletItem(String item) {
-    return '╬ô├ç├│ $item';
+    return '• $item';
   }
 
   @override
   String get aiDisclaimerText =>
-      '╬▒┬¬├à╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬Γòó╬▒┬║├╝╬▒┬¬┬║╬▒┬║├╝╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬║├¼╬▒┬¬Γûæ AI-╬▒┬¬├à╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬½╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬Γòó ╬ô├ç├╢ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬├╣╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├║╬▒┬¬┬╗╬▒┬¬Γò¥ ╬▒┬¬┬┐╬▒┬¬┬╗╬▒┬¬Γò¥╬▒├æ├▒ ╬▒┬¬├╣╬▒┬║├╝╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬├▒╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥ ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├æ╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├ç╬▒┬¬┬╗╬▒┬¬Γò¥ ╬▒┬¬├½╬▒┬¬┬¬╬▒┬║├¼╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬┬¬ ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬½╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬Γòó ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒├æ├▒';
+      'এটি শুধুমাত্র AI-এর পরামর্শ — নিশ্চিত রোগনির্ণয় নয়। গুরুতর সমস্যায় স্থানীয় উদ্ভিদ বিশেষজ্ঞের পরামর্শ নিন।';
 
   @override
   String get chatWelcomeMessage =>
-      '╬▒┬¬Γòú╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├»! ╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬ΓöÉ PlantBot╬▒├æ├▒\n╬▒┬¬├Ñ╬▒┬¬┬ú ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ú╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬ΓöÉ ╬▒┬¬├▓╬▒┬║├ç╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γòú╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬ΓöÉ?';
+      'হ্যালো! আমি PlantBot।\nআজ আপনার গাছের জন্য আমি কীভাবে সাহায্য করতে পারি?';
 
   @override
-  String get chatSuggestion1 =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬Γûô╬▒┬║├╝╬▒┬¬┬¬ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬┐?';
+  String get chatSuggestion1 => 'আমার পাতা হলুদ হয়ে যাচ্ছে কেন?';
 
   @override
-  String get chatSuggestion2 =>
-      '╬▒┬¬├┐╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├▒╬▒┬║├¬╬▒┬¬Γûæ╬▒┬¬ΓöÉ ╬▒┬¬├▓╬▒┬¬Γûô╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get chatSuggestion2 => 'ঘরে তৈরি কলার সার';
 
   @override
-  String get chatSuggestion3 =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¬╬▒┬¬Γò¢╬▒┬¬├╣╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬├▓╬▒┬¬ΓöÉ╬▒┬║├ä╬▒┬¬Γòò╬▒┬¬Γò¢';
+  String get chatSuggestion3 => 'পাতার দাগের চিকিৎসা';
 
   @override
   String get chatRateLimitError =>
-      '╬▒┬¬┬╜╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ-╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬║├ç╬▒┬¬┬½╬▒┬¬Γò¢ ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû╬▒├æ├▒ ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬├╣╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòú ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º ╬▒┬║┬║╬▒┬║┬¬ ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├¡ ╬▒┬¬├á╬▒┬¬┬¼╬▒┬║├º╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'ফ্রি-টিয়ারের সীমা শেষ। অনুগ্রহ করে ১০ সেকেন্ড অপেক্ষা করে আবার চেষ্টা করুন।';
 
   @override
   String get signInRequiredChatMessage =>
-      'PlantBot-╬▒┬¬├à╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├æ╬▒┬║├º ╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬╞Æ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º Google ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'PlantBot-এর সাথে চ্যাট করতে Google দিয়ে সাইন ইন করুন।';
 
   @override
   String get connectionErrorMessage =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ ╬▒┬¬┬┐╬▒┬¬Γûô╬▒┬║├º╬▒┬¬┬ú ╬▒┬¬┬╝╬▒┬║├º╬▒┬¬┬ú╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├æ╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒ ╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬║├ç╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'আমার প্ল্যান্ট নলেজ বেজের সাথে সংযোগ করতে সমস্যা হচ্ছে। আপনার সংযোগ পরীক্ষা করুন।';
 
   @override
   String get genericChatErrorMessage =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬Γûæ╬▒┬║├»╬▒┬¬┬║╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒ ╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐!';
+      'এই অনুরোধে সমস্যা হয়েছে। আবার চেষ্টা করুন!';
 
   @override
   String get scanRateLimitError =>
-      '╬▒┬¬Γòò╬▒┬║├ç╬▒┬¬┬½╬▒┬¬Γò¢ ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├╣╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒ ╬▒┬¬├á╬▒┬¬┬┐╬▒┬║├╝╬▒┬¬├╣╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬Γòú ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º ╬▒┬║┬║╬▒┬║┬¬ ╬▒┬¬Γòò╬▒┬║├º╬▒┬¬├▓╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬├¡ ╬▒┬¬├á╬▒┬¬┬¼╬▒┬║├º╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'সীমা শেষ হয়ে গেছে। অনুগ্রহ করে ১০ সেকেন্ড অপেক্ষা করে আবার চেষ্টা করুন।';
 
   @override
   String get signInRequiredScanMessage =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º Google ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬├º╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'গাছ স্ক্যান করতে Google দিয়ে সাইন ইন করুন।';
 
   @override
   String get scanAnalysisErrorMessage =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬Γòó╬▒┬║├¼╬▒┬¬Γûô╬▒┬║├º╬▒┬¬Γòû╬▒┬¬├║ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒├æ├▒ ╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'এই ছবিটি বিশ্লেষণ করা যায়নি। আবার চেষ্টা করুন।';
 
   @override
-  String get plantDetailsTitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬Γûæ╬▒┬¬├║';
+  String get plantDetailsTitle => 'গাছের বিবরণ';
 
   @override
-  String get careSummaryTitle =>
-      '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬├£╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬║├º╬▒┬¬┬¼';
+  String get careSummaryTitle => 'পরিচর্যার সারসংক্ষেপ';
 
   @override
-  String get actionsTitle =>
-      '╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬½';
+  String get actionsTitle => 'কার্যক্রম';
 
   @override
-  String get lastWateredLabel =>
-      '╬▒┬¬Γòò╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º';
+  String get lastWateredLabel => 'সর্বশেষ পানি দেওয়া হয়েছে';
 
   @override
-  String get nextWaterLabel =>
-      '╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬┬╝╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▒╬▒┬║├ç ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬¬┬╗╬▒┬¬Γò¥';
+  String get nextWaterLabel => 'পরবর্তী পানি দেওয়ার সময়';
 
   @override
-  String get sunlightLabel =>
-      '╬▒┬¬Γòò╬▒┬║├⌐╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬║├»╬▒┬¬├▓';
+  String get sunlightLabel => 'সূর্যালোক';
 
   @override
-  String get neverWateredLabel =>
-      '╬▒┬¬├▓╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬┐╬▒┬¬┬╗╬▒┬¬Γò¥';
+  String get neverWateredLabel => 'কখনো নয়';
 
   @override
-  String get wateredTodayLabel => '╬▒┬¬├Ñ╬▒┬¬┬ú';
+  String get wateredTodayLabel => 'আজ';
 
   @override
   String daysAgoLabel(int days) {
-    return '$days ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐ ╬▒┬¬├Ñ╬▒┬¬├╣╬▒┬║├º';
+    return '$days দিন আগে';
   }
 
   @override
-  String get waterNowLabel =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬¬├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐!';
+  String get waterNowLabel => 'এখনই পানি দিন!';
 
   @override
   String daysLeftLabel(int days) {
-    return '$days ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬┐ ╬▒┬¬┬¼╬▒┬¬Γûæ';
+    return '$days দিন পর';
   }
 
   @override
-  String get unknownSpeciesLabel =>
-      '╬▒┬¬├á╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬Γò¢ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬ú╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬¬ΓöÉ';
+  String get unknownSpeciesLabel => 'অজানা প্রজাতি';
 
   @override
-  String get noNicknameLabel =>
-      '╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬├▓╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬┬½ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get noNicknameLabel => 'কোনো ডাকনাম নেই';
 
   @override
-  String get markWateredButton =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬├£╬▒┬¬ΓöÉ╬▒┬¬Γòú╬▒┬║├¼╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get markWateredButton => 'পানি দেওয়া হয়েছে চিহ্নিত করুন';
 
   @override
-  String get editPlantButton =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├▒╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬Γòò╬▒┬¬┬½╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬¬╬▒┬¬┬┐╬▒┬¬Γò¢';
+  String get editPlantButton => 'গাছের তথ্য সম্পাদনা';
 
   @override
   String markedWateredSnackbar(String name) {
-    return '$name-╬▒┬¬├à ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¬╬▒┬║├º╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º Γëí╞Æ├å┬║';
+    return '$name-এ পানি দেওয়া হয়েছে 💧';
   }
 
   @override
-  String get needsWaterTooltip =>
-      '╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬┬┐╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├»╬▒┬¬┬ú╬▒┬¬┬┐';
+  String get needsWaterTooltip => 'পানি প্রয়োজন';
 
   @override
-  String get emptyPlantsTitle =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get emptyPlantsTitle => 'এখনো কোনো গাছ নেই';
 
   @override
-  String get emptyPlantsBody =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├æ╬▒┬¬┬½ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬├▒╬▒┬║├º + ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+  String get emptyPlantsBody => 'আপনার প্রথম গাছ যোগ করতে + চাপুন।';
 
   @override
-  String get addFirstPlantButton =>
-      '╬▒┬¬├Ñ╬▒┬¬┬¼╬▒┬¬┬┐╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├æ╬▒┬¬┬½ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬╗╬▒┬║├»╬▒┬¬├╣ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get addFirstPlantButton => 'আপনার প্রথম গাছ যোগ করুন';
 
   @override
-  String get plantsGridHeader =>
-      '╬▒┬¬├Ñ╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬Γò¢';
+  String get plantsGridHeader => 'আমার গাছপালা';
 
   @override
-  String get editPlantTitle =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├▒╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▒╬▒┬¬┬┐';
+  String get editPlantTitle => 'গাছের তথ্য পরিবর্তন';
 
   @override
-  String get plantSavedSnackbar =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├▒╬▒┬¬├æ╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬Γòò╬▒┬¬┬╜╬▒┬¬Γûô╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬║├º ╬▒┬¬Γòò╬▒┬¬├⌐╬▒┬¬Γûæ╬▒┬¬├▓╬▒┬║├¼╬▒┬¬Γòû╬▒┬¬ΓöÉ╬▒┬¬├▒ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º╬▒├æ├▒';
+  String get plantSavedSnackbar => 'গাছের তথ্য সফলভাবে সংরক্ষিত হয়েছে।';
 
   @override
-  String get deleteConfirmTitle =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬┬½╬▒┬║├╝╬▒┬¬┬ó╬▒┬║├º ╬▒┬¬┬╜╬▒┬║├º╬▒┬¬Γûô╬▒┬¬├▒╬▒┬║├º ╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬┬┐?';
+  String get deleteConfirmTitle => 'এই গাছটি মুছে ফেলতে চান?';
 
   @override
-  String get deleteConfirmBody =>
-      '╬▒┬¬├à╬▒┬¬├º ╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬ú╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├Ñ╬▒┬¬Γûæ ╬▒┬¬┬╜╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬├Ñ╬▒┬¬┬┐╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬║├º ╬▒┬¬┬┐╬▒┬¬Γò¢╬▒├æ├▒';
+  String get deleteConfirmBody => 'এই কাজটি আর ফিরিয়ে আনা যাবে না।';
 
   @override
-  String get deletePlantButton =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó ╬▒┬¬┬½╬▒┬║├╝╬▒┬¬┬ó╬▒┬║├╝╬▒┬¬┬┐';
+  String get deletePlantButton => 'গাছ মুছুন';
 
   @override
-  String get changePhotoLabel =>
-      '╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬¬ΓöÉ╬▒┬¬┬╝╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▒╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get changePhotoLabel => 'ছবি পরিবর্তন করুন';
 
   @override
-  String get settingsSectionTitle => '╬▒┬¬Γòò╬▒┬║├º╬▒┬¬╞Æ╬▒┬¬ΓöÉ╬▒┬¬├⌐╬▒┬¬Γòò';
+  String get settingsSectionTitle => 'সেটিংস';
 
   @override
-  String get notificationsLabel =>
-      '╬▒┬¬┬╝╬▒┬¬ΓöÉ╬▒┬¬┬ú╬▒┬║├¼╬▒┬¬Γéº╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬├▒╬▒┬¬ΓöÉ';
+  String get notificationsLabel => 'বিজ্ঞপ্তি';
 
   @override
-  String get helpLabel => '╬▒┬¬Γòò╬▒┬¬Γò¢╬▒┬¬Γòú╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬║├¼╬▒┬¬┬╗';
+  String get helpLabel => 'সাহায্য';
 
   @override
-  String get aboutLabel => '╬▒┬¬Γòò╬▒┬¬┬½╬▒┬║├¼╬▒┬¬┬¼╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├▓╬▒┬║├º';
+  String get aboutLabel => 'সম্পর্কে';
 
   @override
-  String get profileStatPlants =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûô╬▒┬¬Γò¢';
+  String get profileStatPlants => 'গাছপালা';
 
   @override
-  String get profileStatOrders => '╬▒┬¬├á╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬├¡╬▒┬¬Γò¢╬▒┬¬Γûæ';
+  String get profileStatOrders => 'অর্ডার';
 
   @override
-  String get profileStatPoints => '╬▒┬¬┬¼╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬┐╬▒┬║├¼╬▒┬¬╞Æ';
+  String get profileStatPoints => 'পয়েন্ট';
 
   @override
-  String get shopTitle => '╬▒┬¬┬¬╬▒┬║├»╬▒┬¬├▓╬▒┬¬Γò¢╬▒┬¬┬┐';
+  String get shopTitle => 'দোকান';
 
   @override
-  String get allCategoryLabel => '╬▒┬¬Γòò╬▒┬¬┬╝';
+  String get allCategoryLabel => 'সব';
 
   @override
-  String get noProductsFoundTitle =>
-      '╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬┬¼╬▒┬¬├║╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬├┤╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get noProductsFoundTitle => 'কোনো পণ্য পাওয়া যায়নি';
 
   @override
-  String get noScanResultTitle =>
-      '╬▒┬¬├à╬▒┬¬├╗╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬├▓╬▒┬║├»╬▒┬¬┬┐╬▒┬║├» ╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬├▓╬▒┬║├¼╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬┐ ╬▒┬¬┬┐╬▒┬║├º╬▒┬¬├º';
+  String get noScanResultTitle => 'এখনো কোনো স্ক্যান নেই';
 
   @override
   String get noScanResultBody =>
-      '╬▒┬¬┬¼╬▒┬║├¼╬▒┬¬Γûæ╬▒┬¬├æ╬▒┬¬┬½╬▒┬║├º ╬▒┬¬├à╬▒┬¬├▓╬▒┬¬╞Æ╬▒┬¬ΓöÉ ╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬┬ó╬▒┬¬┬╝╬▒┬¬ΓöÉ ╬▒┬¬├▒╬▒┬║├╝╬▒┬¬Γûô╬▒┬║├╝╬▒┬¬┬┐ ╬▒┬¬┬╝╬▒┬¬Γò¢ ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬├£╬▒┬¬┬┐ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐╬▒├æ├▒';
+      'প্রথমে একটি গাছের ছবি তুলুন বা নির্বাচন করুন।';
 
   @override
-  String get defaultDisplayName =>
-      '╬▒┬¬├╣╬▒┬¬Γò¢╬▒┬¬┬ó╬▒┬║├º╬▒┬¬Γûæ ╬▒┬¬├á╬▒┬¬┬í╬▒┬¬ΓöÉ╬▒┬¬┬í╬▒┬¬Γò¢╬▒┬¬┬╝╬▒┬¬├▓';
+  String get defaultDisplayName => 'গাছের অভিভাবক';
 
   @override
-  String get refreshPriceButton =>
-      'AI ╬▒┬¬┬¬╬▒┬¬ΓöÉ╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º ╬▒┬¬┬¬╬▒┬¬Γò¢╬▒┬¬┬½ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬├º ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get refreshPriceButton => 'AI দিয়ে দাম যাচাই করুন';
 
   @override
-  String get checkingPriceLabel =>
-      '╬▒┬¬Γòò╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû ╬▒┬¬┬¬╬▒┬¬Γò¢╬▒┬¬┬½ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬├º ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬├£╬▒┬║├¼╬▒┬¬┬ó╬▒┬║├º...';
+  String get checkingPriceLabel => 'সর্বশেষ দাম যাচাই করা হচ্ছে...';
 
   @override
-  String get aiPriceRefreshedLabel =>
-      'AI ╬▒┬¬┬½╬▒┬║├⌐╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬├º';
+  String get aiPriceRefreshedLabel => 'AI মূল্য যাচাই';
 
   @override
   String priceCheckedAgoLabel(String timeAgo) {
-    return '╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬├º ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬¬Γò¢ ╬▒┬¬Γòú╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬║├º╬▒┬¬┬ó╬▒┬║├º $timeAgo';
+    return 'যাচাই করা হয়েছে $timeAgo';
   }
 
   @override
-  String get possiblyOutOfStockLabel =>
-      '╬▒┬¬Γòò╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬├▓ ╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû ╬▒┬¬Γòú╬▒┬¬├▒╬▒┬║├º ╬▒┬¬┬¼╬▒┬¬Γò¢╬▒┬¬Γûæ╬▒┬║├º';
+  String get possiblyOutOfStockLabel => 'স্টক শেষ হতে পারে';
 
   @override
-  String get priceRefreshFailedLabel =>
-      '╬▒┬¬Γòò╬▒┬¬Γûæ╬▒┬║├¼╬▒┬¬┬╝╬▒┬¬Γòó╬▒┬║├º╬▒┬¬Γòû ╬▒┬¬┬½╬▒┬║├⌐╬▒┬¬Γûô╬▒┬║├¼╬▒┬¬┬╗ ╬▒┬¬├Ñ╬▒┬¬┬┐╬▒┬¬Γò¢ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥╬▒┬¬┬┐╬▒┬¬ΓöÉ';
+  String get priceRefreshFailedLabel => 'সর্বশেষ মূল্য আনা যায়নি';
 
   @override
-  String get refreshAgainLabel =>
-      '╬▒┬¬├Ñ╬▒┬¬┬╝╬▒┬¬Γò¢╬▒┬¬Γûæ ╬▒┬¬┬╗╬▒┬¬Γò¢╬▒┬¬├£╬▒┬¬Γò¢╬▒┬¬├º ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get refreshAgainLabel => 'আবার যাচাই করুন';
 
   @override
-  String get retryLabel =>
-      '╬▒┬¬┬¼╬▒┬║├╝╬▒┬¬┬┐╬▒┬¬Γûæ╬▒┬¬Γò¢╬▒┬¬┬╗╬▒┬¬Γò¥ ╬▒┬¬├£╬▒┬║├º╬▒┬¬Γòû╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├▓╬▒┬¬Γûæ╬▒┬║├╝╬▒┬¬┬┐';
+  String get retryLabel => 'পুনরায় চেষ্টা করুন';
 
   @override
-  String get justNowLabel => '╬▒┬¬├à╬▒┬¬├º╬▒┬¬┬½╬▒┬¬Γò¢╬▒┬¬├▒╬▒┬║├¼╬▒┬¬Γûæ';
+  String get justNowLabel => 'এইমাত্র';
 
   @override
   String minutesAgoLabel(int count) {
-    return '$count ╬▒┬¬┬½╬▒┬¬ΓöÉ╬▒┬¬┬┐╬▒┬¬ΓöÉ╬▒┬¬╞Æ ╬▒┬¬├Ñ╬▒┬¬├╣╬▒┬║├º';
+    return '$count মিনিট আগে';
   }
 
   @override
   String hoursAgoLabel(int count) {
-    return '$count ╬▒┬¬├┐╬▒┬¬├║╬▒┬║├¼╬▒┬¬╞Æ╬▒┬¬Γò¢ ╬▒┬¬├Ñ╬▒┬¬├╣╬▒┬║├º';
+    return '$count ঘণ্টা আগে';
   }
 
   @override
-  String get navHome => 'αª╣αºïαª«';
+  String get navHome => 'হোম';
 
   @override
-  String get navScan => 'αª╕αºìαªòαºìαª»αª╛αª¿';
+  String get navScan => 'স্ক্যান';
 
   @override
-  String get navShop => 'αª╢αª¬';
+  String get navShop => 'শপ';
 
   @override
-  String get navAiDoctor => 'αªÅαªåαªç αªíαª╛αªòαºìαªñαª╛αª░';
+  String get navAiDoctor => 'এআই ডাক্তার';
 
   @override
-  String get navProfile => 'αª¬αºìαª░αºïαª½αª╛αªçαª▓';
+  String get navProfile => 'প্রোফাইল';
 }

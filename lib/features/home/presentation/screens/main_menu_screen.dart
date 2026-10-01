@@ -1,8 +1,9 @@
-
-import 'package:flutter/material.dart';
-import 'package:plantpal/features/home/presentation/widgets/main_menu_mascot.dart';
-import 'package:flutter/services.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:plantpal/core/widgets/fb_community_popup.dart';
+import 'package:plantpal/features/gamification/presentation/providers/points_provider.dart';
+import 'package:plantpal/features/home/presentation/widgets/main_menu_mascot.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/gradient_background.dart';
@@ -10,11 +11,14 @@ import '../widgets/main_menu_widgets.dart';
 import '../../../../l10n/app_localizations.dart';
 
 /// Main menu shown after login (route: /home).
-class MainMenuScreen extends StatelessWidget {
+class MainMenuScreen extends StatefulWidget {
   const MainMenuScreen({super.key});
 
-  static const int _points = 999;
-  static const int _pointsPerTaka = 100;
+  @override
+  State<MainMenuScreen> createState() => _MainMenuScreenState();
+}
+
+class _MainMenuScreenState extends State<MainMenuScreen> {
   static const String _mascotName = 'Tetoro';
 
   // Swap these for your own tile art (same filenames in assets/images/ works too).
@@ -24,18 +28,19 @@ class MainMenuScreen extends StatelessWidget {
   static const _imgMaintenance = 'assets/images/maintenance.png';
   static const _imgShop = 'assets/images/shop_image.png';
 
-  void _back(BuildContext context) {
-    if (context.canPop()) {
-      context.pop();
-    } else {
-      SystemNavigator.pop();
-    }
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) FbCommunityPopup.maybeShow(context);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final taka = (_points / _pointsPerTaka).round();
+    final points = context.watch<PointsController>().balance;
+    final taka = (points / PointsController.pointsPerTaka).round();
 
     return Scaffold(
       body: GradientBackground(
@@ -50,10 +55,10 @@ class MainMenuScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     PointsPill(
-                      points: _points,
+                      points: points,
                       taka: taka,
                       label: l10n.pointsBalanceLabel(
-                        _points.toString(),
+                        points.toString(),
                         taka.toString(),
                       ),
                     ),
@@ -163,14 +168,6 @@ class MainMenuScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: MainMenuBottomBar(
-        cameraLabel: l10n.cameraLabel,
-        chatLabel: l10n.chatWithExpertLabel,
-        backLabel: l10n.backButton,
-        onCamera: () => context.go('/scan'),
-        onChat: () => context.go('/ai-doctor'),
-        onBack: () => _back(context),
       ),
     );
   }
