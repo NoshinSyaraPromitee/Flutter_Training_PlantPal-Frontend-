@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import '../../../../l10n/generated/app_localizations.dart';
+import '../../../../l10n/app_localizations.dart';
 
 /// The "chat with expert" teaser row at the bottom of the home screen.
 class ChatAvatar extends StatelessWidget {

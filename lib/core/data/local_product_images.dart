@@ -1,0 +1,40 @@
+// Local product photos shipped in the app bundle, keyed by catalog product
+// id (see backend seed/products/catalog_*.go). Generated from
+// gardening_images.zip on 2026-09-26 — filenames already matched the
+// product ids 1:1, so this map is just id -> asset path with the original
+// extension preserved.
+const Map<String, String> localProductImagePaths = {
+  'fert-bone-meal-ongkoor': 'assets/images/products/fert-bone-meal-ongkoor.webp',
+  'fert-epsom-salt-ongkoor': 'assets/images/products/fert-epsom-salt-ongkoor.webp',
+  'fert-mustard-cake-ongkoor': 'assets/images/products/fert-mustard-cake-ongkoor.webp',
+  'fert-npk-american-daraz': 'assets/images/products/fert-npk-american-daraz.jpg',
+  'flower-chandra-mallika-ongkoor': 'assets/images/products/flower-chandra-mallika-ongkoor.webp',
+  'flower-crown-of-thorns-ongkoor': 'assets/images/products/flower-crown-of-thorns-ongkoor.webp',
+  'flower-kamini-ongkoor': 'assets/images/products/flower-kamini-ongkoor.webp',
+  'flower-petunia-ongkoor': 'assets/images/products/flower-petunia-ongkoor.webp',
+  'herb-bayleaf-ongkoor': 'assets/images/products/herb-bayleaf-ongkoor.webp',
+  'herb-mint-ongkoor': 'assets/images/products/herb-mint-ongkoor.webp',
+  'herb-rosemary-sobujghor': 'assets/images/products/herb-rosemary-sobujghor.jpg',
+  'light-led-grow-50w-daraz': 'assets/images/products/light-led-grow-50w-daraz.webp',
+  'outdoor-areca-palm-sobujghor': 'assets/images/products/outdoor-areca-palm-sobujghor.webp',
+  'outdoor-bougainvillea-pink-sobujghor': 'assets/images/products/outdoor-bougainvillea-pink-sobujghor.jpg',
+  'outdoor-cassia-fistula-sobujghor': 'assets/images/products/outdoor-cassia-fistula-sobujghor.jpeg',
+  'outdoor-hazari-rose-sobujghor': 'assets/images/products/outdoor-hazari-rose-sobujghor.jpg',
+  'plant-jade-crassula-ongkoor': 'assets/images/products/plant-jade-crassula-ongkoor.webp',
+  'plant-lucky-bamboo-950-awal': 'assets/images/products/plant-lucky-bamboo-950-awal.jpg',
+  'plant-spider-plant-awal': 'assets/images/products/plant-spider-plant-awal.webp',
+  'plant-zz-zamioculcas-sobujghor': 'assets/images/products/plant-zz-zamioculcas-sobujghor.webp',
+  'pot-geo-bag-25g-daraz': 'assets/images/products/pot-geo-bag-25g-daraz.jpg',
+  'seed-cherry-tomato-yellow-daraz': 'assets/images/products/seed-cherry-tomato-yellow-daraz.jpg',
+  'seed-chili-ornamental-daraz': 'assets/images/products/seed-chili-ornamental-daraz.jpg',
+  'seed-china-chili-daraz': 'assets/images/products/seed-china-chili-daraz.webp',
+  'seed-hibiscus-daraz': 'assets/images/products/seed-hibiscus-daraz.webp',
+  'succ-ball-cactus-sobujghor': 'assets/images/products/succ-ball-cactus-sobujghor.png',
+  'tool-garden-gloves-ongkoor': 'assets/images/products/tool-garden-gloves-ongkoor.webp',
+  'tool-hand-trowel-ongkoor': 'assets/images/products/tool-hand-trowel-ongkoor.webp',
+  'tool-mini-kodal-daraz': 'assets/images/products/tool-mini-kodal-daraz.webp',
+  'tool-pruning-shear-ongkoor': 'assets/images/products/tool-pruning-shear-ongkoor.webp',
+  'water-can-ongkoor': 'assets/images/products/water-can-ongkoor.webp',
+  'water-rfl-can-6l-othoba': 'assets/images/products/water-rfl-can-6l-othoba.webp',
+  'water-spray-bottle-othoba': 'assets/images/products/water-spray-bottle-othoba.jpeg',
+};

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -19,18 +18,18 @@ class QuantityStepper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget button(IconData icon, VoidCallback onTap) => InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(10),
-      child: Container(
-        width: 34,
-        height: 34,
-        decoration: BoxDecoration(
-          color: AppColors.green.withValues(alpha: 0.1),
+          onTap: onTap,
           borderRadius: BorderRadius.circular(10),
-        ),
-        child: Icon(icon, size: 18, color: AppColors.green),
-      ),
-    );
+          child: Container(
+            width: 34,
+            height: 34,
+            decoration: BoxDecoration(
+              color: AppColors.greenPrimary.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(icon, size: 18, color: AppColors.greenPrimary),
+          ),
+        );
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -38,7 +37,7 @@ class QuantityStepper extends StatelessWidget {
         button(Icons.remove, onMinus),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14),
-          child: Text('$value', style: AppTextStyles.titleMedium),
+          child: Text('$value', style: AppTextStyles.inter(16, w: FontWeight.w700)),
         ),
         button(Icons.add, onPlus),
       ],

@@ -1,13 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
-part 'auth_user.g.dart';
-
-/// Run `dart run build_runner build --delete-conflicting-outputs` after
-/// editing this class to regenerate auth_user.g.dart.
-@JsonSerializable()
 class AuthUser {
   const AuthUser({required this.id, required this.email, this.name});
-
   final String id;
   final String email;
   final String? name;
@@ -19,6 +11,7 @@ class AuthUser {
     return local.isEmpty ? 'Plant Parent' : local[0].toUpperCase() + local.substring(1);
   }
 
-  factory AuthUser.fromJson(Map<String, dynamic> json) => _$AuthUserFromJson(json);
-  Map<String, dynamic> toJson() => _$AuthUserToJson(this);
+  Map<String, dynamic> toJson() => {'id': id, 'email': email, 'name': name};
+  factory AuthUser.fromJson(Map<String, dynamic> j) =>
+      AuthUser(id: j['id'] as String, email: j['email'] as String, name: j['name'] as String?);
 }

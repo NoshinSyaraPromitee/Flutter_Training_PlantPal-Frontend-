@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 class Plant {
   const Plant({
     required this.id,
@@ -17,10 +19,37 @@ class Plant {
     this.fertilizerNote = '',
   });
 
-  final String id, nickname, species, imageUrl, location, sunlight, status, humidity, waterLevel, fertilizerNote;
+  final String id,
+      nickname,
+      species,
+      imageUrl,
+      location,
+      sunlight,
+      status,
+      humidity,
+      waterLevel,
+      fertilizerNote;
   final int? health; // 0-100, null until scanned
   final int wateringFrequencyDays;
   final DateTime? lastScan, lastWatered, nextWatering;
+
+  Plant copyWith({DateTime? lastScan}) => Plant(
+    id: id,
+    nickname: nickname,
+    species: species,
+    imageUrl: imageUrl,
+    location: location,
+    sunlight: sunlight,
+    health: health,
+    status: status,
+    humidity: humidity,
+    lastScan: lastScan ?? this.lastScan,
+    wateringFrequencyDays: wateringFrequencyDays,
+    lastWatered: lastWatered,
+    nextWatering: nextWatering,
+    waterLevel: waterLevel,
+    fertilizerNote: fertilizerNote,
+  );
 }
 
 class NewPlant {
@@ -31,19 +60,21 @@ class NewPlant {
     this.sunlight = '',
     this.wateringFrequencyDays = 7,
     this.lastWatered,
-    this.imagePath,
+    this.imageBytes,
   });
 
   final String nickname, species, location, sunlight;
   final int wateringFrequencyDays;
   final DateTime? lastWatered;
-  final String? imagePath;
+  final Uint8List? imageBytes;
 
   String? validate() {
     if (nickname.trim().isEmpty || species.trim().isEmpty) {
       return 'Please enter at least the plant nickname and species.';
     }
-    if (wateringFrequencyDays < 1) return 'Watering interval must be at least 1 day.';
+    if (wateringFrequencyDays < 1) {
+      return 'Watering interval must be at least 1 day.';
+    }
     return null;
   }
 }

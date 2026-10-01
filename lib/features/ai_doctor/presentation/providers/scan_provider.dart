@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:plantpal/core/network/failure.dart';
-import 'package:plantpal/features/ai_doctor/domain/model/chat_models.dart';
-import 'package:plantpal/features/ai_doctor/domain/repositories/ai_doctor_repository.dart';
+import '../../../../core/network/failure.dart';
+import '../../domain/model/chat_models.dart';
+import '../../domain/repositories/ai_doctor_repository.dart';
 
 class ScanController extends ChangeNotifier {
   ScanController(this._repo);
@@ -9,16 +9,17 @@ class ScanController extends ChangeNotifier {
 
   bool loading = false;
   String? error;
-  String? imagePath;
+  Uint8List? imageBytes;
   BotReply? result;
 
-  Future<bool> analyze(String path) async {
+  /// [plantId] links the saved diagnosis to one of the user's plants.
+  Future<bool> analyze(Uint8List bytes, {String? plantId}) async {
     loading = true;
     error = null;
-    imagePath = path;
+    imageBytes = bytes;
     notifyListeners();
     try {
-      result = await _repo.analyzeImage(path);
+      result = await _repo.analyzeImage(bytes, plantId: plantId);
       loading = false;
       notifyListeners();
       return true;
@@ -27,8 +28,8 @@ class ScanController extends ChangeNotifier {
       error = f.statusCode == 429
           ? 'Rate limit reached. Please wait 10 seconds and try again.'
           : f.isUnauthorized
-              ? 'Please sign in with Google to scan plants.'
-              : "I couldn't analyze that photo. Please try again.";
+          ? 'Please sign in with Google to scan plants.'
+          : "I couldn't analyze that photo. Please try again.";
       result = null;
       loading = false;
       notifyListeners();

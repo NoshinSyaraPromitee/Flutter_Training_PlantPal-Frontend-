@@ -1,5 +1,5 @@
-import 'package:plantpal/features/gamification/domain/model/achievement.dart';
-import 'package:plantpal/features/gamification/domain/repositories/achievement_repository.dart';
+import '../../domain/model/achievement.dart';
+import '../../domain/repositories/achievement_repository.dart';
 
 /// Static badges for now.
 class AchievementLocalRepository implements AchievementRepository {

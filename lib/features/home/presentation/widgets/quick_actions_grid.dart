@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
-import '../../../../l10n/generated/app_localizations.dart';
+import '../../../../l10n/app_localizations.dart';
 import 'menu_action_card.dart';
 
 /// The 2-column grid of primary feature shortcuts on the home screen.

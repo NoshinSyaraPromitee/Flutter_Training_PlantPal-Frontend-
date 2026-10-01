@@ -1,6 +1,6 @@
 {
-    "name": "myplantpal",
-    "short_name": "myplantpal",
+    "name": "plantpal",
+    "short_name": "plantpal",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

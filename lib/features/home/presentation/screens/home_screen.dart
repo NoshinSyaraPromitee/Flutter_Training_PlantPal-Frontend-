@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,7 +7,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/curved_header.dart';
 import '../../../../core/widgets/language_switcher.dart';
-import '../../../../l10n/generated/app_localizations.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../domain/greeting.dart';
 import '../providers/greeting_providers.dart';
 import '../widgets/chat_avatar.dart';

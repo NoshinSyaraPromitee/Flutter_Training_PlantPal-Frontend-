@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/network/api_exception.dart';
+import '../../../../core/network/failure.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import '../../../../l10n/generated/app_localizations.dart';
+import '../../../../l10n/app_localizations.dart';
 
 /// Shown when the fertilizer list fails to load.
 class FertilizerError extends StatelessWidget {
@@ -13,8 +13,8 @@ class FertilizerError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final message = error is ApiException
-        ? (error as ApiException).message
+    final message = error is Failure
+        ? (error as Failure).message
         : AppLocalizations.of(context).serverUnreachable;
     return Center(
       child: Padding(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../theme/app_colors.dart';
 
-/// A network image with a themed placeholder/error fallback — used for
-/// shop product photos and other remote images that don't exist yet
-/// (this app has no image hosting wired up, so this is future-proofing).
+/// An image with a themed placeholder/error fallback, used for shop product
+/// photos. Accepts either a remote URL or a bundled `assets/...` path.
 class NetImage extends StatelessWidget {
   const NetImage(
     this.url, {
@@ -22,15 +20,20 @@ class NetImage extends StatelessWidget {
   final BoxFit fit;
 
   Widget _box(Widget child) => Container(
-    width: width,
-    height: height,
-    color: AppColors.green.withValues(alpha: 0.08),
-    alignment: Alignment.center,
-    child: child,
-  );
+        width: width,
+        height: height,
+        color: AppColors.greenPrimary.withValues(alpha: 0.08),
+        alignment: Alignment.center,
+        child: child,
+      );
 
   Widget _placeholder() =>
-      _box(Icon(Icons.local_florist, color: AppColors.green));
+      _box(const Icon(Icons.local_florist, color: AppColors.greenPrimary));
+
+  // Bundled photos (see core/data/local_product_images.dart) are passed in
+  // as "assets/..." paths rather than URLs, so route those through
+  // Image.asset instead of hitting the network at all.
+  bool get _isAsset => url.startsWith('assets/');
 
   @override
   Widget build(BuildContext context) {
@@ -38,22 +41,30 @@ class NetImage extends StatelessWidget {
       borderRadius: BorderRadius.circular(radius),
       child: url.isEmpty
           ? _placeholder()
-          : Image.network(
-              url,
-              width: width,
-              height: height,
-              fit: fit,
-              errorBuilder: (_, _, _) => _placeholder(),
-              loadingBuilder: (_, child, progress) => progress == null
-                  ? child
-                  : _box(
-                      const SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
-                    ),
-            ),
+          : _isAsset
+              ? Image.asset(
+                  url,
+                  width: width,
+                  height: height,
+                  fit: fit,
+                  errorBuilder: (_, _, _) => _placeholder(),
+                )
+              : Image.network(
+                  url,
+                  width: width,
+                  height: height,
+                  fit: fit,
+                  errorBuilder: (_, _, _) => _placeholder(),
+                  loadingBuilder: (_, child, progress) => progress == null
+                      ? child
+                      : _box(
+                          const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          ),
+                        ),
+                ),
     );
   }
 }

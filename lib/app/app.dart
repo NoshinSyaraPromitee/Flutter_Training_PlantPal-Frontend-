@@ -12,13 +12,14 @@ import 'package:plantpal/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class PlantPalApp extends ConsumerStatefulWidget {
-  const PlantPalApp({super.key});
+  const PlantPalApp({super.key, required this.deps});
+  final AppDependencies deps;
   @override
   ConsumerState<PlantPalApp> createState() => _PlantPalAppState();
 }
 
 class _PlantPalAppState extends ConsumerState<PlantPalApp> {
-  final AppDependencies _deps = AppDependencies();
+  late final AppDependencies _deps = widget.deps;
   late final GoRouter _router = AppRouter.create(_deps.auth);
 
   @override
@@ -35,7 +36,6 @@ class _PlantPalAppState extends ConsumerState<PlantPalApp> {
       _deps.plants.clear();
       _deps.cart.clear();
       _deps.wishlist.clear();
-     
     }
   }
 

@@ -1,4 +1,4 @@
-﻿import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 import 'package:plantpal/core/config/app_config.dart';
 import 'package:plantpal/core/storage/secure_storage.dart';
 

@@ -1,9 +1,21 @@
-import 'package:plantpal/features/plants/domain/model/plant.dart';
+import 'dart:typed_data';
+
+import '../model/plant.dart';
 
 abstract class PlantRepository {
-  Future<List<Plant>> getPlants({bool forceRefresh = false});
+  Future<List<Plant>> getPlants();
+
   Future<Plant> addPlant(NewPlant plant);
-  Future<Plant> updatePlant(String id, Map<String, dynamic> changes);
+
+  Future<Plant> updatePlant(
+    String id,
+    Map<String, dynamic> changes,
+  );
+
   Future<void> deletePlant(String id);
-  Future<Plant> uploadImage(String id, String filePath);
+
+  Future<Plant> uploadImage(
+    String id,
+    Uint8List imageBytes,
+  );
 }

@@ -10,6 +10,7 @@ class AppConfig {
       defaultValue: '951483915022-b7ape69mbclro6jlhnjrm7650qmftcuk.apps.googleusercontent.com');
   static const googleRedirectUri = String.fromEnvironment('GOOGLE_REDIRECT_URI',
       defaultValue: 'https://sixfold-document-bucktooth.ngrok-free.dev/auth/google/callback');
+  static const googleServerClientId = String.fromEnvironment('GOOGLE_SERVER_CLIENT_ID', defaultValue: googleClientId);
   static const appCallbackScheme = 'plantpal';
   static const appCallbackUri = 'plantpal://auth';
 }

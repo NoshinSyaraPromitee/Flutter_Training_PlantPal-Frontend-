@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:plantpal/features/payments/domain/model/payment_models.dart';
-import 'package:plantpal/features/payments/domain/repositories/payment_repository.dart';
+import '../../domain/model/payment_models.dart';
+import '../../domain/repositories/payment_repository.dart';
 
 class PaymentController extends ChangeNotifier {
   PaymentController(this._repo);

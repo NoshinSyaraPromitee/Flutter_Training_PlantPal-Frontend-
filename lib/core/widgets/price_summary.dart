@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../theme/app_text_styles.dart';
 import '../utils/formatters.dart';
 import 'app_card.dart';
@@ -20,9 +19,9 @@ class PriceSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget row(String label, double value, {bool bold = false}) {
-      final style = AppTextStyles.bodyText.copyWith(
-        fontSize: bold ? 17 : 14,
-        fontWeight: bold ? FontWeight.w700 : FontWeight.w500,
+      final style = AppTextStyles.inter(
+        bold ? 17 : 14,
+        w: bold ? FontWeight.w700 : FontWeight.w500,
       );
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),

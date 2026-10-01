@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:plantpal/core/network/failure.dart';
-import 'package:plantpal/features/shop/domain/model/product.dart';
-import 'package:plantpal/features/shop/domain/repositories/product_repository.dart';
+import '../../../../core/network/failure.dart';
+import '../../domain/model/product.dart';
+import '../../domain/repositories/product_repository.dart';
 
 class ShopController extends ChangeNotifier {
   ShopController(this._repo);
