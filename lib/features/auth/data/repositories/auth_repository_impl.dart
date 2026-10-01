@@ -40,7 +40,11 @@ class AuthRepositoryImpl implements AuthRepository {
 
         final user = AuthUser.fromJson(tokens.userJson);
 
-        await _storage.saveSession(token: tokens.accessToken, user: user.toJson(), refreshToken: tokens.refreshToken);
+        await _storage.saveSession(
+          token: tokens.accessToken,
+          user: user.toJson(),
+          refreshToken: tokens.refreshToken,
+        );
 
         return user;
       });
@@ -58,7 +62,11 @@ class AuthRepositoryImpl implements AuthRepository {
 
         final user = AuthUser.fromJson(tokens.userJson);
 
-        await _storage.saveSession(token: tokens.accessToken, user: user.toJson(), refreshToken: tokens.refreshToken);
+        await _storage.saveSession(
+          token: tokens.accessToken,
+          user: user.toJson(),
+          refreshToken: tokens.refreshToken,
+        );
 
         return user;
       });
@@ -72,7 +80,11 @@ class AuthRepositoryImpl implements AuthRepository {
         final tokens = await _remote.loginWithGoogle(idToken);
         final user = AuthUser.fromJson(tokens.userJson);
 
-        await _storage.saveSession(token: tokens.accessToken, user: user.toJson(), refreshToken: tokens.refreshToken);
+        await _storage.saveSession(
+          token: tokens.accessToken,
+          user: user.toJson(),
+          refreshToken: tokens.refreshToken,
+        );
 
         return user;
       });
@@ -89,7 +101,11 @@ class AuthRepositoryImpl implements AuthRepository {
               final tokens = await _remote.loginWithGoogle(idToken);
               final user = AuthUser.fromJson(tokens.userJson);
 
-              await _storage.saveSession(token: tokens.accessToken, user: user.toJson(), refreshToken: tokens.refreshToken);
+              await _storage.saveSession(
+                token: tokens.accessToken,
+                user: user.toJson(),
+                refreshToken: tokens.refreshToken,
+              );
 
               onSignedIn(user);
             } catch (e) {
@@ -134,4 +150,3 @@ class AuthRepositoryImpl implements AuthRepository {
     await _storage.clear();
   }
 }
-

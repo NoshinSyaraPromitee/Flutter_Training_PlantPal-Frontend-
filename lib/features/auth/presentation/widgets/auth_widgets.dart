@@ -68,11 +68,15 @@ class GoogleSignInButton extends StatelessWidget {
           onPressed: auth.busy
               ? null
               : () async {
+                  // On success, GoRouter's own refreshListenable (see
+                  // app_router.dart) already redirects away from here once
+                  // AuthController's status flips to authenticated - an
+                  // explicit context.go('/home') here would fire a second,
+                  // redundant navigation right after, which is what caused
+                  // the brief "screen flashes back" glitch.
                   final ok = await auth.loginWithGoogle();
-                  if (!context.mounted) return;
-                  if (ok) {
-                    context.go('/home');
-                  } else if (auth.error != null) {
+                  if (!context.mounted || ok) return;
+                  if (auth.error != null) {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(auth.error!)));
                   }
                 },
@@ -85,10 +89,7 @@ class GoogleSignInButton extends StatelessWidget {
       ),
       if (kDebugMode)
         TextButton(
-          onPressed: () {
-            auth.continueAsGuest();
-            context.go('/home');
-          },
+          onPressed: () => auth.continueAsGuest(), // router redirects once status flips to guest
           child: const Text('Continue as guest (debug only)'),
         ),
     ]);
