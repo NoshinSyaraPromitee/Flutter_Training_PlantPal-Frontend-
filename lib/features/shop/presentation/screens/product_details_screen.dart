@@ -102,7 +102,8 @@ class _ProductDetailsScreenState
             ),
           ),
           const SizedBox(height: 6),
-          Row(
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               const Icon(
                 Icons.star,
@@ -129,7 +130,9 @@ class _ProductDetailsScreenState
             ],
           ),
           const SizedBox(height: 8),
-          Row(
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: 6,
             children: [
               Text(
                 taka(product.price),
@@ -166,7 +169,9 @@ class _ProductDetailsScreenState
           SectionTitle(
             l10n.quantitySectionTitle,
           ),
-          Row(
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: 8,
             children: [
               QuantityStepper(
                 value: _qty,

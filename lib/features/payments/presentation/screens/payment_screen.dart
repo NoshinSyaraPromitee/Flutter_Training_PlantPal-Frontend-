@@ -39,9 +39,14 @@ class _PaymentScreenState extends ConsumerState<PaymentScreen> {
   Future<void> _pay() async {
     final l10n = AppLocalizations.of(context);
 
+    final lines = [
+      for (final i in ref.read(cartControllerProvider).items)
+        OrderLine(i.product.id, i.quantity),
+    ];
+
     final result = await ref
         .read(paymentControllerProvider)
-        .pay(widget.total, _method);
+        .pay(widget.total, _method, lines);
 
     if (!mounted) return;
 
@@ -94,7 +99,7 @@ class _PaymentScreenState extends ConsumerState<PaymentScreen> {
             color: AppColors.danger,
           ),
           title: Text(l10n.paymentFailedTitle),
-          content: Text(l10n.paymentFailedBody),
+          content: Text(result.error ?? l10n.paymentFailedBody),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx, true),

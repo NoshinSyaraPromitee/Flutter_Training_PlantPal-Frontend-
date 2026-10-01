@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+﻿import 'dart:typed_data';
 
 import '../../../../core/network/failure.dart';
 import '../../domain/model/plant.dart';
@@ -39,6 +39,16 @@ class PlantRepositoryImpl implements PlantRepository {
   @override
   Future<void> deletePlant(String id) =>
       guardCall(() => _remote.remove(id));
+
+  @override
+  Future<Plant> markWatered(String id) => guardCall(
+        () async => PlantModel.fromJson(await _remote.water(id)),
+      );
+
+  @override
+  Future<Plant> markFertilized(String id) => guardCall(
+        () async => PlantModel.fromJson(await _remote.fertilize(id)),
+      );
 
   @override
   Future<Plant> uploadImage(

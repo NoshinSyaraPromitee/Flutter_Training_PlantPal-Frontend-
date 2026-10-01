@@ -152,7 +152,8 @@ class _CareGuideScreenState extends ConsumerState<CareGuideScreen> {
                 if (_done.length == total && total > 0)
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
-                    child: Row(
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
                         const Icon(Icons.celebration, size: 18,
                             color: AppColors.greenPrimary),

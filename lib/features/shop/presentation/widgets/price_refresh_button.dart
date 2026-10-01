@@ -51,7 +51,7 @@ class _PriceRefreshButtonState extends State<PriceRefreshButton> {
     if (_loading) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Row(children: [
+        child: Wrap(crossAxisAlignment: WrapCrossAlignment.center, children: [
           const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: AppColors.greenPrimary)),
           const SizedBox(width: 10),
           Text(l10n.checkingPriceLabel, style: AppTextStyles.inter(13, c: AppColors.textMuted)),
@@ -71,7 +71,7 @@ class _PriceRefreshButtonState extends State<PriceRefreshButton> {
           border: Border.all(color: AppColors.greenPrimary.withValues(alpha: 0.3)),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Row(children: [
+          Wrap(crossAxisAlignment: WrapCrossAlignment.center, children: [
             const Icon(Icons.verified, size: 16, color: AppColors.greenPrimary),
             const SizedBox(width: 6),
             Text(l10n.aiPriceRefreshedLabel, style: AppTextStyles.inter(12, c: AppColors.greenPrimary, w: FontWeight.w700)),

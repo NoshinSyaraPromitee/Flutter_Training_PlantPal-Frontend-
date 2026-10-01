@@ -1,15 +1,19 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     show ConsumerWidget, WidgetRef;
 import 'package:provider/provider.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
-import 'package:plantpal/features/home/domain/greeting.dart';
 import 'package:plantpal/features/home/presentation/providers/greeting_providers.dart';
 import 'package:plantpal/features/home/presentation/widgets/greeting_text.dart';
 import 'package:plantpal/features/home/presentation/widgets/menu_colors.dart';
 import 'package:plantpal/features/home/presentation/widgets/menu_hero_mascot.dart';
 import 'package:plantpal/features/plants/presentation/providers/plants_provider.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
+
+/// STATIC for now. Later: replace with the real plant's name, e.g. the first
+/// plant that needs water ->
+///   plants.firstWhere((p) => p.waterLevel == 'Today').name
+const String _staticPlantName = 'Monstera';
 
 /// Teal hero card: mascot + greeting bubble + upload button.
 class MenuHeroCard extends ConsumerWidget {
@@ -28,10 +32,11 @@ class MenuHeroCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final t = AppLocalizations.of(context);
     final waterTodayCount = context.watch<PlantsController>().waterTodayCount;
-    final greeting = waterTodayCount > 0
-        ? const Greeting(GreetingKind.plantThirsty)
-        : ref.watch(greetingMessageProvider);
-    final bubbleText = greetingText(t, greeting);
+
+    // Thirsty plant -> "<plant name> is looking thirsty—time for a drink!"
+    final bubbleText = waterTodayCount > 0
+        ? t.mascotThirstyMessage(_staticPlantName)
+        : greetingText(t, ref.watch(greetingMessageProvider));
 
     return Container(
       padding: const EdgeInsets.all(14),
@@ -127,8 +132,9 @@ class _UploadButton extends StatelessWidget {
                 child: Text(
                   label,
                   maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.inter(
-                    14,
+                    13,
                     w: FontWeight.w800,
                     c: MenuColors.teal,
                   ),

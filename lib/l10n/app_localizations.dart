@@ -2095,6 +2095,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get navProfile;
+
+  /// No description provided for @myOrdersLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'My Orders'**
+  String get myOrdersLabel;
+
+  /// No description provided for @noOrdersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No orders yet'**
+  String get noOrdersTitle;
+
+  /// No description provided for @noOrdersBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders you place will show up here.'**
+  String get noOrdersBody;
+
+  /// No description provided for @markAsFertilizedTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as fertilized'**
+  String get markAsFertilizedTooltip;
+
+  /// No description provided for @plantFertilizedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has been fed!'**
+  String plantFertilizedSnackbar(String name);
 }
 
 class _AppLocalizationsDelegate

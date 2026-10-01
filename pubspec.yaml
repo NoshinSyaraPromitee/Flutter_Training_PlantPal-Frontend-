@@ -57,7 +57,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/products/
-    - assets/animations/plant.riv
+    - assets/animations/
 
 flutter_launcher_icons:
   android: true

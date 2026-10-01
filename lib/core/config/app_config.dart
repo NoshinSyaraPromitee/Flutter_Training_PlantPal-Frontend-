@@ -30,6 +30,10 @@ class AppConfig {
     defaultValue: googleClientId,
   );
 
+  /// The backend has no /auth/forgot-password or /auth/reset-password
+/// routes yet. Set to true once it does, to show the login link again.
+  static const passwordResetEnabled = false;
+
   static const appCallbackScheme = 'plantpal';
   static const appCallbackUri = 'plantpal://auth';
 }

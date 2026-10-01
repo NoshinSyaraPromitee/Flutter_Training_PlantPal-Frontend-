@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+﻿import 'dart:typed_data';
 
 import '../model/plant.dart';
 
@@ -13,6 +13,10 @@ abstract class PlantRepository {
   );
 
   Future<void> deletePlant(String id);
+
+  Future<Plant> markWatered(String id);
+
+  Future<Plant> markFertilized(String id);
 
   Future<Plant> uploadImage(
     String id,

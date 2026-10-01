@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+﻿import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 
@@ -31,6 +31,20 @@ class PlantRemoteDataSource {
     await _api.dio.delete('/api/v1/plants/$id');
   }
 
+  /// POST /api/v1/plants/{id}/water  (no body)
+  Future<Map<String, dynamic>> water(String id) async =>
+      (await _api.dio.post('/api/v1/plants/$id/water')).data
+          as Map<String, dynamic>;
+
+  /// POST /api/v1/plants/{id}/fertilize  (no body)
+  /// The backend rejects this with 400 if the roadmap has no fertilizing
+  /// interval yet (e.g. seedlings).
+  Future<Map<String, dynamic>> fertilize(String id) async =>
+      (await _api.dio.post('/api/v1/plants/$id/fertilize')).data
+          as Map<String, dynamic>;
+
+  // NOTE: the backend has no /plants/{id}/image route yet, so this call
+  // will 404 until that endpoint is added.
   Future<Map<String, dynamic>> uploadImage(
     String id,
     Uint8List imageBytes,

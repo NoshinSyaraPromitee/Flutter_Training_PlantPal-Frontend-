@@ -1120,4 +1120,21 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get navProfile => 'প্রোফাইল';
+
+  @override
+  String get myOrdersLabel => 'আমার অর্ডার';
+
+  @override
+  String get noOrdersTitle => 'এখনো কোনো অর্ডার নেই';
+
+  @override
+  String get noOrdersBody => 'আপনার দেওয়া অর্ডার এখানে দেখা যাবে।';
+
+  @override
+  String get markAsFertilizedTooltip => 'সার দেওয়া হয়েছে চিহ্নিত করুন';
+
+  @override
+  String plantFertilizedSnackbar(String name) {
+    return '$name-কে সার দেওয়া হয়েছে চিহ্নিত করা হলো';
+  }
 }

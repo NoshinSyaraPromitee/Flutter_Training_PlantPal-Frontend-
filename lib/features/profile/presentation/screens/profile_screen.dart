@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -116,6 +116,12 @@ class ProfileScreen extends ConsumerWidget {
           _Section(
             title: l10n.accountSectionTitle,
             children: [
+              _Tile(
+                Icons.receipt_long_outlined,
+                l10n.myOrdersLabel,
+                null,
+                onTap: () => context.push('/orders'),
+              ),
               _Tile(
                 Icons.help_outline,
                 l10n.helpLabel,

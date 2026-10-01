@@ -55,7 +55,12 @@ class FertilizerScreen extends ConsumerWidget {
                 Expanded(
                   child: c.loading
                       ? const LoadingView()
-                      : list.isEmpty
+                      : c.error != null
+                          ? ErrorView(
+                              message: c.error!,
+                              onRetry: () => c.load(),
+                            )
+                          : list.isEmpty
                           ? EmptyView(
                               icon: Icons.science_outlined,
                               title: l10n.noRecipesFoundTitle,
@@ -85,7 +90,7 @@ class FertilizerScreen extends ConsumerWidget {
                     AppButton(
                       label: l10n.addFertilizerButton,
                       variant: AppButtonVariant.orange,
-                      onPressed: () {},
+                      onPressed: () => context.push('/fertilizer/add'),
                     ),
                   ],
                 ),

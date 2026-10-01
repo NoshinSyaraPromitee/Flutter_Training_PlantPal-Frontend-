@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/net_image.dart';
@@ -10,6 +10,7 @@ class PlantDetailsHeader extends StatelessWidget {
     required this.onBack,
     required this.onMenuSelected,
     required this.waterLabel,
+    required this.fertilizeLabel,
     required this.deleteLabel,
   });
 
@@ -17,6 +18,7 @@ class PlantDetailsHeader extends StatelessWidget {
   final VoidCallback onBack;
   final ValueChanged<String> onMenuSelected;
   final String waterLabel;
+  final String fertilizeLabel;
   final String deleteLabel;
 
   @override
@@ -58,6 +60,10 @@ class PlantDetailsHeader extends StatelessWidget {
                     PopupMenuItem(
                       value: 'water',
                       child: Text(waterLabel),
+                    ),
+                    PopupMenuItem(
+                      value: 'fertilize',
+                      child: Text(fertilizeLabel),
                     ),
                     PopupMenuItem(
                       value: 'delete',

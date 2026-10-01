@@ -1133,4 +1133,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get navProfile => 'Profile';
+
+  @override
+  String get myOrdersLabel => 'My Orders';
+
+  @override
+  String get noOrdersTitle => 'No orders yet';
+
+  @override
+  String get noOrdersBody => 'Orders you place will show up here.';
+
+  @override
+  String get markAsFertilizedTooltip => 'Mark as fertilized';
+
+  @override
+  String plantFertilizedSnackbar(String name) {
+    return '$name has been fed!';
+  }
 }

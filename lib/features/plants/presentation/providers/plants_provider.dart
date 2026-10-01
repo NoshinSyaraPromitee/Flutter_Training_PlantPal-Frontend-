@@ -16,6 +16,7 @@ class PlantsController extends ChangeNotifier {
     this._scans,
   })  : _repo = repository,
         _add = addPlant;
+
   final PlantRepository _repo;
   final AddPlant _add;
   final _buildCareTasks = const BuildCareTasks();
@@ -24,6 +25,13 @@ class PlantsController extends ChangeNotifier {
   /// Source of saved scans (GET /diagnoses), used to fill in each plant's
   /// last-scan date, which the plants API doesn't carry itself.
   final AiDoctorRepository? _scans;
+
+  /// Called with the points earned when a *due* care action is logged.
+  /// Wired to PointsController.add in app_dependencies.dart.
+  void Function(int points)? onCareLogged;
+
+  static const int waterPoints = 10;
+  static const int fertilizePoints = 20;
 
   List<Plant> plants = const [];
   bool loading = false;
@@ -78,8 +86,9 @@ class PlantsController extends ChangeNotifier {
   }
 
   // A plant returned by the API carries no scan date; keep the one we know.
-  Plant _keepScan(Plant old, Plant updated) =>
-      updated.lastScan == null ? updated.copyWith(lastScan: old.lastScan) : updated;
+  Plant _keepScan(Plant old, Plant updated) => updated.lastScan == null
+      ? updated.copyWith(lastScan: old.lastScan)
+      : updated;
 
   Plant? byId(String id) {
     for (final p in plants) {
@@ -91,10 +100,12 @@ class PlantsController extends ChangeNotifier {
   int get averageHealth {
     final scanned = plants.where((p) => p.health != null).toList();
     if (scanned.isEmpty) return 0;
-    return (scanned.fold<int>(0, (s, p) => s + p.health!) / scanned.length).round();
+    return (scanned.fold<int>(0, (s, p) => s + p.health!) / scanned.length)
+        .round();
   }
 
-  int get waterTodayCount => plants.where((p) => p.waterLevel == 'Today').length;
+  int get waterTodayCount =>
+      plants.where((p) => p.waterLevel == 'Today').length;
 
   /// Each action returns an error message, or null on success.
   Future<String?> add(NewPlant input) => _run(() async {
@@ -102,11 +113,26 @@ class PlantsController extends ChangeNotifier {
         plants = [created, ...plants];
       });
 
+  /// POST /plants/{id}/water
   Future<String?> markWatered(String id) => _run(() async {
-        final updated = await _repo.updatePlant(id, {'lastWatered': DateTime.now().toUtc().toIso8601String()});
+        final before = byId(id);
+        final wasDue = before != null && before.waterLevel == 'Today';
+        final updated = await _repo.markWatered(id);
         plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
+        if (wasDue) onCareLogged?.call(waterPoints);
       });
 
+  /// POST /plants/{id}/fertilize
+  Future<String?> markFertilized(String id) => _run(() async {
+        final next = byId(id)?.nextFertilizing;
+        final wasDue = next == null || !next.isAfter(DateTime.now());
+        final updated = await _repo.markFertilized(id);
+        plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
+        if (wasDue) onCareLogged?.call(fertilizePoints);
+      });
+
+  /// PATCH /plants/{id}. The backend only accepts name/type/ageStage;
+  /// location, sunlight and watering days are not stored server-side yet.
   Future<String?> updateDetails({
     required String id,
     required String nickname,
@@ -117,11 +143,8 @@ class PlantsController extends ChangeNotifier {
   }) =>
       _run(() async {
         final updated = await _repo.updatePlant(id, {
-          'nickname': nickname,
-          'species': species,
-          'location': location,
-          'sunlight': sunlight,
-          'wateringFrequencyDays': wateringFrequencyDays,
+          'name': nickname,
+          'type': species,
         });
         plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
       });

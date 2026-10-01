@@ -30,19 +30,25 @@ class OrderSuccessScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              l,
-              style: AppTextStyles.inter(
-                14,
-                c: AppColors.textMuted,
+            Flexible(
+              child: Text(
+                l,
+                style: AppTextStyles.inter(
+                  14,
+                  c: AppColors.textMuted,
+                ),
               ),
             ),
-            Text(
-              v,
-              style: AppTextStyles.inter(
-                14,
-                w: FontWeight.w700,
-                c: color ?? AppColors.textDark,
+            const SizedBox(width: 12),
+            Flexible(
+              child: Text(
+                v,
+                textAlign: TextAlign.end,
+                style: AppTextStyles.inter(
+                  14,
+                  w: FontWeight.w700,
+                  c: color ?? AppColors.textDark,
+                ),
               ),
             ),
           ],

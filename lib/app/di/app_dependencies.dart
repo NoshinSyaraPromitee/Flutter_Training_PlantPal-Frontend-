@@ -11,12 +11,12 @@ import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart
 import 'package:plantpal/features/care_guide/data/repositories/care_guide_local_repository.dart';
 import 'package:plantpal/features/care_guide/domain/repositories/care_guide_repository.dart';
 import 'package:plantpal/features/cart/presentation/providers/cart_provider.dart';
-import 'package:plantpal/features/fertilizer/data/repositories/fertilizer_local_repository.dart';
+import 'package:plantpal/features/fertilizer/data/repositories/fertilizer_remote_repository.dart';
 import 'package:plantpal/features/fertilizer/presentation/providers/fertilizer_provider.dart';
 import 'package:plantpal/features/gamification/data/repositories/achievement_local_repository.dart';
 import 'package:plantpal/features/gamification/domain/repositories/achievement_repository.dart';
 import 'package:plantpal/features/gamification/presentation/providers/points_provider.dart';
-import 'package:plantpal/features/payments/data/repositories/simulated_payment_repository.dart';
+import 'package:plantpal/features/payments/data/repositories/remote_payment_repository.dart';
 import 'package:plantpal/features/payments/presentation/providers/payment_provider.dart';
 import 'package:plantpal/features/plants/data/datasources/plant_remote_data_source.dart';
 import 'package:plantpal/features/plants/data/repositories/plant_repository_impl.dart';
@@ -26,7 +26,7 @@ import 'package:plantpal/features/profile/presentation/providers/settings_provid
 import 'package:plantpal/features/reviews/data/repositories/review_local_repository.dart';
 import 'package:plantpal/features/reviews/presentation/providers/reviews_provider.dart';
 import 'package:plantpal/features/shop/data/repositories/price_refresh_repository.dart';
-import 'package:plantpal/features/shop/data/repositories/product_local_repository.dart';
+import 'package:plantpal/features/shop/data/repositories/product_remote_repository.dart';
 import 'package:plantpal/features/shop/presentation/providers/shop_provider.dart';
 import 'package:plantpal/features/wishlist/presentation/providers/wishlist_provider.dart';
 import 'package:provider/provider.dart';
@@ -57,15 +57,23 @@ class AppDependencies {
     chat = ChatController(aiRepo, storage);
     scan = ScanController(aiRepo);
 
-    shop = ShopController(ProductLocalRepository())..load();
+    api.getLanguage = () => settings.language;
+    shop = ShopController(
+      ProductRemoteRepository(api.dio, getLanguage: () => settings.language),
+    );
     reviews = ReviewsController(ReviewLocalRepository());
-    payment = PaymentController(SimulatedPaymentRepository());
-    fertilizer = FertilizerController(FertilizerLocalRepository());
+    payment = PaymentController(RemotePaymentRepository(api.dio));
+    fertilizer = FertilizerController(
+      FertilizerRemoteRepository(api.dio, getLanguage: () => settings.language),
+    );
     settings = SettingsController(storage);
     careGuide = CareGuideLocalRepository(getLanguage: () => settings.language);
     priceRefresh = PriceRefreshRepository(api.dio);
 
     Failure.currentLanguage = () => settings.language;
+
+    points = PointsController(storage)..load();
+    plants.onCareLogged = points.add;
   }
 
   final SecureStorage storage = const SecureStorage();
@@ -85,7 +93,7 @@ class AppDependencies {
   final CartController cart = CartController();
   final WishlistController wishlist = WishlistController();
   final AchievementRepository achievements = AchievementLocalRepository();
-  final PointsController points = PointsController();
+  late final PointsController points;
 
   List<SingleChildWidget> get providers => [
         ChangeNotifierProvider<AuthController>.value(value: auth),

@@ -8,6 +8,7 @@ class ApiClient {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
+          options.headers['Accept-Language'] = getLanguage?.call() ?? 'en';
           final token = await _storage.readToken();
           if (token != null) {
             options.headers['Authorization'] = 'Bearer $token';
@@ -37,6 +38,9 @@ class ApiClient {
 
   /// Called when the server rejects our token (expired/invalid).
   void Function()? onUnauthorized;
+
+  /// Returns the UI language code ('en' or 'bn'); sent as Accept-Language.
+  String Function()? getLanguage;
 
   Future<dynamic> get(
     String path, {

@@ -16,6 +16,14 @@ class FertilizerLocalRepository implements FertilizerRepository {
     );
   }
 
+  @override
+  Future<Fertilizer> create({
+    required String name,
+    required String nutrient,
+    required String instructions,
+  }) async =>
+      throw UnsupportedError('The bundled catalogue is read-only.');
+
   static const _tips = [
     'Avoid using fertilizers on very young seedlings.',
     'Do not overapply homemade fertilizers, as excess nutrients can harm plants.',

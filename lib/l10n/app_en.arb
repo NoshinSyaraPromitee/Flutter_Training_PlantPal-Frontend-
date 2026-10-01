@@ -655,5 +655,15 @@
   "navScan": "Scan",
   "navShop": "Shop",
   "navAiDoctor": "AI Doctor",
-  "navProfile": "Profile"
+  "navProfile": "Profile",
+  "myOrdersLabel": "My Orders",
+  "noOrdersTitle": "No orders yet",
+  "noOrdersBody": "Orders you place will show up here.",
+  "markAsFertilizedTooltip": "Mark as fertilized",
+  "plantFertilizedSnackbar": "{name} has been fed!",
+  "@plantFertilizedSnackbar": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  }
 }

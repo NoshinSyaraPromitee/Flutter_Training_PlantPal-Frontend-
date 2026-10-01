@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:plantpal/core/config/app_config.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/app_button.dart';
@@ -93,6 +94,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             onPressed: () => setState(() => _hide = !_hide),
           ),
         ),
+        if (AppConfig.passwordResetEnabled)
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
@@ -138,8 +140,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         ),
         const GoogleSignInButton(),
         const SizedBox(height: 24),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(
               l10n.noAccountPrompt,

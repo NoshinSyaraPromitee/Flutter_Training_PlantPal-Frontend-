@@ -62,7 +62,8 @@ class FertilizerDetailsScreen extends ConsumerWidget {
             style: AppTextStyles.screenTitle.copyWith(fontSize: 28),
           ),
           const SizedBox(height: 6),
-          Row(
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               const Icon(
                 Icons.track_changes,
@@ -99,18 +100,21 @@ class FertilizerDetailsScreen extends ConsumerWidget {
                   color: Color(0xFF558B2F),
                 ),
                 const SizedBox(width: 4),
-                Text(
-                  f.nutrient,
-                  style: AppTextStyles.inter(
-                    12,
-                    w: FontWeight.w600,
-                    c: const Color(0xFF558B2F),
+                Flexible(
+                  child: Text(
+                    f.nutrient,
+                    style: AppTextStyles.inter(
+                      12,
+                      w: FontWeight.w600,
+                      c: const Color(0xFF558B2F),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          SectionTitle(l10n.ingredientsTitle),
+          if (f.ingredients.isNotEmpty) ...[
+            SectionTitle(l10n.ingredientsTitle),
           AppCard(
             child: Column(
               children: [
@@ -123,7 +127,9 @@ class FertilizerDetailsScreen extends ConsumerWidget {
               ],
             ),
           ),
-          SectionTitle(l10n.preparationTitle),
+          ],
+          if (f.preparation.isNotEmpty) ...[
+            SectionTitle(l10n.preparationTitle),
           AppCard(
             child: Column(
               children: [
@@ -158,7 +164,9 @@ class FertilizerDetailsScreen extends ConsumerWidget {
               ],
             ),
           ),
-          SectionTitle(l10n.applicationTitle),
+          ],
+          if (f.application.isNotEmpty) ...[
+            SectionTitle(l10n.applicationTitle),
           AppCard(
             child: _row(
               Icons.water_drop_outlined,
@@ -166,7 +174,9 @@ class FertilizerDetailsScreen extends ConsumerWidget {
               f.application,
             ),
           ),
-          SectionTitle(l10n.benefitsTitle),
+          ],
+          if (f.benefits.isNotEmpty) ...[
+            SectionTitle(l10n.benefitsTitle),
           AppCard(
             child: Column(
               children: [
@@ -179,6 +189,7 @@ class FertilizerDetailsScreen extends ConsumerWidget {
               ],
             ),
           ),
+          ],
           SectionTitle(l10n.safetyTipsTitle),
           AppCard(
             color: const Color(0xFFFFF3E0),

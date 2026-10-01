@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:plantpal/core/widgets/fb_community_popup.dart';
@@ -47,13 +47,18 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                     // ---- Top bar: points + notifications ----
                     Row(
                       children: [
-                        MenuPointsChip(
-                          label: l10n.pointsBalanceLabel(
-                            points.toString(),
-                            taka.toString(),
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: MenuPointsChip(
+                              label: l10n.pointsBalanceLabel(
+                                points.toString(),
+                                taka.toString(),
+                              ),
+                            ),
                           ),
                         ),
-                        const Spacer(),
+                        const SizedBox(width: 12),
                         MenuBellButton(
                           onTap: () => ScaffoldMessenger.of(context)
                               .showSnackBar(

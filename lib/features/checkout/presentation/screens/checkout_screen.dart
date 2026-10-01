@@ -14,6 +14,7 @@ import '../../../../core/widgets/app_text_field.dart';
 import '../../../../core/widgets/price_summary.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../payments/domain/model/payment_models.dart';
 import '../../domain/model/checkout_models.dart';
 
 class CheckoutScreen extends ConsumerStatefulWidget {
@@ -50,6 +51,13 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
       ).showSnackBar(SnackBar(content: Text(err)));
       return;
     }
+
+    ref.read(paymentControllerProvider).draft = CheckoutDraft(
+      name: _name.text.trim(),
+      phone: _phone.text.trim(),
+      address: _address.text.trim(),
+      deliveryOptionId: _delivery.id,
+    );
 
     context.push(
       Uri(

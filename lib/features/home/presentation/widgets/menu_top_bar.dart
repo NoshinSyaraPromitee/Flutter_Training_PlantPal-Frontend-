@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/features/home/presentation/widgets/menu_colors.dart';
 
@@ -43,12 +43,16 @@ class MenuPointsChip extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Text(
-            label,
-            style: AppTextStyles.inter(
-              12,
-              w: FontWeight.w800,
-              c: MenuColors.ink,
+          Flexible(
+            child: Text(
+              label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.inter(
+                12,
+                w: FontWeight.w800,
+                c: MenuColors.ink,
+              ),
             ),
           ),
         ],

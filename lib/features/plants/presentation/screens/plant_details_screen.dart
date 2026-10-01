@@ -36,6 +36,19 @@ class PlantDetailsScreen extends ConsumerWidget {
     final router = GoRouter.of(context);
     final l10n = AppLocalizations.of(context);
 
+    if (action == 'fertilize') {
+      final err = await c.markFertilized(plant.id);
+
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(
+            err ?? l10n.plantFertilizedSnackbar(plant.nickname),
+          ),
+        ),
+      );
+      return;
+    }
+
     if (action == 'water') {
       final err = await c.markWatered(plant.id);
 
@@ -115,6 +128,7 @@ class PlantDetailsScreen extends ConsumerWidget {
                 onMenuSelected: (v) =>
                     _onMenu(context, ref, v, plant),
                 waterLabel: l10n.markAsWateredTooltip,
+                fertilizeLabel: l10n.markAsFertilizedTooltip,
                 deleteLabel: l10n.deletePlantMenuItem,
               ),
               Container(

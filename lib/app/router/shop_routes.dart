@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:plantpal/features/cart/presentation/screens/cart_screen.dart';
 import 'package:plantpal/features/checkout/presentation/screens/checkout_screen.dart';
 import 'package:plantpal/features/checkout/presentation/screens/order_success_screen.dart';
+import 'package:plantpal/features/orders/presentation/orders_screen.dart';
 import 'package:plantpal/features/payments/presentation/screens/payment_screen.dart';
 import 'package:plantpal/features/shop/presentation/screens/product_details_screen.dart';
 import 'package:plantpal/features/wishlist/presentation/screens/wishlist_screen.dart';
@@ -14,6 +15,7 @@ final shopRoutes = <RouteBase>[
   ),
   GoRoute(path: '/wishlist', builder: (c, s) => const WishlistScreen()),
   GoRoute(path: '/cart', builder: (c, s) => const CartScreen()),
+  GoRoute(path: '/orders', builder: (c, s) => const OrdersScreen()),
   GoRoute(path: '/checkout', builder: (c, s) => const CheckoutScreen()),
   GoRoute(
     path: '/payment',

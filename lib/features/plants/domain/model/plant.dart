@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+﻿import 'dart:typed_data';
 
 class Plant {
   const Plant({
@@ -15,6 +15,8 @@ class Plant {
     this.wateringFrequencyDays = 7,
     this.lastWatered,
     this.nextWatering,
+    this.lastFertilized,
+    this.nextFertilizing,
     this.waterLevel = 'Not set',
     this.fertilizerNote = '',
   });
@@ -31,7 +33,11 @@ class Plant {
       fertilizerNote;
   final int? health; // 0-100, null until scanned
   final int wateringFrequencyDays;
-  final DateTime? lastScan, lastWatered, nextWatering;
+  final DateTime? lastScan,
+      lastWatered,
+      nextWatering,
+      lastFertilized,
+      nextFertilizing;
 
   Plant copyWith({DateTime? lastScan}) => Plant(
     id: id,
@@ -47,6 +53,8 @@ class Plant {
     wateringFrequencyDays: wateringFrequencyDays,
     lastWatered: lastWatered,
     nextWatering: nextWatering,
+    lastFertilized: lastFertilized,
+    nextFertilizing: nextFertilizing,
     waterLevel: waterLevel,
     fertilizerNote: fertilizerNote,
   );
