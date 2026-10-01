@@ -24,9 +24,13 @@ class LocationService {
     }
 
     try {
+      // A real device can take a long time (or never) to get a GPS fix,
+      // especially indoors — cap the wait so callers (the weather/greeting
+      // providers) never block on it indefinitely.
       final position = await Geolocator.getCurrentPosition(
         locationSettings: const LocationSettings(
           accuracy: LocationAccuracy.low,
+          timeLimit: Duration(seconds: 8),
         ),
       );
       return (position.latitude, position.longitude);

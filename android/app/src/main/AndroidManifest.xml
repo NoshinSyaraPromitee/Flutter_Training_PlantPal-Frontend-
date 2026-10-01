@@ -5,16 +5,26 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
-        android:label="myplantpal"
+        android:label="MyPlantPal"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"> <!-- backend is plain HTTP in dev; tighten before release -->
 
+        <!-- taskAffinity intentionally omitted (was "" in stock
+             flutter-create boilerplate): an explicit empty affinity
+             differs from the default (this app's package name), which
+             stopped Android from routing the flutter_web_auth_2 redirect
+             (dispatched with FLAG_ACTIVITY_NEW_TASK by some browsers,
+             e.g. Samsung Internet) back into this activity's own task -
+             it spun up a stray empty task instead, which immediately
+             finished and dropped to the home launcher, stranding this
+             activity paused in the background. Removing it lets both
+             share the default affinity so the callback task merges
+             correctly. -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
-            android:taskAffinity=""
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
@@ -37,6 +47,21 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!-- flutter_web_auth_2's required Android setup: without this, the
+             browser has nowhere to hand the plantpal:// redirect back to
+             after Google's OAuth consent, so authenticate() never resolves
+             and the login screen's progress bar spins forever. -->
+        <activity
+            android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
+            android:exported="true">
+            <intent-filter android:label="flutter_web_auth_2">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="plantpal" />
+            </intent-filter>
+        </activity>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

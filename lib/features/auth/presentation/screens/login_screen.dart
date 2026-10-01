@@ -28,11 +28,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _emailLogin() async {
     final auth = context.read<AuthController>();
+    // GoRouter's refreshListenable already redirects away on success - see
+    // GoogleSignInButton's onPressed for why a second context.go('/home')
+    // here would just cause a redundant navigation.
     final ok = await auth.loginWithEmail(email: _email.text.trim(), password: _password.text);
-    if (!mounted) return;
-    if (ok) {
-      context.go('/home');
-    } else if (auth.error != null) {
+    if (!mounted || ok) return;
+    if (auth.error != null) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(auth.error!)));
     }
   }

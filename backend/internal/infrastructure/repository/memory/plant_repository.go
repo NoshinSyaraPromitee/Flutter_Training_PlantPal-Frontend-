@@ -1,6 +1,6 @@
 // Package memory provides in-memory implementations of the domain
 // repository interfaces, guarded by mutexes. These are a stand-in for the
-// eventual MongoDB-backed implementations described in CLAUDE.md — swap
+// eventual MongoDB-backed implementations described in CLAUDE.md - swap
 // them out by constructing a different type that satisfies the same
 // domain.Repository interface; no usecase or handler code needs to change.
 package memory
@@ -9,9 +9,10 @@ import (
 	"context"
 	"sort"
 	"sync"
+	"time"
 
-	"myplantpal-backend/internal/domain/apperr"
-	"myplantpal-backend/internal/domain/plant"
+	"plantpal-backend/internal/domain/apperr"
+	"plantpal-backend/internal/domain/plant"
 )
 
 type PlantRepository struct {
@@ -30,33 +31,65 @@ func (r *PlantRepository) Create(_ context.Context, p *plant.Plant) error {
 	return nil
 }
 
-func (r *PlantRepository) GetByID(_ context.Context, id string) (*plant.Plant, error) {
+func (r *PlantRepository) GetByID(_ context.Context, id, userID string) (*plant.Plant, error) {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
 	p, ok := r.items[id]
-	if !ok {
+	if !ok || p.UserID != userID {
 		return nil, apperr.ErrNotFound
 	}
 	return p, nil
 }
 
-func (r *PlantRepository) List(_ context.Context) ([]*plant.Plant, error) {
+func (r *PlantRepository) List(_ context.Context, userID string) ([]*plant.Plant, error) {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
 	out := make([]*plant.Plant, 0, len(r.items))
 	for _, p := range r.items {
+		if p.UserID != userID {
+			continue
+		}
 		out = append(out, p)
 	}
 	sort.Slice(out, func(i, j int) bool { return out[i].CreatedAt.Before(out[j].CreatedAt) })
 	return out, nil
 }
 
-func (r *PlantRepository) Delete(_ context.Context, id string) error {
+func (r *PlantRepository) Update(_ context.Context, p *plant.Plant) error {
 	r.mu.Lock()
 	defer r.mu.Unlock()
-	if _, ok := r.items[id]; !ok {
+	existing, ok := r.items[p.ID]
+	if !ok || existing.UserID != p.UserID {
+		return apperr.ErrNotFound
+	}
+	r.items[p.ID] = p
+	return nil
+}
+
+func (r *PlantRepository) Delete(_ context.Context, id, userID string) error {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	p, ok := r.items[id]
+	if !ok || p.UserID != userID {
 		return apperr.ErrNotFound
 	}
 	delete(r.items, id)
 	return nil
+}
+
+func (r *PlantRepository) ListDue(_ context.Context, userID string, before time.Time) ([]*plant.Plant, error) {
+	r.mu.RLock()
+	defer r.mu.RUnlock()
+	out := make([]*plant.Plant, 0)
+	for _, p := range r.items {
+		if p.UserID != userID {
+			continue
+		}
+		watering := !p.NextWateringAt.IsZero() && !p.NextWateringAt.After(before)
+		fertilizing := p.NextFertilizingAt != nil && !p.NextFertilizingAt.After(before)
+		if watering || fertilizing {
+			out = append(out, p)
+		}
+	}
+	return out, nil
 }

@@ -3,7 +3,6 @@ import 'dart:convert';
 
 import 'package:plantpal/core/network/failure.dart';
 import 'package:plantpal/core/storage/secure_storage.dart';
-import 'package:plantpal/core/utils/jwt.dart';
 import 'package:plantpal/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:plantpal/features/auth/domain/model/auth_user.dart';
 import 'package:plantpal/features/auth/domain/repositories/auth_repository.dart';
@@ -28,24 +27,9 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<AuthUser?> loginWithGoogle() => guardCall(() async {
-        final jwt = await _remote.googleLogin();
-
-        if (jwt == null) return null;
-
-        final p = decodeJwtPayload(jwt);
-
-        final user = AuthUser(
-          id: p['userId'].toString(),
-          email: p['email'].toString(),
-          name: p['name'] as String?,
-        );
-
-        await _storage.saveSession(
-          token: jwt,
-          user: user.toJson(),
-        );
-
-        return user;
+        final res = await _remote.googleLogin();
+        if (res == null) return null;
+        return _saveAuthResult(res);
       });
 
   @override

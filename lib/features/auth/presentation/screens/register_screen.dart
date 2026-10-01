@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:plantpal/core/widgets/app_button.dart';
 import 'package:plantpal/core/widgets/app_text_field.dart';
 import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
@@ -28,15 +27,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   Future<void> _create() async {
     final auth = context.read<AuthController>();
+    // GoRouter's refreshListenable already redirects away on success - see
+    // GoogleSignInButton's onPressed for why a second context.go('/home')
+    // here would just cause a redundant navigation.
     final ok = await auth.registerWithEmail(
       email: _email.text.trim(),
       password: _password.text,
       name: _name.text.trim(),
     );
-    if (!mounted) return;
-    if (ok) {
-      context.go('/home');
-    } else if (auth.error != null) {
+    if (!mounted || ok) return;
+    if (auth.error != null) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(auth.error!)));
     }
   }

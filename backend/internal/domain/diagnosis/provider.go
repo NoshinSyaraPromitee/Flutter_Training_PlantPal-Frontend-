@@ -1,15 +1,23 @@
 package diagnosis
 
-import "context"
+import (
+	"context"
+
+	"plantpal-backend/internal/domain/aiprovider"
+)
 
 // AnalysisResult is what an AI provider returns for a submitted photo.
 // IssueBn/CureBn are optional Bengali translations; a real AI provider can
 // leave them empty and let the caller fall back to English.
 type AnalysisResult struct {
-	Issue   string
-	Cure    string
-	IssueBn string
-	CureBn  string
+	Issue      string
+	Cure       string
+	Confidence string
+	Severity   string
+	Fertilizer string
+	IssueBn    string
+	CureBn     string
+	Provider   aiprovider.Name
 }
 
 // Provider abstracts the AI plant-diagnosis backend. Per the project's hard

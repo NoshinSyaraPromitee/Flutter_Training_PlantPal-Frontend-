@@ -1,81 +1,209 @@
-// Command api runs the MyPlantPal HTTP API.
+// Command api runs the PlantPal HTTP API.
 package main
 
 import (
-	"context"
-	"log"
-	"net/http"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
+"context"
+"fmt"
+"log"
+"net/http"
+"os"
+"time"
 
-	"myplantpal-backend/internal/config"
-	chatdomain "myplantpal-backend/internal/domain/chat"
-	diagnosisdomain "myplantpal-backend/internal/domain/diagnosis"
-	"myplantpal-backend/internal/idgen"
-	"myplantpal-backend/internal/infrastructure/ai"
-	"myplantpal-backend/internal/infrastructure/repository/memory"
-	"myplantpal-backend/internal/infrastructure/repository/memory/seed"
-	httpapi "myplantpal-backend/internal/interface/http"
-	v1 "myplantpal-backend/internal/interface/http/v1"
-	chatuc "myplantpal-backend/internal/usecase/chat"
-	diagnosisuc "myplantpal-backend/internal/usecase/diagnosis"
-	fertilizeruc "myplantpal-backend/internal/usecase/fertilizer"
-	plantuc "myplantpal-backend/internal/usecase/plant"
+"plantpal-backend/internal/config"
+"plantpal-backend/internal/domain/chat"
+"plantpal-backend/internal/domain/diagnosis"
+"plantpal-backend/internal/domain/notification"
+"plantpal-backend/internal/idgen"
+"plantpal-backend/internal/infrastructure/ai"
+"plantpal-backend/internal/infrastructure/ai/gemini"
+"plantpal-backend/internal/infrastructure/ai/groq"
+"plantpal-backend/internal/infrastructure/push"
+"plantpal-backend/internal/infrastructure/push/fcm"
+"plantpal-backend/internal/infrastructure/repository/memory"
+"plantpal-backend/internal/infrastructure/repository/memory/seed"
+productseed "plantpal-backend/internal/infrastructure/repository/memory/seed/products"
+mongorepo "plantpal-backend/internal/infrastructure/repository/mongo"
+"plantpal-backend/internal/infrastructure/security"
+"plantpal-backend/internal/infrastructure/storage/localfs"
+httpapi "plantpal-backend/internal/interface/http"
+"plantpal-backend/internal/interface/http/authmw"
+v1 "plantpal-backend/internal/interface/http/v1"
+authuc "plantpal-backend/internal/usecase/auth"
+chatuc "plantpal-backend/internal/usecase/chat"
+diagnosisuc "plantpal-backend/internal/usecase/diagnosis"
+fertilizeruc "plantpal-backend/internal/usecase/fertilizer"
+notificationuc "plantpal-backend/internal/usecase/notification"
+orderuc "plantpal-backend/internal/usecase/order"
+plantuc "plantpal-backend/internal/usecase/plant"
+productuc "plantpal-backend/internal/usecase/product"
 )
 
+// buildPushSender picks FCM when credentials are configured, otherwise a
+// log-only sender so the reminder flow still runs in local dev.
+func buildPushSender(cfg config.Config) notification.Sender {
+var (
+sender *fcm.Sender
+err    error
+)
+switch {
+case cfg.FCMCredentialsJSON != "":
+sender, err = fcm.NewFromJSON([]byte(cfg.FCMCredentialsJSON))
+case cfg.FCMCredentialsFile != "":
+sender, err = fcm.NewFromFile(cfg.FCMCredentialsFile)
+default:
+log.Println("Push notifications: log-only (set FCM_CREDENTIALS_FILE or FCM_CREDENTIALS_JSON to enable FCM)")
+return push.LogSender{}
+}
+if err != nil {
+log.Fatalf("fcm: %v", err)
+}
+log.Println("Push notifications: FCM enabled")
+return sender
+}
+
 func main() {
-	cfg := config.Load()
-	ids := idgen.New()
+cfg := config.Load()
+if cfg.JWTSecret == "" {
+log.Fatal("JWT_SECRET is required")
+}
+ids := idgen.New()
 
-	// In-memory repositories for now; swap each for a MongoDB-backed
-	// implementation later without touching usecases or handlers.
-	plantRepo := memory.NewPlantRepository()
-	fertilizerRepo := memory.NewFertilizerRepository(seed.Fertilizers()...)
-	diagnosisRepo := memory.NewDiagnosisRepository()
-	chatRepo := memory.NewChatRepository()
+mongoCtx := context.Background()
+mongoClient, err := mongorepo.Connect(mongoCtx, cfg.MongoURI)
+if err != nil {
+log.Fatalf("mongo connect: %v", err)
+}
+defer mongoClient.Disconnect(context.Background())
+db := mongoClient.Database(cfg.MongoDBName)
 
-	var diagnosisProvider diagnosisdomain.Provider
-	var chatProvider chatdomain.ReplyProvider
-	if cfg.GroqAPIKey != "" {
-		diagnosisProvider = ai.NewGroqDiagnosisProvider(cfg.GroqAPIKey, cfg.GroqVisionModel)
-		chatProvider = ai.NewGroqChatReplyProvider(cfg.GroqAPIKey, cfg.GroqChatModel)
-		log.Println("AI Doctor / AI Chat: using Groq")
-	} else {
-		diagnosisProvider = ai.NewMockDiagnosisProvider()
-		chatProvider = ai.NewMockChatReplyProvider()
-		log.Println("AI Doctor / AI Chat: GROQ_API_KEY not set, using mock provider")
-	}
+userRepo := mongorepo.NewUserRepository(db)
+refreshRepo := mongorepo.NewRefreshTokenRepository(db)
+plantRepo := mongorepo.NewPlantRepository(db)
+diagnosisRepo := mongorepo.NewDiagnosisRepository(db)
+chatRepo := mongorepo.NewChatRepository(db)
+orderRepo := mongorepo.NewOrderRepository(db)
+notificationRepo := mongorepo.NewNotificationRepository(db)
+if err := userRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("user indexes: %v", err)
+}
+if err := refreshRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("refresh token indexes: %v", err)
+}
+if err := plantRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("plant indexes: %v", err)
+}
+if err := plantRepo.EnsureDueIndexes(mongoCtx); err != nil {
+log.Fatalf("plant due indexes: %v", err)
+}
+if err := diagnosisRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("diagnosis indexes: %v", err)
+}
+if err := chatRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("chat indexes: %v", err)
+}
+if err := orderRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("order indexes: %v", err)
+}
+if err := notificationRepo.EnsureIndexes(mongoCtx); err != nil {
+log.Fatalf("notification indexes: %v", err)
+}
 
-	deps := v1.Dependencies{
-		PlantService:      plantuc.NewService(plantRepo, ids),
-		FertilizerService: fertilizeruc.NewService(fertilizerRepo, ids),
-		DiagnosisService:  diagnosisuc.NewService(diagnosisRepo, diagnosisProvider, ids),
-		ChatService:       chatuc.NewService(chatRepo, chatProvider, ids),
-	}
+jwtIssuer := security.NewJWTIssuer(cfg.JWTSecret, "plantpal-backend", cfg.JWTAccessTTL)
+authService := authuc.NewService(userRepo, refreshRepo, ids, jwtIssuer, cfg.JWTRefreshTTL)
+if len(cfg.GoogleClientIDs) > 0 {
+authService.SetGoogleVerifier(security.NewGoogleVerifier(cfg.GoogleClientIDs))
+log.Println("Google sign-in: enabled")
+} else {
+log.Println("Google sign-in: disabled (set GOOGLE_CLIENT_ID to enable)")
+}
 
-	srv := &http.Server{
-		Addr:              ":" + cfg.Port,
-		Handler:           httpapi.NewRouter(deps),
-		ReadHeaderTimeout: 5 * time.Second,
-	}
+fertilizerRepo := memory.NewFertilizerRepository(seed.Fertilizers()...)
+productRepo := memory.NewProductRepository(productseed.Products(), productseed.Categories())
 
-	go func() {
-		log.Printf("myplantpal backend listening on :%s", cfg.Port)
-		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			log.Fatalf("server error: %v", err)
-		}
-	}()
+var priceRefresher productuc.PriceRefresherPort
+if key := os.Getenv("GROQ_API_KEY"); key != "" {
+priceRefresher = groq.New(key)
+log.Println("Groq price refresh: enabled")
+} else {
+log.Println("Groq price refresh: disabled (set GROQ_API_KEY to enable)")
+}
 
-	quit := make(chan os.Signal, 1)
-	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
-	<-quit
+var chatEntries []ai.ChatProviderEntry
+var diagnosisEntries []ai.DiagnosisProviderEntry
+if cfg.GeminiAPIKey != "" {
+geminiClient := gemini.New(cfg.GeminiAPIKey, cfg.GeminiModel)
+chatEntries = append(chatEntries, ai.ChatProviderEntry{Name: "gemini", Provider: geminiClient})
+diagnosisEntries = append(diagnosisEntries, ai.DiagnosisProviderEntry{Name: "gemini", Provider: geminiClient})
+}
+if cfg.GroqAPIKey != "" {
+chatEntries = append(chatEntries, ai.ChatProviderEntry{
+Name:     "groq",
+Provider: groq.NewChatProvider(cfg.GroqAPIKey, cfg.GroqChatModel),
+})
+diagnosisEntries = append(diagnosisEntries, ai.DiagnosisProviderEntry{
+Name:     "groq",
+Provider: groq.NewDiagnosisProvider(cfg.GroqAPIKey, cfg.GroqVisionModel),
+})
+}
+chatEntries = append(chatEntries, ai.ChatProviderEntry{Name: "mock", Provider: ai.NewMockChatReplyProvider(), Placeholder: true})
+diagnosisEntries = append(diagnosisEntries, ai.DiagnosisProviderEntry{Name: "mock", Provider: ai.NewMockDiagnosisProvider(), Placeholder: true})
 
-	log.Println("shutting down...")
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-	if err := srv.Shutdown(ctx); err != nil {
-		log.Fatalf("graceful shutdown failed: %v", err)
-	}
+log.Printf("AI providers: gemini=%v groq=%v (mock always available as last resort)",
+cfg.GeminiAPIKey != "", cfg.GroqAPIKey != "")
+
+var chatReplyProvider chat.ReplyProvider = ai.NewFallbackChatProvider(chatEntries...)
+var diagnosisProvider diagnosis.Provider = ai.NewFallbackDiagnosisProvider(diagnosisEntries...)
+
+diagnosisService := diagnosisuc.NewService(diagnosisRepo, diagnosisProvider, ids)
+imageStore, err := localfs.New(cfg.UploadDir)
+if err != nil {
+log.Fatalf("upload dir: %v", err)
+}
+diagnosisService.SetImageStore(imageStore)
+log.Printf("Diagnosis photos: saved to %s (max %d bytes)", cfg.UploadDir, cfg.MaxUploadBytes)
+
+notificationService := notificationuc.NewService(notificationRepo, buildPushSender(cfg), plantRepo)
+if cfg.ReminderInterval > 0 {
+go notificationService.Run(context.Background(), cfg.ReminderInterval)
+log.Printf("Care reminders: checking every %s", cfg.ReminderInterval)
+} else {
+log.Println("Care reminders: disabled (REMINDER_INTERVAL=0)")
+}
+
+deps := v1.Dependencies{
+PlantService:        plantuc.NewService(plantRepo, ids),
+FertilizerService:   fertilizeruc.NewService(fertilizerRepo, ids),
+DiagnosisService:    diagnosisService,
+ChatService:         chatuc.NewService(chatRepo, chatReplyProvider, ids),
+ProductService:      productuc.NewService(productRepo, priceRefresher),
+OrderService:        orderuc.NewService(orderRepo, productRepo, ids),
+AuthService:         authService,
+NotificationService: notificationService,
+MaxImageBytes:       cfg.MaxUploadBytes,
+RequireAuth:         authmw.RequireAuth(jwtIssuer),
+}
+
+var googleOAuthClientID string
+if len(cfg.GoogleClientIDs) > 0 {
+googleOAuthClientID = cfg.GoogleClientIDs[0]
+}
+googleOAuth := httpapi.GoogleOAuthConfig{
+ClientID:     googleOAuthClientID,
+ClientSecret: cfg.GoogleClientSecret,
+RedirectURI:  cfg.GoogleRedirectURI,
+}
+
+srv := &http.Server{
+Addr:    ":" + cfg.Port,
+Handler: httpapi.NewRouter(deps, googleOAuth),
+// Photo uploads from a phone on mobile data can be slow.
+ReadTimeout:  60 * time.Second,
+WriteTimeout: 60 * time.Second,
+IdleTimeout:  60 * time.Second,
+}
+
+fmt.Printf("PlantPal API listening on :%s\n", cfg.Port)
+if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+log.Fatalf("server stopped: %v", err)
+}
 }
