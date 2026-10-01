@@ -8,7 +8,7 @@ import '../../../../core/widgets/app_card.dart';
 import '../../../../core/widgets/app_screen.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
-import '../../domain/usecases/care_tasks.dart';
+import '../../domain/model/care_task.dart';
 
 class CareCalendarScreen extends ConsumerStatefulWidget {
   const CareCalendarScreen({super.key});
@@ -41,9 +41,7 @@ class _CareCalendarScreenState
       CareTaskGroup.later: l10n.laterThisWeekLabel,
     };
 
-    final tasks = const BuildCareTasks()(
-      ref.watch(plantsControllerProvider).plants,
-    );
+    final tasks = ref.watch(plantsControllerProvider).careTasks;
 
     final allDone = tasks.isNotEmpty &&
         tasks.every((t) => _done.contains(t.id));

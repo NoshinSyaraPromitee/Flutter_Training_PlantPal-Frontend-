@@ -15,7 +15,6 @@ class _PlantMascotRiveState extends State<PlantMascotRive> {
     riveFactory: Factory.rive,
   );
 
-  RiveWidgetController? _controller;
   ViewModelInstanceBoolean? _mouthOpen;
   ViewModelInstanceNumber? _numState;
   ViewModelInstanceTrigger? _trigState;
@@ -24,7 +23,6 @@ class _PlantMascotRiveState extends State<PlantMascotRive> {
 
   // Called once from onLoaded, NOT from build().
   void _bind(RiveWidgetController controller) {
-    _controller = controller;
     final vmi = controller.dataBind(DataBind.auto());
     _mouthOpen = vmi.boolean('mouthOpen');
     _numState = vmi.number('numState');

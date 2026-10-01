@@ -11,7 +11,7 @@ import '../../../../core/widgets/app_screen.dart';
 import '../../../../core/widgets/net_image.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
-import '../../domain/usecases/plant_history.dart';
+import '../../domain/model/history_entry.dart';
 
 class PlantHistoryScreen extends ConsumerStatefulWidget {
   const PlantHistoryScreen({super.key});
@@ -36,9 +36,7 @@ class _PlantHistoryScreenState
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
 
-    final history = const BuildPlantHistory()(
-      ref.watch(plantsControllerProvider).plants,
-    );
+    final history = ref.watch(plantsControllerProvider).history;
 
     return AppScreen(
       title: l10n.plantHistoryTitle,

@@ -1,9 +1,13 @@
 import 'package:flutter/foundation.dart';
 import '../../../../core/network/failure.dart';
 import '../../../ai_doctor/domain/repositories/ai_doctor_repository.dart';
+import '../../domain/model/care_task.dart';
+import '../../domain/model/history_entry.dart';
 import '../../domain/model/plant.dart';
 import '../../domain/repositories/plant_repository.dart';
 import '../../domain/usecases/add_plant.dart';
+import '../../domain/usecases/care_tasks.dart';
+import '../../domain/usecases/plant_history.dart';
 
 class PlantsController extends ChangeNotifier {
   PlantsController({
@@ -14,6 +18,8 @@ class PlantsController extends ChangeNotifier {
         _add = addPlant;
   final PlantRepository _repo;
   final AddPlant _add;
+  final _buildCareTasks = const BuildCareTasks();
+  final _buildHistory = const BuildPlantHistory();
 
   /// Source of saved scans (GET /diagnoses), used to fill in each plant's
   /// last-scan date, which the plants API doesn't carry itself.
@@ -23,6 +29,10 @@ class PlantsController extends ChangeNotifier {
   bool loading = false;
   bool loaded = false;
   String? error;
+
+  /// Derived views for the UI (the screens never call use cases directly).
+  List<CareTask> get careTasks => _buildCareTasks(plants);
+  List<HistoryEntry> get history => _buildHistory(plants);
 
   Future<void> load({bool force = false}) async {
     if (loading || (loaded && !force)) return;
