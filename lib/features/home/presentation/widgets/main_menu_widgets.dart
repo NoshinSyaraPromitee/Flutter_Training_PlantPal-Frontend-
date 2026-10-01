@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 
@@ -200,12 +200,12 @@ class MainMenuTile extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Material(
-            color: Colors.white.withValues(alpha: 0.35),
+            color: const Color(0xFFFFF6DC),
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: const BorderSide(
-                color: Color(0xFFB9C4B3),
+                color: Color(0xFF1B5A4B),
               ),
             ),
             child: InkWell(
@@ -224,12 +224,23 @@ class MainMenuTile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: AppTextStyles.inter(
-              13,
-              c: const Color(0xFF6F8068),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1B5A4B),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                color: const Color(0xFFFFF6DC).withValues(alpha: 0.6),
+              ),
+            ),
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              style: AppTextStyles.inter(
+                12,
+                w: FontWeight.w700,
+                c: const Color(0xFFFFF6DC),
+              ),
             ),
           ),
         ],

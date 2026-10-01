@@ -41,7 +41,7 @@ class FertilizerScreen extends ConsumerWidget {
                 const SizedBox(height: 12),
                 Center(
                   child: Image.asset(
-                    'assets/images/fertilizer_bag.png',
+                    'assets/images/fertilizer.png',
                     width: 100,
                     height: 100,
                   ),

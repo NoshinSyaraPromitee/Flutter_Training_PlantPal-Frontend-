@@ -9,6 +9,8 @@ import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart
 import 'package:plantpal/features/auth/presentation/screens/landing_screen.dart';
 import 'package:plantpal/features/auth/presentation/screens/login_screen.dart';
 import 'package:plantpal/features/auth/presentation/screens/register_screen.dart';
+import 'package:plantpal/features/auth/presentation/screens/forgot_password_screen.dart';
+import 'package:plantpal/features/auth/presentation/screens/reset_password_screen.dart';
 import 'package:plantpal/features/home/presentation/screens/main_menu_screen.dart';
 import 'package:plantpal/features/profile/presentation/screens/profile_screen.dart';
 import 'package:plantpal/features/profile/presentation/screens/settings_screen.dart';
@@ -18,7 +20,7 @@ import 'package:plantpal/features/splash/presentation/screens/splash_screen.dart
 class AppRouter {
   AppRouter._();
 
-  static const _public = {'/', '/landing', '/login', '/register'};
+  static const _public = {'/', '/landing', '/login', '/register', '/forgot-password', '/reset-password'};
   static const _loggedOutOnly = {'/landing', '/login', '/register'};
 
   static GoRouter create(AuthController auth) => GoRouter(
@@ -37,6 +39,14 @@ class AppRouter {
       GoRoute(path: '/landing', builder: (c, s) => const LandingScreen()),
       GoRoute(path: '/login', builder: (c, s) => const LoginScreen()),
       GoRoute(path: '/register', builder: (c, s) => const RegisterScreen()),
+      GoRoute(
+        path: '/forgot-password',
+        builder: (c, s) => ForgotPasswordScreen(email: s.extra as String?),
+      ),
+      GoRoute(
+        path: '/reset-password',
+        builder: (c, s) => ResetPasswordScreen(email: s.extra as String?),
+      ),
 
       // Bottom-tab shell
       StatefulShellRoute.indexedStack(

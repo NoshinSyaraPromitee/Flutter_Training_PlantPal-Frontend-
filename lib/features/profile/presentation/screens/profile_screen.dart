@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -42,7 +42,7 @@ class ProfileScreen extends ConsumerWidget {
                     style: AppTextStyles.inter(
                       28,
                       w: FontWeight.w800,
-                      c: AppColors.greenPrimary,
+                      c: AppColors.accent,
                     ),
                   ),
                 ),
@@ -163,7 +163,7 @@ class _StatCard extends StatelessWidget {
               style: AppTextStyles.inter(
                 22,
                 w: FontWeight.w800,
-                c: AppColors.greenPrimary,
+                c: AppColors.accent,
               ),
             ),
             Text(
@@ -224,7 +224,7 @@ class _Tile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color =
-        danger ? AppColors.danger : AppColors.greenPrimary;
+        danger ? AppColors.danger : AppColors.accent;
 
     return ListTile(
       contentPadding: EdgeInsets.zero,

@@ -46,7 +46,11 @@ class SplashMascot extends StatelessWidget {
         Positioned.fill(
           child: Align(
             alignment: const Alignment(0.1, 0.35),
-            child: SizedBox(width: width * 0.53, height: width * 0.53, child: const PlantMascotRive()),
+            child: SizedBox(
+              width: width * 0.55,
+              height: width * 0.65,
+              child: const PlantMascotRive(),
+            ),
           ),
         ),
       ]),

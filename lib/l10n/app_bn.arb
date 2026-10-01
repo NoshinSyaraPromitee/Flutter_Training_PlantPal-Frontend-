@@ -7,13 +7,13 @@
     "greetingMorning":  "শুভ সকাল!  আপনার গাছগুলো দেখে নিন?",
     "greetingAfternoon":  "শুভ অপরাহ্ন!  আপনার গাছগুলো কেমন আছে?",
     "greetingEvening":  "শুভ সন্ধ্যা!  শেষবারের মতো একবার দেখে নিন।",
-    "greetingNight":  "এখনও জেগে আছেন? 🌙 আপনার গাছগুলোও বিশ্রাম নিচ্ছে।",
+    "greetingNight":  "এখনও জেগে আছেন? আপনার গাছগুলোও বিশ্রাম নিচ্ছে।",
     "greetingPlantThirsty":  " আপনার একটি গাছের আজ পানি দরকার!",
     "greetingWeatherRain":  "বাইরে বৃষ্টি হচ্ছে  — আজ বাইরের গাছে পানি দেওয়ার দরকার নেই।",
     "greetingWeatherThunderstorm":  "কাছাকাছি ঝড় হচ্ছে  — সংবেদনশীল গাছগুলো ঘরে রাখুন।",
     "greetingWeatherSnow":  "তুষারপাত হচ্ছে  — নরম গাছগুলো ঘরে নিয়ে আসুন।",
     "greetingWeatherFog":  "কুয়াশাচ্ছন্ন সকাল  — আপনার গাছগুলো এই বাড়তি আর্দ্রতা পছন্দ করে।",
-    "greetingWeatherHot":  "বাইরে {temperature}°সে তাপমাত্রা 🔥 — আপনার গাছের বাড়তি পানি লাগতে পারে।",
+    "greetingWeatherHot":  "বাইরে {temperature}°সে তাপমাত্রা  — আপনার গাছের বাড়তি পানি লাগতে পারে।",
     "@greetingWeatherHot":  {
                                 "placeholders":  {
                                                      "temperature":  {
@@ -70,7 +70,7 @@
                                                      }
                                         }
                    },
-    "weatherTipHot":  "আজ খুব গরম 🔥 — আজ অন্তত {waterMl} মিলি পানি দিন।",
+    "weatherTipHot":  "আজ খুব গরম  — আজ অন্তত {waterMl} মিলি পানি দিন।",
     "@weatherTipHot":  {
                            "placeholders":  {
                                                 "waterMl":  {
@@ -78,8 +78,8 @@
                                                             }
                                             }
                        },
-    "weatherTipCold":  "আজ ঠান্ডা ❄️ — মূল পচন এড়াতে একটু কম পানি দিন।",
-    "weatherTipWetOutside":  "আজ বাইরে ভেজা আবহাওয়া 🌧️ — বাইরের গাছে পানি দেওয়ার দরকার নেই।",
+    "weatherTipCold":  "আজ ঠান্ডা - মূল পচন এড়াতে একটু কম পানি দিন।",
+    "weatherTipWetOutside":  "আজ বাইরে ভেজা আবহাওয়া - বাইরের গাছে পানি দেওয়ার দরকার নেই।",
     "diseasesDetectionHeader":  "রোগ\nশনাক্তকরণ",
     "diseasesDetectionSubtitle":  "একটি ছবি তুলুন এবং তাৎক্ষণিক মূল্যায়ন পান।",
     "openCameraButton":  "ছবি তুলতে ক্যামেরা খুলুন",
@@ -187,7 +187,7 @@
     "orderTotalLabel":  "মোট মূল্য",
     "processingLabel":  "প্রসেস হচ্ছে...",
     "payButtonLabel":  "{amount} পরিশোধ করুন",
-    "plantAddedSnackbar":  "{name} যোগ করা হয়েছে 🌱",
+    "plantAddedSnackbar":  "{name} যোগ করা হয়েছে ",
     "addPlantTitle":  "গাছ যোগ করুন",
     "addPlantPhotoLabel":  "গাছের ছবি যোগ করুন",
     "nicknameLabel":  "ডাকনাম",
@@ -217,7 +217,7 @@
     "statWaterToday":  "আজ পানি",
     "noPlantsTitle":  "এখনো কোনো গাছ নেই",
     "noPlantsBody":  "প্রথম গাছ যোগ করতে + চাপুন।",
-    "plantWateredSnackbar":  "{name}-কে পানি দেওয়া হয়েছে চিহ্নিত করা হলো 💧",
+    "plantWateredSnackbar":  "{name}-কে পানি দেওয়া হয়েছে চিহ্নিত করা হলো",
     "deletePlantConfirmTitle":  "গাছটি মুছবেন?",
     "deletePlantConfirmBody":  "{name} আপনার সংগ্রহ থেকে সরিয়ে ফেলা হবে।",
     "plantFallbackTitle":  "গাছ",
@@ -330,7 +330,7 @@
     "noNicknameLabel":  "কোনো ডাকনাম নেই",
     "markWateredButton":  "পানি দেওয়া হয়েছে চিহ্নিত করুন",
     "editPlantButton":  "গাছের তথ্য সম্পাদনা",
-    "markedWateredSnackbar":  "{name}-এ পানি দেওয়া হয়েছে 💧",
+    "markedWateredSnackbar":  "{name}-এ পানি দেওয়া হয়েছে ",
     "needsWaterTooltip":  "পানি প্রয়োজন",
     "emptyPlantsTitle":  "এখনো কোনো গাছ নেই",
     "emptyPlantsBody":  "আপনার প্রথম গাছ যোগ করতে + চাপুন।",

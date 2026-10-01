@@ -55,19 +55,19 @@ class EmptyView extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 72, color: Colors.black26),
+              Icon(icon, size: 72, color: AppColors.isDark ? Colors.white54 : const Color(0xFF0B2A22).withValues(alpha: 0.6)),
               const SizedBox(height: 12),
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: AppTextStyles.inter(18, w: FontWeight.w700),
+                style: AppTextStyles.inter(18, w: FontWeight.w700, c: AppColors.isDark ? const Color(0xFFEDEDED) : const Color(0xFF0B2A22)),
               ),
               if (subtitle != null) ...[
                 const SizedBox(height: 6),
                 Text(
                   subtitle!,
                   textAlign: TextAlign.center,
-                  style: AppTextStyles.inter(13, c: AppColors.textMuted),
+                  style: AppTextStyles.inter(14, w: FontWeight.w500, c: AppColors.isDark ? const Color(0xFFD6DCD2) : const Color(0xFF0B2A22)),
                 ),
               ],
               if (actionLabel != null) ...[

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../app/riverpod_providers.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -217,6 +218,22 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
           SectionTitle(l10n.accountSectionTitle),
+          AppCard(
+            padding: EdgeInsets.zero,
+            child: ListTile(
+              leading: _icon(Icons.lock_reset, const Color(0xFF5C6BC0)),
+              title: Text(
+                'Reset password',
+                style: AppTextStyles.inter(15, w: FontWeight.w600),
+              ),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => context.push(
+                '/forgot-password',
+                extra: ref.read(authControllerProvider).user?.email,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
           OutlinedButton.icon(
             onPressed: () => confirmLogout(context),
             icon: const Icon(

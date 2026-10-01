@@ -32,8 +32,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get greetingEvening => 'শুভ সন্ধ্যা!  শেষবারের মতো একবার দেখে নিন।';
 
   @override
-  String get greetingNight =>
-      'এখনও জেগে আছেন? 🌙 আপনার গাছগুলোও বিশ্রাম নিচ্ছে।';
+  String get greetingNight => 'এখনও জেগে আছেন? আপনার গাছগুলোও বিশ্রাম নিচ্ছে।';
 
   @override
   String get greetingPlantThirsty => ' আপনার একটি গাছের আজ পানি দরকার!';
@@ -56,7 +55,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String greetingWeatherHot(int temperature) {
-    return 'বাইরে $temperature°সে তাপমাত্রা 🔥 — আপনার গাছের বাড়তি পানি লাগতে পারে।';
+    return 'বাইরে $temperature°সে তাপমাত্রা  — আপনার গাছের বাড়তি পানি লাগতে পারে।';
   }
 
   @override
@@ -164,16 +163,15 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String weatherTipHot(int waterMl) {
-    return 'আজ খুব গরম 🔥 — আজ অন্তত $waterMl মিলি পানি দিন।';
+    return 'আজ খুব গরম  — আজ অন্তত $waterMl মিলি পানি দিন।';
   }
 
   @override
-  String get weatherTipCold =>
-      'আজ ঠান্ডা ❄️ — মূল পচন এড়াতে একটু কম পানি দিন।';
+  String get weatherTipCold => 'আজ ঠান্ডা - মূল পচন এড়াতে একটু কম পানি দিন।';
 
   @override
   String get weatherTipWetOutside =>
-      'আজ বাইরে ভেজা আবহাওয়া 🌧️ — বাইরের গাছে পানি দেওয়ার দরকার নেই।';
+      'আজ বাইরে ভেজা আবহাওয়া - বাইরের গাছে পানি দেওয়ার দরকার নেই।';
 
   @override
   String get diseasesDetectionHeader => 'রোগ\nশনাক্তকরণ';
@@ -500,7 +498,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String plantAddedSnackbar(String name) {
-    return '$name যোগ করা হয়েছে 🌱';
+    return '$name যোগ করা হয়েছে ';
   }
 
   @override
@@ -597,7 +595,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String plantWateredSnackbar(String name) {
-    return '$name-কে পানি দেওয়া হয়েছে চিহ্নিত করা হলো 💧';
+    return '$name-কে পানি দেওয়া হয়েছে চিহ্নিত করা হলো';
   }
 
   @override
@@ -993,7 +991,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String markedWateredSnackbar(String name) {
-    return '$name-এ পানি দেওয়া হয়েছে 💧';
+    return '$name-এ পানি দেওয়া হয়েছে ';
   }
 
   @override

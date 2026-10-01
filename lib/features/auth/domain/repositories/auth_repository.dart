@@ -24,6 +24,14 @@ abstract class AuthRepository {
     required void Function(Object error) onError,
   });
 
+  Future<void> forgotPassword(String email);
+
+  Future<void> resetPassword({
+    required String email,
+    required String code,
+    required String newPassword,
+  });
+
   Future<void> logout();
 }
 

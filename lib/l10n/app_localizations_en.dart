@@ -13,54 +13,57 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'MyPlantPal';
 
   @override
-  String get splashTagline => 'Grow with confidence';
+  String get splashTagline => 'Turn your thumb green.';
 
   @override
-  String get homeHeaderTitle => 'Let\'s care for\nyour plants';
+  String get homeHeaderTitle => 'Let\'s make your\njungle thrive';
 
   @override
-  String get homeHeaderSubtitle => 'Diagnose, feed, and grow with confidence.';
+  String get homeHeaderSubtitle =>
+      'Diagnose issues, mix custom plant food, and grow with confidence.';
 
   @override
   String get greetingMorning =>
-      'Good morning! ☀️ Ready to check on your plants?';
+      'Good morning! Ready to check on your leaf babies?';
 
   @override
   String get greetingAfternoon =>
-      'Good afternoon! 🌤️ How are your plants doing?';
+      'Good afternoon! How are your green companions holding up?';
 
   @override
-  String get greetingEvening => 'Good evening! 🌆 Time for one last check-in.';
+  String get greetingEvening =>
+      'Good evening! Time for a quick sundown check-in.';
 
   @override
-  String get greetingNight => 'Still up? 🌙 Your plants are resting too.';
+  String get greetingNight =>
+      'Still up? Rest easy—your plants are sleeping too.';
 
   @override
-  String get greetingPlantThirsty => '🌱 One of your plants is thirsty today!';
+  String get greetingPlantThirsty => 'Someone\'s looking a bit parched today!';
 
   @override
   String get greetingWeatherRain =>
-      'It\'s rainy out there 🌧️ — skip watering outdoor plants today.';
+      'Rainy skies ahead—hold off on watering outdoor plants.';
 
   @override
   String get greetingWeatherThunderstorm =>
-      'Storms nearby ⛈️ — keep sensitive plants indoors.';
+      'Storm\'s rolling in! Move vulnerable plants inside.';
 
   @override
   String get greetingWeatherSnow =>
-      'It\'s snowing ❄️ — bring tender plants inside.';
+      'Frost alert! Bring tender plants into the warm.';
 
   @override
   String get greetingWeatherFog =>
-      'Foggy morning 🌫️ — your plants love the extra humidity.';
+      'Misty morning—your tropical plants will love the humidity!';
 
   @override
   String greetingWeatherHot(int temperature) {
-    return 'It\'s $temperature°C out 🔥 — your plants may need extra water.';
+    return 'Sizzling $temperature°C today! Keep an eye out for dry soil.';
   }
 
   @override
-  String get uploadPlantPhoto => 'Upload your Plant\'s Photo';
+  String get uploadPlantPhoto => 'Snap a photo of your plant';
 
   @override
   String get quickActionsLabel => 'QUICK ACTIONS';
@@ -69,41 +72,41 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myPlantsLabel => 'My Plants';
 
   @override
-  String get maintainance => 'Maintainance';
+  String get maintainance => 'Plant Care';
 
   @override
-  String get diseaseDetectionTile => 'Disease Detection';
+  String get diseaseDetectionTile => 'AI Plant Doctor';
 
   @override
-  String get fertilizerRecipesLabel => 'Fertilizer Recipes';
+  String get fertilizerRecipesLabel => 'DIY Plant Food';
 
   @override
-  String get shopLabel => 'Shop';
+  String get shopLabel => 'Garden Shop';
 
   @override
-  String get chatWithExpertLabel => 'Chat with expert';
+  String get chatWithExpertLabel => 'Ask an Expert';
 
   @override
-  String get mainMenuButton => 'MainMenu';
+  String get mainMenuButton => 'Main Menu';
 
   @override
-  String get fertilizerHeaderTitle => 'Fertilizer Making';
+  String get fertilizerHeaderTitle => 'DIY Plant Food Lab';
 
   @override
   String get fertilizerHeaderSubtitle =>
-      'Homemade recipes for every growth stage.';
+      'Nutrient-rich homemade recipes tailored for every growth stage.';
 
   @override
-  String get addFertilizerButton => 'Add a new Fertilizer';
+  String get addFertilizerButton => 'Add New Recipe';
 
   @override
-  String get fertilizerNameFieldLabel => 'Name';
+  String get fertilizerNameFieldLabel => 'Recipe Name';
 
   @override
   String get fertilizerCategoryFieldLabel => 'Category';
 
   @override
-  String get fertilizerInstructionsFieldLabel => 'Instructions';
+  String get fertilizerInstructionsFieldLabel => 'Preparation Steps';
 
   @override
   String get cancelButton => 'Cancel';
@@ -112,93 +115,93 @@ class AppLocalizationsEn extends AppLocalizations {
   String get saveButton => 'Save';
 
   @override
-  String get searchFertilizerHint => 'Find your homemade fertilizer';
+  String get searchFertilizerHint => 'Search DIY plant food recipes...';
 
   @override
-  String get noFertilizersFound => 'No fertilizers found.';
+  String get noFertilizersFound => 'No matching recipes found.';
 
   @override
   String get serverUnreachable =>
-      'Could not reach the server. Is the backend running?';
+      'Unable to connect. Please check your internet connection.';
 
   @override
   String get maintainanceHeaderSubtitleForm =>
-      'Tell us about your plant to get a care plan.';
+      'Tell us about your plant to generate a custom care schedule.';
 
   @override
   String get maintainanceHeaderSubtitleResult =>
-      'Here’s the care plan for your plant.';
+      'Here is your plant\'s personalized care roadmap.';
 
   @override
-  String get nameOfPlantLabel => 'Name of the Plant';
+  String get nameOfPlantLabel => 'Plant Nickname';
 
   @override
-  String get nameFieldHint => 'Value';
+  String get nameFieldHint => 'e.g., Fernie, Big Leaf';
 
   @override
-  String get typesOfPlantLabel => 'Types of Plant';
+  String get typesOfPlantLabel => 'Plant Type';
 
   @override
-  String get typesFieldHint => 'Water based, Maniplant etc';
+  String get typesFieldHint => 'e.g., Succulent, Monstera, Aquatic';
 
   @override
-  String get plantAgeLabel => 'How are the plant\'s age ?';
+  String get plantAgeLabel => 'What stage is your plant in?';
 
   @override
-  String get ageFieldHint => 'Seed, Seedlings...';
+  String get ageFieldHint => 'Seedling, Mature, Sprout...';
 
   @override
-  String get createRoadmapButton => 'Create My Roadmap';
+  String get createRoadmapButton => 'Generate Care Roadmap';
 
   @override
   String yourPlantNeeds(String plantName, int amount) {
-    return 'Your plant \'$plantName\' needs around $amount ml water daily. Here is the time table you can water your plants';
+    return 'Your \'$plantName\' needs roughly $amount ml of water daily. Here is your ideal watering schedule:';
   }
 
   @override
-  String get setAlarmButton => 'Set Alarm';
+  String get setAlarmButton => 'Set Reminder';
 
   @override
   String tipsLabel(String tips) {
-    return 'Tips: $tips';
+    return 'Pro Tip: $tips';
   }
 
   @override
   String weatherTipHot(int waterMl) {
-    return 'It\'s too hot today 🔥 — give at least $waterMl ml water today.';
+    return 'High heat expected! Give your plant at least $waterMl ml of water today.';
   }
 
   @override
   String get weatherTipCold =>
-      'It\'s cold today ❄️ — water a little less to avoid root rot.';
+      'Chilly weather ahead—cut back on watering to prevent root rot.';
 
   @override
   String get weatherTipWetOutside =>
-      'It\'s wet outside today 🌧️ — skip watering outdoor plants.';
+      'It\'s rainy outside—let nature water your outdoor plants today.';
 
   @override
-  String get diseasesDetectionHeader => 'Diseases\nDetection';
+  String get diseasesDetectionHeader => 'Plant Health\nScanner';
 
   @override
   String get diseasesDetectionSubtitle =>
-      'Snap a photo and get an instant assessment.';
+      'Snap a photo for an instant health diagnosis.';
 
   @override
-  String get openCameraButton => 'Open Camera to take photo';
+  String get openCameraButton => 'Take Photo';
 
   @override
   String cureLabel(String cure) {
-    return 'Cure: $cure';
+    return 'Recommended Treatment: $cure';
   }
 
   @override
-  String get addToLogButton => 'Add to Log';
+  String get addToLogButton => 'Add to Health Log';
 
   @override
-  String get buyFertilizerButton => 'Buy Fertilizer';
+  String get buyFertilizerButton => 'Shop Plant Food';
 
   @override
-  String get appTagline => 'Your Garden\'s best Friend';
+  String get appTagline => 'Your plant\'s best friend.';
 
   @override
   String get getStartedButton => 'Get Started';
@@ -213,7 +216,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get closeButton => 'Close';
 
   @override
-  String get continueShoppingButton => 'Continue Shopping';
+  String get continueShoppingButton => 'Keep Browsing';
 
   @override
   String get addToCartButton => 'Add to Cart';
@@ -231,7 +234,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get offLabel => 'Off';
 
   @override
-  String get emailLabel => 'Email';
+  String get emailLabel => 'Email Address';
 
   @override
   String get passwordLabel => 'Password';
@@ -243,32 +246,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get locationLabel => 'Location';
 
   @override
-  String get loadingLabel => 'Loading...';
+  String get loadingLabel => 'Growing updates...';
 
   @override
   String get loginWelcomeBack => 'Welcome Back!';
 
   @override
-  String get loginSubtitle => 'Missing your buddies?';
+  String get loginSubtitle => 'Your plants missed you!';
 
   @override
-  String get loginButton => 'Login';
+  String get loginButton => 'Log In';
 
   @override
   String get orDivider => 'OR';
 
   @override
-  String get noAccountPrompt => 'Don\'t have an account?';
+  String get noAccountPrompt => 'New to PlantPal?';
 
   @override
-  String get registerLink => 'Register';
+  String get registerLink => 'Sign Up';
 
   @override
   String get createAccountButton => 'Create Account';
 
   @override
   String get emailSignInUnavailable =>
-      'Email sign-in isn\'t available yet. Please continue with Google.';
+      'Email sign-in is temporarily unavailable. Please continue with Google.';
 
   @override
   String get signingInLabel => 'Signing in...';
@@ -277,47 +280,47 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithGoogleButton => 'Continue with Google';
 
   @override
-  String get continueAsGuestButton => 'Continue as guest (debug only)';
+  String get continueAsGuestButton => 'Explore as Guest (Debug)';
 
   @override
-  String get careMetricWater => 'Water';
+  String get careMetricWater => 'Watering';
 
   @override
   String get careMetricSunlight => 'Sunlight';
 
   @override
-  String get careMetricTemp => 'Temp';
+  String get careMetricTemp => 'Temperature';
 
   @override
-  String get careMetricFertilizer => 'Fertilizer';
+  String get careMetricFertilizer => 'Nutrients';
 
   @override
   String get careMetricHumidity => 'Humidity';
 
   @override
-  String get careGuideTitle => 'Care Guide';
+  String get careGuideTitle => 'Plant Care Playbook';
 
   @override
-  String get careChallengeTitle => 'Today\'s Care Challenge';
+  String get careChallengeTitle => 'Today\'s Plant Quest';
 
   @override
   String get careChallengeDoneMessage =>
-      'All done! Your plant is thriving today.';
+      'All done! Your green family is thriving.';
 
   @override
-  String get careEssentialsTitle => 'Essentials';
+  String get careEssentialsTitle => 'Care Essentials';
 
   @override
-  String get careProTipsTitle => 'Pro Tips';
+  String get careProTipsTitle => 'Expert Insights';
 
   @override
-  String get careCommonProblemsTitle => 'Common Problems';
+  String get careCommonProblemsTitle => 'Troubleshooting';
 
   @override
   String get cartTitle => 'My Cart';
 
   @override
-  String get cartEmptyTitle => 'Your cart is empty';
+  String get cartEmptyTitle => 'Your cart is feeling empty';
 
   @override
   String get proceedToCheckoutButton => 'Proceed to Checkout';
@@ -326,7 +329,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get checkoutTitle => 'Checkout';
 
   @override
-  String get shippingInfoTitle => 'Shipping Information';
+  String get shippingInfoTitle => 'Delivery Address';
 
   @override
   String get phoneNumberLabel => 'Phone Number';
@@ -349,11 +352,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get orderConfirmedTitle => 'Order Confirmed!';
+  String get orderConfirmedTitle => 'Order Placed!';
 
   @override
   String get orderConfirmedBody =>
-      'Thank you for shopping with PlantPal.\nYour order has been placed successfully.';
+      'Thank you for shopping with PlantPal!\nYour goodies are on their way.';
 
   @override
   String get orderIdLabel => 'Order ID';
@@ -370,86 +373,87 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statusLabel => 'Status';
 
   @override
-  String get statusProcessing => 'Processing';
+  String get statusProcessing => 'Prepping your order';
 
   @override
   String get backToHomeButton => 'Back to Home';
 
   @override
-  String get recipeTitle => 'Recipe';
+  String get recipeTitle => 'Recipe Details';
 
   @override
-  String get recipeNotFoundMessage => 'Recipe not found.';
+  String get recipeNotFoundMessage => 'Recipe could not be found.';
 
   @override
   String get ingredientsTitle => 'Ingredients';
 
   @override
-  String get preparationTitle => 'Preparation';
+  String get preparationTitle => 'How to Prepare';
 
   @override
-  String get applicationTitle => 'Application';
+  String get applicationTitle => 'How to Apply';
 
   @override
-  String get benefitsTitle => 'Benefits';
+  String get benefitsTitle => 'Key Benefits';
 
   @override
-  String get safetyTipsTitle => 'Safety Tips';
+  String get safetyTipsTitle => 'Safety Precautions';
 
   @override
-  String get fertilizerMakingTitle => 'Fertilizer Making';
+  String get fertilizerMakingTitle => 'Plant Food Lab';
 
   @override
   String get noRecipesFoundTitle => 'No recipes found';
 
   @override
   String noRecipesFoundBody(String query) {
-    return 'Nothing matches \"$query\".';
+    return 'No plant food recipes match \"$query\".';
   }
 
   @override
-  String get fertilizerSearchSubtitle => 'Find your homemade fertilizer';
+  String get fertilizerSearchSubtitle => 'Discover easy DIY plant nutrients';
 
   @override
   String nutrientLabel(String nutrient) {
-    return 'Nutrient: $nutrient';
+    return 'Key Nutrient: $nutrient';
   }
 
   @override
-  String get achievementsTitle => 'Achievements';
+  String get achievementsTitle => 'Badges & Milestones';
 
   @override
-  String get noNotificationsMessage => 'No new notifications.';
+  String get noNotificationsMessage =>
+      'You\'re all caught up! No new notifications.';
 
   @override
   String mascotThirstyMessage(String mascotName) {
-    return '$mascotName is thirsty, give him some water';
+    return '$mascotName is looking thirsty—time for a drink!';
   }
 
   @override
-  String get uploadPlantPhotoPrompt => 'Upload your Plant\'s Photo';
+  String get uploadPlantPhotoPrompt => 'Snap or upload a photo';
 
   @override
-  String get myPlantsMenuLabel => 'My Plants';
+  String get myPlantsMenuLabel => 'My Garden';
 
   @override
-  String get aiDoctorMenuLabel => 'AI Doctor';
+  String get aiDoctorMenuLabel => 'AI Plant Doctor';
 
   @override
-  String get fertilizerRecipesMenuLabel => 'Fertilizer Recipes';
+  String get fertilizerRecipesMenuLabel => 'DIY Plant Food';
 
   @override
-  String get maintenanceMenuLabel => 'Maintenance';
+  String get maintenanceMenuLabel => 'Care Schedules';
 
   @override
-  String get shopMenuLabel => 'Shop';
+  String get shopMenuLabel => 'Garden Shop';
 
   @override
   String get cameraLabel => 'Camera';
 
   @override
   String pointsBalanceLabel(String points, String taka) {
-    return '$points points ( $taka taka)';
+    return '$points pts ($taka ৳)';
   }
 
   @override
@@ -457,18 +461,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String paymentSuccessBody(String amount, String method) {
-    return 'Your payment of $amount via $method was completed. Your order has been placed.';
+    return 'Your payment of $amount via $method was completed successfully.';
   }
 
   @override
-  String get viewOrderButton => 'View Order';
+  String get viewOrderButton => 'View Order Details';
 
   @override
   String get paymentFailedTitle => 'Payment Failed';
 
   @override
   String get paymentFailedBody =>
-      'We could not process your payment. Please try again or choose a different payment method.';
+      'We couldn\'t process your payment. Please try again or use another payment option.';
 
   @override
   String get changePaymentMethodButton => 'Change Payment Method';
@@ -480,11 +484,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get paymentTitle => 'Payment';
 
   @override
-  String get secureCheckoutTitle => 'Secure Checkout';
+  String get secureCheckoutTitle => 'Encrypted Checkout';
 
   @override
   String get secureCheckoutBody =>
-      'Your payment information is encrypted and secure.';
+      'Your transaction details are protected with bank-grade security.';
 
   @override
   String get selectPaymentMethodTitle => 'Select Payment Method';
@@ -493,7 +497,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orderTotalLabel => 'Order Total';
 
   @override
-  String get processingLabel => 'Processing...';
+  String get processingLabel => 'Processing transaction...';
 
   @override
   String payButtonLabel(String amount) {
@@ -502,44 +506,44 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String plantAddedSnackbar(String name) {
-    return '$name has been added 🌱';
+    return '$name has joined your garden! 🌱';
   }
 
   @override
-  String get addPlantTitle => 'Add Plant';
+  String get addPlantTitle => 'Add New Plant';
 
   @override
-  String get addPlantPhotoLabel => 'Add Plant Photo';
+  String get addPlantPhotoLabel => 'Upload Photo';
 
   @override
-  String get nicknameLabel => 'Nickname';
+  String get nicknameLabel => 'Plant Nickname';
 
   @override
-  String get nicknameHint => 'Bella';
+  String get nicknameHint => 'e.g., Leafy, Monster';
 
   @override
   String get plantSpeciesLabel => 'Plant Species';
 
   @override
-  String get speciesHint => 'Monstera Deliciosa';
+  String get speciesHint => 'e.g., Monstera Deliciosa';
 
   @override
-  String get locationHint => 'Living Room';
+  String get locationHint => 'e.g., Sunroom, Bedside Table';
 
   @override
-  String get sunlightMediumOption => 'Medium';
+  String get sunlightMediumOption => 'Filtered Light';
 
   @override
-  String get waterFrequencyLabel => 'Water every (days)';
+  String get waterFrequencyLabel => 'Watering interval (days)';
 
   @override
-  String get wateredTodayCheckbox => 'I watered it today';
+  String get wateredTodayCheckbox => 'Watered today';
 
   @override
-  String get autoFillAiScanButton => 'Auto Fill Using AI Scan';
+  String get autoFillAiScanButton => 'Identify Automatically with AI';
 
   @override
-  String get savingLabel => 'Saving...';
+  String get savingLabel => 'Saving to garden...';
 
   @override
   String get savePlantButton => 'Save Plant';
@@ -548,16 +552,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tomorrowLabel => 'Tomorrow';
 
   @override
-  String get laterThisWeekLabel => 'Later This Week';
+  String get laterThisWeekLabel => 'Coming Up This Week';
 
   @override
   String get careCalendarTitle => 'Care Calendar';
 
   @override
-  String get noCareTasksTitle => 'No care tasks yet';
+  String get noCareTasksTitle => 'No upcoming care tasks';
 
   @override
-  String get noCareTasksBody => 'Add a plant to see its watering schedule.';
+  String get noCareTasksBody => 'Add a plant to build your watering calendar.';
 
   @override
   String careTaskWater(String name) {
@@ -566,100 +570,101 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String careTaskFertilize(String name) {
-    return 'Fertilize $name';
+    return 'Feed $name';
   }
 
   @override
-  String get allCaughtUpTitle => 'All caught up!';
+  String get allCaughtUpTitle => 'You\'re all done!';
 
   @override
-  String get allCaughtUpBody => 'Your plants thank you.';
+  String get allCaughtUpBody => 'Your leafy crew is happy and hydrated.';
 
   @override
-  String get myPlantsTitle => 'My Green Family';
+  String get myPlantsTitle => 'My Green Sanctuary';
 
   @override
-  String get searchPlantsHint => 'Search plants...';
+  String get searchPlantsHint => 'Find a plant in your garden...';
 
   @override
-  String get statPlants => 'Plants';
+  String get statPlants => 'Total Plants';
 
   @override
-  String get statHealth => 'Health';
+  String get statHealth => 'Overall Health';
 
   @override
-  String get statWaterToday => 'Water Today';
+  String get statWaterToday => 'Due Today';
 
   @override
-  String get noPlantsTitle => 'No plants yet';
+  String get noPlantsTitle => 'Your sanctuary is empty';
 
   @override
-  String get noPlantsBody => 'Tap + to add your first plant.';
+  String get noPlantsBody => 'Tap + to welcome your very first plant!';
 
   @override
   String plantWateredSnackbar(String name) {
-    return '$name marked as watered 💧';
+    return '$name is hydrated and happy! 💧';
   }
 
   @override
-  String get deletePlantConfirmTitle => 'Delete plant?';
+  String get deletePlantConfirmTitle => 'Remove Plant?';
 
   @override
   String deletePlantConfirmBody(String name) {
-    return '$name will be removed from your collection.';
+    return '$name will be removed from your garden collection.';
   }
 
   @override
   String get plantFallbackTitle => 'Plant';
 
   @override
-  String get plantNotFoundMessage => 'Plant not found.';
+  String get plantNotFoundMessage => 'We couldn\'t find that plant.';
 
   @override
   String get markAsWateredTooltip => 'Mark as watered';
 
   @override
-  String get deletePlantMenuItem => 'Delete plant';
+  String get deletePlantMenuItem => 'Remove plant';
 
   @override
-  String get todaysCareTitle => 'Today\'s Care';
+  String get todaysCareTitle => 'Today\'s Routine';
 
   @override
   String plantWaterLevelLabel(String level) {
-    return 'Water: $level';
+    return 'Moisture Level: $level';
   }
 
   @override
-  String get noFertilizerNoteMessage => 'No fertilizer note yet';
+  String get noFertilizerNoteMessage => 'No feeding schedule set yet';
 
   @override
   String plantFertilizeNoteLabel(String note) {
-    return 'Fertilize: $note';
+    return 'Feeding Tip: $note';
   }
 
   @override
   String plantLastScanLabel(String when) {
-    return 'Last scan: $when';
+    return 'Last check-up: $when';
   }
 
   @override
-  String get scanAgainButton => 'Scan Again';
+  String get scanAgainButton => 'Scan Check-up';
 
   @override
-  String get askAiDoctorButton => 'Ask AI Doctor';
+  String get askAiDoctorButton => 'Consult AI Doctor';
 
   @override
-  String get plantHistoryTitle => 'Plant History';
+  String get plantHistoryTitle => 'Growth Journal';
 
   @override
-  String get noActivityTitle => 'No activity yet';
+  String get noActivityTitle => 'No entries yet';
 
   @override
-  String get noActivityBody => 'Scan or water a plant to get started!';
+  String get noActivityBody =>
+      'Scan or water a plant to kick off its growth journal!';
 
   @override
   String historyScanEntry(String name) {
-    return '$name was scanned';
+    return '$name received an AI check-up';
   }
 
   @override
@@ -668,21 +673,21 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get notScannedYetLabel => 'Not scanned yet';
+  String get notScannedYetLabel => 'Awaiting first check-up';
 
   @override
   String healthCritical(int percent) {
-    return '$percent% • Critical';
+    return '$percent% • Urgent Action Needed';
   }
 
   @override
   String healthNeedsCare(int percent) {
-    return '$percent% • Needs Care';
+    return '$percent% • Attention Suggested';
   }
 
   @override
   String healthHealthy(int percent) {
-    return '$percent% • Healthy';
+    return '$percent% • Thriving';
   }
 
   @override
@@ -697,20 +702,20 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get statAvgHealth => 'Avg Health';
+  String get statAvgHealth => 'Avg Health Score';
 
   @override
-  String get statBadges => 'Badges';
+  String get statBadges => 'Garden Badges';
 
   @override
-  String get quickMenuTitle => 'Quick Menu';
+  String get quickMenuTitle => 'Quick Navigation';
 
   @override
-  String get chooseLanguageTitle => 'Choose Language';
+  String get chooseLanguageTitle => 'Select Language';
 
   @override
   String get aboutBody =>
-      'Version 1.0.0\n\nYour friendly AI gardening assistant — scan, track, and care for your plants with confidence.';
+      'Version 1.0.0\n\nYour intelligent plant companion—scan, care, and cultivate your home jungle with confidence.';
 
   @override
   String get notificationsSectionTitle => 'Notifications';
@@ -719,14 +724,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pushNotificationsLabel => 'Push Notifications';
 
   @override
-  String get pushNotificationsSubtitle => 'General app updates and alerts';
+  String get pushNotificationsSubtitle =>
+      'Updates, plant tips, and announcements';
 
   @override
-  String get wateringRemindersLabel => 'Watering Reminders';
+  String get wateringRemindersLabel => 'Watering Alerts';
 
   @override
   String get wateringRemindersSubtitle =>
-      'Get notified when a plant needs water';
+      'Get notified exact moments your plants get thirsty';
 
   @override
   String get appearanceSectionTitle => 'Appearance';
@@ -735,10 +741,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkModeLabel => 'Dark Mode';
 
   @override
-  String get generalSectionTitle => 'General';
+  String get generalSectionTitle => 'General Settings';
 
   @override
-  String get languageLabel => 'Language';
+  String get languageLabel => 'App Language';
 
   @override
   String get aboutPlantPalLabel => 'About PlantPal';
@@ -747,29 +753,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get accountSectionTitle => 'Account';
 
   @override
-  String get logoutConfirmBody => 'Are you sure you want to log out?';
+  String get logoutConfirmBody =>
+      'Are you sure you want to log out of PlantPal?';
 
   @override
-  String get reviewsSectionTitle => 'Reviews';
+  String get reviewsSectionTitle => 'Community Reviews';
 
   @override
   String get noReviewsMessage =>
-      'No reviews yet. Be the first to share your experience!';
+      'No reviews yet. Be the first plant parent to leave a review!';
 
   @override
   String get writeReviewTitle => 'Write a Review';
 
   @override
-  String get yourRatingLabel => 'Your rating';
+  String get yourRatingLabel => 'Your Rating';
 
   @override
-  String get reviewHintText => 'Share your experience with this product...';
+  String get reviewHintText => 'How did this product perform for your plants?';
 
   @override
   String get submitReviewButton => 'Submit Review';
 
   @override
-  String get categoryAllLabel => 'All';
+  String get categoryAllLabel => 'All Items';
 
   @override
   String get productFallbackTitle => 'Product';
@@ -778,10 +785,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get productNotFoundMessage => 'Product not found.';
 
   @override
-  String get detailsSectionTitle => 'Details';
+  String get detailsSectionTitle => 'Product Details';
 
   @override
-  String get descriptionSectionTitle => 'Description';
+  String get descriptionSectionTitle => 'Overview';
 
   @override
   String get quantitySectionTitle => 'Quantity';
@@ -807,21 +814,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String productInStock(int count) {
-    return '$count in stock';
+    return '$count units left';
   }
 
   @override
-  String get shopSubtitle => 'Find your necessary gardening equipment';
+  String get shopSubtitle => 'Curated tools and supplies for a thriving garden';
 
   @override
-  String get searchProductsHint => 'Search products...';
+  String get searchProductsHint => 'Search products, tools, fertilizers...';
 
   @override
-  String get noProductsFoundMessage => 'No products found';
+  String get noProductsFoundMessage =>
+      'No products found matching your search.';
 
   @override
   String productAddedToCartSnackbar(String name) {
-    return '$name added to cart';
+    return '$name added to your cart! 🛍️';
   }
 
   @override
@@ -832,53 +840,54 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get wishlistEmptyBody =>
-      'Tap the heart on any product to save it here.';
+      'Tap the heart on any product to save it for later.';
 
   @override
-  String get browseShopButton => 'Browse Shop';
+  String get browseShopButton => 'Explore the Shop';
 
   @override
-  String get plantBotAnalyzingLabel => 'PlantBot is analyzing...';
+  String get plantBotAnalyzingLabel => 'PlantBot is inspecting your leaf...';
 
   @override
   String get scanPlantTitle => 'Scan Your Plant';
 
   @override
-  String get analyzingPlantLabel => 'Analyzing your plant...';
+  String get analyzingPlantLabel => 'Analyzing leaf patterns & health...';
 
   @override
-  String get chooseFromGalleryButton => 'Choose from Gallery';
+  String get chooseFromGalleryButton => 'Choose from Photo Gallery';
 
   @override
-  String get plantIdentifiedTitle => 'Plant Identified';
+  String get plantIdentifiedTitle => 'Match Found!';
 
   @override
-  String get noScanYetTitle => 'No scan yet';
+  String get noScanYetTitle => 'No active scan';
 
   @override
-  String get noScanYetBody => 'Take or choose a plant photo first.';
+  String get noScanYetBody =>
+      'Take or select a photo of your plant to analyze.';
 
   @override
-  String get unknownPlantLabel => 'Unknown plant';
+  String get unknownPlantLabel => 'Unrecognized Species';
 
   @override
-  String get aiHardcodedLabel => 'Hardcoded';
+  String get aiHardcodedLabel => 'Sample Result';
 
   @override
-  String get viewCareGuideButton => 'View Care Guide';
+  String get viewCareGuideButton => 'Open Care Guide';
 
   @override
-  String get captionHint => 'Add a caption (optional)...';
+  String get captionHint => 'Add a note or caption (optional)...';
 
   @override
-  String get chatInputHint => 'Ask anything...';
+  String get chatInputHint => 'Ask your plant question...';
 
   @override
-  String get aiVisionAnalysisTitle => 'AI Vision Analysis';
+  String get aiVisionAnalysisTitle => 'AI Vision Diagnostics';
 
   @override
   String diagnosisProblemLabel(String issue) {
-    return 'Problem: $issue';
+    return 'Detected Concern: $issue';
   }
 
   @override

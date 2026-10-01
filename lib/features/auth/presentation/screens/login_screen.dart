@@ -94,7 +94,24 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             onPressed: () => setState(() => _hide = !_hide),
           ),
         ),
-        const SizedBox(height: 24),
+        Align(
+          alignment: Alignment.centerRight,
+          child: TextButton(
+            onPressed: () => context.push(
+              '/forgot-password',
+              extra: _email.text.trim(),
+            ),
+            child: Text(
+              'Forgot password?',
+              style: AppTextStyles.inter(
+                13,
+                w: FontWeight.w700,
+                c: AppColors.accent,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
         SizedBox(
           width: double.infinity,
           child: AppButton(
@@ -136,7 +153,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 style: AppTextStyles.inter(
                   14,
                   w: FontWeight.w700,
-                  c: AppColors.greenPrimary,
+                  c: Colors.white,
                 ),
               ),
             ),
