@@ -1,6 +1,6 @@
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:plantpal/features/home/presentation/widgets/main_menu_mascot.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,18 +13,16 @@ import '../../../../l10n/app_localizations.dart';
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});
 
-  // TODO: read points from the gamification/rewards backend.
   static const int _points = 999;
   static const int _pointsPerTaka = 100;
   static const String _mascotName = 'Tetoro';
 
   // Swap these for your own tile art (same filenames in assets/images/ works too).
-  static const _imgMyPlants = 'assets/images/corner_flowers.png';
-  static const _imgAiDoctor = 'assets/images/disease_plant.png';
-  static const _imgFertilizer = 'assets/images/fertilizer_bag.png';
-  static const _imgMaintenance = 'assets/images/maintenance_cactus.png';
+  static const _imgMyPlants = 'assets/images/myplant.png';
+  static const _imgAiDoctor = 'assets/images/aidoctor.png';
+  static const _imgFertilizer = 'assets/images/fertilizer.png';
+  static const _imgMaintenance = 'assets/images/maintenance.png';
   static const _imgShop = 'assets/images/shop_image.png';
-  static const _imgMascot = 'assets/images/splash_mascot.png';
 
   void _back(BuildContext context) {
     if (context.canPop()) {
@@ -74,43 +72,9 @@ class MainMenuScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 4),
-
-                // Mascot + speech bubble
-                LayoutBuilder(
-                  builder: (context, c) {
-                    final bubbleLeft = c.maxWidth / 2 + 52;
-                    final bubbleWidth =
-                        math.min(140.0, c.maxWidth - bubbleLeft);
-
-                    return SizedBox(
-                      height: 132,
-                      child: Stack(
-                        children: [
-                          Align(
-                            child: Container(
-                              width: 84,
-                              height: 108,
-                              padding: const EdgeInsets.all(4),
-                              color: const Color(0xFFCFE8B8),
-                              child: Image.asset(
-                                _imgMascot,
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: bubbleLeft,
-                            top: 0,
-                            width: bubbleWidth,
-                            child: SpeechBubble(
-                              text: l10n.mascotThirstyMessage(_mascotName),
-                              onTap: () => context.push('/plants'),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
+                MainMenuMascot(
+                  mascotName: _mascotName,
+                  onBubbleTap: () => context.push('/plants'),
                 ),
                 const SizedBox(height: 16),
 

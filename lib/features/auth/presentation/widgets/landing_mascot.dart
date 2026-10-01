@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/plant_mascot_rive.dart';
+
 /// Large decorative blob with the potted-plant mascot centered on top.
 class LandingMascot extends StatelessWidget {
   const LandingMascot({super.key, required this.width});
@@ -18,7 +20,8 @@ class LandingMascot extends StatelessWidget {
               alignment: const Alignment(0.1, 0.35),
               child: SizedBox(
                 width: width * (0.45 / 0.85),
-                child: Image.asset('assets/images/splash_mascot.png'),
+                height: width * (0.45 / 0.85),
+                child: const PlantMascotRive(),
               ),
             ),
           ),

@@ -98,6 +98,336 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
+  /// No description provided for @appTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'MyPlantPal'**
+  String get appTitle;
+
+  /// No description provided for @splashTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Grow with confidence'**
+  String get splashTagline;
+
+  /// No description provided for @homeHeaderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s care for\nyour plants'**
+  String get homeHeaderTitle;
+
+  /// No description provided for @homeHeaderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnose, feed, and grow with confidence.'**
+  String get homeHeaderSubtitle;
+
+  /// No description provided for @greetingMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning! ╬ô├┐├çΓê⌐Γòò├à Ready to check on your plants?'**
+  String get greetingMorning;
+
+  /// No description provided for @greetingAfternoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Good afternoon! Γëí╞Æ├«├▒Γê⌐Γòò├à How are your plants doing?'**
+  String get greetingAfternoon;
+
+  /// No description provided for @greetingEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening! Γëí╞Æ├«├Ñ Time for one last check-in.'**
+  String get greetingEvening;
+
+  /// No description provided for @greetingNight.
+  ///
+  /// In en, this message translates to:
+  /// **'Still up? Γëí╞Æ├«├û Your plants are resting too.'**
+  String get greetingNight;
+
+  /// No description provided for @greetingPlantThirsty.
+  ///
+  /// In en, this message translates to:
+  /// **'Γëí╞Æ├«ΓûÆ One of your plants is thirsty today!'**
+  String get greetingPlantThirsty;
+
+  /// No description provided for @greetingWeatherRain.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s rainy out there Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants today.'**
+  String get greetingWeatherRain;
+
+  /// No description provided for @greetingWeatherThunderstorm.
+  ///
+  /// In en, this message translates to:
+  /// **'Storms nearby ╬ô┬ó├¬Γê⌐Γòò├à ╬ô├ç├╢ keep sensitive plants indoors.'**
+  String get greetingWeatherThunderstorm;
+
+  /// No description provided for @greetingWeatherSnow.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s snowing ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ bring tender plants inside.'**
+  String get greetingWeatherSnow;
+
+  /// No description provided for @greetingWeatherFog.
+  ///
+  /// In en, this message translates to:
+  /// **'Foggy morning Γëí╞Æ├«┬╜Γê⌐Γòò├à ╬ô├ç├╢ your plants love the extra humidity.'**
+  String get greetingWeatherFog;
+
+  /// No description provided for @greetingWeatherHot.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s {temperature}Γö¼ΓûæC out Γëí╞Æ├╢├æ ╬ô├ç├╢ your plants may need extra water.'**
+  String greetingWeatherHot(int temperature);
+
+  /// No description provided for @uploadPlantPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload your Plant\'s Photo'**
+  String get uploadPlantPhoto;
+
+  /// No description provided for @quickActionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'QUICK ACTIONS'**
+  String get quickActionsLabel;
+
+  /// No description provided for @myPlantsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'My Plants'**
+  String get myPlantsLabel;
+
+  /// No description provided for @maintainance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintainance'**
+  String get maintainance;
+
+  /// No description provided for @diseaseDetectionTile.
+  ///
+  /// In en, this message translates to:
+  /// **'Disease Detection'**
+  String get diseaseDetectionTile;
+
+  /// No description provided for @fertilizerRecipesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilizer Recipes'**
+  String get fertilizerRecipesLabel;
+
+  /// No description provided for @shopLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop'**
+  String get shopLabel;
+
+  /// No description provided for @chatWithExpertLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with expert'**
+  String get chatWithExpertLabel;
+
+  /// No description provided for @mainMenuButton.
+  ///
+  /// In en, this message translates to:
+  /// **'MainMenu'**
+  String get mainMenuButton;
+
+  /// No description provided for @fertilizerHeaderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilizer Making'**
+  String get fertilizerHeaderTitle;
+
+  /// No description provided for @fertilizerHeaderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Homemade recipes for every growth stage.'**
+  String get fertilizerHeaderSubtitle;
+
+  /// No description provided for @addFertilizerButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a new Fertilizer'**
+  String get addFertilizerButton;
+
+  /// No description provided for @fertilizerNameFieldLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get fertilizerNameFieldLabel;
+
+  /// No description provided for @fertilizerCategoryFieldLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get fertilizerCategoryFieldLabel;
+
+  /// No description provided for @fertilizerInstructionsFieldLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Instructions'**
+  String get fertilizerInstructionsFieldLabel;
+
+  /// No description provided for @cancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelButton;
+
+  /// No description provided for @saveButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get saveButton;
+
+  /// No description provided for @searchFertilizerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Find your homemade fertilizer'**
+  String get searchFertilizerHint;
+
+  /// No description provided for @noFertilizersFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No fertilizers found.'**
+  String get noFertilizersFound;
+
+  /// No description provided for @serverUnreachable.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not reach the server. Is the backend running?'**
+  String get serverUnreachable;
+
+  /// No description provided for @maintainanceHeaderSubtitleForm.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us about your plant to get a care plan.'**
+  String get maintainanceHeaderSubtitleForm;
+
+  /// No description provided for @maintainanceHeaderSubtitleResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Here╬ô├ç├ûs the care plan for your plant.'**
+  String get maintainanceHeaderSubtitleResult;
+
+  /// No description provided for @nameOfPlantLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name of the Plant'**
+  String get nameOfPlantLabel;
+
+  /// No description provided for @nameFieldHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Value'**
+  String get nameFieldHint;
+
+  /// No description provided for @typesOfPlantLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Types of Plant'**
+  String get typesOfPlantLabel;
+
+  /// No description provided for @typesFieldHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Water based, Maniplant etc'**
+  String get typesFieldHint;
+
+  /// No description provided for @plantAgeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'How are the plant\'s age ?'**
+  String get plantAgeLabel;
+
+  /// No description provided for @ageFieldHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed, Seedlings...'**
+  String get ageFieldHint;
+
+  /// No description provided for @createRoadmapButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Create My Roadmap'**
+  String get createRoadmapButton;
+
+  /// No description provided for @yourPlantNeeds.
+  ///
+  /// In en, this message translates to:
+  /// **'Your plant \'{plantName}\' needs around {amount} ml water daily. Here is the time table you can water your plants'**
+  String yourPlantNeeds(String plantName, int amount);
+
+  /// No description provided for @setAlarmButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Alarm'**
+  String get setAlarmButton;
+
+  /// No description provided for @tipsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Tips: {tips}'**
+  String tipsLabel(String tips);
+
+  /// No description provided for @weatherTipHot.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s too hot today Γëí╞Æ├╢├æ ╬ô├ç├╢ give at least {waterMl} ml water today.'**
+  String weatherTipHot(int waterMl);
+
+  /// No description provided for @weatherTipCold.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s cold today ╬ô┬Ñ├ñΓê⌐Γòò├à ╬ô├ç├╢ water a little less to avoid root rot.'**
+  String get weatherTipCold;
+
+  /// No description provided for @weatherTipWetOutside.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s wet outside today Γëí╞Æ├«┬║Γê⌐Γòò├à ╬ô├ç├╢ skip watering outdoor plants.'**
+  String get weatherTipWetOutside;
+
+  /// No description provided for @diseasesDetectionHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Diseases\nDetection'**
+  String get diseasesDetectionHeader;
+
+  /// No description provided for @diseasesDetectionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Snap a photo and get an instant assessment.'**
+  String get diseasesDetectionSubtitle;
+
+  /// No description provided for @openCameraButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Camera to take photo'**
+  String get openCameraButton;
+
+  /// No description provided for @cureLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cure: {cure}'**
+  String cureLabel(String cure);
+
+  /// No description provided for @addToLogButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to Log'**
+  String get addToLogButton;
+
+  /// No description provided for @buyFertilizerButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy Fertilizer'**
+  String get buyFertilizerButton;
+
   /// No description provided for @appTagline.
   ///
   /// In en, this message translates to:
@@ -109,12 +439,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Get Started'**
   String get getStartedButton;
-
-  /// No description provided for @cancelButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancelButton;
 
   /// No description provided for @deleteButton.
   ///
@@ -395,7 +719,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for checkoutDeliveryEtaFee
   ///
   /// In en, this message translates to:
-  /// **'{eta} ΓÇó {fee}'**
+  /// **'{eta} ╬ô├ç├│ {fee}'**
   String checkoutDeliveryEtaFee(String eta, String fee);
 
   /// No description provided for @orderConfirmedTitle.
@@ -506,12 +830,6 @@ abstract class AppLocalizations {
   /// **'Nothing matches \"{query}\".'**
   String noRecipesFoundBody(String query);
 
-  /// No description provided for @addFertilizerButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Add a new Fertilizer'**
-  String get addFertilizerButton;
-
   /// No description provided for @fertilizerSearchSubtitle.
   ///
   /// In en, this message translates to:
@@ -583,12 +901,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Camera'**
   String get cameraLabel;
-
-  /// No description provided for @chatWithExpertLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Chat with expert'**
-  String get chatWithExpertLabel;
 
   /// Auto-extracted UI string for pointsBalanceLabel
   ///
@@ -683,7 +995,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for plantAddedSnackbar
   ///
   /// In en, this message translates to:
-  /// **'{name} has been added ≡ƒî▒'**
+  /// **'{name} has been added Γëí╞Æ├«ΓûÆ'**
   String plantAddedSnackbar(String name);
 
   /// No description provided for @addPlantTitle.
@@ -863,7 +1175,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for plantWateredSnackbar
   ///
   /// In en, this message translates to:
-  /// **'{name} marked as watered ≡ƒÆº'**
+  /// **'{name} marked as watered Γëí╞Æ├å┬║'**
   String plantWateredSnackbar(String name);
 
   /// No description provided for @deletePlantConfirmTitle.
@@ -983,19 +1295,19 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for healthCritical
   ///
   /// In en, this message translates to:
-  /// **'{percent}% ΓÇó Critical'**
+  /// **'{percent}% ╬ô├ç├│ Critical'**
   String healthCritical(int percent);
 
   /// Auto-extracted UI string for healthNeedsCare
   ///
   /// In en, this message translates to:
-  /// **'{percent}% ΓÇó Needs Care'**
+  /// **'{percent}% ╬ô├ç├│ Needs Care'**
   String healthNeedsCare(int percent);
 
   /// Auto-extracted UI string for healthHealthy
   ///
   /// In en, this message translates to:
-  /// **'{percent}% ΓÇó Healthy'**
+  /// **'{percent}% ╬ô├ç├│ Healthy'**
   String healthHealthy(int percent);
 
   /// No description provided for @settingsMenuLabel.
@@ -1043,7 +1355,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutBody.
   ///
   /// In en, this message translates to:
-  /// **'Version 1.0.0\n\nYour friendly AI gardening assistant ΓÇö scan, track, and care for your plants with confidence.'**
+  /// **'Version 1.0.0\n\nYour friendly AI gardening assistant ╬ô├ç├╢ scan, track, and care for your plants with confidence.'**
   String get aboutBody;
 
   /// No description provided for @notificationsSectionTitle.
@@ -1193,7 +1505,7 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for productQuantityFormula
   ///
   /// In en, this message translates to:
-  /// **'= {qty} ├ù {unit}'**
+  /// **'= {qty} Γö£├╣ {unit}'**
   String productQuantityFormula(int qty, String unit);
 
   /// No description provided for @buyNowButton.
@@ -1279,12 +1591,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Analyzing your plant...'**
   String get analyzingPlantLabel;
-
-  /// No description provided for @openCameraButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Open Camera to take photo'**
-  String get openCameraButton;
 
   /// No description provided for @chooseFromGalleryButton.
   ///
@@ -1379,13 +1685,13 @@ abstract class AppLocalizations {
   /// Auto-extracted UI string for bulletItem
   ///
   /// In en, this message translates to:
-  /// **'ΓÇó {item}'**
+  /// **'╬ô├ç├│ {item}'**
   String bulletItem(String item);
 
   /// No description provided for @aiDisclaimerText.
   ///
   /// In en, this message translates to:
-  /// **'AI guidance only ΓÇö not a guaranteed diagnosis. Check with a local plant expert for serious issues.'**
+  /// **'AI guidance only ╬ô├ç├╢ not a guaranteed diagnosis. Check with a local plant expert for serious issues.'**
   String get aiDisclaimerText;
 
   /// No description provided for @chatWelcomeMessage.
@@ -1547,7 +1853,7 @@ abstract class AppLocalizations {
   /// No description provided for @markedWateredSnackbar.
   ///
   /// In en, this message translates to:
-  /// **'{name} has been watered 💧'**
+  /// **'{name} has been watered ≡ƒÆº'**
   String markedWateredSnackbar(String name);
 
   /// No description provided for @needsWaterTooltip.
@@ -1759,312 +2065,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count}h ago'**
   String hoursAgoLabel(int count);
-
-  /// No description provided for @appTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'MyPlantPal'**
-  String get appTitle;
-
-  /// No description provided for @splashTagline.
-  ///
-  /// In en, this message translates to:
-  /// **'Grow with confidence'**
-  String get splashTagline;
-
-  /// No description provided for @homeHeaderTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Let\'s care for\nyour plants'**
-  String get homeHeaderTitle;
-
-  /// No description provided for @homeHeaderSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Diagnose, feed, and grow with confidence.'**
-  String get homeHeaderSubtitle;
-
-  /// No description provided for @greetingMorning.
-  ///
-  /// In en, this message translates to:
-  /// **'Good morning! ΓÿÇ∩╕Å Ready to check on your plants?'**
-  String get greetingMorning;
-
-  /// No description provided for @greetingAfternoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Good afternoon! ≡ƒîñ∩╕Å How are your plants doing?'**
-  String get greetingAfternoon;
-
-  /// No description provided for @greetingEvening.
-  ///
-  /// In en, this message translates to:
-  /// **'Good evening! ≡ƒîå Time for one last check-in.'**
-  String get greetingEvening;
-
-  /// No description provided for @greetingNight.
-  ///
-  /// In en, this message translates to:
-  /// **'Still up? ≡ƒîÖ Your plants are resting too.'**
-  String get greetingNight;
-
-  /// No description provided for @greetingPlantThirsty.
-  ///
-  /// In en, this message translates to:
-  /// **'≡ƒî▒ One of your plants is thirsty today!'**
-  String get greetingPlantThirsty;
-
-  /// No description provided for @greetingWeatherRain.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s rainy out there ≡ƒîº∩╕Å ΓÇö skip watering outdoor plants today.'**
-  String get greetingWeatherRain;
-
-  /// No description provided for @greetingWeatherThunderstorm.
-  ///
-  /// In en, this message translates to:
-  /// **'Storms nearby Γ¢ê∩╕Å ΓÇö keep sensitive plants indoors.'**
-  String get greetingWeatherThunderstorm;
-
-  /// No description provided for @greetingWeatherSnow.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s snowing Γ¥ä∩╕Å ΓÇö bring tender plants inside.'**
-  String get greetingWeatherSnow;
-
-  /// No description provided for @greetingWeatherFog.
-  ///
-  /// In en, this message translates to:
-  /// **'Foggy morning ≡ƒî½∩╕Å ΓÇö your plants love the extra humidity.'**
-  String get greetingWeatherFog;
-
-  /// No description provided for @greetingWeatherHot.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s {temperature}┬░C out ≡ƒöÑ ΓÇö your plants may need extra water.'**
-  String greetingWeatherHot(int temperature);
-
-  /// No description provided for @uploadPlantPhoto.
-  ///
-  /// In en, this message translates to:
-  /// **'Upload your Plant\'s Photo'**
-  String get uploadPlantPhoto;
-
-  /// No description provided for @quickActionsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'QUICK ACTIONS'**
-  String get quickActionsLabel;
-
-  /// No description provided for @myPlantsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'My Plants'**
-  String get myPlantsLabel;
-
-  /// No description provided for @maintainance.
-  ///
-  /// In en, this message translates to:
-  /// **'Maintainance'**
-  String get maintainance;
-
-  /// No description provided for @diseaseDetectionTile.
-  ///
-  /// In en, this message translates to:
-  /// **'Disease Detection'**
-  String get diseaseDetectionTile;
-
-  /// No description provided for @fertilizerRecipesLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Fertilizer Recipes'**
-  String get fertilizerRecipesLabel;
-
-  /// No description provided for @shopLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Shop'**
-  String get shopLabel;
-
-  /// No description provided for @mainMenuButton.
-  ///
-  /// In en, this message translates to:
-  /// **'MainMenu'**
-  String get mainMenuButton;
-
-  /// No description provided for @fertilizerHeaderTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Fertilizer Making'**
-  String get fertilizerHeaderTitle;
-
-  /// No description provided for @fertilizerHeaderSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Homemade recipes for every growth stage.'**
-  String get fertilizerHeaderSubtitle;
-
-  /// No description provided for @fertilizerNameFieldLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Name'**
-  String get fertilizerNameFieldLabel;
-
-  /// No description provided for @fertilizerCategoryFieldLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Category'**
-  String get fertilizerCategoryFieldLabel;
-
-  /// No description provided for @fertilizerInstructionsFieldLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Instructions'**
-  String get fertilizerInstructionsFieldLabel;
-
-  /// No description provided for @saveButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Save'**
-  String get saveButton;
-
-  /// No description provided for @searchFertilizerHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Find your homemade fertilizer'**
-  String get searchFertilizerHint;
-
-  /// No description provided for @noFertilizersFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No fertilizers found.'**
-  String get noFertilizersFound;
-
-  /// No description provided for @serverUnreachable.
-  ///
-  /// In en, this message translates to:
-  /// **'Could not reach the server. Is the backend running?'**
-  String get serverUnreachable;
-
-  /// No description provided for @maintainanceHeaderSubtitleForm.
-  ///
-  /// In en, this message translates to:
-  /// **'Tell us about your plant to get a care plan.'**
-  String get maintainanceHeaderSubtitleForm;
-
-  /// No description provided for @maintainanceHeaderSubtitleResult.
-  ///
-  /// In en, this message translates to:
-  /// **'HereΓÇÖs the care plan for your plant.'**
-  String get maintainanceHeaderSubtitleResult;
-
-  /// No description provided for @nameOfPlantLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Name of the Plant'**
-  String get nameOfPlantLabel;
-
-  /// No description provided for @nameFieldHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Value'**
-  String get nameFieldHint;
-
-  /// No description provided for @typesOfPlantLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Types of Plant'**
-  String get typesOfPlantLabel;
-
-  /// No description provided for @typesFieldHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Water based, Maniplant etc'**
-  String get typesFieldHint;
-
-  /// No description provided for @plantAgeLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'How are the plant\'s age ?'**
-  String get plantAgeLabel;
-
-  /// No description provided for @ageFieldHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Seed, Seedlings...'**
-  String get ageFieldHint;
-
-  /// No description provided for @createRoadmapButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Create My Roadmap'**
-  String get createRoadmapButton;
-
-  /// No description provided for @yourPlantNeeds.
-  ///
-  /// In en, this message translates to:
-  /// **'Your plant \'{plantName}\' needs around {amount} ml water daily. Here is the time table you can water your plants'**
-  String yourPlantNeeds(String plantName, int amount);
-
-  /// No description provided for @setAlarmButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Set Alarm'**
-  String get setAlarmButton;
-
-  /// No description provided for @tipsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Tips: {tips}'**
-  String tipsLabel(String tips);
-
-  /// No description provided for @weatherTipHot.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s too hot today ≡ƒöÑ ΓÇö give at least {waterMl} ml water today.'**
-  String weatherTipHot(int waterMl);
-
-  /// No description provided for @weatherTipCold.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s cold today Γ¥ä∩╕Å ΓÇö water a little less to avoid root rot.'**
-  String get weatherTipCold;
-
-  /// No description provided for @weatherTipWetOutside.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s wet outside today ≡ƒîº∩╕Å ΓÇö skip watering outdoor plants.'**
-  String get weatherTipWetOutside;
-
-  /// No description provided for @diseasesDetectionHeader.
-  ///
-  /// In en, this message translates to:
-  /// **'Diseases\nDetection'**
-  String get diseasesDetectionHeader;
-
-  /// No description provided for @diseasesDetectionSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Snap a photo and get an instant assessment.'**
-  String get diseasesDetectionSubtitle;
-
-  /// No description provided for @cureLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cure: {cure}'**
-  String cureLabel(String cure);
-
-  /// No description provided for @addToLogButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Add to Log'**
-  String get addToLogButton;
-
-  /// No description provided for @buyFertilizerButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Buy Fertilizer'**
-  String get buyFertilizerButton;
 
   /// No description provided for @navHome.
   ///

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/plant_mascot_rive.dart';
+
 /// Decorative blobs and ferns scattered behind the splash screen content.
 class SplashDecor extends StatelessWidget {
   const SplashDecor({super.key, required this.width, required this.height});
@@ -44,7 +46,7 @@ class SplashMascot extends StatelessWidget {
         Positioned.fill(
           child: Align(
             alignment: const Alignment(0.1, 0.35),
-            child: SizedBox(width: width * 0.53, child: Image.asset('assets/images/splash_mascot.png')),
+            child: SizedBox(width: width * 0.53, height: width * 0.53, child: const PlantMascotRive()),
           ),
         ),
       ]),

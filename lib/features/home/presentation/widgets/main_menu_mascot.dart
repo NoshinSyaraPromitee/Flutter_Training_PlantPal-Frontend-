@@ -1,7 +1,8 @@
-import 'dart:math' as math;
+﻿import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:plantpal/core/widgets/plant_mascot_rive.dart';
 import 'package:plantpal/features/home/domain/greeting.dart';
 import 'package:plantpal/features/home/presentation/providers/greeting_providers.dart';
 import 'package:plantpal/features/home/presentation/widgets/main_menu_speech_bubble.dart';
@@ -13,9 +14,16 @@ import 'package:provider/provider.dart';
 /// The bubble text prioritizes an actionable plant-care nudge, falls back
 /// to a notable weather condition, and otherwise greets by time of day.
 class MainMenuMascot extends ConsumerWidget {
-  const MainMenuMascot({super.key, required this.imageAsset, required this.onBubbleTap});
+  const MainMenuMascot({
+    super.key,
+    required this.onBubbleTap,
+    this.imageAsset,
+    this.mascotName,
+  });
 
-  final String imageAsset;
+  // Kept optional so either caller version compiles; the Rive mascot ignores them.
+  final String? imageAsset;
+  final String? mascotName;
   final VoidCallback onBubbleTap;
 
   @override
@@ -39,7 +47,7 @@ class MainMenuMascot extends ConsumerWidget {
                   height: 108,
                   padding: const EdgeInsets.all(4),
                   color: const Color(0xFFCFE8B8),
-                  child: Image.asset(imageAsset, fit: BoxFit.contain),
+                  child: const PlantMascotRive(),
                 ),
               ),
               Positioned(

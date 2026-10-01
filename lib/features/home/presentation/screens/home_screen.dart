@@ -14,6 +14,7 @@ import '../widgets/chat_avatar.dart';
 import '../widgets/points_badge.dart';
 import '../widgets/quick_actions_grid.dart';
 import '../widgets/speech_bubble.dart';
+import '../../../../core/widgets/plant_mascot_rive.dart';
 
 /// Main menu / dashboard screen shown after the splash screen.
 class HomeScreen extends ConsumerWidget {
@@ -53,10 +54,7 @@ class HomeScreen extends ConsumerWidget {
                       SizedBox(
                         width: 72,
                         height: 72,
-                        child: Image.asset(
-                          'assets/images/splash_mascot.png',
-                          fit: BoxFit.contain,
-                        ),
+                        child: const PlantMascotRive(),
                       ),
                       const SizedBox(width: AppSpacing.md),
                       Expanded(
