@@ -76,6 +76,16 @@ abstract class AppLocalizations {
   String weatherTipHot(int waterMl);
   String get weatherTipCold;
   String get weatherTipWetOutside;
+
+  String pointsBalanceLabel(String points, String taka);
+  String get noNotificationsMessage;
+  String get uploadPlantPhotoPrompt;
+  String get myPlantsMenuLabel;
+  String get aiDoctorMenuLabel;
+  String get maintenanceMenuLabel;
+  String get fertilizerRecipesMenuLabel;
+  String get shopMenuLabel;
+  String mascotThirstyMessage(String mascotName);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

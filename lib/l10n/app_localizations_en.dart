@@ -104,4 +104,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get weatherTipCold => "It's cold today ❄️ — water a little less to avoid root rot.";
   @override
   String get weatherTipWetOutside => "It's wet outside today 🌧️ — skip watering outdoor plants.";
+
+  @override
+  String pointsBalanceLabel(String points, String taka) => '$points pts ($taka ৳)';
+  @override
+  String get noNotificationsMessage => "You're all caught up! No new notifications.";
+  @override
+  String get uploadPlantPhotoPrompt => 'Snap or upload a photo';
+  @override
+  String get myPlantsMenuLabel => 'My Garden';
+  @override
+  String get aiDoctorMenuLabel => 'AI Plant Doctor';
+  @override
+  String get maintenanceMenuLabel => 'Care Schedules';
+  @override
+  String get fertilizerRecipesMenuLabel => 'DIY Plant Food';
+  @override
+  String get shopMenuLabel => 'Garden Shop';
+  @override
+  String mascotThirstyMessage(String mascotName) => '$mascotName is looking thirsty—time for a drink!';
 }

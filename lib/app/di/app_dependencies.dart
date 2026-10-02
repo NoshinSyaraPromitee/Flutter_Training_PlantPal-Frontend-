@@ -39,6 +39,8 @@ class AppDependencies {
     );
     api.onUnauthorized = auth.logout; // expired/invalid token -> back to login
 
+    points = PointsController(storage)..load();
+
     final plantRepo = PlantRepositoryImpl(PlantRemoteDataSource(api));
     plants = PlantsController(
       repository: plantRepo,
@@ -67,7 +69,7 @@ class AppDependencies {
   final SettingsController settings = SettingsController();
   final CareGuideRepository careGuide = CareGuideLocalRepository();
   final AchievementRepository achievements = AchievementLocalRepository();
-  final PointsController points = PointsController();
+  late final PointsController points;
 
   List<SingleChildWidget> get providers => [
     ChangeNotifierProvider<AuthController>.value(value: auth),

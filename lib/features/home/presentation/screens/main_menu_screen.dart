@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:plantpal/core/widgets/gradient_background.dart';
 import 'package:plantpal/core/widgets/fb_community_popup.dart';
+import 'package:plantpal/core/widgets/gradient_background.dart';
 import 'package:plantpal/features/gamification/presentation/providers/points_provider.dart';
-import 'package:plantpal/features/home/presentation/widgets/main_menu_mascot.dart';
-import 'package:plantpal/features/home/presentation/widgets/main_menu_upload_button.dart';
-import 'package:plantpal/features/home/presentation/widgets/main_menu_points.dart';
-import 'package:plantpal/features/home/presentation/widgets/main_menu_widgets.dart';
+import 'package:plantpal/features/home/presentation/widgets/menu_colors.dart';
+import 'package:plantpal/features/home/presentation/widgets/menu_hero_card.dart';
+import 'package:plantpal/features/home/presentation/widgets/menu_tile.dart';
+import 'package:plantpal/features/home/presentation/widgets/menu_top_bar.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
 
-/// Main menu shown after login (route: /home).
 class MainMenuScreen extends StatefulWidget {
   const MainMenuScreen({super.key});
 
@@ -19,16 +18,6 @@ class MainMenuScreen extends StatefulWidget {
 }
 
 class _MainMenuScreenState extends State<MainMenuScreen> {
-  static const int _pointsPerTaka = 100;
-
-  // Swap these for your own tile art (same filenames in assets/images/ works too).
-  static const _imgMyPlants = 'assets/images/corner_flowers.png';
-  static const _imgAiDoctor = 'assets/images/disease_plant.png';
-  static const _imgFertilizer = 'assets/images/fertilizer_bag.png';
-  static const _imgMaintenance = 'assets/images/maintenance_cactus.png';
-  static const _imgShop = 'assets/images/shop_image.png';
-  static const _imgMascot = 'assets/images/splash_mascot.png';
-
   @override
   void initState() {
     super.initState();
@@ -39,75 +28,129 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final points = context.watch<PointsController>().balance;
-    final taka = (points / _pointsPerTaka).round();
-    final t = AppLocalizations.of(context);
+    final taka = (points / PointsController.pointsPerTaka).round();
 
     return Scaffold(
       body: GradientBackground(
         child: SafeArea(
           bottom: false,
           child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 520),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    PointsPill(points: points, taka: taka),
-                    IconButton(
-                      icon: const Icon(Icons.notifications_none, color: Color(0xFF8E1B1B)),
-                      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(t.noNewNotifications)),
+                    // ---- Top bar: points + notifications ----
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: MenuPointsChip(
+                              label: l10n.pointsBalanceLabel(
+                                points.toString(),
+                                taka.toString(),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        MenuBellButton(
+                          onTap: () => ScaffoldMessenger.of(context)
+                              .showSnackBar(
+                            SnackBar(
+                              content: Text(l10n.noNotificationsMessage),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+
+                    // ---- Hero: mascot + greeting + upload ----
+                    MenuHeroCard(
+                      uploadLabel: l10n.uploadPlantPhotoPrompt,
+                      onBubbleTap: () => context.push('/plants'),
+                      onUpload: () => context.go('/scan'),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // ---- Bento grid ----
+                    SizedBox(
+                      height: 214,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            flex: 11,
+                            child: MenuTile(
+                              layout: MenuTileLayout.tall,
+                              label: l10n.myPlantsMenuLabel,
+                              image: 'assets/images/myplant.png',
+                              fill: MenuColors.cream,
+                              onTap: () => context.push('/plants'),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            flex: 10,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: MenuTile(
+                                    layout: MenuTileLayout.compact,
+                                    label: l10n.aiDoctorMenuLabel,
+                                    image: 'assets/images/aidoctor.png',
+                                    fill: MenuColors.sage,
+                                    onTap: () => context.go('/ai-doctor'),
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+                                Expanded(
+                                  child: MenuTile(
+                                    layout: MenuTileLayout.compact,
+                                    label: l10n.maintenanceMenuLabel,
+                                    image: 'assets/images/maintenance.png',
+                                    fill: MenuColors.gold,
+                                    onTap: () => context.push('/care-calendar'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      height: 92,
+                      child: MenuTile(
+                        layout: MenuTileLayout.wide,
+                        label: l10n.fertilizerRecipesMenuLabel,
+                        image: 'assets/images/fertilizer.png',
+                        fill: MenuColors.cream,
+                        onTap: () => context.push('/fertilizer'),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      height: 92,
+                      child: MenuTile(
+                        layout: MenuTileLayout.wide,
+                        label: l10n.shopMenuLabel,
+                        image: 'assets/images/shop_image.png',
+                        fill: MenuColors.teal,
+                        dark: true,
+                        onTap: () => context.go('/shop'),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 4),
-                MainMenuMascot(
-                  imageAsset: _imgMascot,
-                  onBubbleTap: () => context.push('/plants'),
-                ),
-                const SizedBox(height: 16),
-                MainMenuUploadButton(
-                  label: t.uploadPlantPhoto,
-                  onTap: () => context.go('/scan'),
-                ),
-                const SizedBox(height: 36),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    MainMenuTile(
-                      imageAsset: _imgMyPlants,
-                      label: t.myPlants,
-                      onTap: () => context.push('/plants'),
-                    ),
-                    MainMenuTile(
-                      imageAsset: _imgAiDoctor,
-                      label: t.aiDoctor,
-                      onTap: () => context.go('/ai-doctor'),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 44),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    MainMenuTile(
-                      imageAsset: _imgFertilizer,
-                      label: t.fertilizerRecipes,
-                      onTap: () => context.push('/fertilizer'),
-                    ),
-                    MainMenuTile(
-                      imageAsset: _imgMaintenance,
-                      label: t.maintenance,
-                      onTap: () => context.push('/care-calendar'),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 40),
-                MainMenuTile(imageAsset: _imgShop, label: t.shop, onTap: () => context.go('/shop')),
-              ],
+              ),
             ),
           ),
         ),

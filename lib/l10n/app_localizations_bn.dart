@@ -104,4 +104,23 @@ class AppLocalizationsBn extends AppLocalizations {
   String get weatherTipCold => 'আজ ঠান্ডা ❄️ — মূল পচন এড়াতে একটু কম পানি দিন।';
   @override
   String get weatherTipWetOutside => 'আজ বাইরে ভেজা আবহাওয়া 🌧️ — বাইরের গাছে পানি দেওয়ার দরকার নেই।';
+
+  @override
+  String pointsBalanceLabel(String points, String taka) => '$points পয়েন্ট ( $taka টাকা)';
+  @override
+  String get noNotificationsMessage => 'নতুন কোনো নোটিফিকেশন নেই।';
+  @override
+  String get uploadPlantPhotoPrompt => 'আপনার গাছের ছবি আপলোড করুন';
+  @override
+  String get myPlantsMenuLabel => 'আমার গাছ';
+  @override
+  String get aiDoctorMenuLabel => 'AI ডাক্তার';
+  @override
+  String get maintenanceMenuLabel => 'রক্ষণাবেক্ষণ';
+  @override
+  String get fertilizerRecipesMenuLabel => 'সারের রেসিপি';
+  @override
+  String get shopMenuLabel => 'দোকান';
+  @override
+  String mascotThirstyMessage(String mascotName) => '$mascotName তৃষ্ণার্ত, একটু পানি দিন';
 }
