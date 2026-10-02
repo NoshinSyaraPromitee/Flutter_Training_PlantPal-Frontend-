@@ -7,6 +7,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get appTitle => 'PlantPal';
   @override
+  String get appTagline => 'Your plant\'s best friend.';
+  @override
+  String get getStartedButton => 'Get Started';
+  @override
   String get myPlants => 'My Plants';
   @override
   String get aiDoctor => 'AI Doctor';

@@ -7,6 +7,10 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get appTitle => 'প্ল্যান্টপাল';
   @override
+  String get appTagline => 'আপনার বাগানের সেরা বন্ধু';
+  @override
+  String get getStartedButton => 'শুরু করুন';
+  @override
   String get myPlants => 'আমার গাছপালা';
   @override
   String get aiDoctor => 'এআই ডাক্তার';

@@ -23,6 +23,8 @@ abstract class AppLocalizations {
 
   // ---- Strings ----
   String get appTitle;
+  String get appTagline;
+  String get getStartedButton;
   String get myPlants;
   String get aiDoctor;
   String get fertilizerRecipes;
