@@ -73,17 +73,18 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<AuthUser?> loginWithGoogle() => guardCall(() async {
-        final idToken = await _remote.googleIdToken();
+        // Browser OAuth (authorization-code) flow. The backend handles
+        // GET /auth/google/callback and GET /auth/google/session/{state}.
+        final res = await _remote.googleLogin();
 
-        if (idToken == null) return null;
+        if (res == null) return null; // user cancelled
 
-        final tokens = await _remote.loginWithGoogle(idToken);
-        final user = AuthUser.fromJson(tokens.userJson);
+        final user = AuthUser.fromJson(res['user'] as Map<String, dynamic>);
 
         await _storage.saveSession(
-          token: tokens.accessToken,
+          token: res['accessToken'] as String,
           user: user.toJson(),
-          refreshToken: tokens.refreshToken,
+          refreshToken: res['refreshToken'] as String?,
         );
 
         return user;
