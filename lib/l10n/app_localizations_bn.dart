@@ -1137,4 +1137,59 @@ class AppLocalizationsBn extends AppLocalizations {
   String plantFertilizedSnackbar(String name) {
     return '$name-কে সার দেওয়া হয়েছে চিহ্নিত করা হলো';
   }
+
+  @override
+  String get chatHistoryTooltip => 'চ্যাট ইতিহাস';
+
+  @override
+  String get chatSessionsTitle => 'আপনার চ্যাট';
+
+  @override
+  String get chatNewChat => 'নতুন চ্যাট';
+
+  @override
+  String get chatSessionsToday => 'আজ';
+
+  @override
+  String get chatSessionsYesterday => 'গতকাল';
+
+  @override
+  String get chatSessionsEarlier => 'আগের';
+
+  @override
+  String get chatSessionsEmptyTitle => 'এখনো কোনো চ্যাট নেই';
+
+  @override
+  String get chatSessionsEmptyBody =>
+      'একটি কথোপকথন শুরু করুন, এখানে দেখা যাবে।';
+
+  @override
+  String get chatUntitledSession => 'নতুন কথোপকথন';
+
+  @override
+  String get chatDeleteConfirmTitle => 'এই চ্যাটটি মুছবেন?';
+
+  @override
+  String get chatDeleteConfirmBody => 'এই কথোপকথনটি স্থায়ীভাবে মুছে যাবে।';
+
+  @override
+  String get chatDeleteFailed => 'চ্যাটটি মুছতে পারিনি। আবার চেষ্টা করুন।';
+
+  @override
+  String get chatLoadHistoryError => 'এই চ্যাটটি লোড করা যায়নি।';
+
+  @override
+  String get chatStopTooltip => 'থামান';
+
+  @override
+  String get chatScanContextRemove => 'এই চ্যাট থেকে স্ক্যান সরান';
+
+  @override
+  String get chatPhotoUnavailable =>
+      'ছবি পাওয়া যায়নি। আবার চেষ্টা করতে ট্যাপ করুন।';
+
+  @override
+  String chatScanPrefill(String issue) {
+    return 'আমার গাছে $issue দেখা যাচ্ছে। আমার কী করা উচিত?';
+  }
 }

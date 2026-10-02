@@ -2125,6 +2125,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} has been fed!'**
   String plantFertilizedSnackbar(String name);
+
+  /// No description provided for @chatHistoryTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat history'**
+  String get chatHistoryTooltip;
+
+  /// No description provided for @chatSessionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your chats'**
+  String get chatSessionsTitle;
+
+  /// No description provided for @chatNewChat.
+  ///
+  /// In en, this message translates to:
+  /// **'New chat'**
+  String get chatNewChat;
+
+  /// No description provided for @chatSessionsToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get chatSessionsToday;
+
+  /// No description provided for @chatSessionsYesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get chatSessionsYesterday;
+
+  /// No description provided for @chatSessionsEarlier.
+  ///
+  /// In en, this message translates to:
+  /// **'Earlier'**
+  String get chatSessionsEarlier;
+
+  /// No description provided for @chatSessionsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No chats yet'**
+  String get chatSessionsEmptyTitle;
+
+  /// No description provided for @chatSessionsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a conversation and it will show up here.'**
+  String get chatSessionsEmptyBody;
+
+  /// No description provided for @chatUntitledSession.
+  ///
+  /// In en, this message translates to:
+  /// **'New conversation'**
+  String get chatUntitledSession;
+
+  /// No description provided for @chatDeleteConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this chat?'**
+  String get chatDeleteConfirmTitle;
+
+  /// No description provided for @chatDeleteConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This conversation will be permanently removed.'**
+  String get chatDeleteConfirmBody;
+
+  /// No description provided for @chatDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t delete the chat. Please try again.'**
+  String get chatDeleteFailed;
+
+  /// No description provided for @chatLoadHistoryError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load this chat.'**
+  String get chatLoadHistoryError;
+
+  /// No description provided for @chatStopTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop generating'**
+  String get chatStopTooltip;
+
+  /// No description provided for @chatScanContextRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove scan from this chat'**
+  String get chatScanContextRemove;
+
+  /// No description provided for @chatPhotoUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo unavailable. Tap to retry.'**
+  String get chatPhotoUnavailable;
+
+  /// No description provided for @chatScanPrefill.
+  ///
+  /// In en, this message translates to:
+  /// **'My plant shows {issue}. What should I do?'**
+  String chatScanPrefill(String issue);
 }
 
 class _AppLocalizationsDelegate

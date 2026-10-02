@@ -55,6 +55,19 @@ class AppDependencies {
       scans: aiRepo,
     );
     chat = ChatController(aiRepo, storage);
+    // Restore the saved conversation once signed in; forget it on logout.
+    AuthStatus? lastAuthStatus;
+    auth.addListener(() {
+      final status = auth.status;
+      if (status == lastAuthStatus) return;
+      lastAuthStatus = status;
+      if (status == AuthStatus.authenticated) {
+        chat.loadHistory();
+      } else if (status == AuthStatus.unauthenticated) {
+        chat.reset();
+        api.clearImageCache();
+      }
+    });
     scan = ScanController(aiRepo);
 
     api.getLanguage = () => settings.language;

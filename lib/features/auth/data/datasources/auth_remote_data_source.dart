@@ -154,7 +154,12 @@ class AuthRemoteDataSource {
     );
   }
 
-  AuthTokens _toTokens(Map<String, dynamic> json) {
+  AuthTokens _toTokens(Map<String, dynamic> raw) {
+    // The backend answers {"data": {accessToken, refreshToken, user}}.
+    // ApiClient unwraps that already; unwrapping here too keeps login working
+    // even where the unwrapping interceptor is not active yet.
+    final inner = raw['data'];
+    final json = inner is Map<String, dynamic> ? inner : raw;
     return AuthTokens(
       accessToken: json['accessToken'] as String,
       refreshToken: json['refreshToken'] as String,

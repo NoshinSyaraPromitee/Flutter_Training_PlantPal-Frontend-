@@ -1150,4 +1150,59 @@ class AppLocalizationsEn extends AppLocalizations {
   String plantFertilizedSnackbar(String name) {
     return '$name has been fed!';
   }
+
+  @override
+  String get chatHistoryTooltip => 'Chat history';
+
+  @override
+  String get chatSessionsTitle => 'Your chats';
+
+  @override
+  String get chatNewChat => 'New chat';
+
+  @override
+  String get chatSessionsToday => 'Today';
+
+  @override
+  String get chatSessionsYesterday => 'Yesterday';
+
+  @override
+  String get chatSessionsEarlier => 'Earlier';
+
+  @override
+  String get chatSessionsEmptyTitle => 'No chats yet';
+
+  @override
+  String get chatSessionsEmptyBody =>
+      'Start a conversation and it will show up here.';
+
+  @override
+  String get chatUntitledSession => 'New conversation';
+
+  @override
+  String get chatDeleteConfirmTitle => 'Delete this chat?';
+
+  @override
+  String get chatDeleteConfirmBody =>
+      'This conversation will be permanently removed.';
+
+  @override
+  String get chatDeleteFailed => 'Couldn\'t delete the chat. Please try again.';
+
+  @override
+  String get chatLoadHistoryError => 'Couldn\'t load this chat.';
+
+  @override
+  String get chatStopTooltip => 'Stop generating';
+
+  @override
+  String get chatScanContextRemove => 'Remove scan from this chat';
+
+  @override
+  String get chatPhotoUnavailable => 'Photo unavailable. Tap to retry.';
+
+  @override
+  String chatScanPrefill(String issue) {
+    return 'My plant shows $issue. What should I do?';
+  }
 }

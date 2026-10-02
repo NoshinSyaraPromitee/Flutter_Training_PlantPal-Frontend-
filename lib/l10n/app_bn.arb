@@ -375,5 +375,22 @@
     "noOrdersTitle":  "\u098F\u0996\u09A8\u09CB \u0995\u09CB\u09A8\u09CB \u0985\u09B0\u09CD\u09A1\u09BE\u09B0 \u09A8\u09C7\u0987",
     "noOrdersBody":  "\u0986\u09AA\u09A8\u09BE\u09B0 \u09A6\u09C7\u0993\u09AF\u09BC\u09BE \u0985\u09B0\u09CD\u09A1\u09BE\u09B0 \u098F\u0996\u09BE\u09A8\u09C7 \u09A6\u09C7\u0996\u09BE \u09AF\u09BE\u09AC\u09C7\u0964",
     "markAsFertilizedTooltip":  "\u09B8\u09BE\u09B0 \u09A6\u09C7\u0993\u09AF\u09BC\u09BE \u09B9\u09AF\u09BC\u09C7\u099B\u09C7 \u099A\u09BF\u09B9\u09CD\u09A8\u09BF\u09A4 \u0995\u09B0\u09C1\u09A8",
-    "plantFertilizedSnackbar":  "{name}-\u0995\u09C7 \u09B8\u09BE\u09B0 \u09A6\u09C7\u0993\u09AF\u09BC\u09BE \u09B9\u09AF\u09BC\u09C7\u099B\u09C7 \u099A\u09BF\u09B9\u09CD\u09A8\u09BF\u09A4 \u0995\u09B0\u09BE \u09B9\u09B2\u09CB"
+    "plantFertilizedSnackbar":  "{name}-\u0995\u09C7 \u09B8\u09BE\u09B0 \u09A6\u09C7\u0993\u09AF\u09BC\u09BE \u09B9\u09AF\u09BC\u09C7\u099B\u09C7 \u099A\u09BF\u09B9\u09CD\u09A8\u09BF\u09A4 \u0995\u09B0\u09BE \u09B9\u09B2\u09CB",
+  "chatHistoryTooltip": "চ্যাট ইতিহাস",
+  "chatSessionsTitle": "আপনার চ্যাট",
+  "chatNewChat": "নতুন চ্যাট",
+  "chatSessionsToday": "আজ",
+  "chatSessionsYesterday": "গতকাল",
+  "chatSessionsEarlier": "আগের",
+  "chatSessionsEmptyTitle": "এখনো কোনো চ্যাট নেই",
+  "chatSessionsEmptyBody": "একটি কথোপকথন শুরু করুন, এখানে দেখা যাবে।",
+  "chatUntitledSession": "নতুন কথোপকথন",
+  "chatDeleteConfirmTitle": "এই চ্যাটটি মুছবেন?",
+  "chatDeleteConfirmBody": "এই কথোপকথনটি স্থায়ীভাবে মুছে যাবে।",
+  "chatDeleteFailed": "চ্যাটটি মুছতে পারিনি। আবার চেষ্টা করুন।",
+  "chatLoadHistoryError": "এই চ্যাটটি লোড করা যায়নি।",
+  "chatStopTooltip": "থামান",
+  "chatScanContextRemove": "এই চ্যাট থেকে স্ক্যান সরান",
+  "chatPhotoUnavailable": "ছবি পাওয়া যায়নি। আবার চেষ্টা করতে ট্যাপ করুন।",
+  "chatScanPrefill": "আমার গাছে {issue} দেখা যাচ্ছে। আমার কী করা উচিত?"
 }

@@ -3,11 +3,33 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/widgets/photo_picker_sheet.dart';
+import 'package:plantpal/l10n/app_localizations.dart';
 
 class ChatInput extends StatefulWidget {
-  const ChatInput({super.key, required this.onSend});
+  const ChatInput({
+    super.key,
+    required this.onSend,
+    this.busy = false,
+    this.onStop,
+    this.prefill,
+    this.prefillVersion = 0,
+    this.onPrefillApplied,
+  });
 
   final void Function(String text, Uint8List? imageBytes) onSend;
+
+  /// A reply is being generated; sending is paused.
+  final bool busy;
+
+  /// When set (and [busy]), the send button becomes a stop button.
+  final VoidCallback? onStop;
+
+  /// Text to put in the field for the user to edit (never sent by itself).
+  /// Applied when a new [prefillVersion] arrives; [onPrefillApplied] then
+  /// tells the owner it was used, so it is not applied again.
+  final String? prefill;
+  final int prefillVersion;
+  final VoidCallback? onPrefillApplied;
 
   @override
   State<ChatInput> createState() => _ChatInputState();
@@ -16,6 +38,28 @@ class ChatInput extends StatefulWidget {
 class _ChatInputState extends State<ChatInput> {
   final _text = TextEditingController();
   Uint8List? _imageBytes;
+
+  @override
+  void initState() {
+    super.initState();
+    _applyPrefill();
+  }
+
+  @override
+  void didUpdateWidget(ChatInput oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.prefillVersion != oldWidget.prefillVersion) _applyPrefill();
+  }
+
+  void _applyPrefill() {
+    final p = widget.prefill;
+    if (p == null || p.isEmpty) return;
+    _text.value = TextEditingValue(
+      text: p,
+      selection: TextSelection.collapsed(offset: p.length),
+    );
+    widget.onPrefillApplied?.call();
+  }
 
   @override
   void dispose() {
@@ -35,6 +79,7 @@ class _ChatInputState extends State<ChatInput> {
     final t = _text.text.trim();
 
     if (t.isEmpty && _imageBytes == null) return;
+    if (widget.busy) return; // keep what the user typed until they can send
 
     widget.onSend(t, _imageBytes);
     _text.clear();
@@ -118,8 +163,16 @@ class _ChatInputState extends State<ChatInput> {
                     ),
                   ),
                   IconButton.filled(
-                    onPressed: _send,
-                    icon: const Icon(Icons.send, size: 18),
+                    onPressed: widget.busy ? widget.onStop : _send,
+                    tooltip: widget.busy && widget.onStop != null
+                        ? AppLocalizations.of(context).chatStopTooltip
+                        : null,
+                    icon: Icon(
+                      widget.busy && widget.onStop != null
+                          ? Icons.stop_rounded
+                          : Icons.send,
+                      size: 18,
+                    ),
                     style: IconButton.styleFrom(
                       backgroundColor: AppColors.greenPrimary,
                     ),

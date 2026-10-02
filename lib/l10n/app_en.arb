@@ -665,5 +665,27 @@
     "placeholders": {
       "name": { "type": "String" }
     }
+  },
+  "chatHistoryTooltip": "Chat history",
+  "chatSessionsTitle": "Your chats",
+  "chatNewChat": "New chat",
+  "chatSessionsToday": "Today",
+  "chatSessionsYesterday": "Yesterday",
+  "chatSessionsEarlier": "Earlier",
+  "chatSessionsEmptyTitle": "No chats yet",
+  "chatSessionsEmptyBody": "Start a conversation and it will show up here.",
+  "chatUntitledSession": "New conversation",
+  "chatDeleteConfirmTitle": "Delete this chat?",
+  "chatDeleteConfirmBody": "This conversation will be permanently removed.",
+  "chatDeleteFailed": "Couldn't delete the chat. Please try again.",
+  "chatLoadHistoryError": "Couldn't load this chat.",
+  "chatStopTooltip": "Stop generating",
+  "chatScanContextRemove": "Remove scan from this chat",
+  "chatPhotoUnavailable": "Photo unavailable. Tap to retry.",
+  "chatScanPrefill": "My plant shows {issue}. What should I do?",
+  "@chatScanPrefill": {
+    "placeholders": {
+      "issue": { "type": "String" }
+    }
   }
 }

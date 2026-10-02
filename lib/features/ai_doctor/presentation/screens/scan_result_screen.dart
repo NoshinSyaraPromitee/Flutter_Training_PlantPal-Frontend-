@@ -7,6 +7,7 @@ import 'package:plantpal/core/widgets/app_button.dart';
 import 'package:plantpal/core/widgets/app_card.dart';
 import 'package:plantpal/core/widgets/app_screen.dart';
 import 'package:plantpal/core/widgets/state_views.dart';
+import 'package:plantpal/features/ai_doctor/domain/model/chat_models.dart';
 import 'package:plantpal/features/ai_doctor/presentation/widgets/diagnosis_card.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
 
@@ -70,7 +71,24 @@ class ScanResultScreen extends ConsumerWidget {
                     label: l10n.askAiDoctorButton,
                     variant: AppButtonVariant.orange,
                     trailingIcon: Icons.smart_toy,
-                    onPressed: () => context.go('/ai-doctor'),
+                    onPressed: () async {
+                      // Open the chat about THIS scan: a fresh conversation
+                      // with the photo + issue as context and an editable
+                      // question in the input. Nothing is sent yet.
+                      final seed = ChatSeed.fromScan(
+                        r.diagnosis,
+                        scan.imageBytes,
+                      );
+                      if (seed != null) {
+                        await ref
+                            .read(chatControllerProvider)
+                            .startFromScan(
+                              seed,
+                              prefill: l10n.chatScanPrefill(seed.issueLabel),
+                            );
+                      }
+                      if (context.mounted) context.go('/ai-doctor');
+                    },
                   ),
                 ),
               ],
