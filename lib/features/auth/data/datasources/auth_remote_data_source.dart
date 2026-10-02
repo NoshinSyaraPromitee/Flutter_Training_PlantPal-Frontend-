@@ -58,4 +58,15 @@ class AuthRemoteDataSource {
     );
     return (res.data as Map<String, dynamic>)['data'] as Map<String, dynamic>;
   }
+
+  Future<void> forgotPassword(String email) async {
+    await _api.dio.post('/api/v1/auth/forgot-password', data: {'email': email});
+  }
+
+  Future<void> resetPassword({required String email, required String code, required String newPassword}) async {
+    await _api.dio.post(
+      '/api/v1/auth/reset-password',
+      data: {'email': email, 'code': code, 'newPassword': newPassword},
+    );
+  }
 }

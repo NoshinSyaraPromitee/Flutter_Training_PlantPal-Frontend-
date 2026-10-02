@@ -81,6 +81,28 @@ class AuthController extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<String?> forgotPassword(String email) async {
+    try {
+      await _repo.forgotPassword(email);
+      return null;
+    } catch (e) {
+      return Failure.from(e).message;
+    }
+  }
+
+  Future<String?> resetPassword({
+    required String email,
+    required String code,
+    required String newPassword,
+  }) async {
+    try {
+      await _repo.resetPassword(email: email, code: code, newPassword: newPassword);
+      return null;
+    } catch (e) {
+      return Failure.from(e).message;
+    }
+  }
+
   Future<void> logout() async {
     await _repo.logout();
     user = null;

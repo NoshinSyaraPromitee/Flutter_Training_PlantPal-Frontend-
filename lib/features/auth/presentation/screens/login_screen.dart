@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:plantpal/core/config/app_config.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/app_button.dart';
@@ -57,7 +58,15 @@ class _LoginScreenState extends State<LoginScreen> {
               onPressed: () => setState(() => _hide = !_hide),
             ),
           ),
-          const SizedBox(height: 24),
+          if (AppConfig.passwordResetEnabled)
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () => context.push('/forgot-password', extra: _email.text.trim()),
+                child: Text('Forgot password?', style: AppTextStyles.inter(13, w: FontWeight.w700, c: AppColors.greenPrimary)),
+              ),
+            ),
+          const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
             child: AppButton(label: 'Login', isLoading: auth.busy, onPressed: auth.busy ? null : _emailLogin),

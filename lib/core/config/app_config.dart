@@ -15,4 +15,8 @@ class AppConfig {
       defaultValue: 'https://ifingi.biz:8134/auth/google/callback');
   static const appCallbackScheme = 'plantpal';
   static const appCallbackUri = 'plantpal://auth';
+
+  /// The backend has no /auth/forgot-password or /auth/reset-password
+  /// routes yet. Set to true once it does, to show the login link again.
+  static const passwordResetEnabled = false;
 }
