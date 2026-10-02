@@ -25,6 +25,21 @@ abstract class AppLocalizations {
   String get appTitle;
   String get appTagline;
   String get getStartedButton;
+  String get loadingLabel;
+
+  String get tryAgainButton;
+
+  String get loginWelcomeBack;
+  String get loginSubtitle;
+  String get emailLabel;
+  String get passwordLabel;
+  String get loginButton;
+  String get orDivider;
+  String get noAccountPrompt;
+  String get registerLink;
+
+  String get createAccountButton;
+  String get fullNameLabel;
   String get myPlants;
   String get aiDoctor;
   String get fertilizerRecipes;

@@ -3,6 +3,7 @@ import 'package:plantpal/core/widgets/app_button.dart';
 import 'package:plantpal/core/widgets/app_text_field.dart';
 import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
 import 'package:plantpal/features/auth/presentation/widgets/auth_widgets.dart';
+import 'package:plantpal/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -43,17 +44,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final auth = context.watch<AuthController>();
     return AuthScaffold(
-        title: 'Create Account',
+        title: l10n.createAccountButton,
         children: [
-          AppTextField(controller: _name, hint: 'Full Name', icon: Icons.person_outline),
+          AppTextField(controller: _name, hint: l10n.fullNameLabel, icon: Icons.person_outline),
           const SizedBox(height: 14),
-          AppTextField(controller: _email, hint: 'Email', icon: Icons.mail_outline, keyboardType: TextInputType.emailAddress),
+          AppTextField(controller: _email, hint: l10n.emailLabel, icon: Icons.mail_outline, keyboardType: TextInputType.emailAddress),
           const SizedBox(height: 14),
           AppTextField(
             controller: _password,
-            hint: 'Password',
+            hint: l10n.passwordLabel,
             icon: Icons.lock_outline,
             obscure: _hide,
             suffix: IconButton(
@@ -64,7 +66,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           const SizedBox(height: 24),
           SizedBox(
             width: double.infinity,
-            child: AppButton(label: 'Create Account', isLoading: auth.busy, onPressed: auth.busy ? null : _create),
+            child: AppButton(label: l10n.createAccountButton, isLoading: auth.busy, onPressed: auth.busy ? null : _create),
           ),
           const SizedBox(height: 16),
           const GoogleSignInButton(),

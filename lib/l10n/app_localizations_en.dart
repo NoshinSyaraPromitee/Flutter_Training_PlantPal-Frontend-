@@ -11,6 +11,33 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get getStartedButton => 'Get Started';
   @override
+  String get loadingLabel => 'Growing updates...';
+
+  @override
+  String get tryAgainButton => 'Try Again';
+
+  @override
+  String get loginWelcomeBack => 'Welcome Back!';
+  @override
+  String get loginSubtitle => 'Your plants missed you!';
+  @override
+  String get emailLabel => 'Email Address';
+  @override
+  String get passwordLabel => 'Password';
+  @override
+  String get loginButton => 'Log In';
+  @override
+  String get orDivider => 'OR';
+  @override
+  String get noAccountPrompt => 'New to PlantPal?';
+  @override
+  String get registerLink => 'Sign Up';
+
+  @override
+  String get createAccountButton => 'Create Account';
+  @override
+  String get fullNameLabel => 'Full Name';
+  @override
   String get myPlants => 'My Plants';
   @override
   String get aiDoctor => 'AI Doctor';

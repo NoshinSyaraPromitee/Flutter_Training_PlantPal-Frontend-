@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/gradient_background.dart';
+import 'package:plantpal/core/widgets/plant_mascot_rive.dart';
 import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +22,7 @@ class AuthScaffold extends StatelessWidget {
               SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 24),
                 child: Column(children: [
-                  Image.asset('assets/images/login.gif', width: 130, height: 130, fit: BoxFit.contain),
+                  const SizedBox(width: 130, height: 130, child: PlantMascotRive()),
                   const SizedBox(height: 8),
                   Text(title, style: AppTextStyles.screenTitle),
                   if (subtitle != null) Text(subtitle!, style: AppTextStyles.inter(15, c: AppColors.textMuted)),

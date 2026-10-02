@@ -11,6 +11,33 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get getStartedButton => 'শুরু করুন';
   @override
+  String get loadingLabel => 'লোড হচ্ছে...';
+
+  @override
+  String get tryAgainButton => 'আবার চেষ্টা করুন';
+
+  @override
+  String get loginWelcomeBack => 'আবার স্বাগতম!';
+  @override
+  String get loginSubtitle => 'আপনার গাছেদের মিস করছেন?';
+  @override
+  String get emailLabel => 'ইমেইল';
+  @override
+  String get passwordLabel => 'পাসওয়ার্ড';
+  @override
+  String get loginButton => 'লগইন';
+  @override
+  String get orDivider => 'অথবা';
+  @override
+  String get noAccountPrompt => 'অ্যাকাউন্ট নেই?';
+  @override
+  String get registerLink => 'নিবন্ধন করুন';
+
+  @override
+  String get createAccountButton => 'অ্যাকাউন্ট তৈরি করুন';
+  @override
+  String get fullNameLabel => 'পূর্ণ নাম';
+  @override
   String get myPlants => 'আমার গাছপালা';
   @override
   String get aiDoctor => 'এআই ডাক্তার';
