@@ -52,7 +52,6 @@ class AppDependencies {
     plants = PlantsController(
       repository: plantRepo,
       addPlant: AddPlant(plantRepo),
-      scans: aiRepo,
     );
     chat = ChatController(aiRepo, storage);
     // Restore the saved conversation once signed in; forget it on logout.

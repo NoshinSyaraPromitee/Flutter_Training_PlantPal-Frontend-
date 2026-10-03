@@ -17,7 +17,12 @@ final plantRoutes = <RouteBase>[
     path: '/plants',
     builder: (c, s) => const MyPlantsScreen(),
     routes: [
-      GoRoute(path: 'add', builder: (c, s) => const AddPlantScreen()),
+      GoRoute(
+        path: 'add',
+        builder: (c, s) => AddPlantScreen(
+          startWithScan: s.uri.queryParameters['scan'] == '1',
+        ),
+      ),
       GoRoute(
         path: ':id',
         builder: (c, s) => PlantDetailsScreen(plantId: s.pathParameters['id']!),

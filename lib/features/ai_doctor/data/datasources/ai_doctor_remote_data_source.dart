@@ -77,6 +77,14 @@ class AiDoctorRemoteDataSource {
     return _asList(_unwrap(res.data));
   }
 
+  /// POST /diagnoses/{id}/treated
+  Future<Map<String, dynamic>> markTreated(String id) async {
+    final res = await _api.dio.post(
+      '/api/v1/diagnoses/${Uri.encodeComponent(id)}/treated',
+    );
+    return _unwrap(res.data) as Map<String, dynamic>;
+  }
+
   // The backend answers an empty result as `"data": null`, so treat anything
   // that isn't a list as "no items" instead of throwing.
   List<Map<String, dynamic>> _asList(Object? data) =>

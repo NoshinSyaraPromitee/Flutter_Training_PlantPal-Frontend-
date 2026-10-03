@@ -10,8 +10,6 @@ class PlantDetailsHeader extends StatelessWidget {
     required this.onBack,
     required this.onMenuSelected,
     required this.editLabel,
-    required this.waterLabel,
-    required this.fertilizeLabel,
     required this.deleteLabel,
   });
 
@@ -19,8 +17,6 @@ class PlantDetailsHeader extends StatelessWidget {
   final VoidCallback onBack;
   final ValueChanged<String> onMenuSelected;
   final String editLabel;
-  final String waterLabel;
-  final String fertilizeLabel;
   final String deleteLabel;
 
   @override
@@ -66,26 +62,6 @@ class PlantDetailsHeader extends StatelessWidget {
                           const Icon(Icons.edit_outlined, size: 20, color: AppColors.greenPrimary),
                           const SizedBox(width: 8),
                           Text(editLabel),
-                        ],
-                      ),
-                    ),
-                    PopupMenuItem(
-                      value: 'water',
-                      child: Row(
-                        children: [
-                          const Icon(Icons.water_drop_outlined, size: 20, color: AppColors.waterBlue),
-                          const SizedBox(width: 8),
-                          Text(waterLabel),
-                        ],
-                      ),
-                    ),
-                    PopupMenuItem(
-                      value: 'fertilize',
-                      child: Row(
-                        children: [
-                          const Icon(Icons.eco_outlined, size: 20, color: AppColors.sunAmber),
-                          const SizedBox(width: 8),
-                          Text(fertilizeLabel),
                         ],
                       ),
                     ),

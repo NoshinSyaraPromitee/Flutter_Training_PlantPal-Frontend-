@@ -59,6 +59,21 @@ class CareGuideLocalRepository implements CareGuideRepository {
 
   String _or(String v) => v.trim().isEmpty ? '—' : v;
 
+  /// "Every 5 days" from the plant's own watering interval.
+  String _waterEvery(Plant p, bool isBn) => isBn
+      ? 'প্রতি ${p.wateringFrequencyDays} দিনে'
+      : 'Every ${p.wateringFrequencyDays} days';
+
+  /// When the next watering is due, from the real date.
+  String _waterDue(Plant p, bool isBn) {
+    final d = p.waterDueInDays;
+    if (d == null) return '—';
+    if (d < 0) return isBn ? '${-d} দিন দেরি' : 'overdue by ${-d} days';
+    if (d == 0) return isBn ? 'আজ' : 'today';
+    if (d == 1) return isBn ? 'আগামীকাল' : 'tomorrow';
+    return isBn ? '$d দিন পরে' : 'in $d days';
+  }
+
   @override
   CareGuide guideFor(Plant? p) {
     final isBn = getLanguage?.call() == 'bn';
@@ -68,8 +83,9 @@ class CareGuideLocalRepository implements CareGuideRepository {
           (isBn ? 'গাছের যত্নআত্তির এ-টু-জেড' : 'Plant Care 101'),
       species: p?.species ??
           (isBn ? 'সাধারণ ইনডোর প্ল্যান্ট' : 'Category – General Houseplant'),
-      water: p?.waterLevel ??
-          (isBn ? 'সপ্তাহে ২ দিন' : 'Twice a week'),
+      water: p == null
+          ? (isBn ? 'সপ্তাহে ২ দিন' : 'Twice a week')
+          : _waterEvery(p, isBn),
       sunlight: p == null
           ? (isBn ? 'মিষ্টি রোদ বা পরোক্ষ আলো' : 'Bright indirect light')
           : _or(p.sunlight),
@@ -83,7 +99,7 @@ class CareGuideLocalRepository implements CareGuideRepository {
           DailyTaskKind.moisture,
           p == null
               ? (isBn ? 'মাটি ভেজা নাকি শুকনো দেখে নিন' : 'Check soil moisture')
-              : '${isBn ? 'পানি' : 'Water'}: ${p.waterLevel}',
+              : '${isBn ? 'পানি' : 'Water'}: ${_waterDue(p, isBn)}',
         ),
         DailyCareTask(
           DailyTaskKind.light,

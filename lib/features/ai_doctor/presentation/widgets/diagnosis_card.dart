@@ -60,14 +60,16 @@ class DiagnosisCard extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            l10n.diagnosisProblemLabel(d.issue),
+            d.isHealthy
+                ? '${l10n.scanHealthyTitle}. ${d.issue}'
+                : l10n.diagnosisProblemLabel(d.issue),
             style: AppTextStyles.inter(
               13,
               w: FontWeight.w700,
-              c: AppColors.danger,
+              c: d.isHealthy ? AppColors.greenPrimary : AppColors.danger,
             ),
           ),
-          head('Cure:'),
+          head(d.isHealthy ? '${l10n.scanCareTipTitle}:' : 'Cure:'),
           MarkdownText(
             d.cure,
             style: AppTextStyles.inter(12),

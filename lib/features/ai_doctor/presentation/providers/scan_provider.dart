@@ -12,6 +12,24 @@ class ScanController extends ChangeNotifier {
   Uint8List? imageBytes;
   BotReply? result;
 
+  /// The newest saved scan of one plant, or null when it has none (or the
+  /// call failed: the details screen simply shows no scan section).
+  Future<Diagnosis?> latestScanFor(String plantId) async {
+    try {
+      final all = await _repo.diagnosisHistory(plantId: plantId);
+      if (all.isEmpty) return null;
+      all.sort((a, b) => (b.createdAt ?? DateTime(0))
+          .compareTo(a.createdAt ?? DateTime(0)));
+      return all.first;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Marks a scan as treated. Returns the updated scan, or throws a
+  /// [Failure] message the caller can show.
+  Future<Diagnosis> markTreated(String id) => _repo.markDiagnosisTreated(id);
+
   /// [plantId] links the saved diagnosis to one of the user's plants.
   Future<bool> analyze(Uint8List bytes, {String? plantId}) async {
     loading = true;

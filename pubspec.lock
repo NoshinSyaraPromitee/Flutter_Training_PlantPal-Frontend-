@@ -1298,6 +1298,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.18"
+  timezone_provider:
+    dependency: "direct main"
+    description:
+      name: timezone_provider
+      sha256: "097950db06d50983279efd29112a5a88682a752929a3f521c8eca91570034097"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   typed_data:
     dependency: transitive
     description:

@@ -665,6 +665,93 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
+  String historyFertilizedEntry(String name) {
+    return 'সার প্রয়োগ করা হয়েছে • $name';
+  }
+
+  @override
+  String historySkippedEntry(String name) {
+    return '$name-এর পানি দেওয়া পিছিয়ে দেওয়া হয়েছে';
+  }
+
+  @override
+  String historyNoteEntry(String name) {
+    return '$name-এর জন্য নোট যোগ করা হয়েছে';
+  }
+
+  @override
+  String get plantRecentActivityTitle => 'সাম্প্রতিক কার্যক্রম';
+
+  @override
+  String get careStreakLabel => 'পরিচর্যার ধারাবাহিকতা';
+
+  @override
+  String careStreakDays(int days) {
+    return '$days দিন';
+  }
+
+  @override
+  String get plantNoActivityYet => 'এখনো কোনো কার্যক্রম রেকর্ড করা হয়নি।';
+
+  @override
+  String get gardenHistoryButton => 'বাগানের ইতিহাস';
+
+  @override
+  String get activityWateredLabel => 'পানি দেওয়া হয়েছে';
+
+  @override
+  String get activityFertilizedLabel => 'সার দেওয়া হয়েছে';
+
+  @override
+  String get activityScanLabel => 'গাছ স্ক্যান';
+
+  @override
+  String get activitySkippedLabel => 'পিছিয়ে দেওয়া হয়েছে';
+
+  @override
+  String get activityNoteLabel => 'নোট';
+
+  @override
+  String get skipSnoozeTitle => 'পানি দেওয়া এড়িয়ে যান বা পিছিয়ে দিন';
+
+  @override
+  String get skipReasonLabel => 'কারণ';
+
+  @override
+  String get skipSoilWetReason => 'মাটি এখনো ভেজা';
+
+  @override
+  String get skipRainedReason => 'বৃষ্টি হয়েছে';
+
+  @override
+  String get skipOtherReason => 'অন্যান্য';
+
+  @override
+  String get skipDurationLabel => 'কত দিন পিছিয়ে দেবেন';
+
+  @override
+  String get skipOneDay => '১ দিন';
+
+  @override
+  String get skipTwoDays => '২ দিন';
+
+  @override
+  String get skipThreeDays => '৩ দিন';
+
+  @override
+  String get skipSevenDays => '৭ দিন';
+
+  @override
+  String skipSavedSnackbar(int days) {
+    return 'পানি দেওয়া $days দিনের জন্য পিছিয়ে দেওয়া হয়েছে।';
+  }
+
+  @override
+  String historyCreatedEntry(String name) {
+    return 'গাছ যোগ করা হয়েছে • $name';
+  }
+
+  @override
   String get notScannedYetLabel => 'এখনো স্ক্যান করা হয়নি';
 
   @override
@@ -680,6 +767,60 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String healthHealthy(int percent) {
     return '$percent% • সুস্থ';
+  }
+
+  @override
+  String healthOkay(int percent) {
+    return '$percent% • মোটামুটি ভালো';
+  }
+
+  @override
+  String healthReasonWaterLate(int days) {
+    return 'পানি দিতে $days দিন দেরি';
+  }
+
+  @override
+  String healthReasonFertilizerLate(int days) {
+    return 'সার দিতে $days দিন দেরি';
+  }
+
+  @override
+  String healthReasonScanIssue(String issue, String severity) {
+    return 'স্ক্যান: $issue ($severity)';
+  }
+
+  @override
+  String get scanSeverityMild => 'হালকা';
+
+  @override
+  String get scanSeverityModerate => 'মাঝারি';
+
+  @override
+  String get scanSeveritySevere => 'গুরুতর';
+
+  @override
+  String get noCheckupHint =>
+      'এখনো কোনো স্ক্যান নেই। গাছটি কেমন আছে জানতে স্ক্যান করুন।';
+
+  @override
+  String get dueNotSet => 'নির্ধারিত নয়';
+
+  @override
+  String dueOverdueDays(int days) {
+    return '$days দিন দেরি';
+  }
+
+  @override
+  String dueInDays(int days) {
+    return '$days দিন পরে';
+  }
+
+  @override
+  String get statNeedAttention => 'যত্ন দরকার';
+
+  @override
+  String plantWaterDueLabel(String when) {
+    return 'পানি: $when';
   }
 
   @override
@@ -1192,4 +1333,303 @@ class AppLocalizationsBn extends AppLocalizations {
   String chatScanPrefill(String issue) {
     return 'আমার গাছে $issue দেখা যাচ্ছে। আমার কী করা উচিত?';
   }
+
+  @override
+  String get filterNeedsWater => 'পানি দরকার';
+
+  @override
+  String get filterNeedsFeeding => 'সার দরকার';
+
+  @override
+  String get filterNeedsAttention => 'যত্ন দরকার';
+
+  @override
+  String plantsCountLabel(int count) {
+    return '$countটি গাছ';
+  }
+
+  @override
+  String get groupByLocation => 'অবস্থান অনুযায়ী';
+
+  @override
+  String get noLocationGroup => 'অবস্থান নেই';
+
+  @override
+  String waterAllDueButton(int count) {
+    return 'সবগুলোতে পানি দিন ($count)';
+  }
+
+  @override
+  String waterAllDoneSnackbar(int count, int points) {
+    return '$countটি গাছে পানি দেওয়া হয়েছে 💧 +$points পয়েন্ট';
+  }
+
+  @override
+  String get statusWaterToday => 'আজ পানি দিন';
+
+  @override
+  String get statusFeedDue => 'সার দেওয়ার সময়';
+
+  @override
+  String statusNextWater(String day) {
+    return 'পরবর্তী: $day';
+  }
+
+  @override
+  String get statusWatered => 'পানি দেওয়া হয়েছে ✓';
+
+  @override
+  String waterPlantTooltip(String name) {
+    return '$name-এ পানি দিন';
+  }
+
+  @override
+  String wateredUndoSnackbar(String name) {
+    return '$name-এ পানি দেওয়া হয়েছে 💧';
+  }
+
+  @override
+  String get undoButton => 'বাতিল';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points পয়েন্ট';
+  }
+
+  @override
+  String get emptyGardenBody =>
+      'ছবি স্ক্যান করুন, আমরা গাছ চিনে নেব — অথবা নিজে যোগ করুন।';
+
+  @override
+  String get scanToAddButton => 'স্ক্যান করে যোগ করুন';
+
+  @override
+  String get addManuallyButton => 'নিজে যোগ করুন';
+
+  @override
+  String get noMatchingPlants => 'এই ফিল্টারে কোনো গাছ নেই';
+
+  @override
+  String get healthBreakdownTitle => 'স্বাস্থ্যের বিবরণ';
+
+  @override
+  String get healthBreakdownBase => 'পূর্ণ সুস্থ';
+
+  @override
+  String get healthBreakdownNoIssues =>
+      'এই গাছের স্বাস্থ্য কমানোর মতো কিছু নেই।';
+
+  @override
+  String get healthBreakdownTotal => 'স্কোর';
+
+  @override
+  String get nextUpTitle => 'এরপর কী';
+
+  @override
+  String get nextUpWaterNow => 'এখনই পানি দিন';
+
+  @override
+  String nextUpWaterNowMl(int ml) {
+    return 'এখনই পানি দিন · $ml মি.লি.';
+  }
+
+  @override
+  String get nextUpFeedNow => 'এখনই সার দিন';
+
+  @override
+  String get nextUpAllDone => 'সব কাজ শেষ';
+
+  @override
+  String nextUpNextWater(String when) {
+    return 'পরবর্তী পানি: $when';
+  }
+
+  @override
+  String get nextUpWaterEarly => 'আগেই পানি দিন';
+
+  @override
+  String get scheduleTitle => 'যত্নের সময়সূচি';
+
+  @override
+  String get scheduleWater => 'পানি';
+
+  @override
+  String get scheduleFertilize => 'সার';
+
+  @override
+  String scheduleLast(String when) {
+    return 'শেষবার: $when';
+  }
+
+  @override
+  String scheduleNext(String when) {
+    return 'পরবর্তী: $when';
+  }
+
+  @override
+  String scheduleEvery(int days) {
+    return 'প্রতি $days দিনে';
+  }
+
+  @override
+  String get lastNever => 'কখনো না';
+
+  @override
+  String get yesterdayLabel => 'গতকাল';
+
+  @override
+  String get careTipsTitle => 'যত্নের টিপস';
+
+  @override
+  String get aiDoctorButton => 'এআই ডাক্তার';
+
+  @override
+  String get addStepPhoto => 'ছবি';
+
+  @override
+  String get addStepDetails => 'বিবরণ';
+
+  @override
+  String get addStepPlan => 'যত্ন পরিকল্পনা';
+
+  @override
+  String addStepProgress(int n, int total) {
+    return 'ধাপ $n / $total';
+  }
+
+  @override
+  String get addPhotoStepTitle => 'একটি ছবি দিয়ে শুরু করুন';
+
+  @override
+  String get addPhotoStepBody =>
+      'আমাদের এআই উদ্ভিদবিদ আপনার গাছ চিনে যত্নের তথ্য পূরণ করে দেবে।';
+
+  @override
+  String get addIdentifyingLabel => 'এআই উদ্ভিদবিদ বিশ্লেষণ করছে...';
+
+  @override
+  String get addEnterManually => 'এড়িয়ে যান, আমি নিজে তথ্য দেব';
+
+  @override
+  String identifiedSnackbar(String species) {
+    return '$species হিসেবে চেনা গেছে! তথ্য পূরণ করা হয়েছে।';
+  }
+
+  @override
+  String get identifyFailedSnackbar =>
+      'গাছটি চেনা যায়নি। আপনি নিজে তথ্য দিতে পারেন।';
+
+  @override
+  String get nextButton => 'পরবর্তী';
+
+  @override
+  String get reviewPlanButton => 'যত্ন পরিকল্পনা দেখুন';
+
+  @override
+  String get locationIndoor => 'ঘরের ভেতরে';
+
+  @override
+  String get locationBalcony => 'বারান্দা';
+
+  @override
+  String get locationOutdoor => 'বাইরে';
+
+  @override
+  String get lightLow => 'কম';
+
+  @override
+  String get lightMedium => 'মাঝারি';
+
+  @override
+  String get lightBright => 'উজ্জ্বল';
+
+  @override
+  String get stageSeedling => 'চারা';
+
+  @override
+  String get stageYoung => 'তরুণ';
+
+  @override
+  String get stageMature => 'পূর্ণবয়স্ক';
+
+  @override
+  String get notYetChip => 'এখনও না';
+
+  @override
+  String get pickDateChip => 'তারিখ বাছুন';
+
+  @override
+  String get planPreviewTitle => 'আপনার যত্ন পরিকল্পনা';
+
+  @override
+  String planWaterAmount(int ml) {
+    return 'প্রতিবার প্রায় $ml মি.লি.';
+  }
+
+  @override
+  String get planFirstWatering => 'প্রথম পানি দেওয়া';
+
+  @override
+  String get planFeedingNote =>
+      'সেভ করলে স্বয়ংক্রিয়ভাবে সার দেওয়ার সময়সূচি তৈরি হবে।';
+
+  @override
+  String get planEditDetails => 'তথ্য বদলান';
+
+  @override
+  String get addAnotherButton => 'আরেকটি যোগ করুন';
+
+  @override
+  String get viewPlantButton => 'গাছ দেখুন';
+
+  @override
+  String get firstSproutUnlocked => '\"ফার্স্ট স্প্রাউট\" অর্জিত হয়েছে!';
+
+  @override
+  String get scanLastTitle => 'সর্বশেষ পরীক্ষা';
+
+  @override
+  String get scanHealthyTitle => 'সুস্থ দেখাচ্ছে';
+
+  @override
+  String get scanSeverityNone => 'সুস্থ';
+
+  @override
+  String get scanTreatmentTitle => 'চিকিৎসা';
+
+  @override
+  String get scanCareTipTitle => 'যত্নের টিপ';
+
+  @override
+  String get scanMarkTreated => 'চিকিৎসা হয়েছে';
+
+  @override
+  String scanTreatedOn(String date) {
+    return '$date তারিখে চিকিৎসা করা হয়েছে';
+  }
+
+  @override
+  String get scanTreatedSnackbar =>
+      'চিকিৎসা হয়েছে বলে চিহ্নিত। স্বাস্থ্য আপডেট হচ্ছে।';
+
+  @override
+  String scanFindFertilizer(String name) {
+    return 'সার খুঁজুন: $name';
+  }
+
+  @override
+  String scanChecklistProgress(int done, int total) {
+    return '$totalটির মধ্যে $doneটি ধাপ সম্পন্ন';
+  }
+
+  @override
+  String get plantPlacementLabel => 'গাছটি কোথায় থাকে?';
+
+  @override
+  String weatherRainSkipTip(String name) {
+    return 'আজ বৃষ্টি হচ্ছে, তাই $name-এ আজ পানি দেওয়া বাদ দিতে পারেন।';
+  }
+
+  @override
+  String get weatherRainSkipButton => 'আজকের জন্য বাদ দিন';
 }

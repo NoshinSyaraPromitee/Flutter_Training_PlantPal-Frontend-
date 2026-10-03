@@ -29,7 +29,8 @@ class ScanPlantScreen extends ConsumerWidget {
         .read(scanControllerProvider)
         .analyze(bytes, plantId: plantId);
     if (ok && plantId != null) {
-      unawaited(ref.read(plantsControllerProvider).refreshScans());
+      // Health is computed by the backend, so reload the plants.
+      unawaited(ref.read(plantsControllerProvider).load(force: true));
     }
     if (ok && context.mounted) context.push('/scan-result');
   }

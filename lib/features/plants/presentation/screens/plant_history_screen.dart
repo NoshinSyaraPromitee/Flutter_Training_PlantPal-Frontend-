@@ -17,12 +17,10 @@ class PlantHistoryScreen extends ConsumerStatefulWidget {
   const PlantHistoryScreen({super.key});
 
   @override
-  ConsumerState<PlantHistoryScreen> createState() =>
-      _PlantHistoryScreenState();
+  ConsumerState<PlantHistoryScreen> createState() => _PlantHistoryScreenState();
 }
 
-class _PlantHistoryScreenState
-    extends ConsumerState<PlantHistoryScreen> {
+class _PlantHistoryScreenState extends ConsumerState<PlantHistoryScreen> {
   @override
   void initState() {
     super.initState();
@@ -47,22 +45,41 @@ class _PlantHistoryScreenState
               subtitle: l10n.noActivityBody,
             )
           : ListView.builder(
-              padding: const EdgeInsets.only(
-                top: 8,
-                bottom: 32,
-              ),
+              padding: const EdgeInsets.only(top: 8, bottom: 32),
               itemCount: history.length,
               itemBuilder: (_, i) {
                 final e = history[i];
-                final scan = e.action == HistoryAction.scan;
-                final color = scan
-                    ? AppColors.greenPrimary
-                    : AppColors.waterBlue;
+                final (color, icon, title) = switch (e.action) {
+                  HistoryAction.scan => (
+                    AppColors.greenPrimary,
+                    Icons.eco,
+                    l10n.historyScanEntry(e.plant.nickname),
+                  ),
+                  HistoryAction.water => (
+                    AppColors.waterBlue,
+                    Icons.water_drop,
+                    l10n.historyWateredEntry(e.plant.nickname),
+                  ),
+                  HistoryAction.fertilize => (
+                    const Color(0xFFF57C00),
+                    Icons.science_outlined,
+                    l10n.historyFertilizedEntry(e.plant.nickname),
+                  ),
+                  HistoryAction.skip => (
+                    const Color(0xFF607D8B),
+                    Icons.snooze,
+                    l10n.historySkippedEntry(e.plant.nickname),
+                  ),
+                  HistoryAction.note => (
+                    const Color(0xFF5E35B1),
+                    Icons.sticky_note_2_outlined,
+                    l10n.historyNoteEntry(e.plant.nickname),
+                  ),
+                };
 
                 return IntrinsicHeight(
                   child: Row(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.stretch,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SizedBox(
                         width: 36,
@@ -71,20 +88,13 @@ class _PlantHistoryScreenState
                             CircleAvatar(
                               radius: 16,
                               backgroundColor: color,
-                              child: Icon(
-                                scan
-                                    ? Icons.eco
-                                    : Icons.water_drop,
-                                size: 16,
-                                color: Colors.white,
-                              ),
+                              child: Icon(icon, size: 16, color: Colors.white),
                             ),
                             if (i != history.length - 1)
                               Expanded(
                                 child: Container(
                                   width: 2,
-                                  margin:
-                                      const EdgeInsets.symmetric(
+                                  margin: const EdgeInsets.symmetric(
                                     vertical: 4,
                                   ),
                                   color: Colors.black12,
@@ -96,14 +106,10 @@ class _PlantHistoryScreenState
                       const SizedBox(width: 10),
                       Expanded(
                         child: AppCard(
-                          margin: const EdgeInsets.only(
-                            bottom: 14,
-                          ),
+                          margin: const EdgeInsets.only(bottom: 14),
                           padding: const EdgeInsets.all(12),
                           radius: 18,
-                          onTap: () => context.push(
-                            '/plants/${e.plant.id}',
-                          ),
+                          onTap: () => context.push('/plants/${e.plant.id}'),
                           child: Row(
                             children: [
                               PlantImage(
@@ -115,17 +121,10 @@ class _PlantHistoryScreenState
                               const SizedBox(width: 12),
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      scan
-                                          ? l10n.historyScanEntry(
-                                              e.plant.nickname,
-                                            )
-                                          : l10n.historyWateredEntry(
-                                              e.plant.nickname,
-                                            ),
+                                      title,
                                       style: AppTextStyles.inter(
                                         14,
                                         w: FontWeight.w600,

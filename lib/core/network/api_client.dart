@@ -12,6 +12,9 @@ class ApiClient {
       InterceptorsWrapper(
         onRequest: (options, handler) async {
           options.headers['Accept-Language'] = getLanguage?.call() ?? 'en';
+          // Where the user is, so the server reads clock times in local time.
+          options.headers['X-UTC-Offset-Minutes'] =
+              DateTime.now().timeZoneOffset.inMinutes.toString();
           final token = await _storage.readToken();
           if (token != null) {
             options.headers['Authorization'] = 'Bearer $token';

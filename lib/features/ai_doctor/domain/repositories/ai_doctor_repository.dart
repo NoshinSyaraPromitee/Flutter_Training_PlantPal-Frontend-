@@ -29,4 +29,7 @@ abstract class AiDoctorRepository {
 
   /// Saved scans, newest first; only those of [plantId] when given.
   Future<List<Diagnosis>> diagnosisHistory({String? plantId});
+
+  /// POST /diagnoses/{id}/treated: the user acted on the advice.
+  Future<Diagnosis> markDiagnosisTreated(String id);
 }

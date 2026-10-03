@@ -72,8 +72,8 @@ class ProfileScreen extends ConsumerWidget {
               ),
               const SizedBox(width: 12),
               _StatCard(
-                label: l10n.statHealth,
-                value: '${plants.averageHealth}%',
+                label: l10n.statNeedAttention,
+                value: '${plants.needAttentionCount}',
               ),
               const SizedBox(width: 12),
               _StatCard(

@@ -10,8 +10,25 @@ class Diagnosis {
     this.plantId,
     this.createdAt,
     this.imageUrl,
+    this.severity = '',
+    this.fertilizer = '',
+    this.treated = false,
+    this.treatedAt,
   });
   final String issue, cure, disclaimer;
+
+  /// Mild | Moderate | Severe | none (none = the AI found nothing wrong).
+  final String severity;
+
+  /// Suggested fertilizer / nutrient, empty when not applicable.
+  final String fertilizer;
+
+  /// The user marked the scan as treated; it no longer lowers plant health.
+  final bool treated;
+  final DateTime? treatedAt;
+
+  /// The scan found nothing wrong.
+  bool get isHealthy => severity.toLowerCase() == 'none';
   final String? provider;
 
   /// API path of the saved photo (`/api/v1/diagnoses/{id}/image`), when the
@@ -138,7 +155,7 @@ class ChatSeed {
     Uint8List? imageBytes,
     String? location,
     String? sunlight,
-    String? waterLevel,
+    String? waterStatus,
     int? health,
   }) {
     final name = nickname.isNotEmpty ? nickname : species;
@@ -147,7 +164,7 @@ class ChatSeed {
       if (location != null && location.isNotEmpty) location,
       if (sunlight != null && sunlight.isNotEmpty) sunlight,
       if (health != null) 'Health: $health%',
-      if (waterLevel != null && waterLevel.isNotEmpty) 'Water: $waterLevel',
+      if (waterStatus != null && waterStatus.isNotEmpty) 'Water: $waterStatus',
     ];
     final subtitle = parts.join(' • ');
     return ChatSeed(

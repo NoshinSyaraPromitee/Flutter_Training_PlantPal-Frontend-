@@ -9,6 +9,7 @@ import '../../../../core/widgets/app_screen.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/model/care_task.dart';
+import '../utils/due_text.dart';
 
 class CareCalendarScreen extends ConsumerStatefulWidget {
   const CareCalendarScreen({super.key});
@@ -20,7 +21,8 @@ class CareCalendarScreen extends ConsumerStatefulWidget {
 
 class _CareCalendarScreenState
     extends ConsumerState<CareCalendarScreen> {
-  final _done = <String>{};
+  /// Tasks whose API call is in flight.
+  final _busy = <String>{};
 
   @override
   void initState() {
@@ -29,6 +31,54 @@ class _CareCalendarScreenState
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => ref.read(plantsControllerProvider).load(),
     );
+  }
+
+  /// Tapping a due task logs it through the watering / fertilizing API. The
+  /// plant then comes back with its next date moved forward, so the task
+  /// leaves "Today" by itself.
+  Future<void> _complete(CareTask t) async {
+    if (_busy.contains(t.id)) return;
+    final l10n = AppLocalizations.of(context);
+    final messenger = ScaffoldMessenger.of(context);
+    final c = ref.read(plantsControllerProvider);
+    final isWater = t.type == CareTaskType.water;
+    final name = t.plant.nickname;
+
+    setState(() => _busy.add(t.id));
+    final err = isWater
+        ? await c.markWatered(t.plant.id)
+        : await c.markFertilized(t.plant.id);
+    if (!mounted) return;
+    setState(() => _busy.remove(t.id));
+
+    final base = isWater
+        ? l10n.plantWateredSnackbar(name)
+        : l10n.plantFertilizedSnackbar(name);
+    final points = c.lastActionPointsEarned;
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(
+          err ?? (points > 0 ? '$base  ${l10n.pointsEarned(points)}' : base),
+        ),
+      ),
+    );
+  }
+
+  Widget _trailing(CareTask t, AppLocalizations l10n) {
+    if (_busy.contains(t.id)) {
+      return const SizedBox(
+        width: 24,
+        height: 24,
+        child: CircularProgressIndicator(strokeWidth: 2.5),
+      );
+    }
+    if (t.group == CareTaskGroup.today) {
+      return const Icon(
+        Icons.radio_button_unchecked,
+        color: AppColors.greenPrimary,
+      );
+    }
+    return const SizedBox.shrink();
   }
 
   @override
@@ -42,9 +92,8 @@ class _CareCalendarScreenState
     };
 
     final tasks = ref.watch(plantsControllerProvider).careTasks;
-
-    final allDone = tasks.isNotEmpty &&
-        tasks.every((t) => _done.contains(t.id));
+    final nothingDue = tasks.isNotEmpty &&
+        !tasks.any((t) => t.group == CareTaskGroup.today);
 
     return AppScreen(
       title: l10n.careCalendarTitle,
@@ -57,19 +106,24 @@ class _CareCalendarScreenState
           : ListView(
               padding: const EdgeInsets.only(bottom: 32),
               children: [
+                if (nothingDue)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: EmptyView(
+                      icon: Icons.verified,
+                      title: l10n.allCaughtUpTitle,
+                      subtitle: l10n.allCaughtUpBody,
+                    ),
+                  ),
                 for (final g in CareTaskGroup.values)
                   if (tasks.any((t) => t.group == g)) ...[
                     SectionTitle(titles[g]!.toUpperCase()),
                     for (final t in tasks.where((t) => t.group == g))
                       AppCard(
                         margin: const EdgeInsets.only(bottom: 10),
-                        onTap: () {
-                          setState(
-                            () => _done.contains(t.id)
-                                ? _done.remove(t.id)
-                                : _done.add(t.id),
-                          );
-                        },
+                        onTap: t.group == CareTaskGroup.today
+                            ? () => _complete(t)
+                            : null,
                         child: Row(
                           children: [
                             CircleAvatar(
@@ -113,30 +167,23 @@ class _CareCalendarScreenState
                                       c: AppColors.textMuted,
                                     ),
                                   ),
+                                  if (t.days < 0)
+                                    Text(
+                                      dueText(l10n, t.days),
+                                      style: AppTextStyles.inter(
+                                        12,
+                                        w: FontWeight.w600,
+                                        c: AppColors.danger,
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
-                            Icon(
-                              _done.contains(t.id)
-                                  ? Icons.check_circle
-                                  : Icons.radio_button_unchecked,
-                              color: _done.contains(t.id)
-                                  ? const Color(0xFF43A047)
-                                  : Colors.black26,
-                            ),
+                            _trailing(t, l10n),
                           ],
                         ),
                       ),
                   ],
-                if (allDone)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 32),
-                    child: EmptyView(
-                      icon: Icons.verified,
-                      title: l10n.allCaughtUpTitle,
-                      subtitle: l10n.allCaughtUpBody,
-                    ),
-                  ),
               ],
             ),
     );

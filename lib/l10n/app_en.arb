@@ -387,6 +387,73 @@
             }
         }
     },
+    "historyFertilizedEntry": "{name} was fertilized",
+    "@historyFertilizedEntry": {
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "historySkippedEntry": "Watering was postponed for {name}",
+    "@historySkippedEntry": {
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "historyNoteEntry": "A note was added for {name}",
+    "@historyNoteEntry": {
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "plantRecentActivityTitle": "Recent activity",
+    "careStreakLabel": "Care streak",
+    "careStreakDays": "{days} days",
+    "@careStreakDays": {
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "plantNoActivityYet": "No activity recorded yet.",
+    "gardenHistoryButton": "Garden history",
+    "activityWateredLabel": "Watered",
+    "activityFertilizedLabel": "Fertilized",
+    "activityScanLabel": "Plant scan",
+    "activitySkippedLabel": "Snoozed",
+    "activityNoteLabel": "Note",
+    "skipSnoozeTitle": "Skip or snooze watering",
+    "skipReasonLabel": "Reason",
+    "skipSoilWetReason": "Soil is still wet",
+    "skipRainedReason": "It rained",
+    "skipOtherReason": "Other",
+    "skipDurationLabel": "Snooze for",
+    "skipOneDay": "1 day",
+    "skipTwoDays": "2 days",
+    "skipThreeDays": "3 days",
+    "skipSevenDays": "7 days",
+    "skipSavedSnackbar": "Watering snoozed for {days} days.",
+    "@skipSavedSnackbar": {
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "historyCreatedEntry": "{name} was added to garden",
+    "@historyCreatedEntry": {
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
     "notScannedYetLabel": "Awaiting first check-up",
     "healthCritical": "{percent}% • Urgent Action Needed",
     "@healthCritical": {
@@ -412,6 +479,78 @@
         "placeholders": {
             "percent": {
                 "type": "int"
+            }
+        }
+    },
+    "healthOkay": "{percent}% • Doing OK",
+    "@healthOkay": {
+        "description": "Auto-extracted UI string for healthOkay",
+        "placeholders": {
+            "percent": {
+                "type": "int"
+            }
+        }
+    },
+    "healthReasonWaterLate": "Watering {days} days overdue",
+    "@healthReasonWaterLate": {
+        "description": "Auto-extracted UI string for healthReasonWaterLate",
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "healthReasonFertilizerLate": "Fertilizing {days} days overdue",
+    "@healthReasonFertilizerLate": {
+        "description": "Auto-extracted UI string for healthReasonFertilizerLate",
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "healthReasonScanIssue": "Check-up: {issue} ({severity})",
+    "@healthReasonScanIssue": {
+        "description": "Auto-extracted UI string for healthReasonScanIssue",
+        "placeholders": {
+            "issue": {
+                "type": "String"
+            },
+            "severity": {
+                "type": "String"
+            }
+        }
+    },
+    "scanSeverityMild": "Mild",
+    "scanSeverityModerate": "Moderate",
+    "scanSeveritySevere": "Severe",
+    "noCheckupHint": "No check-up yet. Scan this plant to see how healthy it really is.",
+    "dueNotSet": "Not set",
+    "dueOverdueDays": "{days, plural, =1{Overdue by 1 day} other{Overdue by {days} days}}",
+    "@dueOverdueDays": {
+        "description": "Auto-extracted UI string for dueOverdueDays",
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "dueInDays": "In {days} days",
+    "@dueInDays": {
+        "description": "Auto-extracted UI string for dueInDays",
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "statNeedAttention": "Need Attention",
+    "plantWaterDueLabel": "Watering: {when}",
+    "@plantWaterDueLabel": {
+        "description": "Auto-extracted UI string for plantWaterDueLabel",
+        "placeholders": {
+            "when": {
+                "type": "String"
             }
         }
     },
@@ -687,5 +826,188 @@
     "placeholders": {
       "issue": { "type": "String" }
     }
-  }
+  },
+  "filterNeedsWater": "Needs water",
+  "filterNeedsFeeding": "Needs feeding",
+  "filterNeedsAttention": "Needs attention",
+  "plantsCountLabel": "{count, plural, =1{1 plant} other{{count} plants}}",
+  "@plantsCountLabel": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "groupByLocation": "Group by location",
+  "noLocationGroup": "No location",
+  "waterAllDueButton": "Water all due ({count})",
+  "@waterAllDueButton": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "waterAllDoneSnackbar": "Watered {count} plants 💧 +{points} points",
+  "@waterAllDoneSnackbar": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "points": { "type": "int" }
+    }
+  },
+  "statusWaterToday": "Water today",
+  "statusFeedDue": "Feeding due",
+  "statusNextWater": "Next: {day}",
+  "@statusNextWater": {
+    "placeholders": {
+      "day": { "type": "String" }
+    }
+  },
+  "statusWatered": "Watered ✓",
+  "waterPlantTooltip": "Water {name}",
+  "@waterPlantTooltip": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "wateredUndoSnackbar": "{name} watered 💧",
+  "@wateredUndoSnackbar": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "undoButton": "Undo",
+  "pointsEarned": "+{points} points",
+  "@pointsEarned": {
+    "placeholders": {
+      "points": { "type": "int" }
+    }
+  },
+  "emptyGardenBody": "Scan a photo and we will identify it for you, or add it by hand.",
+  "scanToAddButton": "Scan to add",
+  "addManuallyButton": "Add manually",
+  "noMatchingPlants": "No plants match this filter",
+  "healthBreakdownTitle": "Health breakdown",
+  "healthBreakdownBase": "Perfect health",
+  "healthBreakdownNoIssues": "Nothing is lowering the health of this plant.",
+  "healthBreakdownTotal": "Score",
+  "nextUpTitle": "Next up",
+  "nextUpWaterNow": "Water now",
+  "nextUpWaterNowMl": "Water now · {ml} ml",
+  "@nextUpWaterNowMl": {
+    "placeholders": {
+      "ml": { "type": "int" }
+    }
+  },
+  "nextUpFeedNow": "Fertilize now",
+  "nextUpAllDone": "All caught up",
+  "nextUpNextWater": "Next watering: {when}",
+  "@nextUpNextWater": {
+    "placeholders": {
+      "when": { "type": "String" }
+    }
+  },
+  "nextUpWaterEarly": "Water early",
+  "scheduleTitle": "Care schedule",
+  "scheduleWater": "Water",
+  "scheduleFertilize": "Fertilize",
+  "scheduleLast": "Last: {when}",
+  "@scheduleLast": {
+    "placeholders": {
+      "when": { "type": "String" }
+    }
+  },
+  "scheduleNext": "Next: {when}",
+  "@scheduleNext": {
+    "placeholders": {
+      "when": { "type": "String" }
+    }
+  },
+  "scheduleEvery": "{days, plural, =1{Every day} other{Every {days} days}}",
+  "@scheduleEvery": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+  "lastNever": "Never",
+  "yesterdayLabel": "Yesterday",
+  "careTipsTitle": "Care tips",
+  "aiDoctorButton": "AI Doctor",
+    "addStepPhoto": "Photo",
+    "addStepDetails": "Details",
+    "addStepPlan": "Care plan",
+    "addStepProgress": "Step {n} of {total}",
+    "@addStepProgress": {
+        "placeholders": {
+            "n": {"type": "int"},
+            "total": {"type": "int"}
+        }
+    },
+    "addPhotoStepTitle": "Start with a photo",
+    "addPhotoStepBody": "Our AI botanist identifies your plant and fills in its care details.",
+    "addIdentifyingLabel": "Analyzing with AI Botanist...",
+    "addEnterManually": "Skip, I will enter the details",
+    "identifiedSnackbar": "Identified as {species}! Details filled in.",
+    "@identifiedSnackbar": {
+        "placeholders": {
+            "species": {"type": "String"}
+        }
+    },
+    "identifyFailedSnackbar": "Could not identify the plant. You can enter the details yourself.",
+    "nextButton": "Next",
+    "reviewPlanButton": "Review care plan",
+    "locationIndoor": "Indoor",
+    "locationBalcony": "Balcony",
+    "locationOutdoor": "Outdoor",
+    "lightLow": "Low",
+    "lightMedium": "Medium",
+    "lightBright": "Bright",
+    "stageSeedling": "Seedling",
+    "stageYoung": "Young",
+    "stageMature": "Mature",
+    "notYetChip": "Not yet",
+    "pickDateChip": "Pick date",
+    "planPreviewTitle": "Your care plan",
+    "planWaterAmount": "About {ml} ml each time",
+    "@planWaterAmount": {
+        "placeholders": {
+            "ml": {"type": "int"}
+        }
+    },
+    "planFirstWatering": "First watering",
+    "planFeedingNote": "A feeding schedule is created automatically when you save.",
+    "planEditDetails": "Edit details",
+    "addAnotherButton": "Add another",
+    "viewPlantButton": "View plant",
+    "firstSproutUnlocked": "First Sprout unlocked!",
+    "scanLastTitle": "Last check-up",
+    "scanHealthyTitle": "Looking healthy",
+    "scanSeverityNone": "Healthy",
+    "scanTreatmentTitle": "Treatment",
+    "scanCareTipTitle": "Care tip",
+    "scanMarkTreated": "Mark treated",
+    "scanTreatedOn": "Treated {date}",
+    "@scanTreatedOn": {
+        "placeholders": {
+            "date": {"type": "String"}
+        }
+    },
+    "scanTreatedSnackbar": "Marked as treated. Health updates now.",
+    "scanFindFertilizer": "Find fertilizer: {name}",
+    "@scanFindFertilizer": {
+        "placeholders": {
+            "name": {"type": "String"}
+        }
+    },
+    "scanChecklistProgress": "{done} of {total} steps done",
+    "@scanChecklistProgress": {
+        "placeholders": {
+            "done": {"type": "int"},
+            "total": {"type": "int"}
+        }
+    },
+  "plantPlacementLabel": "Where does it live?",
+  "weatherRainSkipTip": "It's raining, so {name} can skip watering today.",
+  "@weatherRainSkipTip": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "weatherRainSkipButton": "Skip today"
 }

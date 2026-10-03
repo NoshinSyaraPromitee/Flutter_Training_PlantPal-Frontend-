@@ -26,6 +26,10 @@ class AiDoctorRepositoryImpl implements AiDoctorRepository {
         plantId: j['plantId']?.toString(),
         createdAt: _date(j['createdAt']),
         imageUrl: j['imageUrl']?.toString(),
+        severity: j['severity']?.toString() ?? '',
+        fertilizer: j['fertilizer']?.toString() ?? '',
+        treated: j['treated'] == true,
+        treatedAt: _date(j['treatedAt']),
       );
 
   BotReply _diagnosisReply(Map<String, dynamic> j) =>
@@ -63,6 +67,10 @@ class AiDoctorRepositoryImpl implements AiDoctorRepository {
             _diagnosis(j),
         ],
       );
+
+  @override
+  Future<Diagnosis> markDiagnosisTreated(String id) =>
+      guardCall(() async => _diagnosis(await _remote.markTreated(id)));
 
   @override
   Future<BotReply> chat(String sessionId, String text, {String? diagnosisId}) =>

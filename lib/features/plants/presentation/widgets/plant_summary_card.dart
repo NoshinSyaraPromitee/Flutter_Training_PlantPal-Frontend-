@@ -6,6 +6,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/model/plant.dart';
+import '../utils/due_text.dart';
 
 /// Compact row used for "Recent Plants" on Home.
 class PlantSummaryCard extends StatelessWidget {
@@ -43,7 +44,9 @@ class PlantSummaryCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  l10n.plantWaterLevelLabel(plant.waterLevel),
+                  l10n.plantWaterDueLabel(
+                    dueText(l10n, plant.waterDueInDays),
+                  ),
                   style: AppTextStyles.inter(
                     13,
                     c: AppColors.textMuted,

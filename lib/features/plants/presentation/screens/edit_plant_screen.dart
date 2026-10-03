@@ -14,6 +14,8 @@ import '../../../../core/widgets/plant_image.dart';
 import '../../../../core/widgets/photo_picker_sheet.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../utils/plant_choices.dart';
+import '../widgets/choice_chips_row.dart';
 
 class EditPlantScreen extends ConsumerStatefulWidget {
   const EditPlantScreen({super.key, required this.id});
@@ -25,9 +27,11 @@ class EditPlantScreen extends ConsumerStatefulWidget {
 class _EditPlantScreenState extends ConsumerState<EditPlantScreen> {
   final _nickname = TextEditingController();
   final _species = TextEditingController();
-  final _location = TextEditingController();
-  final _sunlight = TextEditingController();
-  final _days = TextEditingController();
+  String _location = '';
+  bool _outdoor = false;
+  String _sunlight = '';
+  String _stage = '';
+  int _days = 7;
   Uint8List? _newImageBytes;
   bool _saving = false;
   bool _init = false;
@@ -41,18 +45,33 @@ class _EditPlantScreenState extends ConsumerState<EditPlantScreen> {
     if (p != null) {
       _nickname.text = p.nickname;
       _species.text = p.species;
-      _location.text = p.location;
-      _sunlight.text = p.sunlight;
-      _days.text = p.wateringFrequencyDays.toString();
+      _location = p.location;
+      _outdoor = p.isOutdoor;
+      _sunlight = p.sunlight;
+      _stage = p.ageStage;
+      _days = p.wateringFrequencyDays;
     }
   }
 
   @override
   void dispose() {
-    for (final c in [_nickname, _species, _location, _sunlight, _days]) {
-      c.dispose();
-    }
+    _nickname.dispose();
+    _species.dispose();
     super.dispose();
+  }
+
+  List<ChoiceOption> _options(
+    AppLocalizations l10n,
+    List<String> values,
+    String current,
+  ) {
+    final list = [
+      for (final v in values) ChoiceOption(v, PlantChoices.label(l10n, v)),
+    ];
+    if (current.isNotEmpty && !values.contains(current)) {
+      list.add(ChoiceOption(current, current));
+    }
+    return list;
   }
 
   Future<void> _pickPhoto() async {
@@ -76,9 +95,11 @@ class _EditPlantScreenState extends ConsumerState<EditPlantScreen> {
           id: widget.id,
           nickname: _nickname.text,
           species: _species.text,
-          location: _location.text,
-          sunlight: _sunlight.text,
-          wateringFrequencyDays: int.tryParse(_days.text.trim()) ?? 7,
+          location: _location,
+          sunlight: _sunlight,
+          wateringFrequencyDays: _days,
+          ageStage: _stage,
+          outdoor: _outdoor,
         );
 
     if (!mounted) return;
@@ -239,14 +260,43 @@ class _EditPlantScreenState extends ConsumerState<EditPlantScreen> {
           _label(l10n.plantSpeciesLabel),
           AppTextField(controller: _species, hint: l10n.speciesHint),
           _label(l10n.locationLabel),
-          AppTextField(controller: _location, hint: l10n.locationHint),
+          ChoiceChipsRow(
+            options: _options(l10n, PlantChoices.locations, _location),
+            selected: _location,
+            clearable: true,
+            onChanged: (v) => setState(() {
+              _location = v;
+              if (v.isNotEmpty) _outdoor = PlantChoices.isOutdoorLocation(v);
+            }),
+          ),
+          _label(l10n.plantPlacementLabel),
+          ChoiceChipsRow(
+            options: [
+              ChoiceOption('indoor', l10n.locationIndoor, icon: Icons.home_outlined),
+              ChoiceOption('outdoor', l10n.locationOutdoor, icon: Icons.park_outlined),
+            ],
+            selected: _outdoor ? 'outdoor' : 'indoor',
+            onChanged: (v) => setState(() => _outdoor = v == 'outdoor'),
+          ),
           _label(l10n.careMetricSunlight),
-          AppTextField(controller: _sunlight, hint: l10n.sunlightMediumOption),
+          ChoiceChipsRow(
+            options: _options(l10n, PlantChoices.lights, _sunlight),
+            selected: _sunlight,
+            clearable: true,
+            onChanged: (v) => setState(() => _sunlight = v),
+          ),
+          _label(l10n.plantAgeLabel),
+          ChoiceChipsRow(
+            options: _options(l10n, PlantChoices.stages, _stage),
+            selected: _stage,
+            clearable: true,
+            onChanged: (v) => setState(() => _stage = v),
+          ),
           _label(l10n.waterFrequencyLabel),
-          AppTextField(
-            controller: _days,
-            hint: '3',
-            keyboardType: TextInputType.number,
+          IntervalStepper(
+            days: _days,
+            label: l10n.scheduleEvery(_days),
+            onChanged: (v) => setState(() => _days = v),
           ),
           const SizedBox(height: 20),
           SizedBox(

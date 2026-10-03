@@ -673,6 +673,93 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String historyFertilizedEntry(String name) {
+    return '$name was fertilized';
+  }
+
+  @override
+  String historySkippedEntry(String name) {
+    return 'Watering was postponed for $name';
+  }
+
+  @override
+  String historyNoteEntry(String name) {
+    return 'A note was added for $name';
+  }
+
+  @override
+  String get plantRecentActivityTitle => 'Recent activity';
+
+  @override
+  String get careStreakLabel => 'Care streak';
+
+  @override
+  String careStreakDays(int days) {
+    return '$days days';
+  }
+
+  @override
+  String get plantNoActivityYet => 'No activity recorded yet.';
+
+  @override
+  String get gardenHistoryButton => 'Garden history';
+
+  @override
+  String get activityWateredLabel => 'Watered';
+
+  @override
+  String get activityFertilizedLabel => 'Fertilized';
+
+  @override
+  String get activityScanLabel => 'Plant scan';
+
+  @override
+  String get activitySkippedLabel => 'Snoozed';
+
+  @override
+  String get activityNoteLabel => 'Note';
+
+  @override
+  String get skipSnoozeTitle => 'Skip or snooze watering';
+
+  @override
+  String get skipReasonLabel => 'Reason';
+
+  @override
+  String get skipSoilWetReason => 'Soil is still wet';
+
+  @override
+  String get skipRainedReason => 'It rained';
+
+  @override
+  String get skipOtherReason => 'Other';
+
+  @override
+  String get skipDurationLabel => 'Snooze for';
+
+  @override
+  String get skipOneDay => '1 day';
+
+  @override
+  String get skipTwoDays => '2 days';
+
+  @override
+  String get skipThreeDays => '3 days';
+
+  @override
+  String get skipSevenDays => '7 days';
+
+  @override
+  String skipSavedSnackbar(int days) {
+    return 'Watering snoozed for $days days.';
+  }
+
+  @override
+  String historyCreatedEntry(String name) {
+    return '$name was added to garden';
+  }
+
+  @override
   String get notScannedYetLabel => 'Awaiting first check-up';
 
   @override
@@ -688,6 +775,66 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String healthHealthy(int percent) {
     return '$percent% • Thriving';
+  }
+
+  @override
+  String healthOkay(int percent) {
+    return '$percent% • Doing OK';
+  }
+
+  @override
+  String healthReasonWaterLate(int days) {
+    return 'Watering $days days overdue';
+  }
+
+  @override
+  String healthReasonFertilizerLate(int days) {
+    return 'Fertilizing $days days overdue';
+  }
+
+  @override
+  String healthReasonScanIssue(String issue, String severity) {
+    return 'Check-up: $issue ($severity)';
+  }
+
+  @override
+  String get scanSeverityMild => 'Mild';
+
+  @override
+  String get scanSeverityModerate => 'Moderate';
+
+  @override
+  String get scanSeveritySevere => 'Severe';
+
+  @override
+  String get noCheckupHint =>
+      'No check-up yet. Scan this plant to see how healthy it really is.';
+
+  @override
+  String get dueNotSet => 'Not set';
+
+  @override
+  String dueOverdueDays(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Overdue by $days days',
+      one: 'Overdue by 1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String dueInDays(int days) {
+    return 'In $days days';
+  }
+
+  @override
+  String get statNeedAttention => 'Need Attention';
+
+  @override
+  String plantWaterDueLabel(String when) {
+    return 'Watering: $when';
   }
 
   @override
@@ -1205,4 +1352,314 @@ class AppLocalizationsEn extends AppLocalizations {
   String chatScanPrefill(String issue) {
     return 'My plant shows $issue. What should I do?';
   }
+
+  @override
+  String get filterNeedsWater => 'Needs water';
+
+  @override
+  String get filterNeedsFeeding => 'Needs feeding';
+
+  @override
+  String get filterNeedsAttention => 'Needs attention';
+
+  @override
+  String plantsCountLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count plants',
+      one: '1 plant',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get groupByLocation => 'Group by location';
+
+  @override
+  String get noLocationGroup => 'No location';
+
+  @override
+  String waterAllDueButton(int count) {
+    return 'Water all due ($count)';
+  }
+
+  @override
+  String waterAllDoneSnackbar(int count, int points) {
+    return 'Watered $count plants 💧 +$points points';
+  }
+
+  @override
+  String get statusWaterToday => 'Water today';
+
+  @override
+  String get statusFeedDue => 'Feeding due';
+
+  @override
+  String statusNextWater(String day) {
+    return 'Next: $day';
+  }
+
+  @override
+  String get statusWatered => 'Watered ✓';
+
+  @override
+  String waterPlantTooltip(String name) {
+    return 'Water $name';
+  }
+
+  @override
+  String wateredUndoSnackbar(String name) {
+    return '$name watered 💧';
+  }
+
+  @override
+  String get undoButton => 'Undo';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points points';
+  }
+
+  @override
+  String get emptyGardenBody =>
+      'Scan a photo and we will identify it for you, or add it by hand.';
+
+  @override
+  String get scanToAddButton => 'Scan to add';
+
+  @override
+  String get addManuallyButton => 'Add manually';
+
+  @override
+  String get noMatchingPlants => 'No plants match this filter';
+
+  @override
+  String get healthBreakdownTitle => 'Health breakdown';
+
+  @override
+  String get healthBreakdownBase => 'Perfect health';
+
+  @override
+  String get healthBreakdownNoIssues =>
+      'Nothing is lowering the health of this plant.';
+
+  @override
+  String get healthBreakdownTotal => 'Score';
+
+  @override
+  String get nextUpTitle => 'Next up';
+
+  @override
+  String get nextUpWaterNow => 'Water now';
+
+  @override
+  String nextUpWaterNowMl(int ml) {
+    return 'Water now · $ml ml';
+  }
+
+  @override
+  String get nextUpFeedNow => 'Fertilize now';
+
+  @override
+  String get nextUpAllDone => 'All caught up';
+
+  @override
+  String nextUpNextWater(String when) {
+    return 'Next watering: $when';
+  }
+
+  @override
+  String get nextUpWaterEarly => 'Water early';
+
+  @override
+  String get scheduleTitle => 'Care schedule';
+
+  @override
+  String get scheduleWater => 'Water';
+
+  @override
+  String get scheduleFertilize => 'Fertilize';
+
+  @override
+  String scheduleLast(String when) {
+    return 'Last: $when';
+  }
+
+  @override
+  String scheduleNext(String when) {
+    return 'Next: $when';
+  }
+
+  @override
+  String scheduleEvery(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Every $days days',
+      one: 'Every day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get lastNever => 'Never';
+
+  @override
+  String get yesterdayLabel => 'Yesterday';
+
+  @override
+  String get careTipsTitle => 'Care tips';
+
+  @override
+  String get aiDoctorButton => 'AI Doctor';
+
+  @override
+  String get addStepPhoto => 'Photo';
+
+  @override
+  String get addStepDetails => 'Details';
+
+  @override
+  String get addStepPlan => 'Care plan';
+
+  @override
+  String addStepProgress(int n, int total) {
+    return 'Step $n of $total';
+  }
+
+  @override
+  String get addPhotoStepTitle => 'Start with a photo';
+
+  @override
+  String get addPhotoStepBody =>
+      'Our AI botanist identifies your plant and fills in its care details.';
+
+  @override
+  String get addIdentifyingLabel => 'Analyzing with AI Botanist...';
+
+  @override
+  String get addEnterManually => 'Skip, I will enter the details';
+
+  @override
+  String identifiedSnackbar(String species) {
+    return 'Identified as $species! Details filled in.';
+  }
+
+  @override
+  String get identifyFailedSnackbar =>
+      'Could not identify the plant. You can enter the details yourself.';
+
+  @override
+  String get nextButton => 'Next';
+
+  @override
+  String get reviewPlanButton => 'Review care plan';
+
+  @override
+  String get locationIndoor => 'Indoor';
+
+  @override
+  String get locationBalcony => 'Balcony';
+
+  @override
+  String get locationOutdoor => 'Outdoor';
+
+  @override
+  String get lightLow => 'Low';
+
+  @override
+  String get lightMedium => 'Medium';
+
+  @override
+  String get lightBright => 'Bright';
+
+  @override
+  String get stageSeedling => 'Seedling';
+
+  @override
+  String get stageYoung => 'Young';
+
+  @override
+  String get stageMature => 'Mature';
+
+  @override
+  String get notYetChip => 'Not yet';
+
+  @override
+  String get pickDateChip => 'Pick date';
+
+  @override
+  String get planPreviewTitle => 'Your care plan';
+
+  @override
+  String planWaterAmount(int ml) {
+    return 'About $ml ml each time';
+  }
+
+  @override
+  String get planFirstWatering => 'First watering';
+
+  @override
+  String get planFeedingNote =>
+      'A feeding schedule is created automatically when you save.';
+
+  @override
+  String get planEditDetails => 'Edit details';
+
+  @override
+  String get addAnotherButton => 'Add another';
+
+  @override
+  String get viewPlantButton => 'View plant';
+
+  @override
+  String get firstSproutUnlocked => 'First Sprout unlocked!';
+
+  @override
+  String get scanLastTitle => 'Last check-up';
+
+  @override
+  String get scanHealthyTitle => 'Looking healthy';
+
+  @override
+  String get scanSeverityNone => 'Healthy';
+
+  @override
+  String get scanTreatmentTitle => 'Treatment';
+
+  @override
+  String get scanCareTipTitle => 'Care tip';
+
+  @override
+  String get scanMarkTreated => 'Mark treated';
+
+  @override
+  String scanTreatedOn(String date) {
+    return 'Treated $date';
+  }
+
+  @override
+  String get scanTreatedSnackbar => 'Marked as treated. Health updates now.';
+
+  @override
+  String scanFindFertilizer(String name) {
+    return 'Find fertilizer: $name';
+  }
+
+  @override
+  String scanChecklistProgress(int done, int total) {
+    return '$done of $total steps done';
+  }
+
+  @override
+  String get plantPlacementLabel => 'Where does it live?';
+
+  @override
+  String weatherRainSkipTip(String name) {
+    return 'It\'s raining, so $name can skip watering today.';
+  }
+
+  @override
+  String get weatherRainSkipButton => 'Skip today';
 }

@@ -14,9 +14,7 @@ class PlantRemoteDataSource {
     return (r.data as List).cast<Map<String, dynamic>>();
   }
 
-  Future<Map<String, dynamic>> create(
-    Map<String, dynamic> body,
-  ) async =>
+  Future<Map<String, dynamic>> create(Map<String, dynamic> body) async =>
       (await _api.dio.post('/api/v1/plants', data: body)).data
           as Map<String, dynamic>;
 
@@ -43,6 +41,29 @@ class PlantRemoteDataSource {
       (await _api.dio.post('/api/v1/plants/$id/fertilize')).data
           as Map<String, dynamic>;
 
+  Future<List<Map<String, dynamic>>> events({String? plantId}) async {
+    final path = plantId == null
+        ? '/api/v1/plants/events'
+        : '/api/v1/plants/$plantId/events';
+    final data = (await _api.dio.get(path)).data;
+    return data is List ? data.cast<Map<String, dynamic>>() : const [];
+  }
+
+  Future<Map<String, dynamic>> skip(
+    String id, {
+    required String reason,
+    required int days,
+  }) async =>
+      (await _api.dio.post(
+            '/api/v1/plants/$id/skip',
+            data: {'reason': reason, 'days': days},
+          )).data
+          as Map<String, dynamic>;
+
+  Future<void> addNote(String id, String note) async {
+    await _api.dio.post('/api/v1/plants/$id/notes', data: {'note': note});
+  }
+
   // NOTE: the backend has no /plants/{id}/image route yet, so this call
   // will 404 until that endpoint is added.
   Future<Map<String, dynamic>> uploadImage(
@@ -50,17 +71,11 @@ class PlantRemoteDataSource {
     Uint8List imageBytes,
   ) async {
     final form = FormData.fromMap({
-      'image': MultipartFile.fromBytes(
-        imageBytes,
-        filename: 'plant.jpg',
-      ),
+      'image': MultipartFile.fromBytes(imageBytes, filename: 'plant.jpg'),
     });
 
-    return (await _api.dio.post(
-      '/api/v1/plants/$id/image',
-      data: form,
-    ))
-        .data as Map<String, dynamic>;
+    return (await _api.dio.post('/api/v1/plants/$id/image', data: form)).data
+        as Map<String, dynamic>;
   }
 
   /// POST /api/v1/plants/identify
@@ -72,10 +87,7 @@ class PlantRemoteDataSource {
       ),
     });
 
-    return (await _api.dio.post(
-      '/api/v1/plants/identify',
-      data: form,
-    ))
-        .data as Map<String, dynamic>;
+    return (await _api.dio.post('/api/v1/plants/identify', data: form)).data
+        as Map<String, dynamic>;
   }
 }

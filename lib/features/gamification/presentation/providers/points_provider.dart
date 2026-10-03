@@ -55,6 +55,23 @@ class PointsController extends ChangeNotifier {
     _save();
   }
 
+  /// Awards [points] only the first time [key] is used on this device
+  /// (e.g. the "first plant" bonus). Returns true when points were added.
+  /// Local only, like the rest of the wallet, until the server validates
+  /// points (PLAN.md 4.2).
+  Future<bool> awardOnce(String key, int points) async {
+    if (points <= 0) return false;
+    final storageKey = 'award_$key';
+    try {
+      if (await _storage.read(storageKey) != null) return false;
+      await _storage.write(storageKey, '1');
+    } catch (_) {
+      return false;
+    }
+    add(points);
+    return true;
+  }
+
   /// Awards points for a completed care action (e.g. watering a plant).
   void add(int points) {
     if (points <= 0) return;

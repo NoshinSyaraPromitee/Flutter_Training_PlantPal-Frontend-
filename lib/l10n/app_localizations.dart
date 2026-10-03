@@ -1286,6 +1286,156 @@ abstract class AppLocalizations {
   /// **'{name} was watered'**
   String historyWateredEntry(String name);
 
+  /// No description provided for @historyFertilizedEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} was fertilized'**
+  String historyFertilizedEntry(String name);
+
+  /// No description provided for @historySkippedEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Watering was postponed for {name}'**
+  String historySkippedEntry(String name);
+
+  /// No description provided for @historyNoteEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'A note was added for {name}'**
+  String historyNoteEntry(String name);
+
+  /// No description provided for @plantRecentActivityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent activity'**
+  String get plantRecentActivityTitle;
+
+  /// No description provided for @careStreakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Care streak'**
+  String get careStreakLabel;
+
+  /// No description provided for @careStreakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days'**
+  String careStreakDays(int days);
+
+  /// No description provided for @plantNoActivityYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No activity recorded yet.'**
+  String get plantNoActivityYet;
+
+  /// No description provided for @gardenHistoryButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Garden history'**
+  String get gardenHistoryButton;
+
+  /// No description provided for @activityWateredLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Watered'**
+  String get activityWateredLabel;
+
+  /// No description provided for @activityFertilizedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilized'**
+  String get activityFertilizedLabel;
+
+  /// No description provided for @activityScanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant scan'**
+  String get activityScanLabel;
+
+  /// No description provided for @activitySkippedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Snoozed'**
+  String get activitySkippedLabel;
+
+  /// No description provided for @activityNoteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get activityNoteLabel;
+
+  /// No description provided for @skipSnoozeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip or snooze watering'**
+  String get skipSnoozeTitle;
+
+  /// No description provided for @skipReasonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason'**
+  String get skipReasonLabel;
+
+  /// No description provided for @skipSoilWetReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Soil is still wet'**
+  String get skipSoilWetReason;
+
+  /// No description provided for @skipRainedReason.
+  ///
+  /// In en, this message translates to:
+  /// **'It rained'**
+  String get skipRainedReason;
+
+  /// No description provided for @skipOtherReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get skipOtherReason;
+
+  /// No description provided for @skipDurationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Snooze for'**
+  String get skipDurationLabel;
+
+  /// No description provided for @skipOneDay.
+  ///
+  /// In en, this message translates to:
+  /// **'1 day'**
+  String get skipOneDay;
+
+  /// No description provided for @skipTwoDays.
+  ///
+  /// In en, this message translates to:
+  /// **'2 days'**
+  String get skipTwoDays;
+
+  /// No description provided for @skipThreeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'3 days'**
+  String get skipThreeDays;
+
+  /// No description provided for @skipSevenDays.
+  ///
+  /// In en, this message translates to:
+  /// **'7 days'**
+  String get skipSevenDays;
+
+  /// No description provided for @skipSavedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Watering snoozed for {days} days.'**
+  String skipSavedSnackbar(int days);
+
+  /// No description provided for @historyCreatedEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} was added to garden'**
+  String historyCreatedEntry(String name);
+
   /// No description provided for @notScannedYetLabel.
   ///
   /// In en, this message translates to:
@@ -1309,6 +1459,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{percent}% • Thriving'**
   String healthHealthy(int percent);
+
+  /// Auto-extracted UI string for healthOkay
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% • Doing OK'**
+  String healthOkay(int percent);
+
+  /// Auto-extracted UI string for healthReasonWaterLate
+  ///
+  /// In en, this message translates to:
+  /// **'Watering {days} days overdue'**
+  String healthReasonWaterLate(int days);
+
+  /// Auto-extracted UI string for healthReasonFertilizerLate
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilizing {days} days overdue'**
+  String healthReasonFertilizerLate(int days);
+
+  /// Auto-extracted UI string for healthReasonScanIssue
+  ///
+  /// In en, this message translates to:
+  /// **'Check-up: {issue} ({severity})'**
+  String healthReasonScanIssue(String issue, String severity);
+
+  /// No description provided for @scanSeverityMild.
+  ///
+  /// In en, this message translates to:
+  /// **'Mild'**
+  String get scanSeverityMild;
+
+  /// No description provided for @scanSeverityModerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate'**
+  String get scanSeverityModerate;
+
+  /// No description provided for @scanSeveritySevere.
+  ///
+  /// In en, this message translates to:
+  /// **'Severe'**
+  String get scanSeveritySevere;
+
+  /// No description provided for @noCheckupHint.
+  ///
+  /// In en, this message translates to:
+  /// **'No check-up yet. Scan this plant to see how healthy it really is.'**
+  String get noCheckupHint;
+
+  /// No description provided for @dueNotSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get dueNotSet;
+
+  /// Auto-extracted UI string for dueOverdueDays
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =1{Overdue by 1 day} other{Overdue by {days} days}}'**
+  String dueOverdueDays(int days);
+
+  /// Auto-extracted UI string for dueInDays
+  ///
+  /// In en, this message translates to:
+  /// **'In {days} days'**
+  String dueInDays(int days);
+
+  /// No description provided for @statNeedAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'Need Attention'**
+  String get statNeedAttention;
+
+  /// Auto-extracted UI string for plantWaterDueLabel
+  ///
+  /// In en, this message translates to:
+  /// **'Watering: {when}'**
+  String plantWaterDueLabel(String when);
 
   /// No description provided for @settingsMenuLabel.
   ///
@@ -2227,6 +2455,516 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My plant shows {issue}. What should I do?'**
   String chatScanPrefill(String issue);
+
+  /// No description provided for @filterNeedsWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs water'**
+  String get filterNeedsWater;
+
+  /// No description provided for @filterNeedsFeeding.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs feeding'**
+  String get filterNeedsFeeding;
+
+  /// No description provided for @filterNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs attention'**
+  String get filterNeedsAttention;
+
+  /// No description provided for @plantsCountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 plant} other{{count} plants}}'**
+  String plantsCountLabel(int count);
+
+  /// No description provided for @groupByLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Group by location'**
+  String get groupByLocation;
+
+  /// No description provided for @noLocationGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'No location'**
+  String get noLocationGroup;
+
+  /// No description provided for @waterAllDueButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Water all due ({count})'**
+  String waterAllDueButton(int count);
+
+  /// No description provided for @waterAllDoneSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Watered {count} plants 💧 +{points} points'**
+  String waterAllDoneSnackbar(int count, int points);
+
+  /// No description provided for @statusWaterToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Water today'**
+  String get statusWaterToday;
+
+  /// No description provided for @statusFeedDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Feeding due'**
+  String get statusFeedDue;
+
+  /// No description provided for @statusNextWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Next: {day}'**
+  String statusNextWater(String day);
+
+  /// No description provided for @statusWatered.
+  ///
+  /// In en, this message translates to:
+  /// **'Watered ✓'**
+  String get statusWatered;
+
+  /// No description provided for @waterPlantTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Water {name}'**
+  String waterPlantTooltip(String name);
+
+  /// No description provided for @wateredUndoSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} watered 💧'**
+  String wateredUndoSnackbar(String name);
+
+  /// No description provided for @undoButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undoButton;
+
+  /// No description provided for @pointsEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'+{points} points'**
+  String pointsEarned(int points);
+
+  /// No description provided for @emptyGardenBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan a photo and we will identify it for you, or add it by hand.'**
+  String get emptyGardenBody;
+
+  /// No description provided for @scanToAddButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan to add'**
+  String get scanToAddButton;
+
+  /// No description provided for @addManuallyButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add manually'**
+  String get addManuallyButton;
+
+  /// No description provided for @noMatchingPlants.
+  ///
+  /// In en, this message translates to:
+  /// **'No plants match this filter'**
+  String get noMatchingPlants;
+
+  /// No description provided for @healthBreakdownTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Health breakdown'**
+  String get healthBreakdownTitle;
+
+  /// No description provided for @healthBreakdownBase.
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect health'**
+  String get healthBreakdownBase;
+
+  /// No description provided for @healthBreakdownNoIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing is lowering the health of this plant.'**
+  String get healthBreakdownNoIssues;
+
+  /// No description provided for @healthBreakdownTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Score'**
+  String get healthBreakdownTotal;
+
+  /// No description provided for @nextUpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Next up'**
+  String get nextUpTitle;
+
+  /// No description provided for @nextUpWaterNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Water now'**
+  String get nextUpWaterNow;
+
+  /// No description provided for @nextUpWaterNowMl.
+  ///
+  /// In en, this message translates to:
+  /// **'Water now · {ml} ml'**
+  String nextUpWaterNowMl(int ml);
+
+  /// No description provided for @nextUpFeedNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilize now'**
+  String get nextUpFeedNow;
+
+  /// No description provided for @nextUpAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'All caught up'**
+  String get nextUpAllDone;
+
+  /// No description provided for @nextUpNextWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Next watering: {when}'**
+  String nextUpNextWater(String when);
+
+  /// No description provided for @nextUpWaterEarly.
+  ///
+  /// In en, this message translates to:
+  /// **'Water early'**
+  String get nextUpWaterEarly;
+
+  /// No description provided for @scheduleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Care schedule'**
+  String get scheduleTitle;
+
+  /// No description provided for @scheduleWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get scheduleWater;
+
+  /// No description provided for @scheduleFertilize.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilize'**
+  String get scheduleFertilize;
+
+  /// No description provided for @scheduleLast.
+  ///
+  /// In en, this message translates to:
+  /// **'Last: {when}'**
+  String scheduleLast(String when);
+
+  /// No description provided for @scheduleNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next: {when}'**
+  String scheduleNext(String when);
+
+  /// No description provided for @scheduleEvery.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =1{Every day} other{Every {days} days}}'**
+  String scheduleEvery(int days);
+
+  /// No description provided for @lastNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Never'**
+  String get lastNever;
+
+  /// No description provided for @yesterdayLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterdayLabel;
+
+  /// No description provided for @careTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Care tips'**
+  String get careTipsTitle;
+
+  /// No description provided for @aiDoctorButton.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Doctor'**
+  String get aiDoctorButton;
+
+  /// No description provided for @addStepPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo'**
+  String get addStepPhoto;
+
+  /// No description provided for @addStepDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get addStepDetails;
+
+  /// No description provided for @addStepPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Care plan'**
+  String get addStepPlan;
+
+  /// No description provided for @addStepProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {n} of {total}'**
+  String addStepProgress(int n, int total);
+
+  /// No description provided for @addPhotoStepTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start with a photo'**
+  String get addPhotoStepTitle;
+
+  /// No description provided for @addPhotoStepBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Our AI botanist identifies your plant and fills in its care details.'**
+  String get addPhotoStepBody;
+
+  /// No description provided for @addIdentifyingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyzing with AI Botanist...'**
+  String get addIdentifyingLabel;
+
+  /// No description provided for @addEnterManually.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip, I will enter the details'**
+  String get addEnterManually;
+
+  /// No description provided for @identifiedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Identified as {species}! Details filled in.'**
+  String identifiedSnackbar(String species);
+
+  /// No description provided for @identifyFailedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not identify the plant. You can enter the details yourself.'**
+  String get identifyFailedSnackbar;
+
+  /// No description provided for @nextButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextButton;
+
+  /// No description provided for @reviewPlanButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Review care plan'**
+  String get reviewPlanButton;
+
+  /// No description provided for @locationIndoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Indoor'**
+  String get locationIndoor;
+
+  /// No description provided for @locationBalcony.
+  ///
+  /// In en, this message translates to:
+  /// **'Balcony'**
+  String get locationBalcony;
+
+  /// No description provided for @locationOutdoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Outdoor'**
+  String get locationOutdoor;
+
+  /// No description provided for @lightLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get lightLow;
+
+  /// No description provided for @lightMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get lightMedium;
+
+  /// No description provided for @lightBright.
+  ///
+  /// In en, this message translates to:
+  /// **'Bright'**
+  String get lightBright;
+
+  /// No description provided for @stageSeedling.
+  ///
+  /// In en, this message translates to:
+  /// **'Seedling'**
+  String get stageSeedling;
+
+  /// No description provided for @stageYoung.
+  ///
+  /// In en, this message translates to:
+  /// **'Young'**
+  String get stageYoung;
+
+  /// No description provided for @stageMature.
+  ///
+  /// In en, this message translates to:
+  /// **'Mature'**
+  String get stageMature;
+
+  /// No description provided for @notYetChip.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet'**
+  String get notYetChip;
+
+  /// No description provided for @pickDateChip.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick date'**
+  String get pickDateChip;
+
+  /// No description provided for @planPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your care plan'**
+  String get planPreviewTitle;
+
+  /// No description provided for @planWaterAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'About {ml} ml each time'**
+  String planWaterAmount(int ml);
+
+  /// No description provided for @planFirstWatering.
+  ///
+  /// In en, this message translates to:
+  /// **'First watering'**
+  String get planFirstWatering;
+
+  /// No description provided for @planFeedingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'A feeding schedule is created automatically when you save.'**
+  String get planFeedingNote;
+
+  /// No description provided for @planEditDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit details'**
+  String get planEditDetails;
+
+  /// No description provided for @addAnotherButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add another'**
+  String get addAnotherButton;
+
+  /// No description provided for @viewPlantButton.
+  ///
+  /// In en, this message translates to:
+  /// **'View plant'**
+  String get viewPlantButton;
+
+  /// No description provided for @firstSproutUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'First Sprout unlocked!'**
+  String get firstSproutUnlocked;
+
+  /// No description provided for @scanLastTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Last check-up'**
+  String get scanLastTitle;
+
+  /// No description provided for @scanHealthyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking healthy'**
+  String get scanHealthyTitle;
+
+  /// No description provided for @scanSeverityNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get scanSeverityNone;
+
+  /// No description provided for @scanTreatmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Treatment'**
+  String get scanTreatmentTitle;
+
+  /// No description provided for @scanCareTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Care tip'**
+  String get scanCareTipTitle;
+
+  /// No description provided for @scanMarkTreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark treated'**
+  String get scanMarkTreated;
+
+  /// No description provided for @scanTreatedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Treated {date}'**
+  String scanTreatedOn(String date);
+
+  /// No description provided for @scanTreatedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Marked as treated. Health updates now.'**
+  String get scanTreatedSnackbar;
+
+  /// No description provided for @scanFindFertilizer.
+  ///
+  /// In en, this message translates to:
+  /// **'Find fertilizer: {name}'**
+  String scanFindFertilizer(String name);
+
+  /// No description provided for @scanChecklistProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} steps done'**
+  String scanChecklistProgress(int done, int total);
+
+  /// No description provided for @plantPlacementLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Where does it live?'**
+  String get plantPlacementLabel;
+
+  /// No description provided for @weatherRainSkipTip.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s raining, so {name} can skip watering today.'**
+  String weatherRainSkipTip(String name);
+
+  /// No description provided for @weatherRainSkipButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip today'**
+  String get weatherRainSkipButton;
 }
 
 class _AppLocalizationsDelegate
