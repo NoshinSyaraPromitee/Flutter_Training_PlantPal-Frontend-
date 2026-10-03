@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/gradient_background.dart';
+import '../../../../core/widgets/plant_mascot_rive.dart';
 import '../../../../l10n/app_localizations.dart';
 
 /// Launch/loading screen shown while the app initializes.
@@ -38,42 +39,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
             return Stack(
               children: [
-                Positioned(
-                  left: w * 0.03,
-                  top: h * 0.74,
-                  width: w * 0.10,
-                  child: Image.asset('assets/images/blob2.png'),
-                ),
-                Positioned(
-                  left: w * 0.72,
-                  top: h * 0.57,
-                  width: w * 0.09,
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: Image.asset('assets/images/blob2.png'),
-                  ),
-                ),
-                Positioned(
-                  right: -w * 0.08,
-                  bottom: -h * 0.03,
-                  width: w * 0.36,
-                  child: Opacity(
-                    opacity: 0.55,
-                    child: Image.asset('assets/images/blob2.png'),
-                  ),
-                ),
-                Positioned(
-                  left: w * 0.53,
-                  top: h * 0.735,
-                  width: w * 0.10,
-                  child: Image.asset('assets/images/fern.png'),
-                ),
-                Positioned(
-                  right: w * 0.05,
-                  bottom: 0,
-                  width: w * 0.20,
-                  child: Image.asset('assets/images/fern.png'),
-                ),
                 Positioned.fill(
                   child: SafeArea(
                     child: Column(
@@ -96,27 +61,9 @@ class _SplashScreenState extends State<SplashScreen> {
                         ),
                         const Spacer(),
                         SizedBox(
-                          width: w * 0.85,
-                          child: Stack(
-                            children: [
-                              Image.asset(
-                                'assets/images/blob1.png',
-                                width: w * 0.85,
-                                fit: BoxFit.contain,
-                              ),
-                              Positioned.fill(
-                                child: Align(
-                                  alignment: const Alignment(0.1, 0.35),
-                                  child: SizedBox(
-                                    width: w * 0.45,
-                                    child: Image.asset(
-                                      'assets/images/splash_mascot.png',
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                          width: w * 0.45,
+                          height: w * 0.45,
+                          child: const PlantMascotRive(),
                         ),
                         const Spacer(),
                         SizedBox(
