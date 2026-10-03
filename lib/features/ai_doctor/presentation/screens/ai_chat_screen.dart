@@ -15,7 +15,7 @@ class AiChatScreen extends StatelessWidget {
     final chat = context.watch<ChatController>();
     return AppScreen(
       title: 'AI Doctor',
-      showBack: false,
+      showBack: true, // back arrow returns to the main menu (/home)
       padding: EdgeInsets.zero,
       child: Column(children: [
         Expanded(

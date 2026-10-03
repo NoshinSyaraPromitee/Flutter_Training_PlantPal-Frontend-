@@ -1,6 +1,7 @@
-﻿import "package:flutter/material.dart";
+import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:go_router/go_router.dart";
+import "package:plantpal/core/widgets/app_back_button.dart";
 import "package:plantpal/core/theme/app_text_styles.dart";
 import "package:plantpal/core/widgets/app_button.dart";
 import "package:plantpal/core/widgets/gradient_background.dart";
@@ -27,7 +28,11 @@ class FertilizerScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text("Fertilizer Making", textAlign: TextAlign.center, style: AppTextStyles.screenTitle),
+                Row(children: [
+                  const SizedBox(width: 48, child: AppBackButton()),
+                  Expanded(child: Text("Fertilizer Making", textAlign: TextAlign.center, style: AppTextStyles.screenTitle.copyWith(fontSize: 30))),
+                  const SizedBox(width: 48),
+                ]),
                 const SizedBox(height: 12),
                 Center(child: Image.asset("assets/images/fertilizer_bag.png", width: 100, height: 100)),
                 const SizedBox(height: 20),
@@ -55,12 +60,6 @@ class FertilizerScreen extends ConsumerWidget {
                                   separatorBuilder: (_, _) => const SizedBox(height: 10),
                                   itemBuilder: (_, i) => FertilizerRecipeCard(item: list[i]),
                                 ),
-                ),
-                const SizedBox(height: 12),
-                AppButton(
-                  label: "Back",
-                  variant: AppButtonVariant.green,
-                  onPressed: () => context.canPop() ? context.pop() : context.go("/home"),
                 ),
                 const SizedBox(height: 16),
               ],

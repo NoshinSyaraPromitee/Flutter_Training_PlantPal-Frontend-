@@ -1,4 +1,4 @@
-﻿import "package:flutter/material.dart";
+import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:plantpal/core/theme/app_colors.dart";
 import "package:plantpal/core/theme/app_text_styles.dart";
@@ -12,12 +12,12 @@ class FertilizerDetailsScreen extends ConsumerWidget {
   const FertilizerDetailsScreen({super.key, required this.id});
   final String id;
 
-  Widget _row(IconData icon, Color color, String text) => Padding(
+  Widget _row(IconData icon, Color color, String text, {Color? textColor}) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Icon(icon, size: 18, color: color),
           const SizedBox(width: 8),
-          Expanded(child: Text(text, style: AppTextStyles.inter(14, h: 1.4))),
+          Expanded(child: Text(text, style: AppTextStyles.inter(14, c: textColor, h: 1.4))),
         ]),
       );
 
@@ -73,7 +73,7 @@ class FertilizerDetailsScreen extends ConsumerWidget {
         const SectionTitle("Safety Tips"),
         AppCard(
           color: const Color(0xFFFFF3E0),
-          child: Column(children: [for (final t in safetyTips) _row(Icons.warning_amber_rounded, const Color(0xFFFB8C00), t)]),
+          child: Column(children: [for (final t in safetyTips) _row(Icons.warning_amber_rounded, const Color(0xFFFB8C00), t, textColor: const Color(0xFF1A3A31))]),
         ),
       ]),
     );
