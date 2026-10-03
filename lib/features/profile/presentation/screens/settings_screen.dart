@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -7,9 +6,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../core/widgets/app_screen.dart';
 import '../../../../l10n/app_localizations.dart';
-import '../../../auth/presentation/providers/auth_provider.dart';
 import '../providers/settings_provider.dart';
-import '../widgets/logout_dialog.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -139,26 +136,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ]),
           ),
-          SectionTitle(l10n.accountSectionTitle),
-          AppCard(
-            padding: EdgeInsets.zero,
-            child: ListTile(
-              leading: _icon(Icons.lock_reset, const Color(0xFF5C6BC0)),
-              title: Text('Reset password', style: AppTextStyles.inter(15, w: FontWeight.w600)),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/forgot-password', extra: context.read<AuthController>().user?.email),
-            ),
-          ),
-          const SizedBox(height: 12),
-          OutlinedButton.icon(
-            onPressed: () => confirmLogout(context),
-            icon: const Icon(Icons.logout, color: AppColors.danger),
-            label: Text(l10n.logOutButton, style: const TextStyle(color: AppColors.danger)),
-            style: OutlinedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(vertical: 14),
-              side: const BorderSide(color: AppColors.danger),
-            ),
-          ),
+          // AUTH DISABLED (temporary): Account section (Reset password, Log Out) removed.
         ],
       ),
     );
