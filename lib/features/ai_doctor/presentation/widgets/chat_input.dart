@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/widgets/photo_picker_sheet.dart';
+import 'chat_colors.dart';
 
 class ChatInput extends StatefulWidget {
   const ChatInput({super.key, required this.onSend});
@@ -61,21 +62,22 @@ class _ChatInputState extends State<ChatInput> {
             child: Row(children: [
               IconButton.filledTonal(
                 onPressed: _pick,
-                icon: const Icon(Icons.add, color: AppColors.greenPrimary),
-                style: IconButton.styleFrom(backgroundColor: AppColors.surfaceGreen),
+                icon: const Icon(Icons.add, color: kChatIconLight),
+                style: IconButton.styleFrom(backgroundColor: AppColors.greenPrimary),
               ),
               const SizedBox(width: 6),
               Expanded(
                 child: TextField(
                   controller: _text,
+                  style: const TextStyle(color: kChatInk, fontSize: 15),
                   textInputAction: TextInputAction.send,
                   onSubmitted: (_) => _send(),
-                  decoration: InputDecoration(hintText: _image != null ? 'Add a caption (optional)...' : 'Ask anything...', border: InputBorder.none),
+                  decoration: InputDecoration(hintText: _image != null ? 'Add a caption (optional)...' : 'Ask anything...', hintStyle: const TextStyle(color: kChatInkMuted), border: InputBorder.none),
                 ),
               ),
               IconButton.filled(
                 onPressed: _send,
-                icon: const Icon(Icons.send, size: 18),
+                icon: const Icon(Icons.send, size: 18, color: kChatIconLight),
                 style: IconButton.styleFrom(backgroundColor: AppColors.greenPrimary),
               ),
             ]),

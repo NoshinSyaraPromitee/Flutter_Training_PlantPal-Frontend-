@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
+import 'maintenance_colors.dart';
 
 /// Plant name / type / age intake form with the "Create My Roadmap" button.
 /// Reports the submitted name + type up via [onSubmit]; keeps its own
@@ -80,15 +81,17 @@ class _MaintenanceIntakeFormState extends State<MaintenanceIntakeForm> {
         alignment: Alignment.centerLeft,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 6),
-          child: Text(t, style: AppTextStyles.inter(14, w: FontWeight.w700)),
+          child: Text(t, style: AppTextStyles.inter(14, w: FontWeight.w700, c: kMaintenanceInk)),
         ),
       );
 
   Widget _field(TextEditingController c, String hint, {int maxLines = 1}) => TextField(
         controller: c,
+        style: const TextStyle(color: kMaintenanceInk, fontSize: 14),
         maxLines: maxLines,
         decoration: InputDecoration(
           hintText: hint,
+          hintStyle: const TextStyle(color: kMaintenanceInkMuted),
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),

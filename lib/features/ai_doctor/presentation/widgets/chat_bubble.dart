@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/markdown_text.dart';
+import 'chat_colors.dart';
 import 'package:plantpal/features/ai_doctor/domain/model/chat_models.dart';
 import 'package:plantpal/features/ai_doctor/presentation/widgets/diagnosis_card.dart';
 
@@ -35,7 +36,7 @@ class ChatBubble extends StatelessWidget {
                     ),
                   ),
                 if (message.text.isNotEmpty)
-                  MarkdownText(message.text, style: AppTextStyles.inter(15, c: user ? Colors.white : AppColors.textDark, h: 1.4)),
+                  MarkdownText(message.text, style: AppTextStyles.inter(15, c: user ? Colors.white : kChatInk, h: 1.4)),
                 if (message.diagnosis != null) DiagnosisCard(diagnosis: message.diagnosis!),
               ]),
             ),

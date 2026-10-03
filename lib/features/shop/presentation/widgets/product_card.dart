@@ -36,7 +36,7 @@ class ProductCard extends StatelessWidget {
                 child: Row(mainAxisSize: MainAxisSize.min, children: [
                   const Icon(Icons.star, size: 14, color: AppColors.star),
                   const SizedBox(width: 3),
-                  Text('${product.rating}', style: AppTextStyles.inter(12, w: FontWeight.w600)),
+                  Text('${product.rating}', style: AppTextStyles.inter(12, w: FontWeight.w600, c: const Color(0xFF1A3A31))),
                 ]),
               ),
             ),
@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
           ]),
         ),
         const SizedBox(height: 8),
-        Text(product.name, maxLines: 2, overflow: TextOverflow.ellipsis, style: AppTextStyles.inter(14, w: FontWeight.w700, c: AppColors.greenPrimary)),
+        Text(product.name, maxLines: 2, overflow: TextOverflow.ellipsis, style: AppTextStyles.inter(14, w: FontWeight.w700, c: AppColors.isDark ? AppColors.cream : AppColors.greenPrimary)),
         Row(children: [
           Flexible(child: Text(product.category, style: AppTextStyles.inter(12, c: AppColors.textMuted))),
           if (product.unit != null) ...[
@@ -63,7 +63,7 @@ class ProductCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
               decoration: BoxDecoration(color: AppColors.surfaceGreen, borderRadius: BorderRadius.circular(8)),
-              child: Text(product.unit!, style: AppTextStyles.inter(10, w: FontWeight.w700, c: AppColors.greenPrimary)),
+              child: Text(product.unit!, style: AppTextStyles.inter(10, w: FontWeight.w700, c: AppColors.isDark ? AppColors.cream : AppColors.greenPrimary)),
             ),
           ],
         ]),

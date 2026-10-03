@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/app_card.dart';
+import 'maintenance_colors.dart';
 
 /// Checkable care-task list. Keeps its own checked state — nothing to
 /// persist yet, so the parent doesn't need to know which are ticked.
@@ -39,7 +40,7 @@ class _MaintenanceTodoListState extends State<MaintenanceTodoList> {
                           style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w700)),
                     ),
                     const SizedBox(width: 12),
-                    Expanded(child: Text(_labels[i], style: AppTextStyles.inter(14, w: FontWeight.w600))),
+                    Expanded(child: Text(_labels[i], style: AppTextStyles.inter(14, w: FontWeight.w600, c: kMaintenanceInk))),
                     Checkbox(
                       value: _checked[i],
                       activeColor: const Color(0xFF6C63FF),

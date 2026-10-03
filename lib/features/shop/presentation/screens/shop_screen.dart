@@ -16,7 +16,7 @@ class ShopScreen extends StatelessWidget {
 
   Widget _iconBadge(IconData icon, int count, VoidCallback onTap) => IconButton(
         onPressed: onTap,
-        icon: Badge(isLabelVisible: count > 0, label: Text('$count'), child: Icon(icon, size: 28, color: AppColors.greenPrimary)),
+        icon: Badge(isLabelVisible: count > 0, label: Text('$count'), child: Icon(icon, size: 28, color: AppColors.isDark ? Colors.white : AppColors.greenPrimary)),
       );
 
   @override
@@ -52,7 +52,7 @@ class ShopScreen extends StatelessWidget {
                             selected: shop.category == name,
                             onSelected: (_) => shop.selectCategory(name),
                             selectedColor: AppColors.greenPrimary,
-                            backgroundColor: Colors.white,
+                            backgroundColor: AppColors.isDark ? AppColors.surfaceGreen : Colors.white,
                             labelStyle: AppTextStyles.inter(13, w: FontWeight.w600, c: shop.category == name ? Colors.white : AppColors.textDark),
                             showCheckmark: false,
                           ),

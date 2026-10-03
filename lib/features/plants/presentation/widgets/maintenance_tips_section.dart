@@ -6,6 +6,7 @@ import 'package:plantpal/core/widgets/app_card.dart';
 import 'package:plantpal/features/plants/domain/weather_tip.dart';
 import 'package:plantpal/features/plants/presentation/providers/weather_tip_providers.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
+import 'maintenance_colors.dart';
 
 /// Default watering guidance in the absence of a per-plant amount (the
 /// intake form is free-text, not tied to a specific saved plant yet).
@@ -45,7 +46,7 @@ class MaintenanceTipsSection extends ConsumerWidget {
           children: [
             const Icon(Icons.lightbulb_outline, color: AppColors.sunAmber),
             const SizedBox(width: 10),
-            Expanded(child: Text(text, style: AppTextStyles.inter(13, h: 1.4))),
+            Expanded(child: Text(text, style: AppTextStyles.inter(13, c: kMaintenanceInk, h: 1.4))),
           ],
         ),
       );

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/widgets/app_card.dart';
 import 'package:plantpal/core/widgets/photo_picker_sheet.dart';
+import 'maintenance_colors.dart';
 
 /// Daily journal photo upload. Owns its own picked-image state.
 class MaintenanceJournalSection extends StatefulWidget {
@@ -35,7 +36,7 @@ class _MaintenanceJournalSectionState extends State<MaintenanceJournalSection> {
               child: Image.file(File(_image!), height: 140, width: double.infinity, fit: BoxFit.cover),
             ),
           ),
-        const Center(child: Icon(Icons.file_upload_outlined, color: AppColors.greenPrimary, size: 28)),
+        const Center(child: Icon(Icons.file_upload_outlined, color: kMaintenanceIconLight, size: 28)),
         const SizedBox(height: 8),
         ElevatedButton(
           onPressed: _upload,
