@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:plantpal/features/shop/domain/model/product.dart';
+import '../../../shop/domain/model/product.dart';
 
 class WishlistController extends ChangeNotifier {
   final List<Product> _items = [];

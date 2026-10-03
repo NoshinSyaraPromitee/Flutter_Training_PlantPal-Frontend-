@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:plantpal/features/cart/domain/model/cart_item.dart';
-import 'package:plantpal/features/shop/domain/model/product.dart';
+import '../../domain/model/cart_item.dart';
+import '../../../shop/domain/model/product.dart';
 
 class CartController extends ChangeNotifier {
   final List<CartItem> _items = [];

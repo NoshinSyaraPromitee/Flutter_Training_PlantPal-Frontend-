@@ -1,4 +1,4 @@
-import 'package:plantpal/features/gamification/domain/model/achievement.dart';
+import '../model/achievement.dart';
 
 abstract class AchievementRepository {
   List<Achievement> getAchievements();

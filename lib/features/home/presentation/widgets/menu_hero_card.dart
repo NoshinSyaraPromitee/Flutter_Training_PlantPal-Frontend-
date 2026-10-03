@@ -10,11 +10,6 @@ import 'package:plantpal/features/home/presentation/widgets/menu_hero_mascot.dar
 import 'package:plantpal/features/plants/presentation/providers/plants_provider.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
 
-/// STATIC for now. Later: replace with the real plant's name, e.g. the first
-/// plant that needs water ->
-///   plants.firstWhere((p) => p.waterLevel == 'Today').name
-const String _staticPlantName = 'Monstera';
-
 /// Teal hero card: mascot + greeting bubble + upload button.
 class MenuHeroCard extends ConsumerWidget {
   const MenuHeroCard({
@@ -31,11 +26,13 @@ class MenuHeroCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final t = AppLocalizations.of(context);
-    final waterTodayCount = context.watch<PlantsController>().waterTodayCount;
+    final thirsty = context.watch<PlantsController>().thirstiestPlant;
 
     // Thirsty plant -> "<plant name> is looking thirsty—time for a drink!"
-    final bubbleText = waterTodayCount > 0
-        ? t.mascotThirstyMessage(_staticPlantName)
+    final bubbleText = thirsty != null
+        ? t.mascotThirstyMessage(
+            thirsty.nickname.isNotEmpty ? thirsty.nickname : thirsty.species,
+          )
         : greetingText(t, ref.watch(greetingMessageProvider));
 
     return Container(

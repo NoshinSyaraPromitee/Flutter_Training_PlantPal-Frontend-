@@ -3,6 +3,7 @@ import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/app_back_button.dart';
 import 'package:plantpal/core/widgets/gradient_background.dart';
 
+/// Standard screen: gradient + safe area + back arrow / title / trailing action.
 class AppScreen extends StatelessWidget {
   const AppScreen({
     super.key,
@@ -10,6 +11,7 @@ class AppScreen extends StatelessWidget {
     required this.child,
     this.showBack = true,
     this.trailing,
+    this.endDrawer,
     this.padding = const EdgeInsets.symmetric(horizontal: 20),
   });
 
@@ -17,11 +19,15 @@ class AppScreen extends StatelessWidget {
   final Widget child;
   final bool showBack;
   final Widget? trailing;
+
+  /// Optional drawer sliding in from the end (right) edge.
+  final Widget? endDrawer;
   final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: endDrawer,
       body: GradientBackground(
         child: SafeArea(
           child: Column(children: [

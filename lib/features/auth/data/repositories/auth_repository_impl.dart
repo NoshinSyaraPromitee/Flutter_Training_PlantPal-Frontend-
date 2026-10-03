@@ -26,44 +26,127 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<AuthUser?> loginWithGoogle() => guardCall(() async {
-        final res = await _remote.googleLogin();
-        if (res == null) return null;
-        return _saveAuthResult(res);
-      });
-
-  @override
-  Future<AuthUser> loginWithEmail({required String email, required String password}) => guardCall(() async {
-        final res = await _remote.login(email: email, password: password);
-        return _saveAuthResult(res);
-      });
-
-  @override
-  Future<AuthUser> registerWithEmail({required String email, required String password, required String name}) =>
+  Future<AuthUser> registerWithEmail({
+    required String email,
+    required String password,
+    String? name,
+  }) =>
       guardCall(() async {
-        final res = await _remote.register(email: email, password: password, name: name);
-        return _saveAuthResult(res);
+        final tokens = await _remote.register(
+          email: email,
+          password: password,
+          name: name,
+        );
+
+        final user = AuthUser.fromJson(tokens.userJson);
+
+        await _storage.saveSession(
+          token: tokens.accessToken,
+          user: user.toJson(),
+          refreshToken: tokens.refreshToken,
+        );
+
+        return user;
       });
 
-  Future<AuthUser> _saveAuthResult(Map<String, dynamic> res) async {
-    final userJson = res['user'] as Map<String, dynamic>;
-    final user = AuthUser.fromJson(userJson);
-    await _storage.saveSession(
-      token: res['accessToken'] as String,
-      refreshToken: res['refreshToken'] as String?,
-      user: user.toJson(),
-    );
-    return user;
+  @override
+  Future<AuthUser> loginWithEmail({
+    required String email,
+    required String password,
+  }) =>
+      guardCall(() async {
+        final tokens = await _remote.login(
+          email: email,
+          password: password,
+        );
+
+        final user = AuthUser.fromJson(tokens.userJson);
+
+        await _storage.saveSession(
+          token: tokens.accessToken,
+          user: user.toJson(),
+          refreshToken: tokens.refreshToken,
+        );
+
+        return user;
+      });
+
+  @override
+  Future<AuthUser?> loginWithGoogle() => guardCall(() async {
+        final idToken = await _remote.googleIdToken();
+
+        if (idToken == null) return null;
+
+        final tokens = await _remote.loginWithGoogle(idToken);
+        final user = AuthUser.fromJson(tokens.userJson);
+
+        await _storage.saveSession(
+          token: tokens.accessToken,
+          user: user.toJson(),
+          refreshToken: tokens.refreshToken,
+        );
+
+        return user;
+      });
+
+  @override
+  Future<void> listenForGoogleWebSignIn({
+    required void Function(AuthUser user) onSignedIn,
+    required void Function(Object error) onError,
+  }) =>
+      guardCall(
+        () => _remote.listenForGoogleWebSignIn(
+          onIdToken: (idToken) async {
+            try {
+              final tokens = await _remote.loginWithGoogle(idToken);
+              final user = AuthUser.fromJson(tokens.userJson);
+
+              await _storage.saveSession(
+                token: tokens.accessToken,
+                user: user.toJson(),
+                refreshToken: tokens.refreshToken,
+              );
+
+              onSignedIn(user);
+            } catch (e) {
+              onError(Failure.from(e));
+            }
+          },
+          onError: onError,
+        ),
+      );
+
+  @override
+  Future<void> forgotPassword(String email) =>
+      guardCall(() => _remote.forgotPassword(email));
+
+  @override
+  Future<void> resetPassword({
+    required String email,
+    required String code,
+    required String newPassword,
+  }) =>
+      guardCall(
+        () => _remote.resetPassword(
+          email: email,
+          code: code,
+          newPassword: newPassword,
+        ),
+      );
+
+  @override
+  Future<void> logout() async {
+    final refreshToken = await _storage.readRefreshToken();
+
+    if (refreshToken != null) {
+      try {
+        await _remote.logout(refreshToken);
+      } catch (_) {
+        // Local logout still succeeds if the server is unavailable.
+      }
+    }
+
+    await _remote.googleSignOut();
+    await _storage.clear();
   }
-
-  @override
-  Future<void> forgotPassword(String email) => guardCall(() => _remote.forgotPassword(email));
-
-  @override
-  Future<void> resetPassword({required String email, required String code, required String newPassword}) =>
-      guardCall(() => _remote.resetPassword(email: email, code: code, newPassword: newPassword));
-
-  @override
-  Future<void> logout() => _storage.clear();
 }
-

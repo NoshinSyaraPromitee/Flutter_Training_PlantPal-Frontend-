@@ -81,10 +81,7 @@ class ProfileScreen extends StatelessWidget {
           _Section(
             title: l10n.accountSectionTitle,
             children: [
-              // No "My Orders" tile here yet - there's no order-history
-              // screen/route in this app (only order_success_screen.dart,
-              // the checkout-completion page), so this would navigate
-              // nowhere. Add it back once that feature exists.
+              _Tile(Icons.receipt_long_outlined, l10n.myOrdersLabel, null, onTap: () => context.push('/orders')),
               _Tile(Icons.help_outline, l10n.helpLabel, null, onTap: () {}),
               _Tile(Icons.info_outline, l10n.aboutLabel, null, onTap: () {}),
               _Tile(Icons.logout, l10n.logOutButton, null, onTap: () => confirmLogout(context), danger: true),

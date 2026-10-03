@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:plantpal/core/network/failure.dart';
-import 'package:plantpal/features/auth/domain/model/auth_user.dart';
-import 'package:plantpal/features/auth/domain/repositories/auth_repository.dart';
+import '../../../../core/network/failure.dart';
+import '../../domain/model/auth_user.dart';
+import '../../domain/repositories/auth_repository.dart';
 
 enum AuthStatus { unknown, unauthenticated, authenticated, guest }
 
@@ -27,12 +27,12 @@ class AuthController extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> loginWithEmail({required String email, required String password}) async {
+  Future<bool> registerWithEmail({required String email, required String password, String? name}) async {
     busy = true;
     error = null;
     notifyListeners();
     try {
-      user = await _repo.loginWithEmail(email: email, password: password);
+      user = await _repo.registerWithEmail(email: email, password: password, name: name);
       status = AuthStatus.authenticated;
     } catch (e) {
       error = Failure.from(e).message;
@@ -42,12 +42,12 @@ class AuthController extends ChangeNotifier {
     return status == AuthStatus.authenticated;
   }
 
-  Future<bool> registerWithEmail({required String email, required String password, required String name}) async {
+  Future<bool> loginWithEmail({required String email, required String password}) async {
     busy = true;
     error = null;
     notifyListeners();
     try {
-      user = await _repo.registerWithEmail(email: email, password: password, name: name);
+      user = await _repo.loginWithEmail(email: email, password: password);
       status = AuthStatus.authenticated;
     } catch (e) {
       error = Failure.from(e).message;
@@ -73,6 +73,30 @@ class AuthController extends ChangeNotifier {
     busy = false;
     notifyListeners();
     return status == AuthStatus.authenticated;
+  }
+
+  /// Web: starts listening for Google button sign-ins. Call before showing the button.
+  /// On success the status flips to authenticated and the router redirects to /home.
+  Future<void> prepareGoogleWeb() async {
+    try {
+      await _repo.listenForGoogleWebSignIn(
+        onSignedIn: (u) {
+          user = u;
+          error = null;
+          busy = false;
+          status = AuthStatus.authenticated;
+          notifyListeners();
+        },
+        onError: (e) {
+          error = Failure.from(e).message;
+          busy = false;
+          notifyListeners();
+        },
+      );
+    } catch (e) {
+      error = Failure.from(e).message;
+      notifyListeners();
+    }
   }
 
   /// Debug builds only (see login screen). No token, so plants/AI calls will fail.

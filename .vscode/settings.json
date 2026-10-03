@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "D:/plantpal/linux"
+    "cmake.sourceDirectory": "D:/plantpal/linux",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
