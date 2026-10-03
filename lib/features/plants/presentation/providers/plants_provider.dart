@@ -65,6 +65,11 @@ class PlantsController extends ChangeNotifier {
     return null;
   }
 
+  int get averageHealth {
+    if (plants.isEmpty) return 0;
+    return (plants.fold<int>(0, (s, p) => s + p.health) / plants.length).round();
+  }
+
   /// Plants whose watering is due today or overdue (from the dates).
   int get waterTodayCount => plants.where((p) => p.isWaterDue).length;
 

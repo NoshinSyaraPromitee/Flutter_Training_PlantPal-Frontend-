@@ -49,10 +49,6 @@ class SecureStorage {
 
   Future<void> clearChatSessionId() => delete('chat_session_id');
 
-  Future<String?> readLanguage() => read('settings_language');
-
-  Future<void> saveLanguage(String code) => write('settings_language', code);
-
   Future<void> clear() async {
     await delete(_tokenKey);
     await delete(_refreshTokenKey);
