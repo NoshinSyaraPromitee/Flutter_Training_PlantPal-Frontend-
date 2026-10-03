@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:plantpal/app/riverpod_providers.dart';
+import 'package:provider/provider.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
 import 'package:plantpal/core/widgets/app_button.dart';
 import 'package:plantpal/core/widgets/app_text_field.dart';
+import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
 import 'package:plantpal/features/auth/presentation/widgets/auth_scaffold.dart';
 
-class ForgotPasswordScreen extends ConsumerStatefulWidget {
+class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key, this.email});
 
   final String? email;
 
   @override
-  ConsumerState<ForgotPasswordScreen> createState() =>
-      _ForgotPasswordScreenState();
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }
 
-class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
-  late final TextEditingController _email =
-      TextEditingController(text: widget.email ?? '');
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  late final TextEditingController _email = TextEditingController(text: widget.email ?? '');
   bool _busy = false;
 
   @override
@@ -29,8 +27,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
     super.dispose();
   }
 
-  void _snack(String msg) =>
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+  void _snack(String msg) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
 
   Future<void> _send() async {
     final email = _email.text.trim();
@@ -40,7 +37,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
     }
 
     setState(() => _busy = true);
-    final err = await ref.read(authControllerProvider).forgotPassword(email);
+    final err = await context.read<AuthController>().forgotPassword(email);
     if (!mounted) return;
     setState(() => _busy = false);
 
@@ -77,15 +74,10 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         const SizedBox(height: 12),
         Center(
           child: TextButton(
-            onPressed: () =>
-                context.push('/reset-password', extra: _email.text.trim()),
+            onPressed: () => context.push('/reset-password', extra: _email.text.trim()),
             child: Text(
               'I already have a code',
-              style: AppTextStyles.inter(
-                14,
-                w: FontWeight.w700,
-                c: AppColors.accent,
-              ),
+              style: AppTextStyles.inter(14, w: FontWeight.w700, c: AppColors.greenPrimary),
             ),
           ),
         ),

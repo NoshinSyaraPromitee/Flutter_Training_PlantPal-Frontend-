@@ -1,4 +1,4 @@
-﻿import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../../../core/storage/secure_storage.dart';
 

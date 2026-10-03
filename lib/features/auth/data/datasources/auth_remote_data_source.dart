@@ -196,4 +196,3 @@ class AuthRemoteDataSource {
     return _toTokens(res.data as Map<String, dynamic>);
   }
 }
-

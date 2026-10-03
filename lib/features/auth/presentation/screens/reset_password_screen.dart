@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:plantpal/app/riverpod_providers.dart';
+import 'package:provider/provider.dart';
 import 'package:plantpal/core/widgets/app_button.dart';
 import 'package:plantpal/core/widgets/app_text_field.dart';
+import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
 import 'package:plantpal/features/auth/presentation/widgets/auth_scaffold.dart';
 
-class ResetPasswordScreen extends ConsumerStatefulWidget {
+class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key, this.email});
 
   final String? email;
 
   @override
-  ConsumerState<ResetPasswordScreen> createState() =>
-      _ResetPasswordScreenState();
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
-class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen> {
-  late final TextEditingController _email =
-      TextEditingController(text: widget.email ?? '');
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
+  late final TextEditingController _email = TextEditingController(text: widget.email ?? '');
   final _code = TextEditingController();
   final _password = TextEditingController();
   final _confirm = TextEditingController();
@@ -35,8 +33,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen> {
     super.dispose();
   }
 
-  void _snack(String msg) =>
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+  void _snack(String msg) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
 
   Future<void> _reset() async {
     final email = _email.text.trim();
@@ -57,7 +54,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen> {
     }
 
     setState(() => _busy = true);
-    final err = await ref.read(authControllerProvider).resetPassword(
+    final err = await context.read<AuthController>().resetPassword(
           email: email,
           code: code,
           newPassword: password,
@@ -100,9 +97,7 @@ class _ResetPasswordScreenState extends ConsumerState<ResetPasswordScreen> {
           icon: Icons.lock_outline,
           obscure: _hide,
           suffix: IconButton(
-            icon: Icon(
-              _hide ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-            ),
+            icon: Icon(_hide ? Icons.visibility_off_outlined : Icons.visibility_outlined),
             onPressed: () => setState(() => _hide = !_hide),
           ),
         ),

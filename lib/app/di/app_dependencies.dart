@@ -46,6 +46,9 @@ class AppDependencies {
     );
     api.onUnauthorized = auth.logout; // expired/invalid token -> back to login
 
+    points = PointsController(storage)..load();
+    settings = SettingsController(storage)..load();
+
     final plantRepo = PlantRepositoryImpl(PlantRemoteDataSource(api));
     final aiRepo = AiDoctorRepositoryImpl(AiDoctorRemoteDataSource(api));
 
@@ -78,13 +81,11 @@ class AppDependencies {
     fertilizer = FertilizerController(
       FertilizerRemoteRepository(api.dio, getLanguage: () => settings.language),
     );
-    settings = SettingsController(storage);
     careGuide = CareGuideLocalRepository(getLanguage: () => settings.language);
     priceRefresh = PriceRefreshRepository(api.dio);
 
     Failure.currentLanguage = () => settings.language;
 
-    points = PointsController(storage)..load();
     plants.onCareLogged = points.add;
   }
 

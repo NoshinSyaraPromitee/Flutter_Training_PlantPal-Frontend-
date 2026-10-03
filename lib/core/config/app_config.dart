@@ -13,9 +13,12 @@ class AppConfig {
         '441074426973-seg14od7d8apt3u4ahfk83j0ihkjshka.apps.googleusercontent.com',
   );
 
+  // Must exactly match GOOGLE_REDIRECT_URI in the backend's .env and the
+  // redirect URI registered on the Web OAuth client in Google Cloud
+  // Console - Google rejects the code exchange otherwise.
   static const googleRedirectUri = String.fromEnvironment(
     'GOOGLE_REDIRECT_URI',
-    defaultValue: 'https://ifingi.biz:8134/auth/google/callback',
+    defaultValue: 'https://myplantpal.ddns.net/auth/google/callback',
   );
 
   static const googleServerClientId = String.fromEnvironment(

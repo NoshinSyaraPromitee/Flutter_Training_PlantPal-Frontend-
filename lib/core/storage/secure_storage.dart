@@ -12,6 +12,7 @@ class SecureStorage {
   static const _tokenKey = 'auth_token';
   static const _refreshTokenKey = 'auth_refresh_token';
   static const _userKey = 'auth_user';
+  static const _languageKey = 'settings_language';
 
   Future<void> write(String key, String value) =>
       _storage.write(key: key, value: value);
@@ -25,6 +26,10 @@ class SecureStorage {
   Future<String?> readRefreshToken() => read(_refreshTokenKey);
 
   Future<String?> readUser() => read(_userKey);
+
+  Future<String?> readLanguage() => read(_languageKey);
+
+  Future<void> saveLanguage(String code) => write(_languageKey, code);
 
   Future<void> saveSession({
     required String token,
