@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 
@@ -58,7 +58,7 @@ class AppTextField extends StatelessWidget {
           color: AppColors.textMuted,
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        prefixIcon: icon == null ? null : Icon(icon, color: AppColors.greenPrimary),
+        prefixIcon: icon == null ? null : Icon(icon, color: AppColors.isDark ? Colors.white : AppColors.greenPrimary),
         suffixIcon: suffix,
         border: border,
         enabledBorder: border,
