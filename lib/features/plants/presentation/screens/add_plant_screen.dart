@@ -31,6 +31,7 @@ class _AddPlantScreenState extends ConsumerState<AddPlantScreen> {
   Uint8List? _imageBytes;
   bool _wateredToday = true;
   bool _saving = false;
+  bool _identifying = false;
 
   @override
   void dispose() {
@@ -44,6 +45,54 @@ class _AddPlantScreenState extends ConsumerState<AddPlantScreen> {
       c.dispose();
     }
     super.dispose();
+  }
+
+  Future<void> _identifyWithAi() async {
+    var bytes = _imageBytes;
+    if (bytes == null) {
+      bytes = await pickPhoto(context);
+      if (bytes == null) return;
+      setState(() => _imageBytes = bytes);
+    }
+
+    setState(() => _identifying = true);
+
+    final res =
+        await ref.read(plantsControllerProvider).identifyPlant(bytes);
+
+    if (!mounted) return;
+    setState(() => _identifying = false);
+
+    if (res != null) {
+      setState(() {
+        if (res.species.isNotEmpty) _species.text = res.species;
+        if (res.suggestedNickname.isNotEmpty) {
+          _nickname.text = res.suggestedNickname;
+        } else if (_nickname.text.isEmpty && res.species.isNotEmpty) {
+          _nickname.text = res.species.split(' ').first;
+        }
+        if (res.location.isNotEmpty) _location.text = res.location;
+        if (res.sunlight.isNotEmpty) _sunlight.text = res.sunlight;
+        if (res.wateringFrequencyDays > 0) {
+          _days.text = res.wateringFrequencyDays.toString();
+        }
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Identified as ${res.species}! Nickname and care specs auto-filled.',
+          ),
+          backgroundColor: AppColors.greenPrimary,
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Could not identify plant. You can still enter details manually.'),
+        ),
+      );
+    }
   }
 
   Future<void> _save() async {
@@ -107,17 +156,54 @@ class _AddPlantScreenState extends ConsumerState<AddPlantScreen> {
               }
             },
             child: Container(
-              height: 180,
+              height: 190,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(25),
+                border: Border.all(
+                  color: AppColors.greenPrimary.withValues(alpha: 0.2),
+                ),
               ),
               clipBehavior: Clip.antiAlias,
               child: _imageBytes != null
-                  ? Image.memory(
-                      _imageBytes!,
-                      fit: BoxFit.cover,
-                      width: double.infinity,
+                  ? Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        Image.memory(
+                          _imageBytes!,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
+                        Positioned(
+                          right: 12,
+                          bottom: 12,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 6,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.black.withValues(alpha: 0.6),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: const Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.edit, color: Colors.white, size: 14),
+                                SizedBox(width: 4),
+                                Text(
+                                  'Change Photo',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     )
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -140,6 +226,26 @@ class _AddPlantScreenState extends ConsumerState<AddPlantScreen> {
                     ),
             ),
           ),
+          const SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: AppButton(
+              label: _identifying
+                  ? 'Analyzing with AI Botanist...'
+                  : l10n.autoFillAiScanButton,
+              variant: AppButtonVariant.orange,
+              trailingIcon: _identifying ? null : Icons.auto_awesome,
+              onPressed: _identifying ? null : _identifyWithAi,
+            ),
+          ),
+          if (_identifying)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: LinearProgressIndicator(
+                color: AppColors.greenPrimary,
+                backgroundColor: AppColors.surfaceGreen,
+              ),
+            ),
           _label(l10n.nicknameLabel),
           AppTextField(
             controller: _nickname,
@@ -179,17 +285,7 @@ class _AddPlantScreenState extends ConsumerState<AddPlantScreen> {
             value: _wateredToday,
             onChanged: (v) => setState(() => _wateredToday = v),
           ),
-          const SizedBox(height: 8),
-          SizedBox(
-            width: double.infinity,
-            child: AppButton(
-              label: l10n.autoFillAiScanButton,
-              variant: AppButtonVariant.orange,
-              trailingIcon: Icons.smart_toy,
-              onPressed: () => context.go('/scan'),
-            ),
-          ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
             child: AppButton(

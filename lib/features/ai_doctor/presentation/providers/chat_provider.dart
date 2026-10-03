@@ -80,6 +80,17 @@ class ChatController extends ChangeNotifier {
     _notifyNow();
   }
 
+  /// Starts a fresh conversation about a plant in the garden: its photo and
+  /// info appear as a context chip above the input, and an editable care question
+  /// is placed in the input. Nothing is sent until the user submits.
+  Future<void> startFromPlant(ChatSeed plantSeed, {required String prefill}) async {
+    await newChat();
+    seed = plantSeed;
+    this.prefill = prefill;
+    prefillVersion++;
+    _notifyNow();
+  }
+
   /// Removes the context chip; the next message goes out without the scan.
   void clearSeed() {
     if (seed == null) return;

@@ -13,6 +13,7 @@ import '../../../../core/widgets/gradient_background.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/model/plant.dart';
+import '../../../ai_doctor/domain/model/chat_models.dart';
 import '../widgets/health_badge.dart';
 import '../widgets/plant_details_header.dart';
 import '../widgets/plant_stat_tiles.dart';
@@ -35,6 +36,11 @@ class PlantDetailsScreen extends ConsumerWidget {
     final messenger = ScaffoldMessenger.of(context);
     final router = GoRouter.of(context);
     final l10n = AppLocalizations.of(context);
+
+    if (action == 'edit') {
+      context.push('/plants/${plant.id}/edit');
+      return;
+    }
 
     if (action == 'fertilize') {
       final err = await c.markFertilized(plant.id);
@@ -127,6 +133,7 @@ class PlantDetailsScreen extends ConsumerWidget {
                     context.canPop() ? context.pop() : context.go('/plants'),
                 onMenuSelected: (v) =>
                     _onMenu(context, ref, v, plant),
+                editLabel: l10n.editPlantButton,
                 waterLabel: l10n.markAsWateredTooltip,
                 fertilizeLabel: l10n.markAsFertilizedTooltip,
                 deleteLabel: l10n.deletePlantMenuItem,
@@ -237,8 +244,38 @@ class PlantDetailsScreen extends ConsumerWidget {
                         label: l10n.askAiDoctorButton,
                         variant: AppButtonVariant.orange,
                         trailingIcon: Icons.smart_toy,
+                        onPressed: () async {
+                          final plantName = plant.nickname.isNotEmpty
+                              ? plant.nickname
+                              : plant.species;
+                          final seed = ChatSeed.fromPlant(
+                            plantId: plant.id,
+                            nickname: plant.nickname,
+                            species: plant.species,
+                            imageUrl: plant.imageUrl,
+                            location: plant.location,
+                            sunlight: plant.sunlight,
+                            waterLevel: plant.waterLevel,
+                            health: plant.health,
+                          );
+                          await ref.read(chatControllerProvider).startFromPlant(
+                            seed,
+                            prefill:
+                                "Can you give me care tips for my $plantName? How can I keep it healthy?",
+                          );
+                          if (context.mounted) context.go('/ai-doctor');
+                        },
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: double.infinity,
+                      child: AppButton(
+                        label: l10n.editPlantButton,
+                        variant: AppButtonVariant.secondary,
+                        trailingIcon: Icons.edit_outlined,
                         onPressed: () =>
-                            context.go('/ai-doctor'),
+                            context.push('/plants/${plant.id}/edit'),
                       ),
                     ),
                     const SizedBox(height: 10),

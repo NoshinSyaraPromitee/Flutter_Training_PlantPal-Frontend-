@@ -1,4 +1,4 @@
-﻿import 'dart:typed_data';
+import 'dart:typed_data';
 
 import '../model/plant.dart';
 
@@ -20,6 +20,10 @@ abstract class PlantRepository {
 
   Future<Plant> uploadImage(
     String id,
+    Uint8List imageBytes,
+  );
+
+  Future<PlantIdentification> identifyPlant(
     Uint8List imageBytes,
   );
 }

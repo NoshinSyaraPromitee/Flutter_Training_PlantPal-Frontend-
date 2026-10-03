@@ -131,8 +131,7 @@ class PlantsController extends ChangeNotifier {
         if (wasDue) onCareLogged?.call(fertilizePoints);
       });
 
-  /// PATCH /plants/{id}. The backend only accepts name/type/ageStage;
-  /// location, sunlight and watering days are not stored server-side yet.
+  /// PATCH /plants/{id} updates nickname, species, location, sunlight, and wateringFrequencyDays.
   Future<String?> updateDetails({
     required String id,
     required String nickname,
@@ -145,9 +144,30 @@ class PlantsController extends ChangeNotifier {
         final updated = await _repo.updatePlant(id, {
           'name': nickname,
           'type': species,
+          'location': location,
+          'sunlight': sunlight,
+          'wateringFrequencyDays': wateringFrequencyDays,
         });
         plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
       });
+
+  /// POST /plants/{id}/image updates the plant photo.
+  Future<String?> uploadImage(String id, Uint8List imageBytes) =>
+      _run(() async {
+        final updated = await _repo.uploadImage(id, imageBytes);
+        plants = [for (final p in plants) p.id == id ? _keepScan(p, updated) : p];
+      });
+
+  /// POST /plants/identify identifies a plant species and care requirements from photo.
+  Future<PlantIdentification?> identifyPlant(Uint8List imageBytes) async {
+    try {
+      return await _repo.identifyPlant(imageBytes);
+    } catch (e) {
+      error = Failure.from(e).message;
+      notifyListeners();
+      return null;
+    }
+  }
 
   Future<String?> remove(String id) => _run(() async {
         await _repo.deletePlant(id);

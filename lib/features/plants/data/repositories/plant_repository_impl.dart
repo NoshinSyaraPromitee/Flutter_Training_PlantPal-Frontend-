@@ -1,4 +1,4 @@
-﻿import 'dart:typed_data';
+import 'dart:typed_data';
 
 import '../../../../core/network/failure.dart';
 import '../../domain/model/plant.dart';
@@ -58,6 +58,16 @@ class PlantRepositoryImpl implements PlantRepository {
       guardCall(
         () async => PlantModel.fromJson(
           await _remote.uploadImage(id, imageBytes),
+        ),
+      );
+
+  @override
+  Future<PlantIdentification> identifyPlant(
+    Uint8List imageBytes,
+  ) =>
+      guardCall(
+        () async => PlantIdentification.fromJson(
+          await _remote.identify(imageBytes),
         ),
       );
 }

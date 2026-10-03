@@ -1,4 +1,4 @@
-﻿import '../../domain/model/plant.dart';
+import '../../domain/model/plant.dart';
 
 class PlantModel {
   PlantModel._();
@@ -50,10 +50,13 @@ class PlantModel {
     );
   }
 
-  /// POST /api/v1/plants only reads name, type and ageStage.
+  /// POST /api/v1/plants reads name, type, ageStage, location, sunlight, wateringFrequencyDays.
   static Map<String, dynamic> newToJson(NewPlant p) => {
         'name': p.nickname.trim(),
         'type': p.species.trim(),
         'ageStage': 'mature',
+        'location': p.location.trim(),
+        'sunlight': p.sunlight.trim(),
+        'wateringFrequencyDays': p.wateringFrequencyDays,
       };
 }

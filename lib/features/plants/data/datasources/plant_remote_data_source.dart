@@ -1,4 +1,4 @@
-﻿import 'dart:typed_data';
+import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 
@@ -58,6 +58,22 @@ class PlantRemoteDataSource {
 
     return (await _api.dio.post(
       '/api/v1/plants/$id/image',
+      data: form,
+    ))
+        .data as Map<String, dynamic>;
+  }
+
+  /// POST /api/v1/plants/identify
+  Future<Map<String, dynamic>> identify(Uint8List imageBytes) async {
+    final form = FormData.fromMap({
+      'image': MultipartFile.fromBytes(
+        imageBytes,
+        filename: 'plant_identify.jpg',
+      ),
+    });
+
+    return (await _api.dio.post(
+      '/api/v1/plants/identify',
       data: form,
     ))
         .data as Map<String, dynamic>;

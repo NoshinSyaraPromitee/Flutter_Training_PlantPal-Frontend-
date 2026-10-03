@@ -8,7 +8,7 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/formatters.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../core/widgets/app_screen.dart';
-import '../../../../core/widgets/net_image.dart';
+import '../../../../core/widgets/plant_image.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/model/history_entry.dart';
@@ -106,7 +106,7 @@ class _PlantHistoryScreenState
                           ),
                           child: Row(
                             children: [
-                              NetImage(
+                              PlantImage(
                                 e.plant.imageUrl,
                                 width: 52,
                                 height: 52,

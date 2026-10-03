@@ -1,4 +1,4 @@
-﻿import 'dart:typed_data';
+import 'dart:typed_data';
 
 class Plant {
   const Plant({
@@ -85,4 +85,39 @@ class NewPlant {
     }
     return null;
   }
+}
+
+class PlantIdentification {
+  const PlantIdentification({
+    required this.species,
+    this.suggestedNickname = '',
+    this.location = '',
+    this.sunlight = '',
+    this.wateringFrequencyDays = 7,
+    this.waterAmountMl = 250,
+    this.health = 90,
+    this.careTips = '',
+  });
+
+  factory PlantIdentification.fromJson(Map<String, dynamic> j) =>
+      PlantIdentification(
+        species: j['species']?.toString() ?? '',
+        suggestedNickname: j['suggestedNickname']?.toString() ?? '',
+        location: j['location']?.toString() ?? '',
+        sunlight: j['sunlight']?.toString() ?? '',
+        wateringFrequencyDays:
+            (j['wateringFrequencyDays'] as num?)?.toInt() ?? 7,
+        waterAmountMl: (j['waterAmountMl'] as num?)?.toInt() ?? 250,
+        health: (j['health'] as num?)?.toInt() ?? 90,
+        careTips: j['careTips']?.toString() ?? '',
+      );
+
+  final String species;
+  final String suggestedNickname;
+  final String location;
+  final String sunlight;
+  final int wateringFrequencyDays;
+  final int waterAmountMl;
+  final int health;
+  final String careTips;
 }

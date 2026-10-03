@@ -109,7 +109,9 @@ class ChatMessage {
 /// is sent with the next message so the model knows the result.
 class ChatSeed {
   const ChatSeed({
-    required this.diagnosisId,
+    this.diagnosisId,
+    this.plantId,
+    this.plantName,
     required this.issue,
     this.imageBytes,
     this.imageUrl,
@@ -127,7 +129,39 @@ class ChatSeed {
     );
   }
 
-  final String diagnosisId;
+  /// Seed from an existing plant in the garden
+  static ChatSeed fromPlant({
+    required String plantId,
+    required String nickname,
+    required String species,
+    String? imageUrl,
+    Uint8List? imageBytes,
+    String? location,
+    String? sunlight,
+    String? waterLevel,
+    int? health,
+  }) {
+    final name = nickname.isNotEmpty ? nickname : species;
+    final parts = [
+      if (species.isNotEmpty && species != nickname) species,
+      if (location != null && location.isNotEmpty) location,
+      if (sunlight != null && sunlight.isNotEmpty) sunlight,
+      if (health != null) 'Health: $health%',
+      if (waterLevel != null && waterLevel.isNotEmpty) 'Water: $waterLevel',
+    ];
+    final subtitle = parts.join(' • ');
+    return ChatSeed(
+      plantId: plantId,
+      plantName: name,
+      issue: subtitle.isNotEmpty ? '$name ($subtitle)' : name,
+      imageBytes: imageBytes,
+      imageUrl: (imageUrl != null && imageUrl.isNotEmpty) ? imageUrl : null,
+    );
+  }
+
+  final String? diagnosisId;
+  final String? plantId;
+  final String? plantName;
   final String issue;
   final Uint8List? imageBytes;
   final String? imageUrl;

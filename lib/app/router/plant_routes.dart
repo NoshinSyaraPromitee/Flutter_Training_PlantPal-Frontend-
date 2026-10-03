@@ -1,10 +1,12 @@
-﻿import 'package:go_router/go_router.dart';
+import 'package:go_router/go_router.dart';
+import 'package:plantpal/features/ai_doctor/presentation/screens/scan_plant_screen.dart';
 import 'package:plantpal/features/care_guide/presentation/screens/care_guide_screen.dart';
 import 'package:plantpal/features/fertilizer/presentation/screens/add_fertilizer_screen.dart';
 import 'package:plantpal/features/fertilizer/presentation/screens/fertilizer_details_screen.dart';
 import 'package:plantpal/features/fertilizer/presentation/screens/fertilizer_screen.dart';
 import 'package:plantpal/features/plants/presentation/screens/add_plant_screen.dart';
 import 'package:plantpal/features/plants/presentation/screens/care_calendar_screen.dart';
+import 'package:plantpal/features/plants/presentation/screens/edit_plant_screen.dart';
 import 'package:plantpal/features/plants/presentation/screens/my_plants_screen.dart';
 import 'package:plantpal/features/plants/presentation/screens/plant_details_screen.dart';
 import 'package:plantpal/features/plants/presentation/screens/plant_history_screen.dart';
@@ -19,6 +21,16 @@ final plantRoutes = <RouteBase>[
       GoRoute(
         path: ':id',
         builder: (c, s) => PlantDetailsScreen(plantId: s.pathParameters['id']!),
+        routes: [
+          GoRoute(
+            path: 'edit',
+            builder: (c, s) => EditPlantScreen(id: s.pathParameters['id']!),
+          ),
+          GoRoute(
+            path: 'scan',
+            builder: (c, s) => ScanPlantScreen(plantId: s.pathParameters['id']!),
+          ),
+        ],
       ),
     ],
   ),

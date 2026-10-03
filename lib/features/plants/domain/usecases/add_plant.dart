@@ -12,6 +12,15 @@ class AddPlant {
     final error = input.validate();
     if (error != null) throw Failure(error);
 
-    return _repo.addPlant(input);
+    final created = await _repo.addPlant(input);
+    if (input.imageBytes != null) {
+      try {
+        return await _repo.uploadImage(created.id, input.imageBytes!);
+      } catch (_) {
+        // If image upload fails, return the created plant anyway
+        return created;
+      }
+    }
+    return created;
   }
 }

@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_card.dart';
-import '../../../../core/widgets/net_image.dart';
+import '../../../../core/widgets/plant_image.dart';
 import '../../domain/model/plant.dart';
 import 'health_badge.dart';
 
@@ -49,7 +49,7 @@ class PlantStatusCard extends StatelessWidget {
         onTap: () => context.push('/plants/${plant.id}'),
         child: Row(
           children: [
-            NetImage(
+            PlantImage(
               plant.imageUrl,
               width: 90,
               height: 90,

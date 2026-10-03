@@ -1,7 +1,7 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/net_image.dart';
+import '../../../../core/widgets/plant_image.dart';
 
 class PlantDetailsHeader extends StatelessWidget {
   const PlantDetailsHeader({
@@ -9,6 +9,7 @@ class PlantDetailsHeader extends StatelessWidget {
     required this.imageUrl,
     required this.onBack,
     required this.onMenuSelected,
+    required this.editLabel,
     required this.waterLabel,
     required this.fertilizeLabel,
     required this.deleteLabel,
@@ -17,6 +18,7 @@ class PlantDetailsHeader extends StatelessWidget {
   final String imageUrl;
   final VoidCallback onBack;
   final ValueChanged<String> onMenuSelected;
+  final String editLabel;
   final String waterLabel;
   final String fertilizeLabel;
   final String deleteLabel;
@@ -25,7 +27,7 @@ class PlantDetailsHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        NetImage(
+        PlantImage(
           imageUrl,
           width: double.infinity,
           height: 300,
@@ -58,16 +60,44 @@ class PlantDetailsHeader extends StatelessWidget {
                   onSelected: onMenuSelected,
                   itemBuilder: (_) => [
                     PopupMenuItem(
+                      value: 'edit',
+                      child: Row(
+                        children: [
+                          const Icon(Icons.edit_outlined, size: 20, color: AppColors.greenPrimary),
+                          const SizedBox(width: 8),
+                          Text(editLabel),
+                        ],
+                      ),
+                    ),
+                    PopupMenuItem(
                       value: 'water',
-                      child: Text(waterLabel),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.water_drop_outlined, size: 20, color: AppColors.waterBlue),
+                          const SizedBox(width: 8),
+                          Text(waterLabel),
+                        ],
+                      ),
                     ),
                     PopupMenuItem(
                       value: 'fertilize',
-                      child: Text(fertilizeLabel),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.eco_outlined, size: 20, color: AppColors.sunAmber),
+                          const SizedBox(width: 8),
+                          Text(fertilizeLabel),
+                        ],
+                      ),
                     ),
                     PopupMenuItem(
                       value: 'delete',
-                      child: Text(deleteLabel),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.delete_outline, size: 20, color: AppColors.danger),
+                          const SizedBox(width: 8),
+                          Text(deleteLabel, style: const TextStyle(color: AppColors.danger)),
+                        ],
+                      ),
                     ),
                   ],
                 ),
