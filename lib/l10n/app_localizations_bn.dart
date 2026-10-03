@@ -37,6 +37,63 @@ class AppLocalizationsBn extends AppLocalizations {
   String get createAccountButton => 'অ্যাকাউন্ট তৈরি করুন';
   @override
   String get fullNameLabel => 'পূর্ণ নাম';
+
+  @override
+  String get profileTitle => 'প্রোফাইল';
+  @override
+  String get profileStatPlants => 'গাছপালা';
+  @override
+  String get statHealth => 'স্বাস্থ্য';
+  @override
+  String get statWaterToday => 'আজ পানি';
+  @override
+  String get settingsSectionTitle => 'সেটিংস';
+  @override
+  String get settingsMenuLabel => 'সেটিংস';
+  @override
+  String get notificationsLabel => 'বিজ্ঞপ্তি';
+  @override
+  String get onLabel => 'চালু';
+  @override
+  String get offLabel => 'বন্ধ';
+  @override
+  String get darkModeLabel => 'ডার্ক মোড';
+  @override
+  String get accountSectionTitle => 'অ্যাকাউন্ট';
+  @override
+  String get myOrdersLabel => 'আমার অর্ডার';
+  @override
+  String get helpLabel => 'সাহায্য';
+  @override
+  String get aboutLabel => 'সম্পর্কে';
+  @override
+  String get logOutButton => 'লগ আউট';
+
+  @override
+  String get notificationsSectionTitle => 'নোটিফিকেশন';
+  @override
+  String get pushNotificationsLabel => 'পুশ নোটিফিকেশন';
+  @override
+  String get pushNotificationsSubtitle => 'সাধারণ অ্যাপ আপডেট ও সতর্কতা';
+  @override
+  String get wateringRemindersLabel => 'পানি দেওয়ার রিমাইন্ডার';
+  @override
+  String get wateringRemindersSubtitle => 'গাছে পানি প্রয়োজন হলে জানানো হবে';
+  @override
+  String get appearanceSectionTitle => 'চেহারা';
+  @override
+  String get generalSectionTitle => 'সাধারণ';
+  @override
+  String get languageLabel => 'ভাষা';
+  @override
+  String get chooseLanguageTitle => 'ভাষা বেছে নিন';
+  @override
+  String get aboutPlantPalLabel => 'PlantPal সম্পর্কে';
+  @override
+  String get aboutBody =>
+      'সংস্করণ ১.০.০\n\nআপনার বুদ্ধিমান গাছের সঙ্গী—স্কান করুন, পরিচর্যা করুন এবং আত্মবিশ্বাসের সাথে আপনার ঘরের বাগান গড়ে তুলুন।';
+  @override
+  String get closeButton => 'বন্ধ করুন';
   @override
   String get myPlants => 'আমার গাছপালা';
   @override

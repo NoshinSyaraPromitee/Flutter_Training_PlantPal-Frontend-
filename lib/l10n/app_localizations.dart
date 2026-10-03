@@ -40,6 +40,35 @@ abstract class AppLocalizations {
 
   String get createAccountButton;
   String get fullNameLabel;
+
+  String get profileTitle;
+  String get profileStatPlants;
+  String get statHealth;
+  String get statWaterToday;
+  String get settingsSectionTitle;
+  String get settingsMenuLabel;
+  String get notificationsLabel;
+  String get onLabel;
+  String get offLabel;
+  String get darkModeLabel;
+  String get accountSectionTitle;
+  String get myOrdersLabel;
+  String get helpLabel;
+  String get aboutLabel;
+  String get logOutButton;
+
+  String get notificationsSectionTitle;
+  String get pushNotificationsLabel;
+  String get pushNotificationsSubtitle;
+  String get wateringRemindersLabel;
+  String get wateringRemindersSubtitle;
+  String get appearanceSectionTitle;
+  String get generalSectionTitle;
+  String get languageLabel;
+  String get chooseLanguageTitle;
+  String get aboutPlantPalLabel;
+  String get aboutBody;
+  String get closeButton;
   String get myPlants;
   String get aiDoctor;
   String get fertilizerRecipes;

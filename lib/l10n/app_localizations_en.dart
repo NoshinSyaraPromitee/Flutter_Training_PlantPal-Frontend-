@@ -37,6 +37,63 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createAccountButton => 'Create Account';
   @override
   String get fullNameLabel => 'Full Name';
+
+  @override
+  String get profileTitle => 'Profile';
+  @override
+  String get profileStatPlants => 'Plants';
+  @override
+  String get statHealth => 'Overall Health';
+  @override
+  String get statWaterToday => 'Due Today';
+  @override
+  String get settingsSectionTitle => 'Settings';
+  @override
+  String get settingsMenuLabel => 'Settings';
+  @override
+  String get notificationsLabel => 'Notifications';
+  @override
+  String get onLabel => 'On';
+  @override
+  String get offLabel => 'Off';
+  @override
+  String get darkModeLabel => 'Dark Mode';
+  @override
+  String get accountSectionTitle => 'Account';
+  @override
+  String get myOrdersLabel => 'My Orders';
+  @override
+  String get helpLabel => 'Help';
+  @override
+  String get aboutLabel => 'About';
+  @override
+  String get logOutButton => 'Log Out';
+
+  @override
+  String get notificationsSectionTitle => 'Notifications';
+  @override
+  String get pushNotificationsLabel => 'Push Notifications';
+  @override
+  String get pushNotificationsSubtitle => 'Updates, plant tips, and announcements';
+  @override
+  String get wateringRemindersLabel => 'Watering Alerts';
+  @override
+  String get wateringRemindersSubtitle => 'Get notified exact moments your plants get thirsty';
+  @override
+  String get appearanceSectionTitle => 'Appearance';
+  @override
+  String get generalSectionTitle => 'General Settings';
+  @override
+  String get languageLabel => 'App Language';
+  @override
+  String get chooseLanguageTitle => 'Select Language';
+  @override
+  String get aboutPlantPalLabel => 'About PlantPal';
+  @override
+  String get aboutBody =>
+      'Version 1.0.0\n\nYour intelligent plant companion—scan, care, and cultivate your home jungle with confidence.';
+  @override
+  String get closeButton => 'Close';
   @override
   String get myPlants => 'My Plants';
   @override

@@ -1,101 +1,156 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:plantpal/core/theme/app_colors.dart';
-import 'package:plantpal/core/theme/app_text_styles.dart';
-import 'package:plantpal/core/widgets/app_card.dart';
-import 'package:plantpal/core/widgets/app_screen.dart';
-import 'package:plantpal/features/auth/presentation/providers/auth_provider.dart';
-import 'package:plantpal/features/cart/presentation/providers/cart_provider.dart';
-import 'package:plantpal/features/gamification/domain/repositories/achievement_repository.dart';
-import 'package:plantpal/features/gamification/presentation/widgets/achievements_section.dart';
-import 'package:plantpal/features/plants/presentation/providers/plants_provider.dart';
-import 'package:plantpal/features/profile/presentation/widgets/logout_dialog.dart';
 import 'package:provider/provider.dart';
+
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/app_card.dart';
+import '../../../../core/widgets/app_screen.dart';
+import '../../../../l10n/app_localizations.dart';
+import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../../plants/presentation/providers/plants_provider.dart';
+import '../providers/settings_provider.dart';
+import '../widgets/logout_dialog.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  static const _menu = <(IconData, String, String, Color)>[
-    (Icons.local_florist, 'My Plants', '/plants', Color(0xFF43A047)),
-    (Icons.event_available, 'Care Calendar', '/care-calendar', Color(0xFF42A5F5)),
-    (Icons.eco, 'Care Guide', '/care-guide', Color(0xFF00897B)),
-    (Icons.science_outlined, 'Fertilizer Recipes', '/fertilizer', Color(0xFF8BC34A)),
-    (Icons.history, 'Plant History', '/plant-history', Color(0xFF8D6E63)),
-    (Icons.shopping_cart, 'My Cart', '/cart', Color(0xFFFB8C00)),
-    (Icons.settings, 'Settings', '/settings', Color(0xFF757575)),
-  ];
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final auth = context.watch<AuthController>();
+    final plants = context.watch<PlantsController>();
+    final settings = context.watch<SettingsController>();
+    final user = auth.user;
 
-  Widget _stat(String v, String l) => Expanded(
-        child: Column(children: [
-          Text(v, style: AppTextStyles.inter(20, w: FontWeight.w800, c: AppColors.greenPrimary)),
-          Text(l, style: AppTextStyles.inter(12, c: Colors.black54)),
-        ]),
+    final displayName = auth.displayName;
+    final email = user?.email ?? '';
+    final initial = displayName.isNotEmpty ? displayName[0].toUpperCase() : '?';
+
+    return AppScreen(
+      // A bottom-tab screen, not a pushed one - no back button.
+      title: l10n.profileTitle,
+      showBack: false,
+      child: ListView(
+        padding: const EdgeInsets.only(bottom: 32),
+        children: [
+          Center(
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 44,
+                  backgroundColor: AppColors.surfaceGreen,
+                  child: Text(initial, style: AppTextStyles.inter(28, w: FontWeight.w800, c: AppColors.accent)),
+                ),
+                const SizedBox(height: 8),
+                Text(displayName, style: AppTextStyles.screenTitle),
+                if (email.isNotEmpty) Text(email, style: AppTextStyles.inter(13, c: AppColors.textMuted)),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          Row(
+            children: [
+              _StatCard(label: l10n.profileStatPlants, value: '${plants.plants.length}'),
+              const SizedBox(width: 12),
+              _StatCard(label: l10n.statHealth, value: '${plants.averageHealth}%'),
+              const SizedBox(width: 12),
+              _StatCard(label: l10n.statWaterToday, value: '${plants.waterTodayCount}'),
+            ],
+          ),
+          const SizedBox(height: 24),
+          _Section(
+            title: l10n.settingsSectionTitle,
+            children: [
+              _Tile(Icons.tune, l10n.settingsMenuLabel, null, onTap: () => context.push('/settings')),
+              _Tile(
+                Icons.notifications_outlined,
+                l10n.notificationsLabel,
+                settings.notifications ? l10n.onLabel : l10n.offLabel,
+                onTap: () => context.push('/settings'),
+              ),
+              _Tile(
+                Icons.dark_mode_outlined,
+                l10n.darkModeLabel,
+                settings.darkMode ? l10n.onLabel : l10n.offLabel,
+                onTap: () => context.push('/settings'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          _Section(
+            title: l10n.accountSectionTitle,
+            children: [
+              // No "My Orders" tile here yet - there's no order-history
+              // screen/route in this app (only order_success_screen.dart,
+              // the checkout-completion page), so this would navigate
+              // nowhere. Add it back once that feature exists.
+              _Tile(Icons.help_outline, l10n.helpLabel, null, onTap: () {}),
+              _Tile(Icons.info_outline, l10n.aboutLabel, null, onTap: () {}),
+              _Tile(Icons.logout, l10n.logOutButton, null, onTap: () => confirmLogout(context), danger: true),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StatCard extends StatelessWidget {
+  const _StatCard({required this.label, required this.value});
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) => Expanded(
+        child: AppCard(
+          child: Column(
+            children: [
+              Text(value, style: AppTextStyles.inter(22, w: FontWeight.w800, c: AppColors.accent)),
+              Text(label, style: AppTextStyles.inter(11, c: AppColors.textMuted), textAlign: TextAlign.center),
+            ],
+          ),
+        ),
       );
+}
+
+class _Section extends StatelessWidget {
+  const _Section({required this.title, required this.children});
+  final String title;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SectionTitle(title),
+          AppCard(child: Column(children: children)),
+        ],
+      );
+}
+
+class _Tile extends StatelessWidget {
+  const _Tile(this.icon, this.label, this.value, {required this.onTap, this.danger = false});
+  final IconData icon;
+  final String label;
+  final String? value;
+  final VoidCallback onTap;
+  final bool danger;
 
   @override
   Widget build(BuildContext context) {
-    final plants = context.watch<PlantsController>();
-    final cartCount = context.watch<CartController>().count;
-    final name = context.watch<AuthController>().displayName;
-    final unlocked = context.read<AchievementRepository>().getAchievements().where((a) => a.unlocked).length;
-
-    return AppScreen(
-      title: 'Profile',
-      showBack: false,
-      trailing: IconButton(icon: const Icon(Icons.settings_outlined, color: AppColors.greenPrimary), onPressed: () => context.push('/settings')),
-      child: ListView(padding: const EdgeInsets.only(bottom: 32), children: [
-        Container(
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            gradient: const LinearGradient(colors: [Color(0xFFFFF6DC), Color(0xFFDCE6B7)], begin: Alignment.topLeft, end: Alignment.bottomRight),
-          ),
-          child: Column(children: [
-            Row(children: [
-              const CircleAvatar(radius: 34, backgroundColor: AppColors.greenPrimary, child: Icon(Icons.spa, size: 38, color: Colors.white)),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(name, style: AppTextStyles.screenTitle.copyWith(fontSize: 30)),
-                  Text('Plant Parent since 2026', style: AppTextStyles.inter(13, c: Colors.black54)),
-                ]),
-              ),
-            ]),
-            const SizedBox(height: 18),
-            Row(children: [
-              _stat('${plants.plants.length}', 'Plants'),
-              _stat('${plants.averageHealth}%', 'Avg Health'),
-              _stat('$unlocked', 'Badges'),
-            ]),
-          ]),
-        ),
-        const AchievementsSection(),
-        const SectionTitle('Quick Menu'),
-        Wrap(spacing: 12, runSpacing: 12, children: [
-          for (final m in _menu)
-            SizedBox(
-              width: (MediaQuery.of(context).size.width - 40 - 12) / 2,
-              child: AppCard(
-                padding: const EdgeInsets.all(12),
-                radius: 18,
-                onTap: () => context.push(m.$3),
-                child: Row(children: [
-                  CircleAvatar(radius: 18, backgroundColor: m.$4.withValues(alpha: 0.12), child: Icon(m.$1, size: 20, color: m.$4)),
-                  const SizedBox(width: 10),
-                  Expanded(child: Text(m.$2, maxLines: 1, overflow: TextOverflow.ellipsis, style: AppTextStyles.inter(13, w: FontWeight.w600))),
-                  if (m.$3 == '/cart' && cartCount > 0) CircleAvatar(radius: 10, backgroundColor: AppColors.danger, child: Text('$cartCount', style: const TextStyle(fontSize: 11, color: Colors.white))),
-                ]),
-              ),
-            ),
-        ]),
-        const SizedBox(height: 24),
-        OutlinedButton.icon(
-          onPressed: () => confirmLogout(context),
-          icon: const Icon(Icons.logout, color: AppColors.danger),
-          label: const Text('Log Out', style: TextStyle(color: AppColors.danger)),
-          style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 14), side: const BorderSide(color: AppColors.danger)),
-        ),
-      ]),
+    final color = danger ? AppColors.danger : AppColors.accent;
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(icon, color: color),
+      title: Text(
+        label,
+        style: danger ? AppTextStyles.inter(14, w: FontWeight.w600, c: color) : AppTextStyles.inter(14, w: FontWeight.w600),
+      ),
+      trailing: value != null
+          ? Text(value!, style: AppTextStyles.inter(13, c: AppColors.textMuted))
+          : Icon(Icons.chevron_right, color: AppColors.textMuted),
+      onTap: onTap,
     );
   }
 }

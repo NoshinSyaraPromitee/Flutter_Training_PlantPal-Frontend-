@@ -40,6 +40,7 @@ class AppDependencies {
     api.onUnauthorized = auth.logout; // expired/invalid token -> back to login
 
     points = PointsController(storage)..load();
+    settings = SettingsController(storage)..load();
 
     final plantRepo = PlantRepositoryImpl(PlantRemoteDataSource(api));
     plants = PlantsController(
@@ -66,7 +67,7 @@ class AppDependencies {
   late final PaymentController payment;
   final CartController cart = CartController();
   final WishlistController wishlist = WishlistController();
-  final SettingsController settings = SettingsController();
+  late final SettingsController settings;
   final CareGuideRepository careGuide = CareGuideLocalRepository();
   final AchievementRepository achievements = AchievementLocalRepository();
   late final PointsController points;

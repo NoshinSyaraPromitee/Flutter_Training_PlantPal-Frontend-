@@ -1,10 +1,12 @@
-﻿import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:plantpal/core/theme/app_colors.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../core/storage/secure_storage.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class SettingsController extends ChangeNotifier {
-  SettingsController([this._storage = const FlutterSecureStorage()]);
-  final FlutterSecureStorage _storage;
+  SettingsController([this._storage]);
+  final SecureStorage? _storage;
+
   static const _darkModeKey = 'settings_dark_mode';
 
   bool notifications = true;
@@ -12,15 +14,26 @@ class SettingsController extends ChangeNotifier {
   bool darkMode = false;
   String language = 'en';
 
-  static const languages = {'en': 'English', 'bn': 'à¦¬à¦¾à¦‚à¦²à¦¾ (Bangla)'};
+  static const languages = {
+    'en': 'English',
+    'bn': '\u09AC\u09BE\u0982\u09B2\u09BE (Bangla)',
+  };
 
-  /// Call once at startup to restore the saved theme.
+  ThemeMode get themeMode => darkMode ? ThemeMode.dark : ThemeMode.light;
+
+  /// Restores saved theme and language. Call once at startup.
   Future<void> load() async {
-    final saved = await _storage.read(key: _darkModeKey);
-    darkMode = saved == 'true';
+    final dark = await _storage?.read(_darkModeKey);
+    darkMode = dark == 'true';
     AppColors.isDark = darkMode;
+    final savedLang = await _storage?.readLanguage();
+    if (savedLang != null && languages.containsKey(savedLang)) {
+      language = savedLang;
+    }
     notifyListeners();
   }
+
+  Future<void> init() => load();
 
   void setNotifications(bool v) => _set(() => notifications = v);
   void setWateringReminders(bool v) => _set(() => wateringReminders = v);
@@ -28,13 +41,17 @@ class SettingsController extends ChangeNotifier {
   void setDarkMode(bool v) {
     darkMode = v;
     AppColors.isDark = v;
-    _storage.write(key: _darkModeKey, value: v.toString());
+    _storage?.write(_darkModeKey, v.toString());
     notifyListeners();
   }
 
-  void setLanguage(String code) => _set(() => language = code);
-
-  ThemeMode get themeMode => darkMode ? ThemeMode.dark : ThemeMode.light;
+  void setLanguage(String code) {
+    if (!languages.containsKey(code)) return;
+    _set(() {
+      language = code;
+      _storage?.saveLanguage(code);
+    });
+  }
 
   void _set(VoidCallback change) {
     change();
