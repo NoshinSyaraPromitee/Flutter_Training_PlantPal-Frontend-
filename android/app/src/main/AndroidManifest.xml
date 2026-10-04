@@ -8,7 +8,7 @@
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
 
     <application
-        android:label="plantpal"
+        android:label="PlantPal"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"> <!-- backend is plain HTTP in dev; tighten before release -->
