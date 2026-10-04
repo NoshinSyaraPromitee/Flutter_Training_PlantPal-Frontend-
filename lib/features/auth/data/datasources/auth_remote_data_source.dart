@@ -154,6 +154,25 @@ class AuthRemoteDataSource {
     );
   }
 
+  Future<void> registerDevice({required String token, required String platform}) async {
+    await _api.dio.post(
+      '/api/v1/devices',
+      data: {
+        'token': token,
+        'platform': platform,
+      },
+    );
+  }
+
+  Future<void> unregisterDevice(String token) async {
+    await _api.dio.delete(
+      '/api/v1/devices',
+      data: {
+        'token': token,
+      },
+    );
+  }
+
   AuthTokens _toTokens(Map<String, dynamic> raw) {
     // The backend answers {"data": {accessToken, refreshToken, user}}.
     // ApiClient unwraps that already; unwrapping here too keeps login working

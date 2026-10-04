@@ -152,4 +152,11 @@ class AuthRepositoryImpl implements AuthRepository {
     await _remote.googleSignOut();
     await _storage.clear();
   }
+
+  @override
+  Future<void> registerDevice({required String token, required String platform}) =>
+      guardCall(() => _remote.registerDevice(token: token, platform: platform));
+
+  @override
+  Future<void> unregisterDevice(String token) => guardCall(() => _remote.unregisterDevice(token));
 }

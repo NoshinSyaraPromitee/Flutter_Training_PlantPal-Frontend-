@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rive/rive.dart';
@@ -9,6 +11,15 @@ import 'app/riverpod_providers.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await RiveNative.init();
+  if (!kIsWeb) {
+    // Android reads its config from android/app/google-services.json
+    // (injected at build time by the google-services Gradle plugin) - no
+    // FirebaseOptions needed here. Skipped on web: that needs an explicit
+    // FirebaseOptions/VAPID key + service worker, not set up yet (push
+    // notifications are Android/iOS-only for now - see
+    // PushNotificationService.platform).
+    await Firebase.initializeApp();
+  }
   final deps = AppDependencies();
 
   runApp(

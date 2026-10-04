@@ -33,5 +33,11 @@ abstract class AuthRepository {
   });
 
   Future<void> logout();
+
+  /// Registers this device's push token so reminders can reach it.
+  Future<void> registerDevice({required String token, required String platform});
+
+  /// Forgets a push token, e.g. on logout.
+  Future<void> unregisterDevice(String token);
 }
 

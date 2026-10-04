@@ -133,4 +133,18 @@ class AuthController extends ChangeNotifier {
     status = AuthStatus.unauthenticated;
     notifyListeners();
   }
+
+  /// Best-effort; a push token not reaching the backend shouldn't block
+  /// anything else (login, chat history, ...).
+  Future<void> registerDeviceToken({required String token, required String platform}) async {
+    try {
+      await _repo.registerDevice(token: token, platform: platform);
+    } catch (_) {}
+  }
+
+  Future<void> unregisterDeviceToken(String token) async {
+    try {
+      await _repo.unregisterDevice(token);
+    } catch (_) {}
+  }
 }

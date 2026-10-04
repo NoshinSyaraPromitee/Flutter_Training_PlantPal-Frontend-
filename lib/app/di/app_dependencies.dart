@@ -1,5 +1,6 @@
 import 'package:plantpal/core/network/api_client.dart';
 import 'package:plantpal/core/network/failure.dart';
+import 'package:plantpal/core/services/push_notification_service.dart';
 import 'package:plantpal/core/storage/secure_storage.dart';
 import 'package:plantpal/features/ai_doctor/data/datasources/ai_doctor_remote_data_source.dart';
 import 'package:plantpal/features/ai_doctor/data/repositories/ai_doctor_repository_impl.dart';
@@ -57,6 +58,19 @@ class AppDependencies {
       addPlant: AddPlant(plantRepo),
     );
     chat = ChatController(aiRepo, storage);
+    // Push token last registered with the backend, so a logout can
+    // unregister that exact one and a repeat registration with the same
+    // token is skipped.
+    String? registeredPushToken;
+    Future<void> syncPushToken() async {
+      final token = await push.requestToken();
+      if (token == null || token == registeredPushToken) return;
+      await auth.registerDeviceToken(token: token, platform: push.platform!);
+      registeredPushToken = token;
+    }
+    push.onTokenRefresh.listen((_) {
+      if (auth.status == AuthStatus.authenticated) syncPushToken();
+    });
     // Restore the saved conversation once signed in; forget it on logout.
     AuthStatus? lastAuthStatus;
     auth.addListener(() {
@@ -65,9 +79,15 @@ class AppDependencies {
       lastAuthStatus = status;
       if (status == AuthStatus.authenticated) {
         chat.loadHistory();
+        syncPushToken();
       } else if (status == AuthStatus.unauthenticated) {
         chat.reset();
         api.clearImageCache();
+        final token = registeredPushToken;
+        if (token != null) {
+          auth.unregisterDeviceToken(token);
+          registeredPushToken = null;
+        }
       }
     });
     scan = ScanController(aiRepo);
@@ -90,6 +110,7 @@ class AppDependencies {
   }
 
   final SecureStorage storage = const SecureStorage();
+  final PushNotificationService push = PushNotificationService();
   late final ApiClient api;
 
   late final AuthController auth;
