@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/widgets/photo_picker_sheet.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
+import 'chat_colors.dart';
 
 class ChatInput extends StatefulWidget {
   const ChatInput({
@@ -38,27 +39,31 @@ class ChatInput extends StatefulWidget {
 class _ChatInputState extends State<ChatInput> {
   final _text = TextEditingController();
   Uint8List? _imageBytes;
+  int _lastAppliedPrefillVersion = 0;
 
   @override
   void initState() {
     super.initState();
-    _applyPrefill();
+    _applyPrefillIfNeeded();
   }
 
   @override
-  void didUpdateWidget(ChatInput oldWidget) {
+  void didUpdateWidget(covariant ChatInput oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.prefillVersion != oldWidget.prefillVersion) _applyPrefill();
+    _applyPrefillIfNeeded();
   }
 
-  void _applyPrefill() {
-    final p = widget.prefill;
-    if (p == null || p.isEmpty) return;
-    _text.value = TextEditingValue(
-      text: p,
-      selection: TextSelection.collapsed(offset: p.length),
-    );
-    widget.onPrefillApplied?.call();
+  void _applyPrefillIfNeeded() {
+    if (widget.prefillVersion > _lastAppliedPrefillVersion &&
+        widget.prefill != null &&
+        widget.prefill!.isNotEmpty) {
+      _lastAppliedPrefillVersion = widget.prefillVersion;
+      _text.text = widget.prefill!;
+      _text.selection = TextSelection.fromPosition(
+        TextPosition(offset: _text.text.length),
+      );
+      widget.onPrefillApplied?.call();
+    }
   }
 
   @override
@@ -142,22 +147,24 @@ class _ChatInputState extends State<ChatInput> {
                     onPressed: _pick,
                     icon: const Icon(
                       Icons.add,
-                      color: AppColors.greenPrimary,
+                      color: kChatIconLight,
                     ),
                     style: IconButton.styleFrom(
-                      backgroundColor: AppColors.surfaceGreen,
+                      backgroundColor: AppColors.greenPrimary,
                     ),
                   ),
                   const SizedBox(width: 6),
                   Expanded(
                     child: TextField(
                       controller: _text,
+                      style: const TextStyle(color: kChatInk, fontSize: 15),
                       textInputAction: TextInputAction.send,
                       onSubmitted: (_) => _send(),
                       decoration: InputDecoration(
                         hintText: _imageBytes != null
                             ? 'Add a caption (optional)...'
                             : 'Ask anything...',
+                        hintStyle: const TextStyle(color: kChatInkMuted),
                         border: InputBorder.none,
                       ),
                     ),
@@ -172,6 +179,7 @@ class _ChatInputState extends State<ChatInput> {
                           ? Icons.stop_rounded
                           : Icons.send,
                       size: 18,
+                      color: kChatIconLight,
                     ),
                     style: IconButton.styleFrom(
                       backgroundColor: AppColors.greenPrimary,
@@ -184,4 +192,3 @@ class _ChatInputState extends State<ChatInput> {
         ),
       );
 }
-

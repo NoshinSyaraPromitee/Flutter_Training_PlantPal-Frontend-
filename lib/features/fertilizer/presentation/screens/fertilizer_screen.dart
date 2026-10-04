@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../app/riverpod_providers.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/app_back_button.dart';
 import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/gradient_background.dart';
 import '../../../../core/widgets/net_image.dart';
@@ -33,10 +34,18 @@ class FertilizerScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  l10n.fertilizerMakingTitle,
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.screenTitle,
+                Row(
+                  children: [
+                    const SizedBox(width: 48, child: AppBackButton()),
+                    Expanded(
+                      child: Text(
+                        l10n.fertilizerMakingTitle,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.screenTitle.copyWith(fontSize: 30),
+                      ),
+                    ),
+                    const SizedBox(width: 48),
+                  ],
                 ),
                 const SizedBox(height: 12),
                 Center(
@@ -61,38 +70,27 @@ class FertilizerScreen extends ConsumerWidget {
                               onRetry: () => c.load(),
                             )
                           : list.isEmpty
-                          ? EmptyView(
-                              icon: Icons.science_outlined,
-                              title: l10n.noRecipesFoundTitle,
-                              subtitle: l10n.noRecipesFoundBody(c.query),
-                            )
-                          : ListView.separated(
-                              itemCount: list.length,
-                              separatorBuilder: (_, _) =>
-                                  const SizedBox(height: 10),
-                              itemBuilder: (_, i) => _RecipeCard(
-                                item: list[i],
-                                nutrientLabel: l10n.nutrientLabel,
-                              ),
-                            ),
+                              ? EmptyView(
+                                  icon: Icons.science_outlined,
+                                  title: l10n.noRecipesFoundTitle,
+                                  subtitle: l10n.noRecipesFoundBody(c.query),
+                                )
+                              : ListView.separated(
+                                  itemCount: list.length,
+                                  separatorBuilder: (_, _) =>
+                                      const SizedBox(height: 10),
+                                  itemBuilder: (_, i) => _RecipeCard(
+                                    item: list[i],
+                                    nutrientLabel: l10n.nutrientLabel,
+                                  ),
+                                ),
                 ),
                 const SizedBox(height: 12),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppButton(
-                      label: l10n.backButton,
-                      variant: AppButtonVariant.green,
-                      onPressed: () => context.canPop()
-                          ? context.pop()
-                          : context.go('/home'),
-                    ),
-                    AppButton(
-                      label: l10n.addFertilizerButton,
-                      variant: AppButtonVariant.orange,
-                      onPressed: () => context.push('/fertilizer/add'),
-                    ),
-                  ],
+                AppButton(
+                  label: l10n.addFertilizerButton,
+                  variant: AppButtonVariant.orange,
+                  leadingIcon: Icons.add,
+                  onPressed: () => context.push('/fertilizer/add'),
                 ),
                 const SizedBox(height: 16),
               ],

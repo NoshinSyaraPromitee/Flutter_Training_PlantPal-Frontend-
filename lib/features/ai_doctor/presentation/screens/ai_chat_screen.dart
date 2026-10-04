@@ -37,7 +37,7 @@ class AiChatScreen extends ConsumerWidget {
 
     return AppScreen(
       title: l10n.aiDoctorMenuLabel,
-      showBack: false,
+      showBack: true, // back arrow returns to the main menu (/home)
       padding: EdgeInsets.zero,
       endDrawer: const ChatSessionsDrawer(),
       trailing: Builder(

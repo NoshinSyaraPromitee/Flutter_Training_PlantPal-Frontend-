@@ -15,7 +15,7 @@ class FertilizerDetailsScreen extends ConsumerWidget {
 
   final String id;
 
-  Widget _row(IconData icon, Color color, String text) => Padding(
+  Widget _row(IconData icon, Color color, String text, {Color? textColor}) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +25,7 @@ class FertilizerDetailsScreen extends ConsumerWidget {
             Expanded(
               child: Text(
                 text,
-                style: AppTextStyles.inter(14, h: 1.4),
+                style: AppTextStyles.inter(14, c: textColor, h: 1.4),
               ),
             ),
           ],
@@ -115,80 +115,80 @@ class FertilizerDetailsScreen extends ConsumerWidget {
           ),
           if (f.ingredients.isNotEmpty) ...[
             SectionTitle(l10n.ingredientsTitle),
-          AppCard(
-            child: Column(
-              children: [
-                for (final i in f.ingredients)
-                  _row(
-                    Icons.circle,
-                    const Color(0xFF43A047),
-                    i,
-                  ),
-              ],
+            AppCard(
+              child: Column(
+                children: [
+                  for (final i in f.ingredients)
+                    _row(
+                      Icons.circle,
+                      const Color(0xFF43A047),
+                      i,
+                    ),
+                ],
+              ),
             ),
-          ),
           ],
           if (f.preparation.isNotEmpty) ...[
             SectionTitle(l10n.preparationTitle),
-          AppCard(
-            child: Column(
-              children: [
-                for (var i = 0; i < f.preparation.length; i++)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CircleAvatar(
-                          radius: 11,
-                          backgroundColor: AppColors.greenPrimary,
-                          child: Text(
-                            '${i + 1}',
-                            style: AppTextStyles.inter(
-                              11,
-                              w: FontWeight.w700,
-                              c: Colors.white,
+            AppCard(
+              child: Column(
+                children: [
+                  for (var i = 0; i < f.preparation.length; i++)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CircleAvatar(
+                            radius: 11,
+                            backgroundColor: AppColors.greenPrimary,
+                            child: Text(
+                              '${i + 1}',
+                              style: AppTextStyles.inter(
+                                11,
+                                w: FontWeight.w700,
+                                c: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Text(
-                            f.preparation[i],
-                            style: AppTextStyles.inter(14, h: 1.4),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              f.preparation[i],
+                              style: AppTextStyles.inter(14, h: 1.4),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
-          ),
           ],
           if (f.application.isNotEmpty) ...[
             SectionTitle(l10n.applicationTitle),
-          AppCard(
-            child: _row(
-              Icons.water_drop_outlined,
-              AppColors.waterBlue,
-              f.application,
+            AppCard(
+              child: _row(
+                Icons.water_drop_outlined,
+                AppColors.waterBlue,
+                f.application,
+              ),
             ),
-          ),
           ],
           if (f.benefits.isNotEmpty) ...[
             SectionTitle(l10n.benefitsTitle),
-          AppCard(
-            child: Column(
-              children: [
-                for (final b in f.benefits)
-                  _row(
-                    Icons.check_circle,
-                    const Color(0xFF43A047),
-                    b,
-                  ),
-              ],
+            AppCard(
+              child: Column(
+                children: [
+                  for (final b in f.benefits)
+                    _row(
+                      Icons.check_circle,
+                      const Color(0xFF43A047),
+                      b,
+                    ),
+                ],
+              ),
             ),
-          ),
           ],
           SectionTitle(l10n.safetyTipsTitle),
           AppCard(
@@ -200,6 +200,7 @@ class FertilizerDetailsScreen extends ConsumerWidget {
                     Icons.warning_amber_rounded,
                     const Color(0xFFFB8C00),
                     t,
+                    textColor: const Color(0xFF1A3A31),
                   ),
               ],
             ),

@@ -5,10 +5,10 @@ import 'package:plantpal/core/widgets/markdown_text.dart';
 import 'package:plantpal/features/ai_doctor/domain/model/chat_models.dart';
 import 'package:plantpal/features/ai_doctor/presentation/widgets/ai_provider_badge.dart';
 import 'package:plantpal/l10n/app_localizations.dart';
+import 'chat_colors.dart';
 
 class DiagnosisCard extends StatelessWidget {
   const DiagnosisCard({super.key, required this.diagnosis});
-
   final Diagnosis diagnosis;
 
   @override
@@ -23,6 +23,7 @@ class DiagnosisCard extends StatelessWidget {
             style: AppTextStyles.inter(
               12,
               w: FontWeight.w700,
+              c: kChatInk,
             ),
           ),
         );
@@ -72,14 +73,14 @@ class DiagnosisCard extends StatelessWidget {
           head(d.isHealthy ? '${l10n.scanCareTipTitle}:' : 'Cure:'),
           MarkdownText(
             d.cure,
-            style: AppTextStyles.inter(12),
+            style: AppTextStyles.inter(12, c: kChatInk),
           ),
           const SizedBox(height: 8),
           Text(
             d.disclaimer,
             style: AppTextStyles.inter(
               10,
-              c: AppColors.textMuted,
+              c: kChatInkMuted,
             ),
           ),
         ],

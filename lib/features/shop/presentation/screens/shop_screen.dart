@@ -67,34 +67,47 @@ class _ShopScreenState extends ConsumerState<ShopScreen> {
 
     return AppScreen(
       title: l10n.shopTitle,
-      trailing: Stack(
-        alignment: Alignment.center,
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-              color: AppColors.greenPrimary,
+            icon: Icon(
+              Icons.favorite_border,
+              color: AppColors.isDark ? Colors.white : AppColors.greenPrimary,
             ),
-            onPressed: () => context.push('/cart'),
-            tooltip: l10n.cartTitle,
+            onPressed: () => context.push('/wishlist'),
+            tooltip: 'Wishlist',
           ),
-          if (cart.count > 0)
-            Positioned(
-              top: 6,
-              right: 6,
-              child: CircleAvatar(
-                radius: 8,
-                backgroundColor: AppColors.danger,
-                child: Text(
-                  '${cart.count}',
-                  style: AppTextStyles.inter(
-                    9,
-                    w: FontWeight.w800,
-                    c: Colors.white,
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              IconButton(
+                icon: Icon(
+                  Icons.shopping_cart_outlined,
+                  color: AppColors.isDark ? Colors.white : AppColors.greenPrimary,
+                ),
+                onPressed: () => context.push('/cart'),
+                tooltip: l10n.cartTitle,
+              ),
+              if (cart.count > 0)
+                Positioned(
+                  top: 6,
+                  right: 6,
+                  child: CircleAvatar(
+                    radius: 8,
+                    backgroundColor: AppColors.danger,
+                    child: Text(
+                      '${cart.count}',
+                      style: AppTextStyles.inter(
+                        9,
+                        w: FontWeight.w800,
+                        c: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
+            ],
+          ),
         ],
       ),
       child: Column(
@@ -147,14 +160,16 @@ class _CategoryChip extends StatelessWidget {
         onSelected: (_) => onTap(),
         showCheckmark: false,
         selectedColor: AppColors.greenPrimary,
-        backgroundColor: AppColors.cream,
+        backgroundColor: AppColors.isDark ? AppColors.surfaceGreen : AppColors.cream,
         side: BorderSide(
           color: AppColors.cream.withValues(alpha: 0.8),
           width: 1.5,
         ),
         labelStyle: AppTextStyles.inter(
           13,
-          c: selected ? Colors.white : const Color(0xFF1A3A31),
+          c: selected
+              ? Colors.white
+              : (AppColors.isDark ? AppColors.cream : const Color(0xFF1A3A31)),
           w: FontWeight.w700,
         ),
       ),
@@ -203,7 +218,11 @@ class _ProductCard extends ConsumerWidget {
                   product.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.inter(13, w: FontWeight.w700),
+                  style: AppTextStyles.inter(
+                    13,
+                    w: FontWeight.w700,
+                    c: AppColors.isDark ? AppColors.cream : AppColors.textDark,
+                  ),
                 ),
                 if (product.unit != null)
                   Text(
