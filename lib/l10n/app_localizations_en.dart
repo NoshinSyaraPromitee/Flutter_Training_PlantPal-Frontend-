@@ -1,214 +1,1665 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
-/// English strings. Source of truth mirrored in app_en.arb.
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn() : super('en');
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'PlantPal';
+  String get appTitle => 'MyPlantPal';
+
+  @override
+  String get splashTagline => 'Turn your thumb green.';
+
+  @override
+  String get homeHeaderTitle => 'Let\'s make your\njungle thrive';
+
+  @override
+  String get homeHeaderSubtitle =>
+      'Diagnose issues, mix custom plant food, and grow with confidence.';
+
+  @override
+  String get greetingMorning =>
+      'Good morning! Ready to check on your leaf babies?';
+
+  @override
+  String get greetingAfternoon =>
+      'Good afternoon! How are your green companions holding up?';
+
+  @override
+  String get greetingEvening =>
+      'Good evening! Time for a quick sundown check-in.';
+
+  @override
+  String get greetingNight =>
+      'Still up? Rest easy—your plants are sleeping too.';
+
+  @override
+  String get greetingPlantThirsty => 'Someone\'s looking a bit parched today!';
+
+  @override
+  String get greetingWeatherRain =>
+      'Rainy skies ahead—hold off on watering outdoor plants.';
+
+  @override
+  String get greetingWeatherThunderstorm =>
+      'Storm\'s rolling in! Move vulnerable plants inside.';
+
+  @override
+  String get greetingWeatherSnow =>
+      'Frost alert! Bring tender plants into the warm.';
+
+  @override
+  String get greetingWeatherFog =>
+      'Misty morning—your tropical plants will love the humidity!';
+
+  @override
+  String greetingWeatherHot(int temperature) {
+    return 'Sizzling $temperature°C today! Keep an eye out for dry soil.';
+  }
+
+  @override
+  String get uploadPlantPhoto => 'Snap a photo of your plant';
+
+  @override
+  String get quickActionsLabel => 'QUICK ACTIONS';
+
+  @override
+  String get myPlantsLabel => 'My Plants';
+
+  @override
+  String get maintainance => 'Plant Care';
+
+  @override
+  String get diseaseDetectionTile => 'AI Plant Doctor';
+
+  @override
+  String get fertilizerRecipesLabel => 'DIY Plant Food';
+
+  @override
+  String get shopLabel => 'Garden Shop';
+
+  @override
+  String get chatWithExpertLabel => 'Ask an Expert';
+
+  @override
+  String get mainMenuButton => 'Main Menu';
+
+  @override
+  String get fertilizerHeaderTitle => 'DIY Plant Food Lab';
+
+  @override
+  String get fertilizerHeaderSubtitle =>
+      'Nutrient-rich homemade recipes tailored for every growth stage.';
+
+  @override
+  String get addFertilizerButton => 'Add New Recipe';
+
+  @override
+  String get fertilizerNameFieldLabel => 'Recipe Name';
+
+  @override
+  String get fertilizerCategoryFieldLabel => 'Category';
+
+  @override
+  String get fertilizerInstructionsFieldLabel => 'Preparation Steps';
+
+  @override
+  String get cancelButton => 'Cancel';
+
+  @override
+  String get saveButton => 'Save';
+
+  @override
+  String get searchFertilizerHint => 'Search DIY plant food recipes...';
+
+  @override
+  String get noFertilizersFound => 'No matching recipes found.';
+
+  @override
+  String get serverUnreachable =>
+      'Unable to connect. Please check your internet connection.';
+
+  @override
+  String get maintainanceHeaderSubtitleForm =>
+      'Tell us about your plant to generate a custom care schedule.';
+
+  @override
+  String get maintainanceHeaderSubtitleResult =>
+      'Here is your plant\'s personalized care roadmap.';
+
+  @override
+  String get nameOfPlantLabel => 'Plant Nickname';
+
+  @override
+  String get nameFieldHint => 'e.g., Fernie, Big Leaf';
+
+  @override
+  String get typesOfPlantLabel => 'Plant Type';
+
+  @override
+  String get typesFieldHint => 'e.g., Succulent, Monstera, Aquatic';
+
+  @override
+  String get plantAgeLabel => 'What stage is your plant in?';
+
+  @override
+  String get ageFieldHint => 'Seedling, Mature, Sprout...';
+
+  @override
+  String get createRoadmapButton => 'Generate Care Roadmap';
+
+  @override
+  String yourPlantNeeds(String plantName, int amount) {
+    return 'Your \'$plantName\' needs roughly $amount ml of water daily. Here is your ideal watering schedule:';
+  }
+
+  @override
+  String get setAlarmButton => 'Set Reminder';
+
+  @override
+  String tipsLabel(String tips) {
+    return 'Pro Tip: $tips';
+  }
+
+  @override
+  String weatherTipHot(int waterMl) {
+    return 'High heat expected! Give your plant at least $waterMl ml of water today.';
+  }
+
+  @override
+  String get weatherTipCold =>
+      'Chilly weather ahead—cut back on watering to prevent root rot.';
+
+  @override
+  String get weatherTipWetOutside =>
+      'It\'s rainy outside—let nature water your outdoor plants today.';
+
+  @override
+  String get diseasesDetectionHeader => 'Plant Health\nScanner';
+
+  @override
+  String get diseasesDetectionSubtitle =>
+      'Snap a photo for an instant health diagnosis.';
+
+  @override
+  String get openCameraButton => 'Take Photo';
+
+  @override
+  String cureLabel(String cure) {
+    return 'Recommended Treatment: $cure';
+  }
+
+  @override
+  String get addToLogButton => 'Add to Health Log';
+
+  @override
+  String get buyFertilizerButton => 'Shop Plant Food';
+
   @override
   String get appTagline => 'Your plant\'s best friend.';
+
   @override
   String get getStartedButton => 'Get Started';
+
+  @override
+  String get deleteButton => 'Delete';
+
+  @override
+  String get backButton => 'Back';
+
+  @override
+  String get closeButton => 'Close';
+
+  @override
+  String get continueShoppingButton => 'Keep Browsing';
+
+  @override
+  String get addToCartButton => 'Add to Cart';
+
+  @override
+  String get logOutButton => 'Log Out';
+
+  @override
+  String get todayLabel => 'Today';
+
+  @override
+  String get onLabel => 'On';
+
+  @override
+  String get offLabel => 'Off';
+
+  @override
+  String get emailLabel => 'Email Address';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get fullNameLabel => 'Full Name';
+
+  @override
+  String get locationLabel => 'Location';
+
   @override
   String get loadingLabel => 'Growing updates...';
 
   @override
-  String get tryAgainButton => 'Try Again';
+  String get loginWelcomeBack => 'Welcome Back!';
 
   @override
-  String get loginWelcomeBack => 'Welcome Back!';
-  @override
   String get loginSubtitle => 'Your plants missed you!';
-  @override
-  String get emailLabel => 'Email Address';
-  @override
-  String get passwordLabel => 'Password';
+
   @override
   String get loginButton => 'Log In';
+
   @override
   String get orDivider => 'OR';
+
   @override
   String get noAccountPrompt => 'New to PlantPal?';
+
   @override
   String get registerLink => 'Sign Up';
 
   @override
   String get createAccountButton => 'Create Account';
+
   @override
-  String get fullNameLabel => 'Full Name';
+  String get emailSignInUnavailable =>
+      'Email sign-in is temporarily unavailable. Please continue with Google.';
+
+  @override
+  String get signingInLabel => 'Signing in...';
+
+  @override
+  String get continueWithGoogleButton => 'Continue with Google';
+
+  @override
+  String get continueAsGuestButton => 'Explore as Guest (Debug)';
+
+  @override
+  String get careMetricWater => 'Watering';
+
+  @override
+  String get careMetricSunlight => 'Sunlight';
+
+  @override
+  String get careMetricTemp => 'Temperature';
+
+  @override
+  String get careMetricFertilizer => 'Nutrients';
+
+  @override
+  String get careMetricHumidity => 'Humidity';
+
+  @override
+  String get careGuideTitle => 'Plant Care Playbook';
+
+  @override
+  String get careChallengeTitle => 'Today\'s Plant Quest';
+
+  @override
+  String get careChallengeDoneMessage =>
+      'All done! Your green family is thriving.';
+
+  @override
+  String get careEssentialsTitle => 'Care Essentials';
+
+  @override
+  String get careProTipsTitle => 'Expert Insights';
+
+  @override
+  String get careCommonProblemsTitle => 'Troubleshooting';
+
+  @override
+  String get cartTitle => 'My Cart';
+
+  @override
+  String get cartEmptyTitle => 'Your cart is feeling empty';
+
+  @override
+  String get proceedToCheckoutButton => 'Proceed to Checkout';
+
+  @override
+  String get checkoutTitle => 'Checkout';
+
+  @override
+  String get shippingInfoTitle => 'Delivery Address';
+
+  @override
+  String get phoneNumberLabel => 'Phone Number';
+
+  @override
+  String get shippingAddressLabel => 'Shipping Address';
+
+  @override
+  String get deliveryMethodLabel => 'Delivery Method';
+
+  @override
+  String get orderSummaryTitle => 'Order Summary';
+
+  @override
+  String get continueToPaymentButton => 'Continue to Payment';
+
+  @override
+  String checkoutDeliveryEtaFee(String eta, String fee) {
+    return '$eta • $fee';
+  }
+
+  @override
+  String get orderConfirmedTitle => 'Order Placed!';
+
+  @override
+  String get orderConfirmedBody =>
+      'Thank you for shopping with PlantPal!\nYour goodies are on their way.';
+
+  @override
+  String get orderIdLabel => 'Order ID';
+
+  @override
+  String orderIdValue(String orderId) {
+    return '#$orderId';
+  }
+
+  @override
+  String get estimatedDeliveryLabel => 'Estimated Delivery';
+
+  @override
+  String get statusLabel => 'Status';
+
+  @override
+  String get statusProcessing => 'Prepping your order';
+
+  @override
+  String get backToHomeButton => 'Back to Home';
+
+  @override
+  String get recipeTitle => 'Recipe Details';
+
+  @override
+  String get recipeNotFoundMessage => 'Recipe could not be found.';
+
+  @override
+  String get ingredientsTitle => 'Ingredients';
+
+  @override
+  String get preparationTitle => 'How to Prepare';
+
+  @override
+  String get applicationTitle => 'How to Apply';
+
+  @override
+  String get benefitsTitle => 'Key Benefits';
+
+  @override
+  String get safetyTipsTitle => 'Safety Precautions';
+
+  @override
+  String get fertilizerMakingTitle => 'Plant Food Lab';
+
+  @override
+  String get noRecipesFoundTitle => 'No recipes found';
+
+  @override
+  String noRecipesFoundBody(String query) {
+    return 'No plant food recipes match \"$query\".';
+  }
+
+  @override
+  String get fertilizerSearchSubtitle => 'Discover easy DIY plant nutrients';
+
+  @override
+  String nutrientLabel(String nutrient) {
+    return 'Key Nutrient: $nutrient';
+  }
+
+  @override
+  String get achievementsTitle => 'Badges & Milestones';
+
+  @override
+  String get noNotificationsMessage =>
+      'You\'re all caught up! No new notifications.';
+
+  @override
+  String mascotThirstyMessage(String mascotName) {
+    return '$mascotName is looking thirsty—time for a drink!';
+  }
+
+  @override
+  String get uploadPlantPhotoPrompt => 'Snap or upload a photo';
+
+  @override
+  String get myPlantsMenuLabel => 'My Garden';
+
+  @override
+  String get aiDoctorMenuLabel => 'AI Plant Doctor';
+
+  @override
+  String get fertilizerRecipesMenuLabel => 'DIY Plant Food';
+
+  @override
+  String get maintenanceMenuLabel => 'Care Schedules';
+
+  @override
+  String get shopMenuLabel => 'Garden Shop';
+
+  @override
+  String get cameraLabel => 'Camera';
+
+  @override
+  String pointsBalanceLabel(String points, String taka) {
+    return '$points pts ($taka ৳)';
+  }
+
+  @override
+  String get paymentSuccessTitle => 'Payment Successful!';
+
+  @override
+  String paymentSuccessBody(String amount, String method) {
+    return 'Your payment of $amount via $method was completed successfully.';
+  }
+
+  @override
+  String get viewOrderButton => 'View Order Details';
+
+  @override
+  String get paymentFailedTitle => 'Payment Failed';
+
+  @override
+  String get paymentFailedBody =>
+      'We couldn\'t process your payment. Please try again or use another payment option.';
+
+  @override
+  String get changePaymentMethodButton => 'Change Payment Method';
+
+  @override
+  String get tryAgainButton => 'Try Again';
+
+  @override
+  String get paymentTitle => 'Payment';
+
+  @override
+  String get secureCheckoutTitle => 'Encrypted Checkout';
+
+  @override
+  String get secureCheckoutBody =>
+      'Your transaction details are protected with bank-grade security.';
+
+  @override
+  String get selectPaymentMethodTitle => 'Select Payment Method';
+
+  @override
+  String get orderTotalLabel => 'Order Total';
+
+  @override
+  String get processingLabel => 'Processing transaction...';
+
+  @override
+  String payButtonLabel(String amount) {
+    return 'Pay $amount';
+  }
+
+  @override
+  String plantAddedSnackbar(String name) {
+    return '$name has joined your garden! 🌱';
+  }
+
+  @override
+  String get addPlantTitle => 'Add New Plant';
+
+  @override
+  String get addPlantPhotoLabel => 'Upload Photo';
+
+  @override
+  String get nicknameLabel => 'Plant Nickname';
+
+  @override
+  String get nicknameHint => 'e.g., Leafy, Monster';
+
+  @override
+  String get plantSpeciesLabel => 'Plant Species';
+
+  @override
+  String get speciesHint => 'e.g., Monstera Deliciosa';
+
+  @override
+  String get locationHint => 'e.g., Sunroom, Bedside Table';
+
+  @override
+  String get sunlightMediumOption => 'Filtered Light';
+
+  @override
+  String get waterFrequencyLabel => 'Watering interval (days)';
+
+  @override
+  String get wateredTodayCheckbox => 'Watered today';
+
+  @override
+  String get autoFillAiScanButton => 'Identify Automatically with AI';
+
+  @override
+  String get savingLabel => 'Saving to garden...';
+
+  @override
+  String get savePlantButton => 'Save Plant';
+
+  @override
+  String get tomorrowLabel => 'Tomorrow';
+
+  @override
+  String get laterThisWeekLabel => 'Coming Up This Week';
+
+  @override
+  String get careCalendarTitle => 'Care Calendar';
+
+  @override
+  String get noCareTasksTitle => 'No upcoming care tasks';
+
+  @override
+  String get noCareTasksBody => 'Add a plant to build your watering calendar.';
+
+  @override
+  String careTaskWater(String name) {
+    return 'Water $name';
+  }
+
+  @override
+  String careTaskFertilize(String name) {
+    return 'Feed $name';
+  }
+
+  @override
+  String get allCaughtUpTitle => 'You\'re all done!';
+
+  @override
+  String get allCaughtUpBody => 'Your leafy crew is happy and hydrated.';
+
+  @override
+  String get myPlantsTitle => 'My Green Sanctuary';
+
+  @override
+  String get searchPlantsHint => 'Find a plant in your garden...';
+
+  @override
+  String get statPlants => 'Total Plants';
+
+  @override
+  String get statHealth => 'Overall Health';
+
+  @override
+  String get statWaterToday => 'Due Today';
+
+  @override
+  String get noPlantsTitle => 'Your sanctuary is empty';
+
+  @override
+  String get noPlantsBody => 'Tap + to welcome your very first plant!';
+
+  @override
+  String plantWateredSnackbar(String name) {
+    return '$name is hydrated and happy! 💧';
+  }
+
+  @override
+  String get deletePlantConfirmTitle => 'Remove Plant?';
+
+  @override
+  String deletePlantConfirmBody(String name) {
+    return '$name will be removed from your garden collection.';
+  }
+
+  @override
+  String get plantFallbackTitle => 'Plant';
+
+  @override
+  String get plantNotFoundMessage => 'We couldn\'t find that plant.';
+
+  @override
+  String get markAsWateredTooltip => 'Mark as watered';
+
+  @override
+  String get deletePlantMenuItem => 'Remove plant';
+
+  @override
+  String get todaysCareTitle => 'Today\'s Routine';
+
+  @override
+  String plantWaterLevelLabel(String level) {
+    return 'Moisture Level: $level';
+  }
+
+  @override
+  String get noFertilizerNoteMessage => 'No feeding schedule set yet';
+
+  @override
+  String plantFertilizeNoteLabel(String note) {
+    return 'Feeding Tip: $note';
+  }
+
+  @override
+  String plantLastScanLabel(String when) {
+    return 'Last check-up: $when';
+  }
+
+  @override
+  String get scanAgainButton => 'Scan Check-up';
+
+  @override
+  String get askAiDoctorButton => 'Consult AI Doctor';
+
+  @override
+  String get plantHistoryTitle => 'Growth Journal';
+
+  @override
+  String get noActivityTitle => 'No entries yet';
+
+  @override
+  String get noActivityBody =>
+      'Scan or water a plant to kick off its growth journal!';
+
+  @override
+  String historyScanEntry(String name) {
+    return '$name received an AI check-up';
+  }
+
+  @override
+  String historyWateredEntry(String name) {
+    return '$name was watered';
+  }
+
+  @override
+  String historyFertilizedEntry(String name) {
+    return '$name was fertilized';
+  }
+
+  @override
+  String historySkippedEntry(String name) {
+    return 'Watering was postponed for $name';
+  }
+
+  @override
+  String historyNoteEntry(String name) {
+    return 'A note was added for $name';
+  }
+
+  @override
+  String get plantRecentActivityTitle => 'Recent activity';
+
+  @override
+  String get careStreakLabel => 'Care streak';
+
+  @override
+  String careStreakDays(int days) {
+    return '$days days';
+  }
+
+  @override
+  String get plantNoActivityYet => 'No activity recorded yet.';
+
+  @override
+  String get gardenHistoryButton => 'Garden history';
+
+  @override
+  String get activityWateredLabel => 'Watered';
+
+  @override
+  String get activityFertilizedLabel => 'Fertilized';
+
+  @override
+  String get activityScanLabel => 'Plant scan';
+
+  @override
+  String get activitySkippedLabel => 'Snoozed';
+
+  @override
+  String get activityNoteLabel => 'Note';
+
+  @override
+  String get skipSnoozeTitle => 'Skip or snooze watering';
+
+  @override
+  String get skipReasonLabel => 'Reason';
+
+  @override
+  String get skipSoilWetReason => 'Soil is still wet';
+
+  @override
+  String get skipRainedReason => 'It rained';
+
+  @override
+  String get skipOtherReason => 'Other';
+
+  @override
+  String get skipDurationLabel => 'Snooze for';
+
+  @override
+  String get skipOneDay => '1 day';
+
+  @override
+  String get skipTwoDays => '2 days';
+
+  @override
+  String get skipThreeDays => '3 days';
+
+  @override
+  String get skipSevenDays => '7 days';
+
+  @override
+  String skipSavedSnackbar(int days) {
+    return 'Watering snoozed for $days days.';
+  }
+
+  @override
+  String historyCreatedEntry(String name) {
+    return '$name was added to garden';
+  }
+
+  @override
+  String get notScannedYetLabel => 'Awaiting first check-up';
+
+  @override
+  String healthCritical(int percent) {
+    return '$percent% • Urgent Action Needed';
+  }
+
+  @override
+  String healthNeedsCare(int percent) {
+    return '$percent% • Attention Suggested';
+  }
+
+  @override
+  String healthHealthy(int percent) {
+    return '$percent% • Thriving';
+  }
+
+  @override
+  String healthOkay(int percent) {
+    return '$percent% • Doing OK';
+  }
+
+  @override
+  String healthReasonWaterLate(int days) {
+    return 'Watering $days days overdue';
+  }
+
+  @override
+  String healthReasonFertilizerLate(int days) {
+    return 'Fertilizing $days days overdue';
+  }
+
+  @override
+  String healthReasonScanIssue(String issue, String severity) {
+    return 'Check-up: $issue ($severity)';
+  }
+
+  @override
+  String get scanSeverityMild => 'Mild';
+
+  @override
+  String get scanSeverityModerate => 'Moderate';
+
+  @override
+  String get scanSeveritySevere => 'Severe';
+
+  @override
+  String get noCheckupHint =>
+      'No check-up yet. Scan this plant to see how healthy it really is.';
+
+  @override
+  String get dueNotSet => 'Not set';
+
+  @override
+  String dueOverdueDays(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Overdue by $days days',
+      one: 'Overdue by 1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String dueInDays(int days) {
+    return 'In $days days';
+  }
+
+  @override
+  String get statNeedAttention => 'Need Attention';
+
+  @override
+  String plantWaterDueLabel(String when) {
+    return 'Watering: $when';
+  }
+
+  @override
+  String get settingsMenuLabel => 'Settings';
 
   @override
   String get profileTitle => 'Profile';
-  @override
-  String get profileStatPlants => 'Plants';
-  @override
-  String get statHealth => 'Overall Health';
-  @override
-  String get statWaterToday => 'Due Today';
-  @override
-  String get settingsSectionTitle => 'Settings';
-  @override
-  String get settingsMenuLabel => 'Settings';
-  @override
-  String get notificationsLabel => 'Notifications';
-  @override
-  String get onLabel => 'On';
-  @override
-  String get offLabel => 'Off';
-  @override
-  String get darkModeLabel => 'Dark Mode';
-  @override
-  String get accountSectionTitle => 'Account';
-  @override
-  String get myOrdersLabel => 'My Orders';
-  @override
-  String get helpLabel => 'Help';
-  @override
-  String get aboutLabel => 'About';
-  @override
-  String get logOutButton => 'Log Out';
 
   @override
-  String get notificationsSectionTitle => 'Notifications';
+  String profileMemberSince(String year) {
+    return 'Plant Parent since $year';
+  }
+
   @override
-  String get pushNotificationsLabel => 'Push Notifications';
+  String get statAvgHealth => 'Avg Health Score';
+
   @override
-  String get pushNotificationsSubtitle => 'Updates, plant tips, and announcements';
+  String get statBadges => 'Garden Badges';
+
   @override
-  String get wateringRemindersLabel => 'Watering Alerts';
-  @override
-  String get wateringRemindersSubtitle => 'Get notified exact moments your plants get thirsty';
-  @override
-  String get appearanceSectionTitle => 'Appearance';
-  @override
-  String get generalSectionTitle => 'General Settings';
-  @override
-  String get languageLabel => 'App Language';
+  String get quickMenuTitle => 'Quick Navigation';
+
   @override
   String get chooseLanguageTitle => 'Select Language';
-  @override
-  String get aboutPlantPalLabel => 'About PlantPal';
+
   @override
   String get aboutBody =>
       'Version 1.0.0\n\nYour intelligent plant companion—scan, care, and cultivate your home jungle with confidence.';
+
   @override
-  String get closeButton => 'Close';
+  String get notificationsSectionTitle => 'Notifications';
+
   @override
-  String get myPlants => 'My Plants';
+  String get pushNotificationsLabel => 'Push Notifications';
+
   @override
-  String get aiDoctor => 'AI Doctor';
+  String get pushNotificationsSubtitle =>
+      'Updates, plant tips, and announcements';
+
   @override
-  String get fertilizerRecipes => 'Fertilizer Recipes';
+  String get wateringRemindersLabel => 'Watering Alerts';
+
   @override
-  String get maintenance => 'Maintenance';
+  String get wateringRemindersSubtitle =>
+      'Get notified exact moments your plants get thirsty';
+
   @override
-  String get shop => 'Shop';
+  String get appearanceSectionTitle => 'Appearance';
+
   @override
-  String get uploadPlantPhoto => "Upload your Plant's Photo";
+  String get darkModeLabel => 'Dark Mode';
+
   @override
-  String get noNewNotifications => 'No new notifications.';
+  String get generalSectionTitle => 'General Settings';
+
+  @override
+  String get languageLabel => 'App Language';
+
+  @override
+  String get aboutPlantPalLabel => 'About PlantPal';
+
+  @override
+  String get accountSectionTitle => 'Account';
+
+  @override
+  String get logoutConfirmBody =>
+      'Are you sure you want to log out of PlantPal?';
+
+  @override
+  String get reviewsSectionTitle => 'Community Reviews';
+
+  @override
+  String get noReviewsMessage =>
+      'No reviews yet. Be the first plant parent to leave a review!';
+
+  @override
+  String get writeReviewTitle => 'Write a Review';
+
+  @override
+  String get yourRatingLabel => 'Your Rating';
+
+  @override
+  String get reviewHintText => 'How did this product perform for your plants?';
+
+  @override
+  String get submitReviewButton => 'Submit Review';
+
+  @override
+  String get categoryAllLabel => 'All Items';
+
+  @override
+  String get productFallbackTitle => 'Product';
+
+  @override
+  String get productNotFoundMessage => 'Product not found.';
+
+  @override
+  String get detailsSectionTitle => 'Product Details';
+
+  @override
+  String get descriptionSectionTitle => 'Overview';
+
+  @override
+  String get quantitySectionTitle => 'Quantity';
+
+  @override
+  String productQuantityFormula(int qty, String unit) {
+    return '= $qty × $unit';
+  }
+
+  @override
+  String get buyNowButton => 'Buy Now';
+
+  @override
+  String productReviewsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count reviews',
+      one: '1 review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String productInStock(int count) {
+    return '$count units left';
+  }
+
+  @override
+  String get shopSubtitle => 'Curated tools and supplies for a thriving garden';
+
+  @override
+  String get searchProductsHint => 'Search products, tools, fertilizers...';
+
+  @override
+  String get noProductsFoundMessage =>
+      'No products found matching your search.';
+
+  @override
+  String productAddedToCartSnackbar(String name) {
+    return '$name added to your cart! 🛍️';
+  }
+
+  @override
+  String get wishlistTitle => 'My Wishlist';
+
+  @override
+  String get wishlistEmptyTitle => 'Your wishlist is empty';
+
+  @override
+  String get wishlistEmptyBody =>
+      'Tap the heart on any product to save it for later.';
+
+  @override
+  String get browseShopButton => 'Explore the Shop';
+
+  @override
+  String get plantBotAnalyzingLabel => 'PlantBot is inspecting your leaf...';
+
+  @override
+  String get scanPlantTitle => 'Scan Your Plant';
+
+  @override
+  String get analyzingPlantLabel => 'Analyzing leaf patterns & health...';
+
+  @override
+  String get chooseFromGalleryButton => 'Choose from Photo Gallery';
+
+  @override
+  String get plantIdentifiedTitle => 'Match Found!';
+
+  @override
+  String get noScanYetTitle => 'No active scan';
+
+  @override
+  String get noScanYetBody =>
+      'Take or select a photo of your plant to analyze.';
+
+  @override
+  String get unknownPlantLabel => 'Unrecognized Species';
+
+  @override
+  String get aiHardcodedLabel => 'Sample Result';
+
+  @override
+  String get viewCareGuideButton => 'Open Care Guide';
+
+  @override
+  String get captionHint => 'Add a note or caption (optional)...';
+
+  @override
+  String get chatInputHint => 'Ask your plant question...';
+
+  @override
+  String get aiVisionAnalysisTitle => 'AI Vision Diagnostics';
+
+  @override
+  String diagnosisProblemLabel(String issue) {
+    return 'Detected Concern: $issue';
+  }
+
+  @override
+  String diagnosisConfidenceSeverity(String confidence, String severity) {
+    return 'Confidence: $confidence | Severity: $severity';
+  }
+
+  @override
+  String get treatmentLabel => 'Treatment:';
+
+  @override
+  String get recommendedFertilizerLabel => 'Recommended Fertilizer:';
+
+  @override
+  String get shopProductsLabel => 'Shop Products:';
+
+  @override
+  String bulletItem(String item) {
+    return '• $item';
+  }
+
+  @override
+  String get aiDisclaimerText =>
+      'AI guidance only — not a guaranteed diagnosis. Check with a local plant expert for serious issues.';
+
+  @override
+  String get chatWelcomeMessage =>
+      'Hello! I\'m PlantBot.\nHow can I help your plants today?';
+
+  @override
+  String get chatSuggestion1 => 'Why are my leaves yellow?';
+
+  @override
+  String get chatSuggestion2 => 'Homemade Banana Fertilizer';
+
+  @override
+  String get chatSuggestion3 => 'Treat Leaf Spot';
+
+  @override
+  String get chatRateLimitError =>
+      'Free-tier rate limit reached. Please wait 10 seconds and try again.';
+
+  @override
+  String get signInRequiredChatMessage =>
+      'Please sign in with Google to chat with PlantBot.';
+
+  @override
+  String get connectionErrorMessage =>
+      'I am having trouble connecting to my plant knowledge base. Please check your connection.';
+
+  @override
+  String get genericChatErrorMessage =>
+      'I had trouble with that request. Please try again!';
+
+  @override
+  String get scanRateLimitError =>
+      'Rate limit reached. Please wait 10 seconds and try again.';
+
+  @override
+  String get signInRequiredScanMessage =>
+      'Please sign in with Google to scan plants.';
+
+  @override
+  String get scanAnalysisErrorMessage =>
+      'I couldn\'t analyze that photo. Please try again.';
+
+  @override
+  String get plantDetailsTitle => 'Plant Details';
+
+  @override
+  String get careSummaryTitle => 'Care Summary';
+
+  @override
+  String get actionsTitle => 'Actions';
+
+  @override
+  String get lastWateredLabel => 'Last Watered';
+
+  @override
+  String get nextWaterLabel => 'Next Watering';
+
+  @override
+  String get sunlightLabel => 'Sunlight';
+
+  @override
+  String get neverWateredLabel => 'Never';
+
+  @override
+  String get wateredTodayLabel => 'Today';
+
+  @override
+  String daysAgoLabel(int days) {
+    return '${days}d ago';
+  }
+
+  @override
+  String get waterNowLabel => 'Water now!';
+
+  @override
+  String daysLeftLabel(int days) {
+    return 'In ${days}d';
+  }
+
+  @override
+  String get unknownSpeciesLabel => 'Unknown species';
+
+  @override
+  String get noNicknameLabel => 'No nickname';
+
+  @override
+  String get markWateredButton => 'Mark as Watered';
+
+  @override
+  String get editPlantButton => 'Edit Plant';
+
+  @override
+  String markedWateredSnackbar(String name) {
+    return '$name has been watered 💧';
+  }
+
+  @override
+  String get needsWaterTooltip => 'Needs water';
+
+  @override
+  String get emptyPlantsTitle => 'No plants yet';
+
+  @override
+  String get emptyPlantsBody => 'Tap + to add your first plant.';
+
+  @override
+  String get addFirstPlantButton => 'Add your first plant';
+
+  @override
+  String get plantsGridHeader => 'My Plants';
+
+  @override
+  String get editPlantTitle => 'Edit Plant';
+
+  @override
+  String get plantSavedSnackbar => 'Plant saved successfully.';
+
+  @override
+  String get deleteConfirmTitle => 'Delete this plant?';
+
+  @override
+  String get deleteConfirmBody => 'This action cannot be undone.';
+
+  @override
+  String get deletePlantButton => 'Delete Plant';
+
+  @override
+  String get changePhotoLabel => 'Change Photo';
+
+  @override
+  String get settingsSectionTitle => 'Settings';
+
+  @override
+  String get notificationsLabel => 'Notifications';
+
+  @override
+  String get helpLabel => 'Help';
+
+  @override
+  String get aboutLabel => 'About';
+
+  @override
+  String get profileStatPlants => 'Plants';
+
+  @override
+  String get profileStatOrders => 'Orders';
+
+  @override
+  String get profileStatPoints => 'Points';
+
+  @override
+  String get shopTitle => 'Shop';
+
+  @override
+  String get allCategoryLabel => 'All';
+
+  @override
+  String get noProductsFoundTitle => 'No products found';
+
+  @override
+  String get noScanResultTitle => 'No scan yet';
+
+  @override
+  String get noScanResultBody => 'Take or choose a plant photo first.';
+
+  @override
+  String get defaultDisplayName => 'Plant Parent';
+
+  @override
+  String get refreshPriceButton => 'Refresh Price via AI';
+
+  @override
+  String get checkingPriceLabel => 'Checking live price...';
+
+  @override
+  String get aiPriceRefreshedLabel => 'AI Price Check';
+
+  @override
+  String priceCheckedAgoLabel(String timeAgo) {
+    return 'Checked $timeAgo';
+  }
+
+  @override
+  String get possiblyOutOfStockLabel => 'May be out of stock';
+
+  @override
+  String get priceRefreshFailedLabel => 'Couldn\'t fetch live price';
+
+  @override
+  String get refreshAgainLabel => 'Refresh again';
+
+  @override
+  String get retryLabel => 'Retry';
+
+  @override
+  String get justNowLabel => 'just now';
+
+  @override
+  String minutesAgoLabel(int count) {
+    return '$count min ago';
+  }
+
+  @override
+  String hoursAgoLabel(int count) {
+    return '${count}h ago';
+  }
 
   @override
   String get navHome => 'Home';
+
   @override
   String get navScan => 'Scan';
+
   @override
   String get navShop => 'Shop';
+
   @override
   String get navAiDoctor => 'AI Doctor';
+
   @override
   String get navProfile => 'Profile';
 
   @override
-  String get settingsTitle => 'Settings';
-  @override
-  String get settingsAppearance => 'Appearance';
-  @override
-  String get settingsDarkMode => 'Dark mode';
-  @override
-  String get settingsLanguage => 'Language';
-  @override
-  String get settingsNotifications => 'Notifications';
-  @override
-  String get settingsWateringReminders => 'Watering reminders';
-  @override
-  String get settingsLogout => 'Log out';
+  String get myOrdersLabel => 'My Orders';
 
   @override
-  String get landingTitle => 'PlantPal';
-  @override
-  String get landingSubtitle => "Your Garden's best Friend";
-  @override
-  String get landingLogin => 'Log In';
-  @override
-  String get landingRegister => 'Create Account';
+  String get noOrdersTitle => 'No orders yet';
 
   @override
-  String get loginTitle => 'Welcome back';
-  @override
-  String get loginEmail => 'Email';
-  @override
-  String get loginPassword => 'Password';
-  @override
-  String get loginSubmit => 'Log In';
+  String get noOrdersBody => 'Orders you place will show up here.';
 
   @override
-  String get registerTitle => 'Create your account';
-  @override
-  String get registerSubmit => 'Sign Up';
+  String get markAsFertilizedTooltip => 'Mark as fertilized';
 
   @override
-  String get cancel => 'Cancel';
-  @override
-  String get delete => 'Delete';
-  @override
-  String get save => 'Save';
+  String plantFertilizedSnackbar(String name) {
+    return '$name has been fed!';
+  }
 
   @override
-  String get greetingMorning => 'Good morning! ☀️ Ready to check on your plants?';
-  @override
-  String get greetingAfternoon => 'Good afternoon! 🌤️ How are your plants doing?';
-  @override
-  String get greetingEvening => 'Good evening! 🌆 Time for one last check-in.';
-  @override
-  String get greetingNight => 'Still up? 🌙 Your plants are resting too.';
-  @override
-  String get greetingPlantThirsty => '🌱 One of your plants is thirsty today!';
-  @override
-  String get greetingWeatherRain => "It's rainy out there 🌧️ — skip watering outdoor plants today.";
-  @override
-  String get greetingWeatherThunderstorm => 'Storms nearby ⛈️ — keep sensitive plants indoors.';
-  @override
-  String get greetingWeatherSnow => "It's snowing ❄️ — bring tender plants inside.";
-  @override
-  String get greetingWeatherFog => 'Foggy morning 🌫️ — your plants love the extra humidity.';
-  @override
-  String greetingWeatherHot(int temperature) => "It's $temperature°C out 🔥 — your plants may need extra water.";
+  String get chatHistoryTooltip => 'Chat history';
 
   @override
-  String weatherTipHot(int waterMl) => "It's too hot today 🔥 — give at least $waterMl ml water today.";
-  @override
-  String get weatherTipCold => "It's cold today ❄️ — water a little less to avoid root rot.";
-  @override
-  String get weatherTipWetOutside => "It's wet outside today 🌧️ — skip watering outdoor plants.";
+  String get chatSessionsTitle => 'Your chats';
 
   @override
-  String pointsBalanceLabel(String points, String taka) => '$points pts ($taka ৳)';
+  String get chatNewChat => 'New chat';
+
   @override
-  String get noNotificationsMessage => "You're all caught up! No new notifications.";
+  String get chatSessionsToday => 'Today';
+
   @override
-  String get uploadPlantPhotoPrompt => 'Snap or upload a photo';
+  String get chatSessionsYesterday => 'Yesterday';
+
   @override
-  String get myPlantsMenuLabel => 'My Garden';
+  String get chatSessionsEarlier => 'Earlier';
+
   @override
-  String get aiDoctorMenuLabel => 'AI Plant Doctor';
+  String get chatSessionsEmptyTitle => 'No chats yet';
+
   @override
-  String get maintenanceMenuLabel => 'Care Schedules';
+  String get chatSessionsEmptyBody =>
+      'Start a conversation and it will show up here.';
+
   @override
-  String get fertilizerRecipesMenuLabel => 'DIY Plant Food';
+  String get chatUntitledSession => 'New conversation';
+
   @override
-  String get shopMenuLabel => 'Garden Shop';
+  String get chatDeleteConfirmTitle => 'Delete this chat?';
+
   @override
-  String mascotThirstyMessage(String mascotName) => '$mascotName is looking thirsty—time for a drink!';
+  String get chatDeleteConfirmBody =>
+      'This conversation will be permanently removed.';
+
+  @override
+  String get chatDeleteFailed => 'Couldn\'t delete the chat. Please try again.';
+
+  @override
+  String get chatLoadHistoryError => 'Couldn\'t load this chat.';
+
+  @override
+  String get chatStopTooltip => 'Stop generating';
+
+  @override
+  String get chatScanContextRemove => 'Remove scan from this chat';
+
+  @override
+  String get chatPhotoUnavailable => 'Photo unavailable. Tap to retry.';
+
+  @override
+  String chatScanPrefill(String issue) {
+    return 'My plant shows $issue. What should I do?';
+  }
+
+  @override
+  String get filterNeedsWater => 'Needs water';
+
+  @override
+  String get filterNeedsFeeding => 'Needs feeding';
+
+  @override
+  String get filterNeedsAttention => 'Needs attention';
+
+  @override
+  String plantsCountLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count plants',
+      one: '1 plant',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get groupByLocation => 'Group by location';
+
+  @override
+  String get noLocationGroup => 'No location';
+
+  @override
+  String waterAllDueButton(int count) {
+    return 'Water all due ($count)';
+  }
+
+  @override
+  String waterAllDoneSnackbar(int count, int points) {
+    return 'Watered $count plants 💧 +$points points';
+  }
+
+  @override
+  String get statusWaterToday => 'Water today';
+
+  @override
+  String get statusFeedDue => 'Feeding due';
+
+  @override
+  String statusNextWater(String day) {
+    return 'Next: $day';
+  }
+
+  @override
+  String get statusWatered => 'Watered ✓';
+
+  @override
+  String waterPlantTooltip(String name) {
+    return 'Water $name';
+  }
+
+  @override
+  String wateredUndoSnackbar(String name) {
+    return '$name watered 💧';
+  }
+
+  @override
+  String get undoButton => 'Undo';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points points';
+  }
+
+  @override
+  String get emptyGardenBody =>
+      'Scan a photo and we will identify it for you, or add it by hand.';
+
+  @override
+  String get scanToAddButton => 'Scan to add';
+
+  @override
+  String get addManuallyButton => 'Add manually';
+
+  @override
+  String get noMatchingPlants => 'No plants match this filter';
+
+  @override
+  String get healthBreakdownTitle => 'Health breakdown';
+
+  @override
+  String get healthBreakdownBase => 'Perfect health';
+
+  @override
+  String get healthBreakdownNoIssues =>
+      'Nothing is lowering the health of this plant.';
+
+  @override
+  String get healthBreakdownTotal => 'Score';
+
+  @override
+  String get nextUpTitle => 'Next up';
+
+  @override
+  String get nextUpWaterNow => 'Water now';
+
+  @override
+  String nextUpWaterNowMl(int ml) {
+    return 'Water now · $ml ml';
+  }
+
+  @override
+  String get nextUpFeedNow => 'Fertilize now';
+
+  @override
+  String get nextUpAllDone => 'All caught up';
+
+  @override
+  String nextUpNextWater(String when) {
+    return 'Next watering: $when';
+  }
+
+  @override
+  String get nextUpWaterEarly => 'Water early';
+
+  @override
+  String get scheduleTitle => 'Care schedule';
+
+  @override
+  String get scheduleWater => 'Water';
+
+  @override
+  String get scheduleFertilize => 'Fertilize';
+
+  @override
+  String scheduleLast(String when) {
+    return 'Last: $when';
+  }
+
+  @override
+  String scheduleNext(String when) {
+    return 'Next: $when';
+  }
+
+  @override
+  String scheduleEvery(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Every $days days',
+      one: 'Every day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get lastNever => 'Never';
+
+  @override
+  String get yesterdayLabel => 'Yesterday';
+
+  @override
+  String get careTipsTitle => 'Care tips';
+
+  @override
+  String get aiDoctorButton => 'AI Doctor';
+
+  @override
+  String get addStepPhoto => 'Photo';
+
+  @override
+  String get addStepDetails => 'Details';
+
+  @override
+  String get addStepPlan => 'Care plan';
+
+  @override
+  String addStepProgress(int n, int total) {
+    return 'Step $n of $total';
+  }
+
+  @override
+  String get addPhotoStepTitle => 'Start with a photo';
+
+  @override
+  String get addPhotoStepBody =>
+      'Our AI botanist identifies your plant and fills in its care details.';
+
+  @override
+  String get addIdentifyingLabel => 'Analyzing with AI Botanist...';
+
+  @override
+  String get addEnterManually => 'Skip, I will enter the details';
+
+  @override
+  String identifiedSnackbar(String species) {
+    return 'Identified as $species! Details filled in.';
+  }
+
+  @override
+  String get identifyFailedSnackbar =>
+      'Could not identify the plant. You can enter the details yourself.';
+
+  @override
+  String get nextButton => 'Next';
+
+  @override
+  String get reviewPlanButton => 'Review care plan';
+
+  @override
+  String get locationIndoor => 'Indoor';
+
+  @override
+  String get locationBalcony => 'Balcony';
+
+  @override
+  String get locationOutdoor => 'Outdoor';
+
+  @override
+  String get lightLow => 'Low';
+
+  @override
+  String get lightMedium => 'Medium';
+
+  @override
+  String get lightBright => 'Bright';
+
+  @override
+  String get stageSeedling => 'Seedling';
+
+  @override
+  String get stageYoung => 'Young';
+
+  @override
+  String get stageMature => 'Mature';
+
+  @override
+  String get notYetChip => 'Not yet';
+
+  @override
+  String get pickDateChip => 'Pick date';
+
+  @override
+  String get planPreviewTitle => 'Your care plan';
+
+  @override
+  String planWaterAmount(int ml) {
+    return 'About $ml ml each time';
+  }
+
+  @override
+  String get planFirstWatering => 'First watering';
+
+  @override
+  String get planFeedingNote =>
+      'A feeding schedule is created automatically when you save.';
+
+  @override
+  String get planEditDetails => 'Edit details';
+
+  @override
+  String get addAnotherButton => 'Add another';
+
+  @override
+  String get viewPlantButton => 'View plant';
+
+  @override
+  String get firstSproutUnlocked => 'First Sprout unlocked!';
+
+  @override
+  String get scanLastTitle => 'Last check-up';
+
+  @override
+  String get scanHealthyTitle => 'Looking healthy';
+
+  @override
+  String get scanSeverityNone => 'Healthy';
+
+  @override
+  String get scanTreatmentTitle => 'Treatment';
+
+  @override
+  String get scanCareTipTitle => 'Care tip';
+
+  @override
+  String get scanMarkTreated => 'Mark treated';
+
+  @override
+  String scanTreatedOn(String date) {
+    return 'Treated $date';
+  }
+
+  @override
+  String get scanTreatedSnackbar => 'Marked as treated. Health updates now.';
+
+  @override
+  String scanFindFertilizer(String name) {
+    return 'Find fertilizer: $name';
+  }
+
+  @override
+  String scanChecklistProgress(int done, int total) {
+    return '$done of $total steps done';
+  }
+
+  @override
+  String get plantPlacementLabel => 'Where does it live?';
+
+  @override
+  String weatherRainSkipTip(String name) {
+    return 'It\'s raining, so $name can skip watering today.';
+  }
+
+  @override
+  String get weatherRainSkipButton => 'Skip today';
 }

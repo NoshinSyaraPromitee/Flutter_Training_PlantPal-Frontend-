@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
+import 'maintenance_colors.dart';
 
 /// Fixed "Add another plant" / "Back" row shown under the Maintenance screen.
 class MaintenanceBottomBar extends StatelessWidget {
@@ -31,10 +32,10 @@ class MaintenanceBottomBar extends StatelessWidget {
       children: [
         IconButton(
           style: filled ? IconButton.styleFrom(backgroundColor: Colors.white, shape: const CircleBorder()) : null,
-          icon: Icon(icon, color: AppColors.greenPrimary),
+          icon: Icon(icon, color: filled ? AppColors.greenPrimary : kMaintenanceIconLight),
           onPressed: onTap,
         ),
-        Text(label, style: AppTextStyles.inter(11, w: FontWeight.w600)),
+        Text(label, style: AppTextStyles.inter(11, w: FontWeight.w600, c: kMaintenanceIconLight)),
       ],
     );
   }

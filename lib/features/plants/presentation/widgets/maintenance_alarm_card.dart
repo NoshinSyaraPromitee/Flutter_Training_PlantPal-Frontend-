@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/theme/app_text_styles.dart';
+import 'maintenance_colors.dart';
 
 /// "Set Alarm" card with tappable hour/minute steppers and an AM/PM toggle.
 class SetAlarmCard extends StatefulWidget {
@@ -28,7 +29,7 @@ class _SetAlarmCardState extends State<SetAlarmCard> {
         children: [
           Align(
               alignment: Alignment.centerLeft,
-              child: Text('Set Alarm', style: AppTextStyles.inter(14, w: FontWeight.w700))),
+              child: Text('Set Alarm', style: AppTextStyles.inter(14, w: FontWeight.w700, c: kMaintenanceInk))),
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +37,7 @@ class _SetAlarmCardState extends State<SetAlarmCard> {
               _timeBox(_hour.toString().padLeft(2, '0'), () => _adjustHour(1), () => _adjustHour(-1)),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
-                child: Text(':', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                child: Text(':', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: kMaintenanceInk)),
               ),
               _timeBox(_minute.toString().padLeft(2, '0'), () => _adjustMinute(1), () => _adjustMinute(-1)),
               const SizedBox(width: 12),
@@ -57,7 +58,7 @@ class _SetAlarmCardState extends State<SetAlarmCard> {
                   _minute = 0;
                   _pm = true;
                 }),
-                child: const Text('Cancel'),
+                child: const Text('Cancel', style: TextStyle(color: kMaintenanceInk)),
               ),
               TextButton(
                 onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
@@ -88,14 +89,14 @@ class _SetAlarmCardState extends State<SetAlarmCard> {
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
                 onPressed: onUp,
-                icon: const Icon(Icons.keyboard_arrow_up)),
-            Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                icon: const Icon(Icons.keyboard_arrow_up, color: kMaintenanceInk)),
+            Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: kMaintenanceInk)),
             IconButton(
                 iconSize: 16,
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
                 onPressed: onDown,
-                icon: const Icon(Icons.keyboard_arrow_down)),
+                icon: const Icon(Icons.keyboard_arrow_down, color: kMaintenanceInk)),
           ],
         ),
       );

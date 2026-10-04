@@ -1,9 +1,10 @@
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:plantpal/core/theme/app_colors.dart';
 import 'package:plantpal/core/widgets/app_card.dart';
 import 'package:plantpal/core/widgets/photo_picker_sheet.dart';
+import 'maintenance_colors.dart';
 
 /// Daily journal photo upload. Owns its own picked-image state.
 class MaintenanceJournalSection extends StatefulWidget {
@@ -14,7 +15,7 @@ class MaintenanceJournalSection extends StatefulWidget {
 }
 
 class _MaintenanceJournalSectionState extends State<MaintenanceJournalSection> {
-  String? _image;
+  Uint8List? _image;
 
   Future<void> _upload() async {
     final p = await pickPhoto(context);
@@ -32,10 +33,10 @@ class _MaintenanceJournalSectionState extends State<MaintenanceJournalSection> {
             padding: const EdgeInsets.only(bottom: 12),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(14),
-              child: Image.file(File(_image!), height: 140, width: double.infinity, fit: BoxFit.cover),
+              child: Image.memory(_image!, height: 140, width: double.infinity, fit: BoxFit.cover),
             ),
           ),
-        const Center(child: Icon(Icons.file_upload_outlined, color: AppColors.greenPrimary, size: 28)),
+        const Center(child: Icon(Icons.file_upload_outlined, color: kMaintenanceIconLight, size: 28)),
         const SizedBox(height: 8),
         ElevatedButton(
           onPressed: _upload,

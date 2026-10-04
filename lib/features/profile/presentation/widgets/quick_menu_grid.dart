@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -32,6 +32,7 @@ final _menu = [
   _MenuItem(Icons.history, 'Plant History', '/plant-history', AppColors.plum),
   _MenuItem(Icons.favorite_border, 'Wishlist', '/wishlist', AppColors.plum),
   _MenuItem(Icons.shopping_cart_outlined, 'My Cart', '/cart', AppColors.orange),
+  _MenuItem(Icons.receipt_long_outlined, 'My Orders', '/orders', AppColors.teal),
 ];
 
 /// Grid of quick-link cards into the rest of the app, shown on the profile tab.

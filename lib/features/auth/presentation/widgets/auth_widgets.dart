@@ -22,7 +22,11 @@ class AuthScaffold extends StatelessWidget {
               SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 24),
                 child: Column(children: [
-                  const SizedBox(width: 130, height: 130, child: PlantMascotRive()),
+                  const SizedBox(
+                    width: 130,
+                    height: 130,
+                    child: PlantMascotRive(),
+                  ),
                   const SizedBox(height: 8),
                   Text(title, style: AppTextStyles.screenTitle),
                   if (subtitle != null) Text(subtitle!, style: AppTextStyles.inter(15, c: AppColors.textMuted)),

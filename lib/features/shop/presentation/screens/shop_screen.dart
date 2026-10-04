@@ -1,81 +1,278 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:plantpal/core/theme/app_colors.dart';
-import 'package:plantpal/core/theme/app_text_styles.dart';
-import 'package:plantpal/core/widgets/app_screen.dart';
-import 'package:plantpal/core/widgets/app_text_field.dart';
-import 'package:plantpal/core/widgets/state_views.dart';
-import 'package:plantpal/features/cart/presentation/providers/cart_provider.dart';
-import 'package:plantpal/features/shop/presentation/providers/shop_provider.dart';
-import 'package:plantpal/features/shop/presentation/widgets/product_card.dart';
-import 'package:plantpal/features/wishlist/presentation/providers/wishlist_provider.dart';
-import 'package:provider/provider.dart';
 
-class ShopScreen extends StatelessWidget {
+import '../../../../app/riverpod_providers.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/formatters.dart';
+import '../../../../core/widgets/app_card.dart';
+import '../../../../core/widgets/app_screen.dart';
+import '../../../../core/widgets/net_image.dart';
+import '../../../../core/widgets/quantity_stepper.dart';
+import '../../../../core/widgets/state_views.dart';
+import '../../../../l10n/app_localizations.dart';
+import '../../domain/model/product.dart';
+
+class ShopScreen extends ConsumerStatefulWidget {
   const ShopScreen({super.key});
 
-  Widget _iconBadge(IconData icon, int count, VoidCallback onTap) => IconButton(
-        onPressed: onTap,
-        icon: Badge(isLabelVisible: count > 0, label: Text('$count'), child: Icon(icon, size: 28, color: AppColors.greenPrimary)),
-      );
+  @override
+  ConsumerState<ShopScreen> createState() => _ShopScreenState();
+}
+
+class _ShopScreenState extends ConsumerState<ShopScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // If nothing has been loaded yet (e.g. the post-login load never ran or
+    // failed), fetch now instead of spinning forever / showing "no products".
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final shop = ref.read(shopControllerProvider);
+      if (shop.products.isEmpty && !shop.isFetching) shop.load();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    final shop = context.watch<ShopController>();
-    final cartCount = context.watch<CartController>().count;
-    final wishCount = context.watch<WishlistController>().items.length;
-    final list = shop.filtered;
+    final l10n = AppLocalizations.of(context);
+    final shop = ref.watch(shopControllerProvider);
+    final cart = ref.watch(cartControllerProvider);
+    final filteredProducts = shop.filtered;
+
+    Widget body;
+    if (shop.loading) {
+      body = const LoadingView();
+    } else if (shop.error != null && shop.products.isEmpty) {
+      body = ErrorView(message: shop.error!, onRetry: shop.load);
+    } else if (filteredProducts.isEmpty) {
+      body = EmptyView(
+        icon: Icons.storefront,
+        title: l10n.noProductsFoundTitle,
+      );
+    } else {
+      body = GridView.builder(
+        padding: const EdgeInsets.only(bottom: 24),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          mainAxisExtent: 262, // fixed height: no overflow on narrow phones
+        ),
+        itemCount: filteredProducts.length,
+        itemBuilder: (_, i) => _ProductCard(product: filteredProducts[i]),
+      );
+    }
 
     return AppScreen(
-      title: 'Shop',
-      showBack: false,
-      child: shop.loading
-          ? const LoadingView()
-          : shop.error != null
-              ? ErrorView(message: shop.error!, onRetry: shop.load)
-              : Column(children: [
-                  Row(children: [
+      title: l10n.shopTitle,
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            icon: Icon(
+              Icons.favorite_border,
+              color: AppColors.isDark ? Colors.white : AppColors.greenPrimary,
+            ),
+            onPressed: () => context.push('/wishlist'),
+            tooltip: 'Wishlist',
+          ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              IconButton(
+                icon: Icon(
+                  Icons.shopping_cart_outlined,
+                  color: AppColors.isDark ? Colors.white : AppColors.greenPrimary,
+                ),
+                onPressed: () => context.push('/cart'),
+                tooltip: l10n.cartTitle,
+              ),
+              if (cart.count > 0)
+                Positioned(
+                  top: 6,
+                  right: 6,
+                  child: CircleAvatar(
+                    radius: 8,
+                    backgroundColor: AppColors.danger,
+                    child: Text(
+                      '${cart.count}',
+                      style: AppTextStyles.inter(
+                        9,
+                        w: FontWeight.w800,
+                        c: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 46,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                _CategoryChip(
+                  label: l10n.allCategoryLabel,
+                  selected: shop.category == 'All',
+                  onTap: () => shop.selectCategory('All'),
+                ),
+                for (final cat in shop.categories)
+                  _CategoryChip(
+                    label: cat.name,
+                    selected: shop.category == cat.name,
+                    onTap: () => shop.selectCategory(cat.name),
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 8),
+          Expanded(child: body),
+        ],
+      ),
+    );
+  }
+}
 
-                    _iconBadge(Icons.favorite_border, wishCount, () => context.push('/wishlist')),
-                    _iconBadge(Icons.shopping_cart_outlined, cartCount, () => context.push('/cart')),
-                  ]),
-                  AppTextField(hint: 'Search products...', icon: Icons.search, radius: 18, onChanged: shop.setQuery),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 42,
-                    child: ListView(scrollDirection: Axis.horizontal, children: [
-                      for (final name in ['All', ...shop.categories.map((c) => c.name)])
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: ChoiceChip(
-                            label: Text(name),
-                            selected: shop.category == name,
-                            onSelected: (_) => shop.selectCategory(name),
-                            selectedColor: AppColors.greenPrimary,
-                            backgroundColor: Colors.white,
-                            labelStyle: AppTextStyles.inter(13, w: FontWeight.w600, c: shop.category == name ? Colors.white : AppColors.textDark),
-                            showCheckmark: false,
+class _CategoryChip extends StatelessWidget {
+  const _CategoryChip({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: ChoiceChip(
+        label: Text(label),
+        selected: selected,
+        onSelected: (_) => onTap(),
+        showCheckmark: false,
+        selectedColor: AppColors.greenPrimary,
+        backgroundColor: AppColors.isDark ? AppColors.surfaceGreen : AppColors.cream,
+        side: BorderSide(
+          color: AppColors.cream.withValues(alpha: 0.8),
+          width: 1.5,
+        ),
+        labelStyle: AppTextStyles.inter(
+          13,
+          c: selected
+              ? Colors.white
+              : (AppColors.isDark ? AppColors.cream : const Color(0xFF1A3A31)),
+          w: FontWeight.w700,
+        ),
+      ),
+    );
+  }
+}
+
+class _ProductCard extends ConsumerWidget {
+  const _ProductCard({required this.product});
+
+  final Product product;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final cart = ref.watch(cartControllerProvider);
+
+    final cartItem = cart.items
+        .where((item) => item.product.id == product.id)
+        .firstOrNull;
+
+    final qty = cartItem?.quantity ?? 0;
+
+    return AppCard(
+      padding: EdgeInsets.zero,
+      onTap: () => context.push('/shop/product/${product.id}'),
+      child: Column(
+        children: [
+          Expanded(
+            child: ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
+              child: NetImage(
+                product.imageUrl,
+                width: double.infinity,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 8, 10, 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.inter(
+                    13,
+                    w: FontWeight.w700,
+                    c: AppColors.isDark ? AppColors.cream : AppColors.textDark,
+                  ),
+                ),
+                if (product.unit != null)
+                  Text(
+                    product.unit!,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.inter(11, c: AppColors.textMuted),
+                  ),
+                Text(
+                  taka(product.price),
+                  style: AppTextStyles.inter(
+                    14,
+                    w: FontWeight.w800,
+                    c: const Color(0xFFFF9800),
+                  ),
+                ),
+                const SizedBox(height: 6),
+                qty == 0
+                    ? SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.greenPrimary,
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                          ),
+                          onPressed: () => cart.add(product),
+                          child: Text(
+                            l10n.addToCartButton,
+                            style: AppTextStyles.inter(
+                              12,
+                              w: FontWeight.w700,
+                              c: Colors.white,
+                            ),
                           ),
                         ),
-                    ]),
-                  ),
-                  const SizedBox(height: 10),
-                  Expanded(
-                    child: list.isEmpty
-                        ? const EmptyView(icon: Icons.search, title: 'No products found')
-                        : GridView.builder(
-                            padding: const EdgeInsets.only(bottom: 24),
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              mainAxisSpacing: 14,
-                              crossAxisSpacing: 14,
-                              childAspectRatio: 0.66,
-                            ),
-                            itemCount: list.length,
-                            itemBuilder: (_, i) => ProductCard(product: list[i]),
-                          ),
-                  ),
-                ]),
+                      )
+                    : QuantityStepper(
+                        value: qty,
+                        onMinus: () => cart.decrease(product.id),
+                        onPlus: () => cart.increase(product.id),
+                      ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

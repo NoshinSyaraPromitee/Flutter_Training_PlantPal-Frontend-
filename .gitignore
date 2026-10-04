@@ -34,6 +34,13 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Local environment and secrets
+**/.env
+!.env.example
+
+# Backend is maintained in its own repository
+/backend/
+
 # Symbolication related
 app.*.symbols
 

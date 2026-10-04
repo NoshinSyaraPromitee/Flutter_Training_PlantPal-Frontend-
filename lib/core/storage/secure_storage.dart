@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -43,9 +43,16 @@ class SecureStorage {
     }
   }
 
+  Future<String?> readChatSessionId() => read('chat_session_id');
+
+  Future<void> saveChatSessionId(String id) => write('chat_session_id', id);
+
+  Future<void> clearChatSessionId() => delete('chat_session_id');
+
   Future<void> clear() async {
     await delete(_tokenKey);
     await delete(_refreshTokenKey);
     await delete(_userKey);
+    await clearChatSessionId();
   }
 }
